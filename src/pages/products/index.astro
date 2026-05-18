@@ -1,0 +1,110 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import ProductCard from '@components/ProductCard.astro';
+import productsData from '@data/products.json';
+
+const categories = [...new Set(productsData.map((p: any) => p.category))];
+---
+
+<BaseLayout
+  title="Shop — Curated Products for a Beautiful Life"
+  description="Browse our curated collection of premium lifestyle products — from home decor to wellness essentials. Thoughtfully selected for quality and style."
+  type="website"
+  canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
+>
+  <section class="section-sm">
+    <div class="container">
+      <div class="page-header">
+        <h1>The <span class="gradient-text">Shop</span></h1>
+        <p>Thoughtfully curated products for a beautiful, intentional lifestyle.</p>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-category="all">All Products</button>
+        {categories.map(cat => (
+          <button class="filter-btn" data-category={cat}>{cat}</button>
+        ))}
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid-3" id="products-grid">
+        {productsData.map((product: any) => (
+          <div class="product-item" data-category={product.category} data-title={product.title.toLowerCase()}>
+            <ProductCard {...product} />
+          </div>
+        ))}
+      </div>
+
+      <div id="no-results" style="display:none; text-align:center; padding: 64px 0;">
+        <p style="color: var(--color-text-muted); font-size: 1.1rem;">No products found in this category.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    margin-bottom: 12px;
+  }
+
+  .page-header p {
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+  }
+
+  .filter-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+
+  .filter-btn {
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: var(--color-bg-hover);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+</style>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll<HTMLElement>('.product-item');
+  const noResults = document.getElementById('no-results');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.category || 'all';
+      let visible = 0;
+      items.forEach(item => {
+        const show = cat === 'all' || item.dataset.category === cat;
+        item.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      if (noResults) noResults.style.display = visible === 0 ? '' : 'none';
+    });
+  });
+</script>

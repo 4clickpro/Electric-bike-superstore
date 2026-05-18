@@ -1,0 +1,416 @@
+---
+// Blog Post — dynamic route for all blog posts
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  return [
+    { params: { slug: 'transform-your-home-with-biophilic-design' } },
+    { params: { slug: 'morning-rituals-for-a-mindful-day' } },
+    { params: { slug: 'the-art-of-curated-minimalism' } },
+    { params: { slug: 'smart-home-tech-that-actually-improves-your-life' } },
+    { params: { slug: 'seasonal-tablescaping-for-every-occasion' } },
+    { params: { slug: 'the-science-of-better-sleep' } },
+    { params: { slug: 'sustainable-fashion-wardrobe-essentials' } },
+    { params: { slug: 'digital-detox-reclaiming-your-attention' } },
+    { params: { slug: 'the-perfect-home-office-setup' } },
+  ];
+}
+
+const { slug } = Astro.params;
+
+const posts: Record<string, any> = {
+  'transform-your-home-with-biophilic-design': {
+    title: 'Transform Your Home with Biophilic Design Principles',
+    description: 'Discover how bringing nature indoors can dramatically improve your wellbeing, productivity, and the aesthetic appeal of your living space.',
+    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80',
+    category: 'Home Decor',
+    date: '2025-01-10',
+    author: 'Olivia Hart',
+    readTime: '7',
+    tags: ['home decor', 'biophilic design', 'interior design', 'wellness', 'natural living'],
+    content: `
+      <p class="lead">In an increasingly urbanized world, our innate connection to nature often gets lost in the shuffle of daily life. But what if your home could bridge that gap? Enter biophilic design — an approach that integrates natural elements into our built environments to enhance wellbeing, creativity, and overall happiness.</p>
+
+      <h2>What Is Biophilic Design?</h2>
+      <p>Biophilic design goes far beyond adding a few potted plants to your living room. It's a comprehensive design philosophy that seeks to connect building occupants more closely to nature. The term "biophilia" was popularized by biologist E.O. Wilson, who suggested that humans have an innate tendency to seek connections with nature and other forms of life.</p>
+
+      <p>In practice, biophilic design incorporates natural lighting, ventilation, landscape features, and organic materials to create spaces that feel alive and nurturing. Research has consistently shown that environments rich in natural elements reduce stress, improve cognitive function, and enhance mood.</p>
+
+      <h2>Three Core Pillars of Biophilic Design</h2>
+
+      <h3>1. Direct Experience of Nature</h3>
+      <p>This involves actual contact with natural elements within the built environment. Think natural light flooding through large windows, the sound of a water feature, or the gentle movement of air from a cross-breeze. These elements aren't just decorative — they're functional components that transform how a space feels.</p>
+
+      <p>Consider installing a living wall in your entryway, placing a small indoor fountain in your reading nook, or simply maximizing natural light by removing heavy curtains. Even a small herb garden on a sunny kitchen windowsill brings life and freshness into your daily routine.</p>
+
+      <h3>2. Indirect Experience of Nature</h3>
+      <p>When direct access to nature is limited, indirect experiences can fill the gap. This includes the use of natural materials like wood, stone, and bamboo; colors found in nature (earthy browns, leafy greens, sky blues); and patterns that evoke natural forms (think the fractal patterns of ferns or the spiral of a seashell).</p>
+
+      <p>Swap synthetic materials for wood furniture, incorporate stone accent walls or countertops, and choose textiles in organic fibers like linen, wool, and cotton. Even images of nature — landscape photography or botanical prints — can have a measurable calming effect.</p>
+
+      <h3>3. Space and Place Conditions</h3>
+      <p>This pillar addresses the spatial configurations that make us feel comfortable and secure, yet stimulated. It includes elements like prospect (open views), refuge (cozy, protected spaces), mystery (partially obscured views that invite exploration), and risk (an identifiable threat coupled with a reliable safeguard, like a glass balcony).</p>
+
+      <p>Create varied zones in open-plan spaces — a cozy reading corner with a comfortable chair and soft lighting, a bright workspace near windows, and gathering areas with varied seating. Diversity within a space keeps the mind engaged and allows different activities to feel naturally supported.</p>
+
+      <h2>Getting Started: A Room-by-Room Guide</h2>
+
+      <h3>Living Room</h3>
+      <p>Start with the heart of your home. Position seating to face windows or outdoor views when possible. Choose furniture in natural materials — a solid wood coffee table, a wool area rug, linen-upholstered sofas. Add layered lighting: a mix of natural light, warm ambient fixtures, and task lighting creates the dynamic lighting conditions we experience outdoors.</p>
+
+      <h3>Bedroom</h3>
+      <p>Your bedroom should be a sanctuary. Use organic cotton or linen bedding in soothing, nature-inspired colors. Keep air quality high with plants like snake plants or peace lilies, which actually filter common indoor pollutants. Consider a Himalayan salt lamp or sunrise alarm clock for gentle, natural-feeling light transitions.</p>
+
+      <h3>Home Office</h3>
+      <p>The home office benefits enormously from biophilic principles. Position your desk near a window if possible. Add a small desktop plant or a shelf of succulents above your monitor. Use a wooden desk rather than laminate, and incorporate natural textures through accessories like bamboo pen holders or stone paperweights.</p>
+
+      <h2>The Science Behind the Beauty</h2>
+      <p>The benefits of biophilic design aren't just anecdotal — they're backed by robust research. A landmark study by the University of Oregon found that 10% of employee absences could be attributed to architecture with no connection to nature. Office workers with views of trees and landscapes reported significantly higher job satisfaction and lower stress levels.</p>
+
+      <p>In healthcare settings, patients with views of nature recovered faster and required less pain medication than those facing brick walls. In schools, classrooms with natural light and outdoor views have been linked to 20-26% faster learning rates.</p>
+
+      <blockquote>
+        <p>"Nature holds the key to our aesthetic, intellectual, cognitive, and even spiritual satisfaction."</p>
+        <cite>— Dr. E.O. Wilson</cite>
+      </blockquote>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <p>Avoid these pitfalls when bringing biophilic design into your home:</p>
+      <ul>
+        <li><strong>Overdoing it:</strong> A jungle-themed living room might be overwhelming. Start small and layer elements gradually.</li>
+        <li><strong>Neglecting maintenance:</strong> Dying plants have the opposite effect — they add visual stress. Choose hardy plants you can realistically care for.</li>
+        <li><strong>Ignoring context:</strong> A design element that works in a coastal home might feel out of place in a city loft. Adapt principles to your specific environment and architecture.</li>
+        <li><strong>Forgetting function:</strong> Beautiful natural materials still need to serve your lifestyle. That gorgeous reclaimed wood table needs to be practical for daily use.</li>
+      </ul>
+
+      <h2>Your Biophilic Journey Begins</h2>
+      <p>Transforming your home with biophilic design isn't about a complete renovation. It's a gradual journey of reconnecting your living space with the natural world. Start with one room, one element — and watch as your home becomes not just more beautiful, but more nurturing for your mind, body, and spirit.</p>
+
+      <p>Ready to start? Browse our curated collection of natural home decor pieces designed with biophilic principles in mind.</p>
+    `,
+  },
+  'morning-rituals-for-a-mindful-day': {
+    title: 'Morning Rituals That Set the Tone for a Mindful Day',
+    description: 'Start each day with intention. These science-backed morning practices will help you cultivate focus, gratitude, and inner calm.',
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80',
+    category: 'Wellness',
+    date: '2025-01-05',
+    author: 'Dr. Amara Lee',
+    readTime: '5',
+    tags: ['wellness', 'mindfulness', 'morning routine', 'meditation', 'self care'],
+    content: `
+      <p class="lead">How you start your morning sets the tone for your entire day. A rushed, reactive morning often leads to a scattered, stressful day — while an intentional morning can create a foundation of calm and clarity that carries through.</p>
+
+      <h2>The Power of a Morning Ritual</h2>
+      <p>Morning rituals aren't just trendy self-care concepts — they're grounded in neuroscience. The first hour after waking, sometimes called the "golden hour," is when your brain is most receptive to programming. The theta brainwave state that occurs just after waking is associated with deep relaxation, creativity, and suggestibility.</p>
+
+      <p>By establishing consistent morning practices, you're essentially programming your brain for focus, positivity, and resilience before the demands of the day begin competing for your attention.</p>
+
+      <h2>1. Wake Without Technology (First 15 Minutes)</h2>
+      <p>Resist the urge to reach for your phone immediately upon waking. When you check emails and social media first thing, you're letting external demands set your agenda before you've even had a chance to center yourself. Instead, take 15 minutes of tech-free time.</p>
+
+      <p>Upon waking, drink a full glass of water to rehydrate after sleep. Sit quietly by a window or step outside for a few deep breaths of fresh air. This simple act signals to your body that the day has begun on your terms.</p>
+
+      <h2>2. Mindful Movement (15 Minutes)</h2>
+      <p>Movement doesn't have to mean an intense workout. Gentle stretching, yoga, or a short walk activates your lymphatic system, increases blood flow to the brain, and releases tension accumulated during sleep. Focus on the sensations in your body — the stretch of muscles, the rhythm of your breath.</p>
+
+      <p>Research from the University of Bristol found that people who exercise during the workday report improved mood, performance, and concentration. Morning movement amplifies these benefits by frontloading them.</p>
+
+      <h2>3. Meditation or Breathwork (10 Minutes)</h2>
+      <p>Even five to ten minutes of meditation can have profound effects. A study published in Psychiatry Research found that just 8 weeks of daily meditation actually changes brain structure, increasing gray matter density in regions associated with learning, memory, and emotional regulation.</p>
+
+      <p>If traditional meditation feels challenging, try box breathing: inhale for 4 counts, hold for 4, exhale for 4, hold for 4. Repeat for 5-10 cycles. This technique activates your parasympathetic nervous system, reducing stress and improving focus.</p>
+
+      <h2>4. Gratitude Practice (5 Minutes)</h2>
+      <p>Write down three things you're genuinely grateful for. They can be profound or simple — a good night's sleep, the sound of rain, a supportive friend. The key is specificity and genuine feeling. Research from UC Davis shows that people who regularly practice gratitude report 25% higher happiness levels and better physical health.</p>
+
+      <h2>5. Intentional Nourishment</h2>
+      <p>Breakfast is an opportunity to nourish both body and mind. Rather than eating on autopilot, practice mindful eating: notice the colors, textures, and flavors of your food. Choose foods that sustain energy — protein, healthy fats, and complex carbohydrates — rather than quick sugars that lead to mid-morning crashes.</p>
+
+      <blockquote>
+        <p>"The way you start your day determines how well you live your day."</p>
+        <cite>— Robin Sharma</cite>
+      </blockquote>
+
+      <h2>Designing Your Personal Ritual</h2>
+      <p>Your morning ritual should feel authentic and sustainable. Start with just one or two elements and build from there. The goal isn't perfection — it's presence. Some mornings will flow beautifully; others might feel chaotic. The practice is in returning to intention, again and again.</p>
+    `,
+  },
+  'the-art-of-curated-minimalism': {
+    title: 'The Art of Curated Minimalism: Less Stuff, More Meaning',
+    description: "Minimalism isn't about deprivation — it's about making room for what truly matters. Learn how to curate a meaningful space.",
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80',
+    category: 'Lifestyle',
+    date: '2024-12-28',
+    author: 'James Kwan',
+    readTime: '6',
+    tags: ['lifestyle', 'minimalism', 'decluttering', 'home organization', 'intentional living'],
+    content: `
+      <p class="lead">Minimalism has become a buzzword, often associated with stark white rooms and owning fewer than 100 items. But true minimalism isn't about emptiness — it's about intentionality. It's the art of curating your environment so that everything in it serves a purpose or brings you joy.</p>
+
+      <h2>Curated vs. Deprived: A Crucial Distinction</h2>
+      <p>Deprivation-based minimalism comes from a place of lack: "I shouldn't have this" or "I should want less." Curated minimalism comes from abundance: "I choose to surround myself only with what enhances my life." The difference in mindset is everything.</p>
+
+      <p>When you curate rather than deprive, the process becomes joyful. You're not giving things up — you're making room. Room for clear surfaces, for easy mornings, for the things you genuinely love and use.</p>
+
+      <h2>Start With Why</h2>
+      <p>Before decluttering a single drawer, get clear on your vision. What do you want your space to feel like? Calm and serene? Energized and creative? Warm and inviting? Your answer will guide every decision.</p>
+
+      <p>Write down three words that describe your ideal home environment. When you're deciding whether to keep an item, ask yourself: does this contribute to that feeling?</p>
+
+      <h2>The Curation Process: Quality Over Quantity</h2>
+      <p>Rather than asking "Does this spark joy?" (which can be vague), ask three concrete questions:</p>
+      <ol>
+        <li><strong>Do I use this regularly?</strong> If you haven't used it in a year, you probably don't need it.</li>
+        <li><strong>Would I buy this again today?</strong> If not, it's costing you space without adding value.</li>
+        <li><strong>Does this represent who I am now?</strong> Let go of items tied to past identities or aspirational selves that no longer resonate.</li>
+      </ol>
+
+      <h2>Invest in Fewer, Better Things</h2>
+      <p>Once you've cleared the excess, the real art begins. Invest in high-quality pieces that bring lasting satisfaction. A single, beautiful ceramic mug that feels perfect in your hands is worth more than a cabinet of mismatched ones. A well-made wool blanket will outlast a dozen synthetic throws.</p>
+
+      <p>This approach is not only more aesthetically pleasing — it's more sustainable and often more economical in the long run. And when you love every item you own, your home naturally feels more cohesive and intentional.</p>
+
+      <blockquote>
+        <p>"Have nothing in your house that you do not know to be useful, or believe to be beautiful."</p>
+        <cite>— William Morris</cite>
+      </blockquote>
+    `,
+  },
+};
+
+const post = posts[slug as string];
+
+if (!post) {
+  return Astro.redirect('/blog');
+}
+
+const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout
+  title={post.title}
+  description={post.description}
+  image={post.image}
+  type="article"
+  publishedTime={new Date(post.date).toISOString()}
+  author={post.author}
+  tags={post.tags}
+  canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
+>
+  <article class="article-section">
+    <div class="container container-narrow">
+      <!-- Article Header -->
+      <header class="article-header">
+        <span class="badge badge-new">{post.category}</span>
+        <h1>{post.title}</h1>
+        <div class="article-meta">
+          <span class="author">{post.author}</span>
+          <span class="dot">·</span>
+          <time datetime={post.date}>{formattedDate}</time>
+          <span class="dot">·</span>
+          <span>{post.readTime} min read</span>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      <div class="article-featured-image">
+        <img src={post.image} alt={post.title} loading="eager" />
+      </div>
+
+      <!-- Article Content -->
+      <div class="article-content" set:html={post.content} />
+
+      <!-- Tags -->
+      <div class="article-tags">
+        {post.tags.map((tag: string) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+
+      <!-- Share -->
+      <div class="share-section">
+        <span>Share this article:</span>
+        <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(Astro.url.toString())}`} target="_blank" rel="noopener" class="share-btn" aria-label="Share on Twitter">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(Astro.url.toString())}`} target="_blank" rel="noopener" class="share-btn" aria-label="Share on Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <button class="share-btn copy-btn" onclick={`navigator.clipboard.writeText('${Astro.url.toString()}'); this.textContent='✓ Copied!'; setTimeout(() => this.textContent='📋', 2000);`} aria-label="Copy link">
+          📋
+        </button>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .container-narrow {
+    max-width: 720px;
+  }
+
+  .article-section {
+    padding: 40px 0 80px;
+  }
+
+  .article-header {
+    margin-bottom: 32px;
+  }
+
+  .article-header .badge {
+    margin-bottom: 16px;
+  }
+
+  .article-header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 16px;
+    line-height: 1.15;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .author {
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  .article-featured-image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .article-featured-image img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .article-content {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--color-text-secondary);
+  }
+
+  .article-content :global(.lead) {
+    font-size: 1.2rem;
+    color: var(--color-text-primary);
+    line-height: 1.75;
+    margin-bottom: 32px;
+    font-weight: 500;
+  }
+
+  .article-content :global(h2) {
+    color: var(--color-text-primary);
+    margin: 48px 0 16px;
+    font-size: 1.8rem;
+  }
+
+  .article-content :global(h3) {
+    color: var(--color-text-primary);
+    margin: 32px 0 12px;
+    font-size: 1.35rem;
+  }
+
+  .article-content :global(p) {
+    margin-bottom: 20px;
+  }
+
+  .article-content :global(ul), .article-content :global(ol) {
+    margin: 16px 0 24px;
+    padding-left: 24px;
+  }
+
+  .article-content :global(li) {
+    margin-bottom: 10px;
+  }
+
+  .article-content :global(strong) {
+    color: var(--color-text-primary);
+  }
+
+  .article-content :global(blockquote) {
+    border-left: 3px solid var(--color-accent);
+    padding: 24px 32px;
+    margin: 32px 0;
+    background: var(--color-bg-card);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  .article-content :global(blockquote p) {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--color-text-primary);
+    margin-bottom: 8px;
+  }
+
+  .article-content :global(blockquote cite) {
+    font-style: normal;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 40px 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .tag {
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+  }
+
+  .share-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  .share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: 0;
+  }
+
+  .share-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .copy-btn {
+    font-size: 1rem;
+    background: none;
+    border: none;
+  }
+</style>

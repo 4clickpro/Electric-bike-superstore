@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const faqs = [
+  { q: 'What is your return policy?', a: 'We offer a 30-day hassle-free return policy on all products. Items must be in original condition with packaging. Simply contact us to initiate a return.' },
+  { q: 'How long does shipping take?', a: 'Standard shipping: 5-7 business days. Express shipping: 2-3 business days. Free shipping on all orders over $75.' },
+  { q: 'Do you ship internationally?', a: 'Yes, we ship to over 40 countries worldwide. International shipping rates vary by destination and are calculated at checkout.' },
+  { q: 'Are your products sustainable?', a: 'We prioritize ethically sourced materials and partner with brands that share our commitment to environmental responsibility. Look for our sustainability badge on product pages.' },
+  { q: 'Can I cancel or modify my order?', a: 'Orders can be modified or cancelled within 2 hours of placement. Contact us immediately for assistance.' },
+  { q: 'How can I track my order?', a: 'Once your order ships, you\'ll receive a tracking number via email. You can track your shipment on our website or the carrier\'s site.' },
+];
+---
+
+<BaseLayout
+  title="FAQ — Frequently Asked Questions | Celestial Goods"
+  description="Find answers to common questions about shipping, returns, products, and more."
+  type="website"
+>
+  <section class="section-sm">
+    <div class="container" style="max-width: 750px;">
+      <div class="page-header">
+        <h1>Frequently Asked <span class="gradient-text">Questions</span></h1>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        {faqs.map(faq => (
+          <details class="faq-item card" style="border-radius: var(--radius-md);">
+            <summary style="padding: 20px 24px; cursor: pointer; list-style: none; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+              {faq.q}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-left: 16px;">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </summary>
+            <p style="padding: 0 24px 20px; color: var(--color-text-secondary); line-height: 1.7;">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

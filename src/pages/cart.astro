@@ -1,0 +1,299 @@
+---
+// Cart Page — full shopping cart management
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Shopping Cart — Celestial Goods"
+  description="Review your cart, adjust quantities, and proceed to checkout."
+  noindex={true}
+>
+  <section class="section-sm">
+    <div class="container">
+      <div class="page-header">
+        <h1>Your <span class="gradient-text">Cart</span></h1>
+      </div>
+
+      <div id="cart-empty" class="cart-empty">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <h2>Your cart is empty</h2>
+        <p>Looks like you haven't added anything yet. Browse our curated collection to find something you'll love.</p>
+        <a href="/products" class="btn btn-primary">Shop Now</a>
+      </div>
+
+      <div id="cart-content" style="display:none;">
+        <div class="cart-grid">
+          <div class="cart-items" id="cart-items"></div>
+          <aside class="cart-summary card" style="padding: 32px; height: fit-content; position: sticky; top: calc(var(--header-height) + 24px);">
+            <h3>Order Summary</h3>
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="summary-subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span id="summary-shipping">Calculated at checkout</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total</span>
+              <span id="summary-total">$0.00</span>
+            </div>
+            <button class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 16px;" onclick="alert('This is a demo — checkout would go here! 🛍️')">
+              Proceed to Checkout
+            </button>
+            <p style="font-size: 0.75rem; color: var(--color-text-muted); text-align: center; margin-top: 12px;">
+              Free shipping on orders over $75
+            </p>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+  }
+
+  .cart-empty {
+    text-align: center;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .cart-empty h2 {
+    font-size: 1.5rem;
+  }
+
+  .cart-empty p {
+    color: var(--color-text-secondary);
+    max-width: 400px;
+    margin-bottom: 8px;
+  }
+
+  .cart-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .cart-item {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 16px;
+  }
+
+  .cart-item-image {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--color-bg-elevated);
+  }
+
+  .cart-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cart-item-info {
+    flex: 1;
+  }
+
+  .cart-item-info h4 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .cart-item-price {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+
+  .cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cart-qty-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: var(--font-sans);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart-qty-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .cart-qty-display {
+    width: 36px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .remove-btn {
+    background: none;
+    border: none;
+    color: var(--color-danger);
+    font-size: 0.8rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+    font-family: var(--font-sans);
+    margin-left: auto;
+  }
+
+  .remove-btn:hover {
+    background: rgba(248, 113, 113, 0.1);
+  }
+
+  .cart-summary h3 {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  .summary-row.total {
+    border-top: 1px solid var(--color-border);
+    padding-top: 16px;
+    margin-top: 16px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+
+  @media (max-width: 768px) {
+    .cart-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cart-item {
+      flex-direction: column;
+    }
+
+    .cart-item-image {
+      width: 100%;
+      height: 200px;
+    }
+
+    .cart-item-actions {
+      flex-wrap: wrap;
+    }
+
+    .remove-btn {
+      margin-left: 0;
+    }
+  }
+</style>
+
+<script>
+  function renderCart() {
+    const cart: any[] = JSON.parse(localStorage.getItem('celestial-cart') || '[]');
+    const empty = document.getElementById('cart-empty');
+    const content = document.getElementById('cart-content');
+    const items = document.getElementById('cart-items');
+
+    if (cart.length === 0) {
+      if (empty) empty.style.display = '';
+      if (content) content.style.display = 'none';
+      return;
+    }
+
+    if (empty) empty.style.display = 'none';
+    if (content) content.style.display = '';
+
+    let subtotal = 0;
+    if (items) {
+      items.innerHTML = cart.map((item, i) => {
+        subtotal += item.price * item.quantity;
+        return `
+          <div class="cart-item">
+            <div class="cart-item-image"><img src="${item.image}" alt="${item.title}" /></div>
+            <div class="cart-item-info">
+              <h4>${item.title}</h4>
+              <p class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</p>
+              <div class="cart-item-actions">
+                <button class="cart-qty-btn" onclick="updateQty(${i}, -1)">−</button>
+                <span class="cart-qty-display">${item.quantity}</span>
+                <button class="cart-qty-btn" onclick="updateQty(${i}, 1)">+</button>
+                <button class="remove-btn" onclick="removeItem(${i})">Remove</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    const shipping = subtotal >= 75 ? 0 : 9.99;
+    (document.getElementById('summary-subtotal') as HTMLElement).textContent = `$${subtotal.toFixed(2)}`;
+    (document.getElementById('summary-shipping') as HTMLElement).textContent = shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`;
+    (document.getElementById('summary-total') as HTMLElement).textContent = `$${(subtotal + shipping).toFixed(2)}`;
+  }
+
+  (window as any).updateQty = function(index: number, delta: number) {
+    const cart: any[] = JSON.parse(localStorage.getItem('celestial-cart') || '[]');
+    cart[index].quantity += delta;
+    if (cart[index].quantity <= 0) cart.splice(index, 1);
+    localStorage.setItem('celestial-cart', JSON.stringify(cart));
+    window.dispatchEvent(new Event('storage'));
+    renderCart();
+  };
+
+  (window as any).removeItem = function(index: number) {
+    const cart: any[] = JSON.parse(localStorage.getItem('celestial-cart') || '[]');
+    cart.splice(index, 1);
+    localStorage.setItem('celestial-cart', JSON.stringify(cart));
+    window.dispatchEvent(new CustomEvent('cart-updated'));
+    renderCart();
+  };
+
+  renderCart();
+  window.addEventListener('cart-updated', renderCart);
+  window.addEventListener('storage', () => { renderCart(); });
+</script>

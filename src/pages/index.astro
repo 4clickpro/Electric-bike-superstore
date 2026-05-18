@@ -1,0 +1,457 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import BlogCard from '@components/BlogCard.astro';
+import ProductCard from '@components/ProductCard.astro';
+import productsData from '@data/products.json';
+
+const featuredPosts = [
+  {
+    slug: 'how-to-choose-your-first-electric-bike',
+    title: 'How to Choose Your First Electric Bike: The Ultimate 2025 Guide',
+    excerpt: 'Everything you need to know before buying your first e-bike — motor types, battery range, classes, and the questions most first-time buyers forget to ask.',
+    image: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&q=80',
+    category: 'Buying Guide',
+    date: '2025-01-12',
+    readTime: '10',
+  },
+  {
+    slug: 'ebike-commuting-save-time-money',
+    title: 'How E-Bike Commuting Saves You Time & Money (With Real Numbers)',
+    excerpt: 'We crunched the numbers. A $1,899 e-bike pays for itself in 8 months compared to driving — and you get there faster too.',
+    image: 'https://images.unsplash.com/photo-1559348349-86f1f65817fe?w=800&q=80',
+    category: 'Commuting',
+    date: '2025-01-08',
+    readTime: '7',
+  },
+  {
+    slug: 'ebike-maintenance-checklist',
+    title: 'The Complete E-Bike Maintenance Checklist: Keep Your Ride Running Like New',
+    excerpt: 'From battery care to chain lube, brake adjustments to tire pressure — this maintenance routine will extend your e-bike\'s lifespan by years.',
+    image: 'https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800&q=80',
+    category: 'Maintenance',
+    date: '2025-01-02',
+    readTime: '8',
+  },
+];
+
+const featuredProducts = productsData.filter((p: any) => p.featured).slice(0, 4);
+---
+
+<BaseLayout
+  title="The Electric Bike Superstore — Premium E-Bikes & Expert Guides"
+  description="Discover top-rated electric bikes, expert buying guides, and essential e-bike gear. Free shipping on orders over $75. 30-day returns."
+  canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
+>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="hero-badge badge badge-new animate-fade-up">⚡ New 2025 Models Just Landed</span>
+        <h1 class="animate-fade-up" style="animation-delay: 0.1s">
+          Ride the <span class="gradient-text">Future</span>
+        </h1>
+        <p class="hero-text animate-fade-up" style="animation-delay: 0.2s">
+          Premium electric bikes for commuters, adventurers, and families. Expert-curated selection, free shipping over $75, and a 30-day test ride guarantee.
+        </p>
+        <div class="hero-actions animate-fade-up" style="animation-delay: 0.3s">
+          <a href="/products" class="btn btn-primary">
+            Shop E-Bikes
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <a href="/blog" class="btn btn-outline">Buying Guides</a>
+        </div>
+        <div class="hero-stats animate-fade-up" style="animation-delay: 0.4s">
+          <div class="stat">
+            <span class="stat-number">15K+</span>
+            <span class="stat-label">E-Bikes Sold</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">4.9</span>
+            <span class="stat-label">Avg Rating</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">30-Day</span>
+            <span class="stat-label">Test Ride Guarantee</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual animate-fade-up" style="animation-delay: 0.3s">
+        <div class="hero-image-wrapper">
+          <div class="hero-glow"></div>
+          <img
+            src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=800&q=80"
+            alt="Premium electric bike in action"
+            width="600"
+            height="750"
+            loading="eager"
+          />
+          <div class="floating-card fc-1">
+            <span class="fc-icon">⚡</span>
+            <span>Up to 80 Mile Range</span>
+          </div>
+          <div class="floating-card fc-2">
+            <span class="fc-icon">🔋</span>
+            <span>2-Year Battery Warranty</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Quick Links -->
+  <section class="section" style="background: var(--color-bg-elevated); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+    <div class="container">
+      <div class="category-grid">
+        {[
+          { label: 'Commuter', icon: '🏙️', slug: 'commuter-pro-500' },
+          { label: 'Mountain', icon: '⛰️', slug: 'trail-blazer-elite' },
+          { label: 'Folding', icon: '🎒', slug: 'fold-commute-x1' },
+          { label: 'Cargo', icon: '📦', slug: 'cargo-hauler-pro' },
+        ].map(cat => (
+          <a href={`/products/${cat.slug}`} class="category-card card">
+            <span class="cat-icon">{cat.icon}</span>
+            <h3>{cat.label} E-Bikes</h3>
+            <span class="view-link">View Models →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Bikes -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Top <span class="gradient-text">E-Bikes</span></h2>
+        <p>Our most popular models, rated 4.5+ stars by real riders.</p>
+        <a href="/products" class="btn btn-outline btn-sm">View All</a>
+      </div>
+      <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+        {featuredProducts.map((product: any) => <ProductCard {...product} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Guides Section -->
+  <section class="section" style="background: var(--color-bg-elevated); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Expert E-Bike <span class="gradient-text">Guides</span></h2>
+        <p>Buying advice, maintenance tips, and commuting strategies from e-bike experts.</p>
+        <a href="/blog" class="btn btn-outline btn-sm">All Guides</a>
+      </div>
+      <div class="grid-3">
+        {featuredPosts.map(post => <BlogCard {...post} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Buy Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 48px;">
+        <h2>Why Shop With <span class="gradient-text">Us</span></h2>
+      </div>
+      <div class="features-grid">
+        {[
+          { icon: '🚚', title: 'Free Shipping $75+', desc: 'Fast, insured delivery to your door. Most orders ship within 48 hours.' },
+          { icon: '🔄', title: '30-Day Test Ride', desc: 'Not sure? Ride it for 30 days. If you don\'t love it, return it — no questions asked.' },
+          { icon: '🛡️', title: '2-Year Warranty', desc: 'Every e-bike includes a comprehensive 2-year warranty on frame, motor, and battery.' },
+          { icon: '⭐', title: '4.9 Star Support', desc: 'Real humans, real fast. Our e-bike experts are available 7 days a week.' },
+        ].map(f => (
+          <div class="feature-card card" style="padding: 32px; text-align: center;">
+            <span style="font-size: 2.5rem; display: block; margin-bottom: 16px;">{f.icon}</span>
+            <h3 style="font-size: 1.1rem; margin-bottom: 8px;">{f.title}</h3>
+            <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6; margin: 0;">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section" style="background: var(--color-bg-elevated); border-top: 1px solid var(--color-border);">
+    <div class="container">
+      <div class="newsletter card" style="padding: 64px 48px; text-align: center;">
+        <span style="font-size: 3rem; display: block; margin-bottom: 12px;">⚡</span>
+        <h2>Get <span class="gradient-text">Exclusive</span> Deals</h2>
+        <p style="max-width: 500px; margin: 12px auto 28px; color: var(--color-text-secondary);">
+          Join 25,000+ riders. Get weekly e-bike deals, new model alerts, and expert riding tips delivered to your inbox.
+        </p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing! ⚡');">
+          <input type="email" placeholder="your@email.com" required aria-label="Email address" />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p style="color: var(--color-text-muted); font-size: 0.75rem; margin-top: 16px;">No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 40px;">
+        <h2>Rider <span class="gradient-text">Reviews</span></h2>
+      </div>
+      <div class="testimonials-grid">
+        {[
+          { text: 'I sold my car after 3 months with my Commuter Pro. I save $400/month and my commute is actually fun now.', name: 'Marcus Chen', role: 'Daily Commuter — Seattle' },
+          { text: 'The Trail Blazer Elite handled Moab like a champ. I did 35 miles on technical singletrack and still had 40% battery left.', name: 'Sarah Rodriguez', role: 'MTB Enthusiast — Colorado' },
+          { text: 'Bought the Cargo Hauler to take my kids to school. Game changer. They love it, I get exercise, and no more school drop-off traffic.', name: 'James & Emily Park', role: 'Family Riders — Portland' },
+        ].map((t, i) => (
+          <div class="testimonial card" style="padding: 32px;">
+            <div class="testimonial-stars">
+              {Array.from({ length: 5 }).map(() => (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#34d399" stroke="#34d399" stroke-width="1" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              ))}
+            </div>
+            <p style="color: var(--color-text-secondary); font-style: italic; font-size: 0.95rem; margin-top: 16px;">"{t.text}"</p>
+            <div style="margin-top: 16px;">
+              <strong style="font-size: 0.9rem;">{t.name}</strong>
+              <span style="display: block; color: var(--color-text-muted); font-size: 0.8rem;">{t.role}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 60px 0 80px;
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .hero-content {
+    max-width: 560px;
+  }
+
+  .hero-badge {
+    margin-bottom: 24px;
+    font-size: 0.8rem;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #34d399, var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+
+  .hero-text {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-number {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #34d399, var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-image-wrapper {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .hero-glow {
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle, rgba(52, 211, 153, 0.15), transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-image-wrapper img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+  }
+
+  .floating-card {
+    position: absolute;
+    z-index: 3;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-glow);
+    border-radius: var(--radius-md);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(10px);
+  }
+
+  .fc-1 { top: 24px; right: -20px; }
+  .fc-2 { bottom: 60px; left: -30px; }
+  .fc-icon { font-size: 1.2rem; }
+
+  /* Category grid */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .category-card {
+    padding: 32px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    transition: all var(--transition-smooth);
+  }
+
+  .category-card:hover {
+    border-color: #34d399;
+    box-shadow: 0 0 30px rgba(52, 211, 153, 0.15);
+    transform: translateY(-4px);
+  }
+
+  .cat-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .category-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+
+  .view-link {
+    font-size: 0.85rem;
+    color: #34d399;
+    font-weight: 500;
+  }
+
+  /* Section headers */
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .section-header h2 { margin: 0; }
+  .section-header p {
+    flex: 1;
+    color: var(--color-text-secondary);
+    max-width: 400px;
+    margin: 0 24px;
+  }
+
+  /* Features */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+
+  /* Newsletter */
+  .newsletter-form {
+    display: flex;
+    gap: 12px;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+    transition: border-color var(--transition-fast);
+  }
+
+  .newsletter-form input:focus {
+    outline: none;
+    border-color: #34d399;
+    box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.1);
+  }
+
+  /* Testimonials */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .testimonial-stars { display: flex; gap: 3px; }
+
+  @media (max-width: 768px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .hero-visual { order: -1; }
+    .floating-card { display: none; }
+    .section-header { flex-direction: column; align-items: flex-start; }
+    .section-header p { margin: 0; }
+    .newsletter-form { flex-direction: column; }
+  }
+</style>

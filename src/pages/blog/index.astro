@@ -1,0 +1,269 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import BlogCard from '@components/BlogCard.astro';
+
+const allPosts = [
+  {
+    slug: 'transform-your-home-with-biophilic-design',
+    title: 'Transform Your Home with Biophilic Design Principles',
+    excerpt: 'Discover how bringing nature indoors can dramatically improve your wellbeing, productivity, and the aesthetic appeal of your living space.',
+    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80',
+    category: 'Home Decor',
+    date: '2025-01-10',
+    readTime: '7',
+    author: 'Olivia Hart',
+  },
+  {
+    slug: 'morning-rituals-for-a-mindful-day',
+    title: 'Morning Rituals That Set the Tone for a Mindful Day',
+    excerpt: 'Start each day with intention. These science-backed morning practices will help you cultivate focus, gratitude, and inner calm.',
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
+    category: 'Wellness',
+    date: '2025-01-05',
+    readTime: '5',
+    author: 'Dr. Amara Lee',
+  },
+  {
+    slug: 'the-art-of-curated-minimalism',
+    title: 'The Art of Curated Minimalism: Less Stuff, More Meaning',
+    excerpt: 'Minimalism isn\'t about deprivation — it\'s about making room for what truly matters. Learn how to curate a meaningful space.',
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
+    category: 'Lifestyle',
+    date: '2024-12-28',
+    readTime: '6',
+    author: 'James Kwan',
+  },
+  {
+    slug: 'smart-home-tech-that-actually-improves-your-life',
+    title: 'Smart Home Tech That Actually Improves Your Life',
+    excerpt: 'Forget gimmicks. These are the smart home devices that genuinely enhance comfort, security, and energy efficiency.',
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80',
+    category: 'Tech & Gadgets',
+    date: '2024-12-20',
+    readTime: '8',
+    author: 'Alex Rivera',
+  },
+  {
+    slug: 'seasonal-tablescaping-for-every-occasion',
+    title: 'Seasonal Tablescaping: Create Stunning Tables for Every Occasion',
+    excerpt: 'Master the art of the tablescape. From intimate dinners to holiday feasts, learn how to set a table that wows.',
+    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&q=80',
+    category: 'Home Decor',
+    date: '2024-12-15',
+    readTime: '6',
+    author: 'Olivia Hart',
+  },
+  {
+    slug: 'the-science-of-better-sleep',
+    title: 'The Science of Better Sleep: A Complete Guide',
+    excerpt: 'Sleep is the foundation of health. Explore evidence-based strategies to optimize your sleep environment and habits.',
+    image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80',
+    category: 'Wellness',
+    date: '2024-12-08',
+    readTime: '9',
+    author: 'Dr. Amara Lee',
+  },
+  {
+    slug: 'sustainable-fashion-wardrobe-essentials',
+    title: 'Building a Sustainable Fashion Wardrobe: The Essentials',
+    excerpt: 'Fast fashion is out. Learn how to build a timeless, ethical wardrobe that looks great and lasts for years.',
+    image: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80',
+    category: 'Lifestyle',
+    date: '2024-12-01',
+    readTime: '7',
+    author: 'James Kwan',
+  },
+  {
+    slug: 'digital-detox-reclaiming-your-attention',
+    title: 'Digital Detox: A Practical Guide to Reclaiming Your Attention',
+    excerpt: 'Screen fatigue is real. Here\'s how to reset your relationship with technology and rediscover life offline.',
+    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80',
+    category: 'Wellness',
+    date: '2024-11-25',
+    readTime: '8',
+    author: 'Dr. Amara Lee',
+  },
+  {
+    slug: 'the-perfect-home-office-setup',
+    title: 'The Perfect Home Office Setup: Ergonomics Meets Style',
+    excerpt: 'Working from home? Design a workspace that boosts productivity, supports your body, and inspires creativity.',
+    image: 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=800&q=80',
+    category: 'Tech & Gadgets',
+    date: '2024-11-18',
+    readTime: '10',
+    author: 'Alex Rivera',
+  },
+];
+
+const categories = [...new Set(allPosts.map(p => p.category))];
+---
+
+<BaseLayout
+  title="Blog — Expert Guides & Lifestyle Inspiration"
+  description="Explore expert guides on home decor, wellness, lifestyle, and tech. Elevate your everyday with Celestial Goods."
+  type="website"
+  canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
+>
+  <section class="section-sm">
+    <div class="container">
+      <div class="page-header">
+        <h1>The <span class="gradient-text">Blog</span></h1>
+        <p>Expert guides, curated inspiration, and stories to elevate your everyday life.</p>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-category="all">All</button>
+        {categories.map(cat => (
+          <button class="filter-btn" data-category={cat}>{cat}</button>
+        ))}
+      </div>
+
+      <!-- Search -->
+      <div class="search-bar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <input type="text" id="blog-search" placeholder="Search articles..." aria-label="Search articles" />
+      </div>
+
+      <!-- Posts Grid -->
+      <div class="grid-3" id="posts-grid">
+        {allPosts.map(post => (
+          <div class="post-item" data-category={post.category} data-title={post.title.toLowerCase()}>
+            <BlogCard {...post} />
+          </div>
+        ))}
+      </div>
+
+      <!-- No Results -->
+      <div id="no-results" style="display:none; text-align:center; padding: 64px 0;">
+        <p style="color: var(--color-text-muted); font-size: 1.1rem;">No articles found. Try a different search or filter.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    margin-bottom: 12px;
+  }
+
+  .page-header p {
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+  }
+
+  .filter-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  .filter-btn {
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: var(--color-bg-hover);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto 48px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 12px 20px;
+    transition: border-color var(--transition-fast);
+  }
+
+  .search-bar:focus-within {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.1);
+  }
+
+  .search-bar svg {
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  .search-bar input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+  }
+
+  .search-bar input:focus {
+    outline: none;
+  }
+
+  .search-bar input::placeholder {
+    color: var(--color-text-muted);
+  }
+</style>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const posts = document.querySelectorAll<HTMLElement>('.post-item');
+  const search = document.getElementById('blog-search') as HTMLInputElement;
+  const noResults = document.getElementById('no-results');
+  const grid = document.getElementById('posts-grid');
+
+  let activeCategory = 'all';
+
+  function filterPosts() {
+    const query = search?.value.toLowerCase() || '';
+    let visible = 0;
+
+    posts.forEach(post => {
+      const cat = post.dataset.category || '';
+      const title = post.dataset.title || '';
+      const matchCat = activeCategory === 'all' || cat === activeCategory;
+      const matchSearch = !query || title.includes(query);
+      const show = matchCat && matchSearch;
+      post.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    if (noResults) noResults.style.display = visible === 0 ? '' : 'none';
+    if (grid) grid.style.display = visible === 0 ? 'none' : '';
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = btn.dataset.category || 'all';
+      filterPosts();
+    });
+  });
+
+  search?.addEventListener('input', filterPosts);
+</script>

@@ -1,0 +1,38 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="404 — Page Not Found | Celestial Goods"
+  description="Sorry, the page you're looking for doesn't exist. Browse our blog or shop instead."
+  noindex={true}
+>
+  <section style="padding: 100px 0; text-align: center;">
+    <div class="container" style="max-width: 600px;">
+      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 24px; opacity: 0.5;">
+        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px;">
+        Page <span class="gradient-text">Not Found</span>
+      </h1>
+      <p style="color: var(--color-text-secondary); font-size: 1.1rem; margin-bottom: 32px; line-height: 1.7;">
+        The page you're looking for has drifted into the cosmos.<br />
+        Let's get you back on course.
+      </p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="/" class="btn btn-primary">Back to Home</a>
+        <a href="/blog" class="btn btn-outline">Read the Blog</a>
+        <a href="/products" class="btn btn-outline">Shop Products</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>

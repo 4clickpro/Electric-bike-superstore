@@ -1,0 +1,182 @@
+[
+  {
+    "slug": "commuter-pro-500",
+    "title": "Commuter Pro 500 — Urban Electric Bike",
+    "price": 1899.00,
+    "originalPrice": 2199.00,
+    "image": "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&q=80",
+    "category": "Commuter",
+    "badge": "sale",
+    "featured": true,
+    "rating": 4.8,
+    "reviews": 327,
+    "description": "The Commuter Pro 500 is the ultimate urban electric bike. With a 500W brushless motor, 50-mile range, and lightweight aluminum frame, it's built to transform your daily commute. Cruise at 20 mph with pedal-assist or twist the throttle for full electric mode.",
+    "details": [
+      "500W brushless rear hub motor",
+      "48V 14Ah lithium battery — 50 mile range",
+      "20 mph top speed with pedal assist",
+      "6061 aluminum frame — only 48 lbs",
+      "Shimano 7-speed drivetrain",
+      "Hydraulic disc brakes",
+      "Integrated LED lights & LCD display",
+      "26\" puncture-resistant tires"
+    ]
+  },
+  {
+    "slug": "trail-blazer-elite",
+    "title": "Trail Blazer Elite — Mountain E-Bike",
+    "price": 2799.00,
+    "image": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=800&q=80",
+    "category": "Mountain",
+    "badge": "new",
+    "featured": true,
+    "rating": 4.9,
+    "reviews": 198,
+    "description": "Conquer any trail with the Trail Blazer Elite. Featuring a 750W mid-drive motor, full suspension, and fat tires, this e-MTB delivers unstoppable performance. 60-mile range and advanced torque sensing give you the power and control to tackle the toughest terrain.",
+    "details": [
+      "750W Bafang mid-drive motor",
+      "48V 17.5Ah battery — 60 mile range",
+      "Full suspension: RockShox front + rear",
+      "27.5\" x 2.8\" fat tires for all-terrain grip",
+      "Shimano Deore 10-speed groupset",
+      "4-piston hydraulic disc brakes",
+      "Torque sensor for natural ride feel",
+      "IP65 water-resistant rating"
+    ]
+  },
+  {
+    "slug": "fold-commute-x1",
+    "title": "Fold Commute X1 — Portable E-Bike",
+    "price": 1299.00,
+    "originalPrice": 1499.00,
+    "image": "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800&q=80",
+    "category": "Folding",
+    "badge": "sale",
+    "featured": true,
+    "rating": 4.6,
+    "reviews": 412,
+    "description": "The Fold Commute X1 folds in 15 seconds and fits under your desk, in a car trunk, or on public transit. Don't let its size fool you — the 350W motor delivers a peppy 18 mph, and the 35-mile range makes it a true car replacement for city dwellers.",
+    "details": [
+      "350W geared hub motor",
+      "36V 10.4Ah battery — 35 mile range",
+      "Folds to 28\" x 22\" x 14\" in 15 seconds",
+      "Only 39 lbs — carry it anywhere",
+      "18 mph top speed",
+      "20\" wheels with wide comfort tires",
+      "Front suspension fork",
+      "Includes carrying bag and fenders"
+    ]
+  },
+  {
+    "slug": "cargo-hauler-pro",
+    "title": "Cargo Hauler Pro — Family Electric Cargo Bike",
+    "price": 3299.00,
+    "image": "https://images.unsplash.com/photo-1559348349-86f1f65817fe?w=800&q=80",
+    "category": "Cargo",
+    "badge": "new",
+    "featured": true,
+    "rating": 4.7,
+    "reviews": 89,
+    "description": "Haul groceries, kids, or gear with ease. The Cargo Hauler Pro features an extended rear rack rated for 400 lbs, a powerful 750W motor, and dual-battery capability for up to 80 miles of range. The ultimate car replacement for families.",
+    "details": [
+      "750W geared hub motor — 28 mph",
+      "Dual battery ready: up to 80 mile range",
+      "400 lb payload capacity (rider + cargo)",
+      "Heavy-duty chromoly steel frame",
+      "Extended rear rack with passenger kit",
+      "Hydraulic disc brakes with 203mm rotors",
+      "24\" x 2.4\" heavy-duty tires",
+      "Integrated front basket and running boards"
+    ]
+  },
+  {
+    "slug": "speedster-sport",
+    "title": "Speedster Sport — Performance Road E-Bike",
+    "price": 2499.00,
+    "image": "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=800&q=80",
+    "category": "Commuter",
+    "badge": "new",
+    "featured": false,
+    "rating": 4.5,
+    "reviews": 156,
+    "description": "For riders who want speed and style. The Speedster Sport combines road bike agility with a 500W motor for effortless cruising at 28 mph. The hidden battery design keeps the sleek look while delivering a 45-mile range.",
+    "details": [
+      "500W ultra-quiet rear hub motor",
+      "Integrated 48V 14Ah downtube battery",
+      "28 mph Class 3 pedal assist",
+      "Carbon belt drive — zero maintenance",
+      "Shimano Alfine 8-speed internal hub",
+      "Hydraulic disc brakes",
+      "700c x 38mm road tires",
+      "Weighs only 42 lbs"
+    ]
+  },
+  {
+    "slug": "fat-tire-explorer",
+    "title": "Fat Tire Explorer — All-Terrain E-Bike",
+    "price": 1999.00,
+    "originalPrice": 2399.00,
+    "image": "https://images.unsplash.com/photo-1557032589-82a4e5e9e8ad?w=800&q=80",
+    "category": "Mountain",
+    "badge": "sale",
+    "featured": false,
+    "rating": 4.7,
+    "reviews": 278,
+    "description": "Sand, snow, trails, or pavement — the Fat Tire Explorer handles it all. With massive 4\" tires, a 750W motor, and full suspension, there's no terrain too extreme. 55-mile range for all-day adventures.",
+    "details": [
+      "750W Bafang hub motor",
+      "48V 16Ah battery — 55 mile range",
+      "4\" wide fat tires for any surface",
+      "Front suspension fork with 120mm travel",
+      "26\" alloy rims",
+      "Tektro mechanical disc brakes",
+      "Twist throttle + pedal assist",
+      "Integrated headlight & taillight"
+    ]
+  },
+  {
+    "slug": "premium-helmet",
+    "title": "Smart Helmet with LED Turn Signals",
+    "price": 149.00,
+    "image": "https://images.unsplash.com/photo-1557806141-08dcce615639?w=800&q=80",
+    "category": "Accessories",
+    "badge": "new",
+    "featured": false,
+    "rating": 4.8,
+    "reviews": 503,
+    "description": "Ride safer and smarter. This premium helmet features integrated LED turn signals controlled by a wireless handlebar remote, MIPS protection, and a magnetic visor. USB-C rechargeable with 10-hour battery life.",
+    "details": [
+      "MIPS brain protection system",
+      "Wireless LED turn signals & brake light",
+      "Handlebar-mounted remote control",
+      "USB-C rechargeable — 10 hour battery",
+      "Magnetic Fidlock buckle",
+      "16 ventilation channels",
+      "Adjustable fit with dial system",
+      "CPSC & EN 1078 certified"
+    ]
+  },
+  {
+    "slug": "e-bike-security-bundle",
+    "title": "E-Bike Security Bundle",
+    "price": 89.00,
+    "originalPrice": 110.00,
+    "image": "https://images.unsplash.com/photo-1594120491678-750a5e64f0b3?w=800&q=80",
+    "category": "Accessories",
+    "badge": "sale",
+    "featured": false,
+    "rating": 4.6,
+    "reviews": 634,
+    "description": "Protect your investment. This bundle includes a heavy-duty folding lock (sold secure silver rated), a motion-sensing 120dB disc brake alarm, and a concealed GPS tracker with 30-day battery life.",
+    "details": [
+      "Premium folding lock — Sold Secure Silver rated",
+      "120dB motion-sensing disc brake alarm",
+      "GPS tracker — 4G + Bluetooth (SIM included)",
+      "30-day GPS tracker battery life",
+      "Lock weighs only 2.5 lbs",
+      "Includes 3 keys + mounting bracket",
+      "GPS app for iOS & Android",
+      "Weatherproof IP65 construction"
+    ]
+  }
+]
