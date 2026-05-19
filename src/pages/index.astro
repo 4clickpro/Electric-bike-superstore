@@ -82,6 +82,12 @@ const featuredProducts = productsData.filter((p: any) => p.featured).slice(0, 4)
       <div class="hero-visual animate-fade-up" style="animation-delay: 0.3s">
         <div class="hero-image-wrapper">
           <div class="hero-glow"></div>
+          <div class="hero-particles">
+            <span class="particle p1">⚡</span>
+            <span class="particle p2">🔋</span>
+            <span class="particle p3">🚴</span>
+            <span class="particle p4">💨</span>
+          </div>
           <img
             src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=800&q=80"
             alt="Premium electric bike in action"
@@ -97,7 +103,40 @@ const featuredProducts = productsData.filter((p: any) => p.featured).slice(0, 4)
             <span class="fc-icon">🔋</span>
             <span>2-Year Battery Warranty</span>
           </div>
+          <div class="floating-card fc-3">
+            <span class="fc-icon">🏆</span>
+            <span>#1 Best Seller</span>
+          </div>
         </div>
+      </div>
+    </div>
+    <!-- Cycling Stats Ticker -->
+    <div class="hero-ticker">
+      <div class="ticker-track">
+        <span class="ticker-item">🚴 15,000+ Riders Nationwide</span>
+        <span class="ticker-sep">•</span>
+        <span class="ticker-item">⚡ 80mi Max Range</span>
+        <span class="ticker-sep">•</span>
+        <span class="ticker-item">⭐ 4.9/5 Average Rating</span>
+        <span class="ticker-sep">•</span>
+        <span class="ticker-item">🔋 2-Year Battery Warranty</span>
+        <span class="ticker-sep">•</span>
+        <span class="ticker-item">🚚 Free Shipping $75+</span>
+        <span class="ticker-sep">•</span>
+        <span class="ticker-item">🔄 30-Day Test Ride</span>
+        <span class="ticker-sep">•</span>
+        <span class="ticker-item">🚴 15,000+ Riders Nationwide</span>
+        <span class="ticker-sep">•</span>
+        <span class="ticker-item">⚡ 80mi Max Range</span>
+        <span class="ticker-sep">•</span>
+        <span class="ticker-item">⭐ 4.9/5 Average Rating</span>
+        <span class="ticker-sep">•</span>
+        <span class="ticker-item">🔋 2-Year Battery Warranty</span>
+        <span class="ticker-sep">•</span>
+        <span class="ticker-item">🚚 Free Shipping $75+</span>
+        <span class="ticker-sep">•</span>
+        <span class="ticker-item">🔄 30-Day Test Ride</span>
+        <span class="ticker-sep">•</span>
       </div>
     </div>
   </section>
@@ -147,8 +186,79 @@ const featuredProducts = productsData.filter((p: any) => p.featured).slice(0, 4)
     </div>
   </section>
 
+  <!-- Live Countdown Timer -->
+  <section class="section" style="padding: 24px 0; background: linear-gradient(90deg, rgba(52,211,153,0.06), rgba(167,139,250,0.06), rgba(244,114,182,0.06)); border-top: 1px solid rgba(52,211,153,0.2); border-bottom: 1px solid rgba(52,211,153,0.2); overflow: hidden;">
+    <div class="container">
+      <div class="countdown-bar" style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
+        <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #34d399;">🔥 May Flash Sale Ends In:</span>
+        <div class="countdown-digits" style="display: flex; gap: 8px; align-items: center;">
+          <div class="cd-box"><span id="cd-days">00</span><small>Days</small></div>
+          <span class="cd-colon">:</span>
+          <div class="cd-box"><span id="cd-hours">00</span><small>Hrs</small></div>
+          <span class="cd-colon">:</span>
+          <div class="cd-box"><span id="cd-mins">00</span><small>Min</small></div>
+          <span class="cd-colon">:</span>
+          <div class="cd-box"><span id="cd-secs">00</span><small>Sec</small></div>
+        </div>
+        <a href="https://www.aovopro.com/?wpam_id=1120" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #34d399, #10b981); color: #fff; font-size: 0.8rem; padding: 8px 20px;">Shop the Sale →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Find Your E-Bike Quiz -->
+  <section class="section" style="background: var(--color-bg-elevated); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); position: relative; overflow: hidden;">
+    <div class="quiz-bg-glow"></div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="section-header" style="text-align: center; display: block; margin-bottom: 40px;">
+        <span class="badge" style="background: rgba(167,139,250,0.15); color: var(--color-accent); margin-bottom: 12px;">🧠 Interactive</span>
+        <h2>Find Your Perfect <span class="gradient-text">E-Bike</span> in 30 Seconds</h2>
+        <p style="max-width: 500px; margin: 12px auto 0; color: var(--color-text-secondary);">Answer 3 quick questions and we'll match you with the ideal ride.</p>
+      </div>
+      <div class="quiz-widget" id="quiz-widget">
+        <!-- Progress bar -->
+        <div class="quiz-progress"><div class="quiz-progress-bar" id="quiz-progress-bar"></div></div>
+        <!-- Question 1 -->
+        <div class="quiz-step active" data-step="1">
+          <h3 class="quiz-q">What's your primary riding style?</h3>
+          <div class="quiz-options">
+            <button class="quiz-opt" data-q1="commuter" onclick="quizAnswer(1, 'commuter', this)">🏙️ City Commuting</button>
+            <button class="quiz-opt" data-q1="mountain" onclick="quizAnswer(1, 'mountain', this)">⛰️ Off-Road Trails</button>
+            <button class="quiz-opt" data-q1="folding" onclick="quizAnswer(1, 'folding', this)">🎒 Compact & Portable</button>
+            <button class="quiz-opt" data-q1="cargo" onclick="quizAnswer(1, 'cargo', this)">📦 Hauling Cargo / Kids</button>
+          </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="quiz-step" data-step="2">
+          <h3 class="quiz-q">What's your budget range?</h3>
+          <div class="quiz-options">
+            <button class="quiz-opt" data-q2="budget" onclick="quizAnswer(2, 'budget', this)">💰 Under $1,000</button>
+            <button class="quiz-opt" data-q2="mid" onclick="quizAnswer(2, 'mid', this)">💰💰 $1,000 – $2,500</button>
+            <button class="quiz-opt" data-q2="premium" onclick="quizAnswer(2, 'premium', this)">💰💰💰 $2,500+</button>
+          </div>
+        </div>
+        <!-- Question 3 -->
+        <div class="quiz-step" data-step="3">
+          <h3 class="quiz-q">How far do you need to ride per charge?</h3>
+          <div class="quiz-options">
+            <button class="quiz-opt" data-q3="short" onclick="quizAnswer(3, 'short', this)">🛣️ Under 30 miles</button>
+            <button class="quiz-opt" data-q3="medium" onclick="quizAnswer(3, 'medium', this)">🛣️🛣️ 30–60 miles</button>
+            <button class="quiz-opt" data-q3="long" onclick="quizAnswer(3, 'long', this)">🛣️🛣️🛣️ 60+ miles</button>
+          </div>
+        </div>
+        <!-- Result -->
+        <div class="quiz-step quiz-result-step" data-step="4">
+          <div class="quiz-result-emoji" id="quiz-result-emoji">🎉</div>
+          <h3 class="quiz-result-title" id="quiz-result-title">Your Perfect Match!</h3>
+          <p class="quiz-result-desc" id="quiz-result-desc"></p>
+          <a class="btn btn-primary" id="quiz-result-link" href="https://hnrqqt-an.myshopify.com/collections/all" target="_blank" rel="noopener noreferrer">Shop Your Match →</a>
+          <button class="quiz-reset" onclick="quizReset()">↻ Retake Quiz</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Category Quick Links -->
-  <section class="section" style="background: var(--color-bg-elevated); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+  <section class="section scroll-reveal" style="background: var(--color-bg-elevated); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
     <div class="container">
       <div class="category-grid">
         {[
@@ -168,7 +278,7 @@ const featuredProducts = productsData.filter((p: any) => p.featured).slice(0, 4)
   </section>
 
   <!-- Featured Bikes -->
-  <section class="section">
+  <section class="section scroll-reveal">
     <div class="container">
       <div class="section-header">
         <h2>Top <span class="gradient-text">E-Bikes</span></h2>
@@ -227,7 +337,7 @@ const featuredProducts = productsData.filter((p: any) => p.featured).slice(0, 4)
   </section>
 
   <!-- Guides Section -->
-  <section class="section" style="background: var(--color-bg-elevated); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+  <section class="section scroll-reveal" style="background: var(--color-bg-elevated); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
     <div class="container">
       <div class="section-header">
         <h2>Expert E-Bike <span class="gradient-text">Guides</span></h2>
@@ -241,7 +351,7 @@ const featuredProducts = productsData.filter((p: any) => p.featured).slice(0, 4)
   </section>
 
   <!-- Why Buy Section -->
-  <section class="section">
+  <section class="section scroll-reveal">
     <div class="container">
       <div class="section-header" style="margin-bottom: 48px;">
         <h2>Why Shop With <span class="gradient-text">Us</span></h2>
@@ -264,7 +374,7 @@ const featuredProducts = productsData.filter((p: any) => p.featured).slice(0, 4)
   </section>
 
   <!-- Newsletter -->
-  <section class="section" style="background: var(--color-bg-elevated); border-top: 1px solid var(--color-border);">
+  <section class="section scroll-reveal" style="background: var(--color-bg-elevated); border-top: 1px solid var(--color-border);">
     <div class="container">
       <div class="newsletter card" style="padding: 64px 48px; text-align: center;">
         <span style="font-size: 3rem; display: block; margin-bottom: 12px;">⚡</span>
@@ -282,7 +392,7 @@ const featuredProducts = productsData.filter((p: any) => p.featured).slice(0, 4)
   </section>
 
   <!-- Testimonials -->
-  <section class="section-sm">
+  <section class="section-sm scroll-reveal">
     <div class="container">
       <div class="section-header" style="margin-bottom: 40px;">
         <h2>Rider <span class="gradient-text">Reviews</span></h2>
@@ -313,11 +423,183 @@ const featuredProducts = productsData.filter((p: any) => p.featured).slice(0, 4)
   </section>
 </BaseLayout>
 
+<script>
+  // Countdown Timer
+  (function() {
+    function update() {
+      var now = new Date();
+      var end = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+      var diff = end - now;
+      if (diff <= 0) return;
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      var el;
+      el = document.getElementById('cd-days'); if (el) el.textContent = String(d).padStart(2, '0');
+      el = document.getElementById('cd-hours'); if (el) el.textContent = String(h).padStart(2, '0');
+      el = document.getElementById('cd-mins'); if (el) el.textContent = String(m).padStart(2, '0');
+      el = document.getElementById('cd-secs'); if (el) el.textContent = String(s).padStart(2, '0');
+    }
+    update();
+    setInterval(update, 1000);
+  })();
+
+  // Quiz
+  var quizState = { q1: null, q2: null, q3: null };
+  window.quizAnswer = function(step, value, btn) {
+    quizState['q' + step] = value;
+    var parent = btn.parentElement;
+    parent.querySelectorAll('.quiz-opt').forEach(function(b) { b.classList.remove('selected'); });
+    btn.classList.add('selected');
+    document.getElementById('quiz-progress-bar').style.width = (step / 3 * 100) + '%';
+    setTimeout(function() {
+      document.querySelector('.quiz-step[data-step="' + step + '"]').classList.remove('active');
+      document.querySelector('.quiz-step[data-step="' + (step + 1) + '"]').classList.add('active');
+      if (step === 3) {
+        var q1 = quizState.q1;
+        var map = {
+          commuter: { emoji: '🏙️', title: 'The Urban Commuter', desc: 'You need a sleek, reliable e-bike that makes city riding effortless. Integrated lights, fenders, and racks — your daily commute just got an upgrade.' },
+          mountain: { emoji: '⛰️', title: 'The Trail Blazer', desc: 'You live for off-road adventure. Our mountain e-bikes feature full suspension, fat tires, and powerful motors that eat trails for breakfast.' },
+          folding: { emoji: '🎒', title: 'The City Minimalist', desc: 'Portability is everything. Our folding e-bikes pack down small, ride big, and are perfect for mixed commutes and tight storage.' },
+          cargo: { emoji: '📦', title: 'The Family Hauler', desc: 'You need to move people and stuff. Our cargo e-bikes have the power, range, and carrying capacity to replace your car for local trips.' }
+        };
+        var r = map[q1] || map.commuter;
+        document.getElementById('quiz-result-emoji').textContent = r.emoji;
+        document.getElementById('quiz-result-title').textContent = r.title;
+        document.getElementById('quiz-result-desc').textContent = r.desc;
+      }
+    }, 350);
+  };
+  window.quizReset = function() {
+    quizState = { q1: null, q2: null, q3: null };
+    document.querySelectorAll('.quiz-opt').forEach(function(b) { b.classList.remove('selected'); });
+    document.querySelectorAll('.quiz-step').forEach(function(s) { s.classList.remove('active'); });
+    document.querySelector('.quiz-step[data-step="1"]').classList.add('active');
+    document.getElementById('quiz-progress-bar').style.width = '0%';
+  };
+
+  // Scroll Reveal
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-scale').forEach(function(el) {
+      observer.observe(el);
+    });
+  }
+</script>
+
 <style>
+  /* ===== Scroll-reveal animations ===== */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+  .scroll-reveal-left {
+    opacity: 0; transform: translateX(-40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .scroll-reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .scroll-reveal-scale {
+    opacity: 0; transform: scale(0.9);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .scroll-reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+  /* ===== Hero particles ===== */
+  .hero-particles { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+  .particle {
+    position: absolute; font-size: 1.5rem;
+    animation: floatParticle 6s ease-in-out infinite; opacity: 0.7;
+  }
+  .p1 { top: 15%; left: 10%; animation-delay: 0s; }
+  .p2 { top: 25%; right: 15%; animation-delay: 1.5s; }
+  .p3 { bottom: 30%; left: 20%; animation-delay: 3s; }
+  .p4 { bottom: 15%; right: 10%; animation-delay: 4.5s; }
+  @keyframes floatParticle {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.5; }
+    50% { transform: translateY(-20px) rotate(10deg); opacity: 1; }
+  }
+
+  /* ===== Stats ticker ===== */
+  .hero-ticker {
+    width: 100%; overflow: hidden; padding: 16px 0;
+    background: rgba(167, 139, 250, 0.04);
+    border-top: 1px solid rgba(167, 139, 250, 0.1);
+    border-bottom: 1px solid rgba(167, 139, 250, 0.1);
+  }
+  .ticker-track { display: flex; width: max-content; animation: tickerScroll 30s linear infinite; }
+  .ticker-item { white-space: nowrap; font-size: 0.85rem; font-weight: 600; color: var(--color-text-secondary); padding: 0 24px; }
+  .ticker-sep { color: var(--color-accent); opacity: 0.5; padding: 0 8px; }
+  @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* ===== Countdown ===== */
+  .cd-box {
+    display: flex; flex-direction: column; align-items: center;
+    background: rgba(52, 211, 153, 0.1); border: 1px solid rgba(52, 211, 153, 0.25);
+    border-radius: var(--radius-sm); padding: 8px 14px; min-width: 56px;
+  }
+  .cd-box span { font-size: 1.4rem; font-weight: 800; color: #34d399; line-height: 1; font-variant-numeric: tabular-nums; }
+  .cd-box small { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-top: 4px; }
+  .cd-colon { font-size: 1.2rem; font-weight: 700; color: #34d399; opacity: 0.6; animation: colonPulse 1s ease-in-out infinite; }
+  @keyframes colonPulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 0.2; } }
+
+  /* ===== Quiz widget ===== */
+  .quiz-bg-glow {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .quiz-widget {
+    max-width: 640px; margin: 0 auto;
+    background: var(--color-bg-card); border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl); padding: 40px; position: relative; overflow: hidden;
+  }
+  .quiz-progress { width: 100%; height: 4px; background: var(--color-bg-hover); border-radius: 4px; margin-bottom: 32px; overflow: hidden; }
+  .quiz-progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, #34d399, #a78bfa); border-radius: 4px; transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+  .quiz-step { display: none; animation: quizFadeIn 0.4s ease; }
+  .quiz-step.active { display: block; }
+  @keyframes quizFadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .quiz-q { font-size: 1.3rem; margin-bottom: 24px; text-align: center; font-family: var(--font-sans); }
+  .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .quiz-opt {
+    padding: 18px 20px; border-radius: var(--radius-md);
+    border: 1.5px solid var(--color-border); background: var(--color-bg-elevated);
+    color: var(--color-text-primary); font-size: 0.95rem; font-weight: 500;
+    cursor: pointer; transition: all var(--transition-smooth);
+    text-align: left; font-family: var(--font-sans);
+  }
+  .quiz-opt:hover {
+    border-color: var(--color-accent); background: rgba(167, 139, 250, 0.08);
+    transform: translateY(-2px); box-shadow: 0 4px 16px rgba(167, 139, 250, 0.15);
+  }
+  .quiz-opt.selected { border-color: #34d399; background: rgba(52, 211, 153, 0.1); box-shadow: 0 0 20px rgba(52, 211, 153, 0.15); }
+  .quiz-result-step { text-align: center; }
+  .quiz-result-emoji { font-size: 3.5rem; margin-bottom: 16px; animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  @keyframes bounceIn { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+  .quiz-result-title { font-family: var(--font-sans); font-size: 1.5rem; margin-bottom: 12px; }
+  .quiz-result-desc { color: var(--color-text-secondary); margin-bottom: 24px; line-height: 1.7; }
+  .quiz-reset { display: block; margin: 16px auto 0; background: none; border: none; color: var(--color-text-muted); font-size: 0.85rem; cursor: pointer; font-family: var(--font-sans); transition: color var(--transition-fast); }
+  .quiz-reset:hover { color: var(--color-accent); }
+
   .hero {
     padding: 60px 0 80px;
     overflow: hidden;
+    position: relative;
   }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(52,211,153,0.05), rgba(167,139,250,0.05), rgba(244,114,182,0.05), rgba(52,211,153,0.05));
+    background-size: 400% 400%; animation: heroGradient 15s ease infinite;
+    pointer-events: none;
+  }
+  @keyframes heroGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
   .hero-inner {
     display: grid;
@@ -434,6 +716,7 @@ const featuredProducts = productsData.filter((p: any) => p.featured).slice(0, 4)
 
   .fc-1 { top: 24px; right: -20px; }
   .fc-2 { bottom: 60px; left: -30px; }
+  .fc-3 { top: 50%; right: -25px; }
   .fc-icon { font-size: 1.2rem; }
 
   /* Category grid */
@@ -562,6 +845,12 @@ const featuredProducts = productsData.filter((p: any) => p.featured).slice(0, 4)
 
   .promo-banner:hover .promo-image-wrap img {
     transform: scale(1.04);
+  }
+
+  /* ===== Quiz mobile ===== */
+  @media (max-width: 768px) {
+    .quiz-widget { padding: 24px; }
+    .quiz-options { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 768px) {
