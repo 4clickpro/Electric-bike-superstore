@@ -178,6 +178,51 @@ const featuredProducts = productsData.filter((p: any) => p.featured).slice(0, 4)
       <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
         {featuredProducts.map((product: any) => <ProductCard {...product} />)}
       </div>
+
+      <!-- Featured: Aventon Level 3 Step-Through -->
+      <div style="margin-top: 48px;">
+        <div class="section-header" style="margin-bottom: 24px;">
+          <h3 style="font-size: 1.4rem;">⭐ Staff <span class="gradient-text">Pick</span></h3>
+        </div>
+        <a href="https://hnrqqt-an.myshopify.com/products/aventon-level-3-commuter-e-bike-step-through" target="_blank" rel="noopener noreferrer" class="card" style="display: grid; grid-template-columns: 320px 1fr; gap: 32px; padding: 0; text-decoration: none; color: inherit; overflow: hidden; transition: all var(--transition-smooth);">
+          <div style="background: var(--color-bg-elevated); overflow: hidden;">
+            <img
+              src="/images/aventon-level3-step-through.jpg"
+              alt="Aventon Level.3 Commuter E-Bike Step-Through"
+              width="320"
+              height="320"
+              loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--transition-smooth);"
+              onmouseover="this.style.transform='scale(1.05)'"
+              onmouseout="this.style.transform='scale(1)'"
+            />
+          </div>
+          <div style="padding: 32px 32px 32px 0; display: flex; flex-direction: column; justify-content: center;">
+            <span class="badge" style="background: rgba(251, 191, 36, 0.15); color: #fbbf24; font-size: 0.75rem; align-self: flex-start; margin-bottom: 12px;">⭐ TOP RATED</span>
+            <h3 style="font-size: 1.5rem; margin-bottom: 8px; font-family: var(--font-sans); font-weight: 700;">Aventon Level.3 Step-Through Commuter E-Bike</h3>
+            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 12px;">
+              {[1,2,3,4,5].map(() => (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              ))}
+              <span style="font-size: 0.85rem; color: var(--color-text-muted); margin-left: 6px;">5.0 (128 reviews)</span>
+            </div>
+            <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 16px;">
+              GPS tracking, front suspension, rear rack & fenders included. Up to 60 miles range. The ultimate commuter e-bike — step-through design for easy mounting.
+            </p>
+            <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px;">
+              <span style="font-size: 0.9rem; color: var(--color-text-muted); text-decoration: line-through;">$1,899.00</span>
+              <span style="font-size: 1.8rem; font-weight: 800; color: #34d399;">$1,699<sup style="font-size: 0.9rem;">.00</sup></span>
+              <span class="badge" style="background: rgba(52, 211, 153, 0.15); color: #34d399; font-size: 0.75rem;">$200 OFF</span>
+            </div>
+            <span class="btn btn-primary" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px;">
+              Buy Now on Shopify
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
