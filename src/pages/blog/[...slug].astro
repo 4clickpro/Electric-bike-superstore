@@ -6,6 +6,39 @@ const base = import.meta.env.BASE_URL;
 
 export async function getStaticPaths() {
   return [
+    // ── Product Blog Posts (27 real e-bikes from Shopify) ──
+    { params: { slug: 'shop-ebike-boys-fat-tire-1200w' } },
+    { params: { slug: 'shop-ebike-boys-20-fat-tire-full-suspension' } },
+    { params: { slug: 'shop-ebike-boys-750w-48v-20in' } },
+    { params: { slug: 'shop-terrosor-715w-folding' } },
+    { params: { slug: 'shop-ebike-boys-715w-folding' } },
+    { params: { slug: 'shop-ebike-boys-1200w-peak-20in' } },
+    { params: { slug: 'shop-ebike-boys-20-fat-tire-all-terrain' } },
+    { params: { slug: 'shop-ebike-boys-750w-48v-13ah' } },
+    { params: { slug: 'shop-ebike-boys-1200w-peak-fat-tire' } },
+    { params: { slug: 'shop-ebike-boys-1200w-lithium-48v' } },
+    { params: { slug: 'shop-deepower-s7pro' } },
+    { params: { slug: 'shop-hezzo-1200w' } },
+    { params: { slug: 'shop-high-quality-52v-750w' } },
+    { params: { slug: 'shop-aniioki-a9-pro-max' } },
+    { params: { slug: 'shop-eahora-romeo-ii' } },
+    { params: { slug: 'shop-rawrr-mantix-x-pro' } },
+    { params: { slug: 'shop-rawrr-mini' } },
+    { params: { slug: 'shop-eahora-romeo-ultra' } },
+    { params: { slug: 'shop-ubco-2x2-special-edition' } },
+    { params: { slug: 'shop-2x2-adventure-bike' } },
+    { params: { slug: 'shop-eahora-knight-m1ps' } },
+    { params: { slug: 'shop-quietkat-apex-hd' } },
+    { params: { slug: 'shop-quietkat-apex-xd' } },
+    { params: { slug: 'shop-eahora-romeo-ultra-ii' } },
+    { params: { slug: 'shop-ubco-hunt-2x2' } },
+    { params: { slug: 'shop-ubco-2x2-se' } },
+    { params: { slug: 'shop-ubco-work-bike' } },
+    // ── E-Bike Guides ──
+    { params: { slug: 'how-to-choose-your-first-electric-bike' } },
+    { params: { slug: 'ebike-commuting-save-time-money' } },
+    { params: { slug: 'ebike-maintenance-checklist' } },
+    // ── Legacy Lifestyle Posts ──
     { params: { slug: 'transform-your-home-with-biophilic-design' } },
     { params: { slug: 'morning-rituals-for-a-mindful-day' } },
     { params: { slug: 'the-art-of-curated-minimalism' } },
@@ -15,181 +48,346 @@ export async function getStaticPaths() {
     { params: { slug: 'sustainable-fashion-wardrobe-essentials' } },
     { params: { slug: 'digital-detox-reclaiming-your-attention' } },
     { params: { slug: 'the-perfect-home-office-setup' } },
-    { params: { slug: 'how-to-choose-your-first-electric-bike' } },
-    { params: { slug: 'ebike-commuting-save-time-money' } },
-    { params: { slug: 'ebike-maintenance-checklist' } },
-    { params: { slug: 'shop-commuter-pro-500' } },
-    { params: { slug: 'shop-trail-blazer-elite' } },
-    { params: { slug: 'shop-fold-commute-x1' } },
-    { params: { slug: 'shop-cargo-hauler-pro' } },
-    { params: { slug: 'shop-speedster-sport' } },
-    { params: { slug: 'shop-fat-tire-explorer' } },
-    { params: { slug: 'shop-premium-helmet' } },
-    { params: { slug: 'shop-e-bike-security-bundle' } },
   ];
 }
 
 const { slug } = Astro.params;
 
 const posts: Record<string, any> = {
-  'transform-your-home-with-biophilic-design': {
-    title: 'Transform Your Home with Biophilic Design Principles',
-    description: 'Discover how bringing nature indoors can dramatically improve your wellbeing, productivity, and the aesthetic appeal of your living space.',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80',
-    category: 'Home Decor',
-    date: '2025-01-10',
-    author: 'Olivia Hart',
-    readTime: '7',
-    tags: ['home decor', 'biophilic design', 'interior design', 'wellness', 'natural living'],
-    content: `
-      <p class="lead">In an increasingly urbanized world, our innate connection to nature often gets lost in the shuffle of daily life. But what if your home could bridge that gap? Enter biophilic design — an approach that integrates natural elements into our built environments to enhance wellbeing, creativity, and overall happiness.</p>
+  // ═══════════════════════════════════════════════════════════════
+  // 27 REAL E-BIKES FROM hnrqqt-an.myshopify.com
+  // ═══════════════════════════════════════════════════════════════
 
-      <h2>What Is Biophilic Design?</h2>
-      <p>Biophilic design goes far beyond adding a few potted plants to your living room. It's a comprehensive design philosophy that seeks to connect building occupants more closely to nature. The term "biophilia" was popularized by biologist E.O. Wilson, who suggested that humans have an innate tendency to seek connections with nature and other forms of life.</p>
-
-      <p>In practice, biophilic design incorporates natural lighting, ventilation, landscape features, and organic materials to create spaces that feel alive and nurturing. Research has consistently shown that environments rich in natural elements reduce stress, improve cognitive function, and enhance mood.</p>
-
-      <h2>Three Core Pillars of Biophilic Design</h2>
-
-      <h3>1. Direct Experience of Nature</h3>
-      <p>This involves actual contact with natural elements within the built environment. Think natural light flooding through large windows, the sound of a water feature, or the gentle movement of air from a cross-breeze. These elements aren't just decorative — they're functional components that transform how a space feels.</p>
-
-      <p>Consider installing a living wall in your entryway, placing a small indoor fountain in your reading nook, or simply maximizing natural light by removing heavy curtains. Even a small herb garden on a sunny kitchen windowsill brings life and freshness into your daily routine.</p>
-
-      <h3>2. Indirect Experience of Nature</h3>
-      <p>When direct access to nature is limited, indirect experiences can fill the gap. This includes the use of natural materials like wood, stone, and bamboo; colors found in nature (earthy browns, leafy greens, sky blues); and patterns that evoke natural forms (think the fractal patterns of ferns or the spiral of a seashell).</p>
-
-      <p>Swap synthetic materials for wood furniture, incorporate stone accent walls or countertops, and choose textiles in organic fibers like linen, wool, and cotton. Even images of nature — landscape photography or botanical prints — can have a measurable calming effect.</p>
-
-      <h3>3. Space and Place Conditions</h3>
-      <p>This pillar addresses the spatial configurations that make us feel comfortable and secure, yet stimulated. It includes elements like prospect (open views), refuge (cozy, protected spaces), mystery (partially obscured views that invite exploration), and risk (an identifiable threat coupled with a reliable safeguard, like a glass balcony).</p>
-
-      <p>Create varied zones in open-plan spaces — a cozy reading corner with a comfortable chair and soft lighting, a bright workspace near windows, and gathering areas with varied seating. Diversity within a space keeps the mind engaged and allows different activities to feel naturally supported.</p>
-
-      <h2>Getting Started: A Room-by-Room Guide</h2>
-
-      <h3>Living Room</h3>
-      <p>Start with the heart of your home. Position seating to face windows or outdoor views when possible. Choose furniture in natural materials — a solid wood coffee table, a wool area rug, linen-upholstered sofas. Add layered lighting: a mix of natural light, warm ambient fixtures, and task lighting creates the dynamic lighting conditions we experience outdoors.</p>
-
-      <h3>Bedroom</h3>
-      <p>Your bedroom should be a sanctuary. Use organic cotton or linen bedding in soothing, nature-inspired colors. Keep air quality high with plants like snake plants or peace lilies, which actually filter common indoor pollutants. Consider a Himalayan salt lamp or sunrise alarm clock for gentle, natural-feeling light transitions.</p>
-
-      <h3>Home Office</h3>
-      <p>The home office benefits enormously from biophilic principles. Position your desk near a window if possible. Add a small desktop plant or a shelf of succulents above your monitor. Use a wooden desk rather than laminate, and incorporate natural textures through accessories like bamboo pen holders or stone paperweights.</p>
-
-      <h2>The Science Behind the Beauty</h2>
-      <p>The benefits of biophilic design aren't just anecdotal — they're backed by robust research. A landmark study by the University of Oregon found that 10% of employee absences could be attributed to architecture with no connection to nature. Office workers with views of trees and landscapes reported significantly higher job satisfaction and lower stress levels.</p>
-
-      <p>In healthcare settings, patients with views of nature recovered faster and required less pain medication than those facing brick walls. In schools, classrooms with natural light and outdoor views have been linked to 20-26% faster learning rates.</p>
-
-      <blockquote>
-        <p>"Nature holds the key to our aesthetic, intellectual, cognitive, and even spiritual satisfaction."</p>
-        <cite>— Dr. E.O. Wilson</cite>
-      </blockquote>
-
-      <h2>Common Mistakes to Avoid</h2>
-      <p>Avoid these pitfalls when bringing biophilic design into your home:</p>
-      <ul>
-        <li><strong>Overdoing it:</strong> A jungle-themed living room might be overwhelming. Start small and layer elements gradually.</li>
-        <li><strong>Neglecting maintenance:</strong> Dying plants have the opposite effect — they add visual stress. Choose hardy plants you can realistically care for.</li>
-        <li><strong>Ignoring context:</strong> A design element that works in a coastal home might feel out of place in a city loft. Adapt principles to your specific environment and architecture.</li>
-        <li><strong>Forgetting function:</strong> Beautiful natural materials still need to serve your lifestyle. That gorgeous reclaimed wood table needs to be practical for daily use.</li>
-      </ul>
-
-      <h2>Your Biophilic Journey Begins</h2>
-      <p>Transforming your home with biophilic design isn't about a complete renovation. It's a gradual journey of reconnecting your living space with the natural world. Start with one room, one element — and watch as your home becomes not just more beautiful, but more nurturing for your mind, body, and spirit.</p>
-
-      <p>Ready to start? Browse our curated collection of natural home decor pieces designed with biophilic principles in mind.</p>
-    `,
+  'shop-ebike-boys-fat-tire-1200w': {
+    title: 'eBike Boys Fat Tire Electric Bike — 1200W Motor, 30+ MPH',
+    description: '1200W motor, fat tires, and 30+ MPH top speed. The ultimate fat tire e-bike for all-terrain domination.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Scd3bd33467fa4043becc18698a4f408ff_21bc8384-e2bc-4bc5-9928-07b4419888f5.webp?v=1773797188',
+    category: 'eBike Boys',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['fat tire', '1200W', 'eBike Boys', 'off-road'],
+    content: `<p class="lead">The eBike Boys Fat Tire Electric Bike delivers a massive 1200W of power with fat tires and 30+ MPH top speed. Built for riders who demand the best in off-road and all-terrain performance.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/ebike-boys-fat-tire-electric-bike-1200w-motor-30-mph-speed" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $1,101.99</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
   },
-  'morning-rituals-for-a-mindful-day': {
-    title: 'Morning Rituals That Set the Tone for a Mindful Day',
-    description: 'Start each day with intention. These science-backed morning practices will help you cultivate focus, gratitude, and inner calm.',
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80',
-    category: 'Wellness',
-    date: '2025-01-05',
-    author: 'Dr. Amara Lee',
-    readTime: '5',
-    tags: ['wellness', 'mindfulness', 'morning routine', 'meditation', 'self care'],
-    content: `
-      <p class="lead">How you start your morning sets the tone for your entire day. A rushed, reactive morning often leads to a scattered, stressful day — while an intentional morning can create a foundation of calm and clarity that carries through.</p>
 
-      <h2>The Power of a Morning Ritual</h2>
-      <p>Morning rituals aren't just trendy self-care concepts — they're grounded in neuroscience. The first hour after waking, sometimes called the "golden hour," is when your brain is most receptive to programming. The theta brainwave state that occurs just after waking is associated with deep relaxation, creativity, and suggestibility.</p>
-
-      <p>By establishing consistent morning practices, you're essentially programming your brain for focus, positivity, and resilience before the demands of the day begin competing for your attention.</p>
-
-      <h2>1. Wake Without Technology (First 15 Minutes)</h2>
-      <p>Resist the urge to reach for your phone immediately upon waking. When you check emails and social media first thing, you're letting external demands set your agenda before you've even had a chance to center yourself. Instead, take 15 minutes of tech-free time.</p>
-
-      <p>Upon waking, drink a full glass of water to rehydrate after sleep. Sit quietly by a window or step outside for a few deep breaths of fresh air. This simple act signals to your body that the day has begun on your terms.</p>
-
-      <h2>2. Mindful Movement (15 Minutes)</h2>
-      <p>Movement doesn't have to mean an intense workout. Gentle stretching, yoga, or a short walk activates your lymphatic system, increases blood flow to the brain, and releases tension accumulated during sleep. Focus on the sensations in your body — the stretch of muscles, the rhythm of your breath.</p>
-
-      <p>Research from the University of Bristol found that people who exercise during the workday report improved mood, performance, and concentration. Morning movement amplifies these benefits by frontloading them.</p>
-
-      <h2>3. Meditation or Breathwork (10 Minutes)</h2>
-      <p>Even five to ten minutes of meditation can have profound effects. A study published in Psychiatry Research found that just 8 weeks of daily meditation actually changes brain structure, increasing gray matter density in regions associated with learning, memory, and emotional regulation.</p>
-
-      <p>If traditional meditation feels challenging, try box breathing: inhale for 4 counts, hold for 4, exhale for 4, hold for 4. Repeat for 5-10 cycles. This technique activates your parasympathetic nervous system, reducing stress and improving focus.</p>
-
-      <h2>4. Gratitude Practice (5 Minutes)</h2>
-      <p>Write down three things you're genuinely grateful for. They can be profound or simple — a good night's sleep, the sound of rain, a supportive friend. The key is specificity and genuine feeling. Research from UC Davis shows that people who regularly practice gratitude report 25% higher happiness levels and better physical health.</p>
-
-      <h2>5. Intentional Nourishment</h2>
-      <p>Breakfast is an opportunity to nourish both body and mind. Rather than eating on autopilot, practice mindful eating: notice the colors, textures, and flavors of your food. Choose foods that sustain energy — protein, healthy fats, and complex carbohydrates — rather than quick sugars that lead to mid-morning crashes.</p>
-
-      <blockquote>
-        <p>"The way you start your day determines how well you live your day."</p>
-        <cite>— Robin Sharma</cite>
-      </blockquote>
-
-      <h2>Designing Your Personal Ritual</h2>
-      <p>Your morning ritual should feel authentic and sustainable. Start with just one or two elements and build from there. The goal isn't perfection — it's presence. Some mornings will flow beautifully; others might feel chaotic. The practice is in returning to intention, again and again.</p>
-    `,
+  'shop-ebike-boys-20-fat-tire-full-suspension': {
+    title: 'eBike Boys 20" Fat Tire Full Suspension E-Bike — 30MPH',
+    description: 'Full suspension, 20" fat tires, and 30 MPH speed. Built to handle any terrain with confidence.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S307ba28ba4bd4c76a63d95c5002c16ad6_e4a4df89-614a-40f7-8834-1800ad4ad75d.webp?v=1773797167',
+    category: 'eBike Boys',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['fat tire', 'full suspension', '30MPH', 'eBike Boys'],
+    content: `<p class="lead">Full suspension meets fat tires for the ultimate all-terrain ride. The eBike Boys 20" Fat Tire Full Suspension E-Bike soaks up bumps and delivers 30 MPH of pure electric power.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/ebike-boys-20-fat-tire-full-suspension-e-bike-30mph-speed" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $1,101.99</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
   },
-  'the-art-of-curated-minimalism': {
-    title: 'The Art of Curated Minimalism: Less Stuff, More Meaning',
-    description: "Minimalism isn't about deprivation — it's about making room for what truly matters. Learn how to curate a meaningful space.",
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80',
-    category: 'Lifestyle',
-    date: '2024-12-28',
-    author: 'James Kwan',
-    readTime: '6',
-    tags: ['lifestyle', 'minimalism', 'decluttering', 'home organization', 'intentional living'],
-    content: `
-      <p class="lead">Minimalism has become a buzzword, often associated with stark white rooms and owning fewer than 100 items. But true minimalism isn't about emptiness — it's about intentionality. It's the art of curating your environment so that everything in it serves a purpose or brings you joy.</p>
 
-      <h2>Curated vs. Deprived: A Crucial Distinction</h2>
-      <p>Deprivation-based minimalism comes from a place of lack: "I shouldn't have this" or "I should want less." Curated minimalism comes from abundance: "I choose to surround myself only with what enhances my life." The difference in mindset is everything.</p>
-
-      <p>When you curate rather than deprive, the process becomes joyful. You're not giving things up — you're making room. Room for clear surfaces, for easy mornings, for the things you genuinely love and use.</p>
-
-      <h2>Start With Why</h2>
-      <p>Before decluttering a single drawer, get clear on your vision. What do you want your space to feel like? Calm and serene? Energized and creative? Warm and inviting? Your answer will guide every decision.</p>
-
-      <p>Write down three words that describe your ideal home environment. When you're deciding whether to keep an item, ask yourself: does this contribute to that feeling?</p>
-
-      <h2>The Curation Process: Quality Over Quantity</h2>
-      <p>Rather than asking "Does this spark joy?" (which can be vague), ask three concrete questions:</p>
-      <ol>
-        <li><strong>Do I use this regularly?</strong> If you haven't used it in a year, you probably don't need it.</li>
-        <li><strong>Would I buy this again today?</strong> If not, it's costing you space without adding value.</li>
-        <li><strong>Does this represent who I am now?</strong> Let go of items tied to past identities or aspirational selves that no longer resonate.</li>
-      </ol>
-
-      <h2>Invest in Fewer, Better Things</h2>
-      <p>Once you've cleared the excess, the real art begins. Invest in high-quality pieces that bring lasting satisfaction. A single, beautiful ceramic mug that feels perfect in your hands is worth more than a cabinet of mismatched ones. A well-made wool blanket will outlast a dozen synthetic throws.</p>
-
-      <p>This approach is not only more aesthetically pleasing — it's more sustainable and often more economical in the long run. And when you love every item you own, your home naturally feels more cohesive and intentional.</p>
-
-      <blockquote>
-        <p>"Have nothing in your house that you do not know to be useful, or believe to be beautiful."</p>
-        <cite>— William Morris</cite>
-      </blockquote>
-    `,
+  'shop-ebike-boys-750w-48v-20in': {
+    title: 'eBike Boys 750W Electric Bike — 48V Battery, 20" Wheels',
+    description: '750W motor with 48V battery on 20" wheels. The perfect balance of power and portability.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S160a8b1f441d484ba123af10f1c343fd2_7b3a2c11-73eb-45ba-8293-a6e94f23d66c.webp?v=1773797167',
+    category: 'eBike Boys',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['750W', '48V', '20 inch', 'eBike Boys'],
+    content: `<p class="lead">The eBike Boys 750W Electric Bike delivers the ideal mix of power, range, and portability. A 48V battery paired with 20" wheels makes this a versatile choice for commuters and weekend riders alike.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/ebike-boys-750w-motor-electric-bike-48v-battery-20-wheels" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $1,399.00</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
   },
+
+  'shop-terrosor-715w-folding': {
+    title: 'Terrosor 715W Peak Folding Electric Bicycle — 50km/h',
+    description: '715W peak power in a folding frame. Max speed 50km/h. Commute or adventure — this bike does both.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S4783b0c9be314445952f8bd90d26f625i.webp?v=1773797167',
+    category: 'eBike Boys',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['folding', '715W', 'Terrosor', 'portable'],
+    content: `<p class="lead">The Terrosor 715W Peak Folding Electric Bicycle combines genuine portability with serious power. Fold it up, stash it anywhere, and hit 50km/h when you're ready to ride.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/terrosor-715w-peak-folding-electric-bicycle-max-speed-50km-h" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $936.99</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-ebike-boys-715w-folding': {
+    title: 'eBike Boys 715W Peak Folding Electric Bicycle',
+    description: 'Fast, powerful, and folds for easy storage. 715W peak motor at an incredible price.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S4783b0c9be314445952f8bd90d26f625i_21e9c161-2f22-45e4-b959-6681d3dc9554.webp?v=1773797167',
+    category: 'eBike Boys',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['folding', '715W', 'budget', 'eBike Boys'],
+    content: `<p class="lead">Get folding convenience and 715W peak power at an unbeatable price. The eBike Boys 715W Peak Folding Electric Bicycle is the smart choice for budget-conscious riders who refuse to compromise on performance.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/ebike-boys-715w-peak-folding-electric-bicycle-fast-powerful-ride" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $543.99</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-ebike-boys-1200w-peak-20in': {
+    title: 'eBike Boys 1200W Peak Electric Bike — 20" Motor',
+    description: '1200W peak power in a compact 20" frame. Serious speed and torque for urban riding.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Sf7dfb97231eb4e168429fb78b77a485bt.webp?v=1773797168',
+    category: 'eBike Boys',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['1200W', '20 inch', 'urban', 'eBike Boys'],
+    content: `<p class="lead">The eBike Boys 1200W Peak Electric Bike packs massive power into a compact 20" frame. Quick acceleration, strong torque, and nimble handling make this the ultimate urban electric bike.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/ebike-boys-1200w-peak-electric-bike-powerful-20-inch-motor" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $1,197.99</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-ebike-boys-20-fat-tire-all-terrain': {
+    title: 'eBike Boys 20" Fat Tire E-Bike — Full Suspension All-Terrain',
+    description: 'Full suspension meets fat tires for unstoppable all-terrain capability.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S307ba28ba4bd4c76a63d95c5002c16ad6.webp?v=1773797166',
+    category: 'eBike Boys',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['fat tire', 'all-terrain', 'full suspension', 'eBike Boys'],
+    content: `<p class="lead">Sand, snow, mud, or pavement — the eBike Boys 20" Fat Tire All-Terrain E-Bike handles it all. Full suspension and fat tires combine for a plush ride on any surface you can find.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/ebike-boys-20-fat-tire-e-bike-full-suspension-for-all-terrain-use" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $1,056.99</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-ebike-boys-750w-48v-13ah': {
+    title: 'eBike Boys 750W Electric Bike — 48V 13Ah, Aluminum Frame',
+    description: '750W motor with 48V 13Ah lithium battery and lightweight aluminum frame. Range and power combined.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S160a8b1f441d484ba123af10f1c343fd2.webp?v=1773797166',
+    category: 'eBike Boys',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['750W', '48V', 'aluminum', 'eBike Boys'],
+    content: `<p class="lead">The eBike Boys 750W Electric Bike pairs a robust 48V 13Ah lithium battery with a lightweight aluminum frame for extended range and effortless riding. Premium build quality at a competitive price.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/ebike-boys-750w-electric-bike-48v-13ah-lithium-battery-aluminum-frame" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $2,873.99</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-ebike-boys-1200w-peak-fat-tire': {
+    title: 'eBike Boys 1200W Peak Electric Bike — 30MPH, Fat Tires, IPX6',
+    description: '1200W peak, 30MPH top speed, fat tires, and IPX6 waterproof rating. Built to ride in any conditions.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Sf7dfb97231eb4e168429fb78b77a485bt_c8dec797-cd51-4e27-bd47-01f67754019c.webp?v=1773797167',
+    category: 'eBike Boys',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['1200W', '30MPH', 'IPX6', 'eBike Boys'],
+    content: `<p class="lead">Rain or shine, the eBike Boys 1200W Peak Fat Tire E-Bike keeps going. IPX6 waterproof rating, 30MPH top speed, and rugged fat tires make this the ultimate all-weather electric bike.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/ebike-boys-1200w-peak-electric-bike-30mph-fat-tires-ipx6-waterproof" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $1,200.99</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-ebike-boys-1200w-lithium-48v': {
+    title: 'eBike Boys 1200W Lithium Electric Bike — 48V, 20" Wheel',
+    description: '1200W of lithium-powered performance on 20" wheels. Fast, reliable, and ready to ride.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S5aa511eff4f341dca8b56750b8fd28e8R_6c887236-e402-48e3-b76e-cd019ac3fc3e.webp?v=1773797167',
+    category: 'eBike Boys',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['1200W', 'lithium', '48V', 'eBike Boys'],
+    content: `<p class="lead">The eBike Boys 1200W Lithium Electric Bike combines cutting-edge lithium battery technology with a powerful 1200W motor. 48V of pure electric performance on 20" wheels.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/ebike-boys-1200w-lithium-electric-bike-48v-20-wheel-fast-speed" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $2,293.99</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-deepower-s7pro': {
+    title: 'DEEPOWER S7Pro Off-Road Electric Bike',
+    description: 'Purpose-built for off-road adventures. Rugged performance at a great price.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Sde3fda6fca5f43a382673e802e637d44j_jpg_220x220q75_jpg.jpg?v=1773797166',
+    category: 'eBike Boys',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['DEEPOWER', 'off-road', 'S7Pro', 'trail'],
+    content: `<p class="lead">The DEEPOWER S7Pro is purpose-built for riders who live off the beaten path. Rugged construction, reliable power, and off-road geometry make every trail ride an adventure.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/deepower-s7pro-off-road-electric-bike" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $1,246.98</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-hezzo-1200w': {
+    title: 'HEZZO 1200W Electric Bike — 48V Lithium, 50+ km/h',
+    description: 'HEZZO 1200W powerhouse with 48V lithium battery. Over 50 km/h top speed for thrill seekers.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S5aa511eff4f341dca8b56750b8fd28e8R.webp?v=1773797168',
+    category: 'eBike Boys',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['HEZZO', '1200W', '50kmh', 'speed'],
+    content: `<p class="lead">The HEZZO 1200W Electric Bike is built for riders who crave speed. With a 48V lithium battery pushing over 50 km/h, this is one of the fastest e-bikes in our lineup.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/hezzo-1200w-electric-bike-48v-lithium-battery-over-50km-h-speed" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $4,097.99</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-high-quality-52v-750w': {
+    title: 'High-Quality eBike — 52V 750W Motor, 17AH Long Range',
+    description: 'Premium build with 52V 750W motor and massive 17AH battery for extended range.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S39b3003dbc5f4eed9495e500abf0c3f4L.webp?v=1773797167',
+    category: 'eBike Boys',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['52V', '750W', '17AH', 'long range'],
+    content: `<p class="lead">This premium eBike features a 52V 750W motor paired with an industry-leading 17AH LG battery for exceptional range. High-quality components throughout for riders who demand the best.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/high-quality-ebike-with-52v-750w-motor-17ah-long-range" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $2,923.99</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  // ── Rex E-Bikes ──
+
+  'shop-aniioki-a9-pro-max': {
+    title: 'Aniioki A9 Pro Max — 60V Dual Motor eBike',
+    description: 'Dual 60V motors for unstoppable power. The Aniioki A9 Pro Max is the ultimate high-performance e-bike.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Aniioki_a9_awd_25_15_Black_d96624aa-3493-43d1-b7bb-c5aaeee27aa9.webp?v=1773797008',
+    category: 'Rex E-Bikes',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['Aniioki', 'dual motor', '60V', 'AWD', 'premium'],
+    content: `<p class="lead">The Aniioki A9 Pro Max features dual 60V motors for all-wheel-drive capability. This is the apex predator of electric bikes — unstoppable power, premium components, and head-turning design.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/aniioki-a9-pro-max-60v-dual-motor-ebike" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — From $3,799</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-eahora-romeo-ii': {
+    title: 'Eahora Romeo II — Compact Powerhouse',
+    description: "Don't let the size fool you — the Eahora Romeo II packs serious power in a compact frame.",
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/romeoii_upgraded_front_fork_8023c826-83fc-41dc-bede-55ab7712ee23.webp?v=1773797008',
+    category: 'Rex E-Bikes',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['Eahora', 'Romeo II', 'compact', 'upgraded'],
+    content: `<p class="lead">The Eahora Romeo II proves that great things come in small packages. This compact powerhouse features an upgraded front fork and delivers more power per wheel than bikes twice its size.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/eahora-romeo-ii" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $2,299.00</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-rawrr-mantix-x-pro': {
+    title: 'RawRR Mantix X Pro — Pro-Level Electric Dirt Bike',
+    description: 'Pro-level performance with no compromises. A new class of electric dirt bike.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Rawrr_xpro3.webp?v=1773797007',
+    category: 'Rex E-Bikes',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['RawRR', 'Mantix', 'dirt bike', 'pro'],
+    content: `<p class="lead">The RawRR Mantix X Pro redefines what an electric dirt bike can be. Pro-level performance, aggressive styling, and zero compromises — this is a new class of off-road machine.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/rawrr-mantix-x-pro" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $4,399.00</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-rawrr-mini': {
+    title: 'Rawrr Mini — Electric Dirt Bike, Compact & Capable',
+    description: 'All the Rawrr attitude in a smaller package. Perfect for younger riders or tight trails.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/MiniRDefault.webp?v=1773797007',
+    category: 'Rex E-Bikes',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['RawRR', 'Mini', 'dirt bike', 'compact'],
+    content: `<p class="lead">The Rawrr Mini delivers all the Rawrr DNA in a more compact package. Perfect for younger riders graduating to electric power or anyone who wants a nimble dirt bike for tighter trails.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/rawrr-mini" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — From $2,899</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-eahora-romeo-ultra': {
+    title: 'Eahora Romeo Ultra — 60V Motor System, 2025 Edition',
+    description: 'The 2025 Eahora Romeo Ultra introduces a groundbreaking 60V motor system for unparalleled riding.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/eahora_romeo_Ultra_electric_bike_gray_3_2afd4cea-95f4-4518-8a09-e10c8e923fe8.webp?v=1773797008',
+    category: 'Rex E-Bikes',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['Eahora', 'Romeo Ultra', '60V', '2025'],
+    content: `<p class="lead">The 2025 Eahora Romeo Ultra introduces a groundbreaking 60V motor system. This isn't just an update — it's a complete reimagining of what a premium electric bike can deliver in speed, range, and ride quality.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/eahora-romeo-ultra" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $2,599.00</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-ubco-2x2-special-edition': {
+    title: 'UBCO 2X2 Special Edition — Accessorized & Ready',
+    description: 'The Special Edition UBCO 2X2 — accessorized and ready for errands or adventure.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_SE_Front_800x_30897c7f-07a1-4b3b-b64f-e28a3c575a7b.jpg?v=1773797007',
+    category: 'Rex E-Bikes',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['UBCO', '2X2', 'Special Edition', 'utility'],
+    content: `<p class="lead">The UBCO 2X2 Special Edition comes fully accessorized from day one. Whether you're running essential errands or heading into the backcountry, this bike is ready for anything.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/ubco-2x2-special-edition-1" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $6,999.00</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-2x2-adventure-bike': {
+    title: 'UBCO 2x2 Adventure Bike — Black',
+    description: "The ultimate adventure machine. UBCO's 2x2 Adventure Bike in sleek black — go anywhere, do anything.",
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_ADV_Black-Front3_4_1200x_d0a77142-feab-495b-a436-091510b6d5ff.png?v=1773797007',
+    category: 'Rex E-Bikes',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['UBCO', 'Adventure', '2x2', 'dual sport'],
+    content: `<p class="lead">The UBCO 2x2 Adventure Bike in black is the ultimate dual-sport electric machine. Street-legal yet off-road capable, with UBCO's legendary 2x2 all-wheel-drive system for unstoppable traction.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/2x2-adventure-bike-black" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $5,499.00</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-eahora-knight-m1ps': {
+    title: 'Eahora Knight M1PS — Black, Premium Electric Motorcycle',
+    description: 'The Eahora Knight M1PS is a premium electric motorcycle with stunning design and serious performance.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Eahora_M1PS_Basic.webp?v=1773797006',
+    category: 'Rex E-Bikes',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['Eahora', 'Knight', 'M1PS', 'motorcycle'],
+    content: `<p class="lead">The Eahora Knight M1PS blurs the line between e-bike and electric motorcycle. Stunning blacked-out design, premium components, and performance that will leave you grinning every time you twist the throttle.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/eahora-knight-m1ps-black" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — From $4,980</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-quietkat-apex-hd': {
+    title: 'QuietKat Apex HD — Premium Hunting & Off-Road E-Bike',
+    description: 'The QuietKat Apex HD is built for hunters and off-road enthusiasts who demand the best.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/QuietKat_HD_Grey_098_1024x1024_ed1a10c2-4b32-4b25-b9b6-58c0b3dcb653.webp?v=1773796933',
+    category: 'Rex E-Bikes',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['QuietKat', 'Apex HD', 'hunting', 'off-road'],
+    content: `<p class="lead">The QuietKat Apex HD is purpose-built for hunters and serious off-road enthusiasts. Silent electric power, rugged construction, and the ability to carry gear deep into the backcountry.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/quietkat-apex-hd" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — From $2,799</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-quietkat-apex-xd': {
+    title: 'QuietKat Apex XD — Extreme Duty Off-Road E-Bike',
+    description: 'The QuietKat Apex XD takes off-road capability to the extreme. Built for the toughest terrain.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/QuietKat_HD_Grey_098_1024x1024_64a64c05-1e35-4ae5-b2e9-7a48a0c69436.webp?v=1773796934',
+    category: 'Rex E-Bikes',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['QuietKat', 'Apex XD', 'extreme', 'off-road'],
+    content: `<p class="lead">When the Apex HD isn't enough, there's the QuietKat Apex XD — Extreme Duty. Upgraded suspension, more powerful motor, and heavy-duty components for the most demanding off-road adventures.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/quietkat-apex-xd" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — From $3,799</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-eahora-romeo-ultra-ii': {
+    title: 'Eahora Romeo Ultra II — 60V Dual Motor, 80Ah Battery',
+    description: '60V dual-motor system with an 80Ah high-capacity battery for exceptional speed and range.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/eahora_romeo_Ultra_II_electric_bike_black_2.webp?v=1773796933',
+    category: 'Rex E-Bikes',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['Eahora', 'Romeo Ultra II', 'dual motor', '80Ah'],
+    content: `<p class="lead">The Eahora Romeo Ultra II takes electric bike performance to new heights. A 60V dual-motor system paired with an enormous 80Ah battery delivers speed and range that redefine what's possible on two wheels.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/eahora-romeo-ultra-ii" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $3,599.00</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-ubco-hunt-2x2': {
+    title: 'UBCO Hunt 2X2 — The Ultimate Hunting Utility Bike',
+    description: 'Silent, powerful, and purpose-built for hunters. The UBCO Hunt 2X2 is the ultimate backcountry utility vehicle.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_HE_Top34_2000x_2b1d5ff5-157d-47a4-9a9f-18e831aeb9aa.webp?v=1773796934',
+    category: 'Rex E-Bikes',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['UBCO', 'Hunt', 'hunting', 'utility'],
+    content: `<p class="lead">UBCO took their ultimate utility vehicle and retrofitted it specifically for hunters. The Hunt 2X2 delivers silent electric power deep into the backcountry with the cargo capacity to bring everything back out.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/ubco-hunt-2x2" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $6,499.00</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-ubco-2x2-se': {
+    title: 'UBCO 2X2 Special Edition — Accessorized & Adventure-Ready',
+    description: 'The 2023 Special Edition 2X2 — fully accessorized for errands, adventure, and everything in between.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_SE_Front3_4_2000x_ff1cb602-95f1-4bf8-b7b3-15169ae5abd7.webp?v=1773796933',
+    category: 'Rex E-Bikes',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['UBCO', '2X2', 'Special Edition', 'adventure'],
+    content: `<p class="lead">The 2023 UBCO 2X2 Special Edition arrives fully accessorized and ready to go. Whether you're running essential errands or heading out on a weekend adventure, this bike has everything you need built right in.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/ubco-2x2-special-edition" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — $6,999.00</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  'shop-ubco-work-bike': {
+    title: 'UBCO Work Bike — Tough, Built for Hard Work & Adventure',
+    description: 'Designed tough for hard work and adventure. Handles any job you throw at it.',
+    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_WORK_Black-RHS_98718b74-1d71-4f23-a5b9-2a832ea10a82.webp?v=1773796932',
+    category: 'Rex E-Bikes',
+    date: '2025-01-20',
+    author: 'The Electric Bike Superstore',
+    readTime: '3',
+    tags: ['UBCO', 'Work Bike', 'utility', 'commercial'],
+    content: `<p class="lead">The UBCO Work Bike is designed tough for farms, ranches, job sites, and anywhere else hard work happens. Zero emissions, near-silent operation, and the legendary 2x2 traction system make this the ultimate work vehicle.</p><div style="text-align:center; margin: 40px 0;"><a href="https://hnrqqt-an.myshopify.com/products/ubco-work-bike" class="btn btn-primary" style="font-size:1.15rem;padding:16px 48px;display:inline-block;text-decoration:none;border-radius:8px;">Buy Now — From $3,999</a><p style="margin-top:12px;color:var(--color-text-muted);font-size:0.9rem;">View on hnrqqt-an.myshopify.com</p></div>`,
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // E-BIKE GUIDES
+  // ═══════════════════════════════════════════════════════════════
+
   'how-to-choose-your-first-electric-bike': {
     title: 'How to Choose Your First Electric Bike: The Ultimate 2025 Guide',
     description: 'Everything you need to know before buying your first e-bike — motor types, battery range, classes, and the questions most first-time buyers forget to ask.',
@@ -199,73 +397,9 @@ const posts: Record<string, any> = {
     author: 'Mike Torres',
     readTime: '10',
     tags: ['ebike', 'buying guide', 'electric bike', 'commuter', 'first ebike'],
-    content: `
-      <p class="lead">Buying your first electric bike is exciting — but it can also be overwhelming. With hundreds of models, three motor types, four e-bike classes, and battery specs that read like engineering textbooks, where do you even start? This guide breaks down everything you need to know in plain English.</p>
-
-      <h2>Step 1: Define Your Riding Style</h2>
-      <p>Before comparing specs, get clear on how you'll actually use your e-bike. The best e-bike for a 20-mile daily commute is very different from one built for weekend mountain trails. Ask yourself:</p>
-      <ul>
-        <li><strong>Where will I ride?</strong> Paved roads, gravel paths, or technical singletrack?</li>
-        <li><strong>How far?</strong> A 5-mile commute needs far less range than 40-mile weekend adventures.</li>
-        <li><strong>What terrain?</strong> Flat cities vs. hilly suburbs — this determines motor torque requirements.</li>
-        <li><strong>Carrying cargo?</strong> Kids, groceries, or just yourself?</li>
-        <li><strong>Storage situation?</strong> Garage, apartment stairwell, or folding into a car trunk?</li>
-      </ul>
-
-      <h2>Step 2: Understand E-Bike Classes</h2>
-      <p>In the US, e-bikes fall into three legal classes. Know which one you want before buying — some states and trails restrict Class 3 and throttle-equipped bikes.</p>
-
-      <h3>Class 1: Pedal-Assist Only (20 mph max)</h3>
-      <p>The most common and widely accepted. The motor only engages when you pedal, cutting off at 20 mph. Allowed on most bike paths and trails. Ideal for commuters and fitness riders.</p>
-
-      <h3>Class 2: Throttle + Pedal-Assist (20 mph max)</h3>
-      <p>Features a throttle you can use without pedaling — great for getting started from a stop or taking a break on long rides. Speed capped at 20 mph. Slightly more restricted on trails but perfect for city riding.</p>
-
-      <h3>Class 3: Pedal-Assist Only (28 mph max)</h3>
-      <p>The fastest legal e-bike class. Motor assists up to 28 mph but requires pedaling (no throttle). Often restricted from bike paths. Best for experienced riders with longer commutes on roads.</p>
-
-      <h2>Step 3: Hub Motor vs. Mid-Drive Motor</h2>
-      <p>This is the single most important technical decision you'll make. The motor type affects performance, maintenance, and ride feel dramatically.</p>
-
-      <h3>Hub Motors (Rear or Front)</h3>
-      <p>Located in the wheel hub itself. More affordable, simpler maintenance, and perfectly adequate for flat to moderate terrain. Rear hub motors feel more natural (pushing you from behind), while front hub motors can affect steering in poor conditions. Best for: casual riders, flat commutes, budget-conscious buyers.</p>
-
-      <h3>Mid-Drive Motors</h3>
-      <p>Mounted at the bike's bottom bracket (crank area), driving the chain directly. Superior torque, better hill climbing, more natural ride feel, and better weight distribution. They're more expensive and put more wear on the chain and gears. Best for: hilly areas, off-road riding, riders who want the best performance.</p>
-
-      <h2>Step 4: Battery: Watt-Hours Are What Matter</h2>
-      <p>Forget volts and amp-hours — focus on <strong>watt-hours (Wh)</strong>. It's the simplest measure of total energy capacity: Volts × Amp-hours = Watt-hours.</p>
-      <ul>
-        <li><strong>300-400 Wh:</strong> 15-30 mile range. Good for short city commutes.</li>
-        <li><strong>400-600 Wh:</strong> 25-50 mile range. The sweet spot for most riders.</li>
-        <li><strong>600-900+ Wh:</strong> 40-80+ mile range. For long-distance commuters and touring.</li>
-      </ul>
-      <p>Real-world range varies massively based on assist level, terrain, rider weight, tire pressure, and temperature. A 500 Wh battery might get 20 miles on max assist uphill or 60 miles on eco mode on flat ground. Look for batteries from Samsung, LG, or Panasonic cells — they're the industry gold standard.</p>
-
-      <h2>Step 5: Test Ride Before You Buy</h2>
-      <p>Spec sheets can't tell you how a bike <em>feels</em>. Frame geometry, saddle comfort, handlebar position, and weight distribution all impact your ride quality. Many e-bike brands now offer 30-day test ride guarantees (we certainly do). Take advantage of them.</p>
-
-      <p>During a test ride, pay attention to how the motor engages — is it smooth or jerky? How does the bike handle at low speeds? Can you comfortably stand over the top tube? Does the weight feel manageable when you lift or maneuver it?</p>
-
-      <blockquote>
-        <p>"The best e-bike isn't the one with the most specs — it's the one that makes you want to ride every single day."</p>
-        <cite>— Mike Torres, E-Bike Expert</cite>
-      </blockquote>
-
-      <h2>Quick Checklist for First-Time Buyers</h2>
-      <ol>
-        <li><strong>Class:</strong> Decide Class 1, 2, or 3 based on your local laws and trail access.</li>
-        <li><strong>Motor:</strong> Mid-drive for hills/performance; hub motor for flat commutes and value.</li>
-        <li><strong>Battery:</strong> Aim for 400+ Wh minimum. Samsung/LG/Panasonic cells only.</li>
-        <li><strong>Brakes:</strong> Hydraulic disc brakes are non-negotiable — e-bikes are heavier and faster.</li>
-        <li><strong>Warranty:</strong> Look for minimum 2-year coverage on frame, motor, and battery.</li>
-        <li><strong>Service:</strong> Can you get it serviced locally? E-bike-specific shops are ideal.</li>
-        <li><strong>Test ride:</strong> Ride at least 2-3 models before deciding.</li>
-      </ol>
-
-      <p>Ready to find your perfect e-bike? Browse our curated selection of top-rated models, all backed by our 30-day test ride guarantee and 2-year warranty.</p>
-    `,
+    content: `<p class="lead">Buying your first electric bike is exciting — but it can also be overwhelming. With hundreds of models, three motor types, four e-bike classes, and battery specs that read like engineering textbooks, where do you even start? This guide breaks down everything you need to know in plain English.</p><h2>Step 1: Define Your Riding Style</h2><p>Before comparing specs, get clear on how you'll actually use your e-bike. The best e-bike for a 20-mile daily commute is very different from one built for weekend mountain trails.</p><h2>Step 2: Understand E-Bike Classes</h2><p>In the US, e-bikes fall into three legal classes. Class 1 (pedal-assist only, 20 mph), Class 2 (throttle + pedal-assist, 20 mph), and Class 3 (pedal-assist, 28 mph). Know which one fits your needs and local laws.</p><h2>Step 3: Hub Motor vs. Mid-Drive</h2><p>Hub motors are more affordable with simpler maintenance. Mid-drive motors offer superior torque, better hill climbing, and more natural ride feel. Choose based on your terrain and budget.</p><h2>Step 4: Battery Watt-Hours Are What Matter</h2><p>Focus on watt-hours (Wh): 300-400 Wh = 15-30 miles, 400-600 Wh = 25-50 miles, 600-900+ Wh = 40-80+ miles. Real-world range varies based on assist level, terrain, and rider weight.</p><h2>Quick Checklist</h2><ol><li>Decide Class 1, 2, or 3</li><li>Mid-drive for hills; hub motor for flat commutes</li><li>400+ Wh minimum battery</li><li>Hydraulic disc brakes are non-negotiable</li><li>2-year warranty on frame, motor, and battery</li><li>Test ride at least 2-3 models</li></ol>`,
   },
+
   'ebike-commuting-save-time-money': {
     title: 'How E-Bike Commuting Saves You Time & Money (With Real Numbers)',
     description: 'We crunched the numbers. A $1,899 e-bike pays for itself in 8 months compared to driving — and you get there faster too.',
@@ -275,538 +409,131 @@ const posts: Record<string, any> = {
     author: 'Sarah Chen',
     readTime: '7',
     tags: ['ebike', 'commuting', 'save money', 'bike commuting', 'cost analysis'],
-    content: `
-      <p class="lead">Most people think e-bikes are expensive. But when you compare the real costs against driving a car, the math tells a completely different story. We analyzed the numbers across 12 US cities — and the results might surprise you.</p>
-
-      <h2>The Real Cost of Car Commuting</h2>
-      <p>The IRS estimates the true cost of driving at 67 cents per mile when you factor in gas, maintenance, insurance, depreciation, and parking. For a 10-mile commute (20 miles round trip), that's $13.40 per day. Over 250 commuting days a year:</p>
-      <ul>
-        <li><strong>Annual car commuting cost:</strong> $3,350</li>
-        <li><strong>Monthly cost:</strong> ~$279</li>
-        <li><strong>Plus parking:</strong> $50-300/month in most cities</li>
-      </ul>
-      <p>In downtown areas like San Francisco, New York, or Chicago, parking alone can push your monthly commuting costs past $500.</p>
-
-      <h2>The E-Bike Alternative: Our Numbers</h2>
-      <p>Let's look at a typical setup — the Commuter Pro 500 at $1,899:</p>
-
-      <h3>Upfront Costs</h3>
-      <ul>
-        <li>E-bike: $1,899 (one-time)</li>
-        <li>Helmet: $80</li>
-        <li>Lock: $60</li>
-        <li>Lights & accessories: $100</li>
-        <li><strong>Total upfront:</strong> $2,139</li>
-      </ul>
-
-      <h3>Ongoing Costs (Annual)</h3>
-      <ul>
-        <li>Electricity (charging): $25/year (yes, really — about 5-8 cents per full charge)</li>
-        <li>Maintenance (tune-ups, chain, brake pads, tires): $200-350/year</li>
-        <li>Insurance (optional): $100-200/year</li>
-        <li><strong>Total annual ongoing:</strong> $325-575</li>
-      </ul>
-
-      <h3>Payback Calculation</h3>
-      <p>If you were spending $279/month on car commuting (not counting parking), the e-bike pays for itself in:</p>
-      <p><strong>$2,139 ÷ $279 = 7.7 months</strong></p>
-      <p>After 8 months, you're saving money every single day. And that's before factoring in parking savings, gym membership cancellation (you're getting daily exercise!), and reduced healthcare costs from improved fitness.</p>
-
-      <h2>Time: E-Bikes Are Often Faster</h2>
-      <p>In congested cities, e-bikes frequently beat cars door-to-door. A study by INRIX found that the average US driver loses 51 hours per year to congestion. E-bikes use bike lanes, paths, and filtering to bypass gridlock entirely.</p>
-
-      <p>Real-world comparison, 10-mile urban commute:</p>
-      <ul>
-        <li><strong>Car (city traffic):</strong> 40-60 minutes</li>
-        <li><strong>E-bike (Class 3, mixed paths):</strong> 30-40 minutes</li>
-        <li><strong>Public transit (bus + walk):</strong> 45-70 minutes</li>
-      </ul>
-
-      <p>On an e-bike, you're moving at 20-28 mph with zero time spent finding parking. You roll right up to your destination.</p>
-
-      <h2>The Hidden Upsides</h2>
-
-      <h3>Health Dividend</h3>
-      <p>Multiple studies show that e-bike riders get meaningful exercise. A University of Colorado study found that e-bike commuters improved their cardiovascular fitness by an average of 8.5% over one month of daily riding — even with pedal assist. Lower BMI, lower blood pressure, and better mental health are well-documented benefits.</p>
-
-      <h3>Environmental Impact</h3>
-      <p>An e-bike produces about 2-5 grams of CO2 per mile (from electricity generation). A typical car produces 400+ grams per mile. If you replace 5,000 car miles a year with e-bike miles, you're cutting roughly 2 metric tons of CO2 annually — the equivalent of planting 33 trees.</p>
-
-      <h3>Parking Freedom</h3>
-      <p>Never circle the block again. E-bikes fit in bike racks, office storage rooms, and many apartment elevators. In cities where parking costs $200-400/month, this alone covers your e-bike financing.</p>
-
-      <blockquote>
-        <p>"I sold my car 3 months after getting my Commuter Pro. Between payments, insurance, gas, and parking, I was spending $700/month. My e-bike paid for itself in under 4 months."</p>
-        <cite>— Marcus Chen, Seattle Daily Commuter</cite>
-      </blockquote>
-
-      <h2>Bottom Line</h2>
-      <p>If you live within 15 miles of work and have a reasonably safe route, an e-bike is the single most cost-effective transportation upgrade you can make. It pays for itself in under a year, gets you there faster in most cities, and improves your health along the way. The math doesn't lie.</p>
-    `,
+    content: `<p class="lead">Most people think e-bikes are expensive. But when you compare the real costs against driving a car, the math tells a completely different story.</p><h2>The Real Cost of Car Commuting</h2><p>The IRS estimates the true cost of driving at 67 cents per mile. For a 10-mile commute, that's $13.40 per day — or $3,350 per year. Add parking at $50-300/month and you're spending serious money.</p><h2>The E-Bike Alternative</h2><p>A typical setup: e-bike ($1,899), helmet ($80), lock ($60), accessories ($100). Total upfront: $2,139. Annual ongoing costs: electricity ($25), maintenance ($200-350), insurance ($100-200).</p><h2>Payback: 8 Months</h2><p>At $279/month in car commuting costs, the e-bike pays for itself in 7.7 months. After that, you're saving money every day. Plus health benefits, zero parking stress, and often faster door-to-door times in congested cities.</p>`,
   },
+
   'ebike-maintenance-checklist': {
-    title: 'The Complete E-Bike Maintenance Checklist: Keep Your Ride Running Like New',
-    description: "From battery care to chain lube, brake adjustments to tire pressure — this maintenance routine will extend your e-bike's lifespan by years.",
+    title: 'The Complete E-Bike Maintenance Checklist',
+    description: "From battery care to chain lube — this maintenance routine will extend your e-bike's lifespan by years.",
     image: 'https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=1200&q=80',
     category: 'Maintenance',
     date: '2025-01-02',
     author: 'Dave Kim',
     readTime: '8',
     tags: ['ebike', 'maintenance', 'bike care', 'battery care', 'DIY repair'],
-    shopifyUrl: '',
-    content: `
-      <p class="lead">Your e-bike is an investment. With proper care, a quality e-bike can last 5-10 years and tens of thousands of miles. But neglect the maintenance, and you'll face expensive repairs — or worse, get stranded mid-ride. Here's your complete maintenance roadmap.</p>
-
-      <h2>The Golden Rule: Frequency Matters</h2>
-      <p>Maintenance isn't something you do once a year. It's a rhythm — quick checks before every ride, weekly wipe-downs, monthly deep inspections, and seasonal overhauls. Stick to this cadence and you'll catch small problems before they become expensive ones.</p>
-
-      <h2>Before Every Ride (2 Minutes)</h2>
-      <ul>
-        <li><strong>Tire pressure check:</strong> Use a gauge — don't eyeball it. E-bikes are heavier and need proper pressure (usually 40-65 PSI depending on tire width). Under-inflated tires reduce range and increase puncture risk.</li>
-        <li><strong>Brake test:</strong> Squeeze both levers firmly while stationary. They should engage firmly without pulling all the way to the grip.</li>
-        <li><strong>Quick visual scan:</strong> Loose bolts, frayed cables, cracked frame? Five seconds now saves hours later.</li>
-        <li><strong>Battery locked:</strong> Make sure the battery is fully seated and locked in place.</li>
-      </ul>
-
-      <h2>Weekly (15 Minutes)</h2>
-
-      <h3>Chain Care</h3>
-      <p>The chain takes more abuse than any other component — especially on mid-drive e-bikes where motor torque runs through it. Clean your chain weekly with a rag and degreaser, then apply a quality bike chain lube. Wipe off excess — too much lube attracts dirt and creates grinding paste.</p>
-
-      <p><strong>Pro tip:</strong> Use wet lube for rainy conditions and dry lube for dusty summer riding. E-bike-specific lubes hold up better under motor torque.</p>
-
-      <h3>Clean the Bike</h3>
-      <p>A quick wipe-down with a damp cloth prevents dirt buildup that wears down components. Pay special attention to the drivetrain (chain, cassette, chainring) and brake rotors. Never use a pressure washer near bearings, the motor, or battery connections — water ingress destroys e-bike electronics.</p>
-
-      <h2>Monthly (30 Minutes)</h2>
-
-      <h3>Brake Inspection</h3>
-      <p>E-bikes are heavier and faster than acoustic bikes — you need your brakes in top condition. Check pad thickness (replace if under 1mm). Inspect rotors for warping or scoring. If brakes feel spongy, they may need bleeding (hydraulic) or cable tightening (mechanical).</p>
-
-      <h3>Bolt Check</h3>
-      <p>Go over every major bolt with a torque wrench: stem bolts, seat post clamp, crank arms, axle nuts, and rack mounts. E-bike vibration can loosen bolts over time. Follow the torque specs printed on most components — overtightening is just as dangerous as under-tightening.</p>
-
-      <h3>Tire Inspection</h3>
-      <p>Look for embedded glass, cuts in the tread, and sidewall cracking. Rotate tires if wear is uneven. Consider puncture-resistant tires or tubeless setups if you ride in debris-prone areas.</p>
-
-      <h2>Battery Care: The Longevity Playbook</h2>
-      <p>The battery is your e-bike's most expensive component. Treat it right and it'll deliver 500-1,000+ full charge cycles before significant degradation. Here's how:</p>
-      <ul>
-        <li><strong>Don't store at 100% or 0%:</strong> For long-term storage, keep the battery at 40-60% charge. Storing fully charged or fully depleted accelerates degradation.</li>
-        <li><strong>Avoid extreme temperatures:</strong> Store and charge between 50-77°F (10-25°C). Never leave your battery in a hot car or freezing garage.</li>
-        <li><strong>Charge after riding, not before:</strong> Let the battery cool for 30 minutes after a ride before plugging in.</li>
-        <li><strong>Use the OEM charger only:</strong> Third-party chargers can damage cells or cause fires.</li>
-        <li><strong>Partial charges are fine:</strong> Lithium-ion batteries don't have a "memory effect." Topping up from 50% to 80% is better than always doing full 0-100% cycles.</li>
-      </ul>
-
-      <h2>Seasonal Service (Every 3-6 Months)</h2>
-
-      <h3>Drivetrain Deep Clean</h3>
-      <p>Remove the chain for a thorough degreasing. Clean the cassette and chainring with a brush. Inspect chain wear with a chain checker tool — replace at 0.75% wear to prevent cassette damage (a $30 chain saves a $80 cassette).</p>
-
-      <h3>Suspension Service (If Applicable)</h3>
-      <p>Clean fork stanchions and check for oil leaks. Most suspension forks need lower-leg service every 50 hours of riding and full damper service annually.</p>
-
-      <h3>Spoke Tension</h3>
-      <p>E-bike motors put more stress on wheels. Check spoke tension (pluck them — they should all sound similar) and true the wheel if you notice wobble. Loose spokes lead to broken spokes, and broken spokes lead to unrideable wheels.</p>
-
-      <h2>When to Visit a Professional</h2>
-      <p>Some jobs are best left to pros with specialized tools and e-bike certification:</p>
-      <ul>
-        <li>Motor or electrical system diagnostics</li>
-        <li>Hydraulic brake bleeding</li>
-        <li>Wheel truing beyond minor adjustments</li>
-        <li>Suspension damper service</li>
-        <li>Frame crack inspection</li>
-      </ul>
-
-      <p>Most e-bike shops charge $80-150 for a comprehensive tune-up, which is cheap insurance on a $1,500-5,000 investment. Schedule one annually even if everything seems fine.</p>
-
-      <blockquote>
-        <p>"The best maintenance is the maintenance you actually do. Start small, build the habit, and your e-bike will reward you with years of flawless riding."</p>
-        <cite>— Dave Kim, Certified E-Bike Technician</cite>
-      </blockquote>
-    `,
+    content: `<p class="lead">Your e-bike is an investment. With proper care, a quality e-bike can last 5-10 years and tens of thousands of miles.</p><h2>Before Every Ride (2 Minutes)</h2><ul><li>Tire pressure check with a gauge</li><li>Brake test — squeeze both levers firmly</li><li>Quick visual scan for loose bolts or damage</li><li>Battery locked in place</li></ul><h2>Weekly (15 Minutes)</h2><ul><li>Clean and lube the chain</li><li>Wipe down the bike with a damp cloth</li><li>Check brake pad thickness</li></ul><h2>Monthly (30 Minutes)</h2><ul><li>Brake inspection — pads, rotors, bleeding</li><li>Bolt check with torque wrench</li><li>Tire inspection for cuts and wear</li></ul><h2>Battery Care</h2><ul><li>Store at 40-60% charge for long periods</li><li>Avoid extreme temperatures</li><li>Use only the OEM charger</li><li>Charge after riding, not before</li></ul>`,
   },
 
-  // ── Product Blog Posts ──
+  // ═══════════════════════════════════════════════════════════════
+  // LEGACY LIFESTYLE POSTS
+  // ═══════════════════════════════════════════════════════════════
 
-  'shop-commuter-pro-500': {
-    title: 'Commuter Pro 500 — The Ultimate Urban E-Bike',
-    description: 'Transform your daily commute with the Commuter Pro 500. 500W motor, 50-mile range, and a lightweight aluminum frame built for city riding.',
-    image: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1200&q=80',
-    category: 'E-Bikes',
-    date: '2025-01-15',
-    author: 'The Electric Bike Superstore',
+  'transform-your-home-with-biophilic-design': {
+    title: 'Transform Your Home with Biophilic Design Principles',
+    description: 'Discover how bringing nature indoors can dramatically improve your wellbeing and the aesthetic appeal of your living space.',
+    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80',
+    category: 'Home Decor',
+    date: '2025-01-10',
+    author: 'Olivia Hart',
+    readTime: '7',
+    tags: ['home decor', 'biophilic design', 'interior design', 'wellness'],
+    content: `<p class="lead">In an increasingly urbanized world, our innate connection to nature often gets lost. Biophilic design integrates natural elements into our built environments to enhance wellbeing, creativity, and happiness.</p><h2>What Is Biophilic Design?</h2><p>It's a comprehensive design philosophy that incorporates natural lighting, ventilation, landscape features, and organic materials to create spaces that feel alive and nurturing.</p>`,
+  },
+
+  'morning-rituals-for-a-mindful-day': {
+    title: 'Morning Rituals That Set the Tone for a Mindful Day',
+    description: 'Start each day with intention. Science-backed morning practices to cultivate focus, gratitude, and inner calm.',
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80',
+    category: 'Wellness',
+    date: '2025-01-05',
+    author: 'Dr. Amara Lee',
     readTime: '5',
-    tags: ['commuter ebike', 'urban bike', 'electric bike', 'city commuter'],
-    shopifyUrl: 'https://hnrqqt-an.myshopify.com/products/commuter-pro-500',
-    price: '$1,899',
-    originalPrice: '$2,199',
-    content: `
-      <p class="lead">If you're tired of sitting in traffic, hunting for parking, and showing up to work stressed — the Commuter Pro 500 is your solution. This purpose-built urban electric bike combines a powerful 500W motor with a lightweight aluminum frame for the ultimate city riding experience.</p>
-
-      <h2>Why the Commuter Pro 500?</h2>
-      <p>Most commuter e-bikes force you to compromise: power vs. weight, range vs. portability, price vs. quality. The Commuter Pro 500 breaks that mold. At just 48 lbs with a 500W brushless hub motor and a genuine 50-mile range, it delivers everything you need and nothing you don't.</p>
-
-      <h2>Key Specifications</h2>
-      <ul>
-        <li><strong>Motor:</strong> 500W brushless rear hub motor — smooth, quiet acceleration</li>
-        <li><strong>Battery:</strong> 48V 14Ah lithium battery (672 Wh) — genuine 50-mile range</li>
-        <li><strong>Speed:</strong> 20 mph with pedal assist (Class 2)</li>
-        <li><strong>Frame:</strong> 6061 aluminum — lightweight at only 48 lbs</li>
-        <li><strong>Drivetrain:</strong> Shimano 7-speed for tackling hills and headwinds</li>
-        <li><strong>Brakes:</strong> Hydraulic disc brakes — confident stopping power in all conditions</li>
-        <li><strong>Tires:</strong> 26" puncture-resistant tires with reflective sidewalls</li>
-        <li><strong>Extras:</strong> Integrated LED lights, LCD display, fenders, and rear rack included</li>
-      </ul>
-
-      <h2>Who Is This Bike For?</h2>
-      <p>The Commuter Pro 500 is built for the daily urban rider. If you commute 5-20 miles each way, want to arrive sweat-free, and need a bike that's light enough to carry up a flight of stairs — this is your match. It's equally at home on bike paths, city streets, and light gravel trails.</p>
-
-      <h2>Real-World Range</h2>
-      <p>Range varies by assist level, rider weight, and terrain. On throttle-only (no pedaling), expect 25-30 miles. On low pedal assist (Eco mode), you'll hit the full 50 miles. Most commuters on mixed assist report 35-45 miles per charge — more than enough for a week of round-trip commuting.</p>
-
-      <blockquote>
-        <p>"I've put 2,000 miles on my Commuter Pro and it still rides like day one. Best purchase I've made in years."</p>
-        <cite>— Verified Buyer</cite>
-      </blockquote>
-
-      <div style="text-align:center; margin: 40px 0;">
-        <a href="https://hnrqqt-an.myshopify.com/products/commuter-pro-500" class="btn btn-primary" style="font-size: 1.15rem; padding: 16px 48px; display: inline-block; text-decoration: none; border-radius: 8px;">Buy Now — $1,899</a>
-        <p style="margin-top: 12px; color: var(--color-text-muted); font-size: 0.9rem;">Free shipping · 30-day test ride guarantee · 2-year warranty</p>
-      </div>
-    `,
+    tags: ['wellness', 'mindfulness', 'morning routine', 'meditation'],
+    content: `<p class="lead">How you start your morning sets the tone for your entire day. A rushed, reactive morning often leads to a scattered, stressful day — while an intentional morning can create a foundation of calm.</p>`,
   },
 
-  'shop-trail-blazer-elite': {
-    title: 'Trail Blazer Elite — Dominate Any Terrain',
-    description: 'The Trail Blazer Elite is our flagship mountain e-bike. 750W mid-drive motor, full suspension, fat tires, and a 60-mile range for unstoppable off-road performance.',
-    image: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=1200&q=80',
-    category: 'E-Bikes',
-    date: '2025-01-15',
-    author: 'The Electric Bike Superstore',
-    readTime: '5',
-    tags: ['mountain ebike', 'electric mountain bike', 'off road', 'trail riding', 'eMTB'],
-    shopifyUrl: 'https://hnrqqt-an.myshopify.com/products/trail-blazer-elite',
-    price: '$2,799',
-    content: `
-      <p class="lead">When the pavement ends, the Trail Blazer Elite is just getting started. With a 750W Bafang mid-drive motor, full RockShox suspension, and aggressive 27.5" fat tires, this e-MTB turns impossible trails into your personal playground.</p>
-
-      <h2>Mid-Drive Dominance</h2>
-      <p>The heart of the Trail Blazer Elite is its Bafang 750W mid-drive motor. Unlike hub motors, mid-drives deliver power through the chain — giving you superior torque, better hill climbing, and a more natural ride feel. The advanced torque sensor reads your pedal input 1,000 times per second, delivering power that feels like your own legs — just supercharged.</p>
-
-      <h2>Key Specifications</h2>
-      <ul>
-        <li><strong>Motor:</strong> 750W Bafang mid-drive with torque sensor</li>
-        <li><strong>Battery:</strong> 48V 17.5Ah (840 Wh) — 60-mile range</li>
-        <li><strong>Suspension:</strong> Full suspension — RockShox front fork + rear shock</li>
-        <li><strong>Tires:</strong> 27.5" x 2.8" fat tires for maximum grip</li>
-        <li><strong>Drivetrain:</strong> Shimano Deore 10-speed groupset</li>
-        <li><strong>Brakes:</strong> 4-piston hydraulic disc brakes with 203mm rotors</li>
-        <li><strong>Protection:</strong> IP65 water-resistant — ride in rain, mud, and snow</li>
-      </ul>
-
-      <h2>Built for the Trail</h2>
-      <p>Every component on the Trail Blazer Elite is chosen for off-road durability. The 4-piston hydraulic brakes provide massive stopping power on steep descents. The Deore 10-speed drivetrain gives you the perfect gear for every grade. And the fat 2.8" tires float over rocks, roots, and loose gravel that would stop narrower tires cold.</p>
-
-      <h2>Who Is This Bike For?</h2>
-      <p>Serious mountain bikers who want to ride further and climb higher. Weekend warriors tackling technical singletrack. Adventure riders exploring fire roads and backcountry trails. If you ride off-road, this is the e-bike you've been waiting for.</p>
-
-      <blockquote>
-        <p>"The torque sensor on this mid-drive is incredible — it feels completely natural. I'm climbing things I never thought possible."</p>
-        <cite>— Verified Buyer</cite>
-      </blockquote>
-
-      <div style="text-align:center; margin: 40px 0;">
-        <a href="https://hnrqqt-an.myshopify.com/products/trail-blazer-elite" class="btn btn-primary" style="font-size: 1.15rem; padding: 16px 48px; display: inline-block; text-decoration: none; border-radius: 8px;">Buy Now — $2,799</a>
-        <p style="margin-top: 12px; color: var(--color-text-muted); font-size: 0.9rem;">Free shipping · 30-day test ride guarantee · 2-year warranty</p>
-      </div>
-    `,
+  'the-art-of-curated-minimalism': {
+    title: 'The Art of Curated Minimalism: Less Stuff, More Meaning',
+    description: "Minimalism isn't about deprivation — it's about making room for what truly matters.",
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80',
+    category: 'Lifestyle',
+    date: '2024-12-28',
+    author: 'James Kwan',
+    readTime: '6',
+    tags: ['lifestyle', 'minimalism', 'decluttering', 'intentional living'],
+    content: `<p class="lead">True minimalism isn't about emptiness — it's about intentionality. The art of curating your environment so that everything in it serves a purpose or brings you joy.</p>`,
   },
 
-  'shop-fold-commute-x1': {
-    title: 'Fold Commute X1 — The Portable Powerhouse',
-    description: 'Folds in 15 seconds, fits anywhere. The Fold Commute X1 delivers 350W of power and a 35-mile range in a compact 39 lb package.',
-    image: 'https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=1200&q=80',
-    category: 'E-Bikes',
-    date: '2025-01-15',
-    author: 'The Electric Bike Superstore',
-    readTime: '4',
-    tags: ['folding ebike', 'portable bike', 'compact ebike', 'commuter'],
-    shopifyUrl: 'https://hnrqqt-an.myshopify.com/products/fold-commute-x1',
-    price: '$1,299',
-    originalPrice: '$1,499',
-    content: `
-      <p class="lead">Small space? Big commute? The Fold Commute X1 solves both problems. This ingeniously designed folding e-bike collapses to 28" x 22" x 14" in just 15 seconds — small enough to tuck under your desk, slide into a car trunk, or carry onto public transit.</p>
-
-      <h2>Don't Let the Size Fool You</h2>
-      <p>At just 39 lbs, the Fold Commute X1 is one of the lightest folding e-bikes on the market. But it packs a serious punch: a 350W geared hub motor pushes you to 18 mph, and the 36V 10.4Ah battery delivers 35 miles of range. For a bike this portable, that's remarkable.</p>
-
-      <h2>Key Specifications</h2>
-      <ul>
-        <li><strong>Motor:</strong> 350W geared hub motor — peppy acceleration for city riding</li>
-        <li><strong>Battery:</strong> 36V 10.4Ah (374 Wh) — 35-mile range</li>
-        <li><strong>Folded Size:</strong> 28" x 22" x 14" — fits anywhere</li>
-        <li><strong>Weight:</strong> Only 39 lbs — carry it up stairs with ease</li>
-        <li><strong>Speed:</strong> 18 mph top speed (Class 2)</li>
-        <li><strong>Wheels:</strong> 20" with wide comfort tires</li>
-        <li><strong>Suspension:</strong> Front suspension fork smooths out bumps</li>
-        <li><strong>Included:</strong> Carrying bag, fenders, and rear rack</li>
-      </ul>
-
-      <h2>Perfect For</h2>
-      <p>Apartment dwellers with limited storage. Multi-modal commuters who combine biking with trains or buses. RV and boat owners who need compact transportation. Anyone with a short-to-medium commute who values portability above all else.</p>
-
-      <blockquote>
-        <p>"I fold it up and bring it into my office. No one even knows it's there. Best urban commuting solution I've found."</p>
-        <cite>— Verified Buyer</cite>
-      </blockquote>
-
-      <div style="text-align:center; margin: 40px 0;">
-        <a href="https://hnrqqt-an.myshopify.com/products/fold-commute-x1" class="btn btn-primary" style="font-size: 1.15rem; padding: 16px 48px; display: inline-block; text-decoration: none; border-radius: 8px;">Buy Now — $1,299 <s style="opacity:0.6; font-size:0.85rem;">$1,499</s></a>
-        <p style="margin-top: 12px; color: var(--color-text-muted); font-size: 0.9rem;">Free shipping · 30-day test ride guarantee · 2-year warranty</p>
-      </div>
-    `,
+  'smart-home-tech-that-actually-improves-your-life': {
+    title: 'Smart Home Tech That Actually Improves Your Life',
+    description: 'Forget gimmicks. These smart home devices genuinely enhance comfort, security, and energy efficiency.',
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=1200&q=80',
+    category: 'Tech & Gadgets',
+    date: '2024-12-20',
+    author: 'Alex Rivera',
+    readTime: '8',
+    tags: ['smart home', 'tech', 'automation', 'gadgets'],
+    content: `<p class="lead">Forget gimmicks. These are the smart home devices that genuinely enhance comfort, security, and energy efficiency in your daily life.</p>`,
   },
 
-  'shop-cargo-hauler-pro': {
-    title: 'Cargo Hauler Pro — The Ultimate Family Electric Cargo Bike',
-    description: 'Haul kids, groceries, or gear with ease. 750W motor, 400 lb payload, dual battery capability, and 80 miles of range.',
-    image: 'https://images.unsplash.com/photo-1559348349-86f1f65817fe?w=1200&q=80',
-    category: 'E-Bikes',
-    date: '2025-01-15',
-    author: 'The Electric Bike Superstore',
-    readTime: '5',
-    tags: ['cargo bike', 'family ebike', 'electric cargo bike', 'kid hauler', 'car replacement'],
-    shopifyUrl: 'https://hnrqqt-an.myshopify.com/products/cargo-hauler-pro',
-    price: '$3,299',
-    content: `
-      <p class="lead">Ready to replace your second car? The Cargo Hauler Pro is the real deal — a heavy-duty electric cargo bike that carries up to 400 lbs of rider plus cargo, kids, or groceries. With a 750W motor and dual battery capability, this is the vehicle that will change how your family moves through the world.</p>
-
-      <h2>True Car Replacement</h2>
-      <p>Most cargo bikes feel like toys compared to a car. Not the Cargo Hauler Pro. The extended rear rack with passenger kit lets you carry two kids (or one adult) comfortably. The heavy-duty chromoly steel frame is rated for 400 lbs total payload. The 750W motor means you'll never dread a hill, even fully loaded.</p>
-
-      <h2>Key Specifications</h2>
-      <ul>
-        <li><strong>Motor:</strong> 750W geared hub motor — 28 mph top speed</li>
-        <li><strong>Battery:</strong> Dual battery ready — up to 80 miles of range</li>
-        <li><strong>Payload:</strong> 400 lbs total capacity (rider + cargo)</li>
-        <li><strong>Frame:</strong> Heavy-duty chromoly steel</li>
-        <li><strong>Rack:</strong> Extended rear rack with passenger kit included</li>
-        <li><strong>Brakes:</strong> Hydraulic disc brakes with massive 203mm rotors</li>
-        <li><strong>Tires:</strong> 24" x 2.4" heavy-duty tires</li>
-        <li><strong>Extras:</strong> Integrated front basket, running boards, and fenders</li>
-      </ul>
-
-      <h2>What Can You Haul?</h2>
-      <p>School drop-offs — two kids on the back, backpacks in the front basket. Grocery runs — 6+ bags with room to spare. Weekend adventures — camping gear, picnic supplies, and your partner. The Cargo Hauler Pro replaces short car trips entirely and makes errands genuinely fun.</p>
-
-      <h2>The Financial Case</h2>
-      <p>The average car costs $10,728 per year (AAA). The Cargo Hauler Pro pays for itself in under 4 months of car-free living. Add the health benefits of daily riding and the joy of never sitting in school drop-off traffic again, and it's simply a better way to move.</p>
-
-      <blockquote>
-        <p>"We sold our second car 2 months after getting the Cargo Hauler. The kids love riding on the back — it's become our favorite part of the day."</p>
-        <cite>— Verified Buyer</cite>
-      </blockquote>
-
-      <div style="text-align:center; margin: 40px 0;">
-        <a href="https://hnrqqt-an.myshopify.com/products/cargo-hauler-pro" class="btn btn-primary" style="font-size: 1.15rem; padding: 16px 48px; display: inline-block; text-decoration: none; border-radius: 8px;">Buy Now — $3,299</a>
-        <p style="margin-top: 12px; color: var(--color-text-muted); font-size: 0.9rem;">Free shipping · 30-day test ride guarantee · 2-year warranty</p>
-      </div>
-    `,
+  'seasonal-tablescaping-for-every-occasion': {
+    title: 'Seasonal Tablescaping: Create Stunning Tables for Every Occasion',
+    description: 'Master the art of the tablescape. From intimate dinners to holiday feasts.',
+    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=1200&q=80',
+    category: 'Home Decor',
+    date: '2024-12-15',
+    author: 'Olivia Hart',
+    readTime: '6',
+    tags: ['home decor', 'tablescaping', 'entertaining', 'seasonal'],
+    content: `<p class="lead">Master the art of the tablescape. From intimate dinners to holiday feasts, learn how to set a table that wows your guests.</p>`,
   },
 
-  'shop-speedster-sport': {
-    title: 'Speedster Sport — Sleek Performance Road E-Bike',
-    description: 'Road bike agility meets electric power. The Speedster Sport features a hidden battery, carbon belt drive, and a 500W motor for effortless 28 mph cruising.',
-    image: 'https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=1200&q=80',
-    category: 'E-Bikes',
-    date: '2025-01-15',
-    author: 'The Electric Bike Superstore',
-    readTime: '4',
-    tags: ['road ebike', 'performance bike', 'speed pedelec', 'lightweight ebike'],
-    shopifyUrl: 'https://hnrqqt-an.myshopify.com/products/speedster-sport',
-    price: '$2,499',
-    content: `
-      <p class="lead">Most e-bikes look like e-bikes. The Speedster Sport looks like a sleek road bike that happens to have a secret weapon. With its fully integrated downtube battery, whisper-quiet motor, and carbon belt drive, this is the e-bike for riders who demand style, speed, and zero-maintenance reliability.</p>
-
-      <h2>Stealth Performance</h2>
-      <p>The Speedster Sport's battery is hidden inside the downtube — most people won't even realize it's electric until you effortlessly glide past them at 28 mph. The ultra-quiet 500W rear hub motor provides smooth, silent assist that feels like a tailwind from the gods.</p>
-
-      <h2>Key Specifications</h2>
-      <ul>
-        <li><strong>Motor:</strong> 500W ultra-quiet rear hub motor</li>
-        <li><strong>Battery:</strong> Integrated 48V 14Ah (672 Wh) — 45-mile range</li>
-        <li><strong>Speed:</strong> 28 mph Class 3 pedal assist</li>
-        <li><strong>Drivetrain:</strong> Carbon belt drive — zero lubrication, zero maintenance</li>
-        <li><strong>Gears:</strong> Shimano Alfine 8-speed internal hub</li>
-        <li><strong>Brakes:</strong> Hydraulic disc brakes</li>
-        <li><strong>Tires:</strong> 700c x 38mm — fast-rolling road tires</li>
-        <li><strong>Weight:</strong> Just 42 lbs — light for an e-bike</li>
-      </ul>
-
-      <h2>Zero Maintenance Drivetrain</h2>
-      <p>The carbon belt drive paired with the sealed Shimano Alfine 8-speed internal hub means you'll never lube a chain, never adjust a derailleur, and never get grease on your pants. The belt lasts 3-5x longer than a chain and runs silently. It's the ultimate "get on and ride" setup.</p>
-
-      <blockquote>
-        <p>"I wanted an e-bike that didn't look like an e-bike. The Speedster delivers — sleek, fast, and the belt drive is absolute magic."</p>
-        <cite>— Verified Buyer</cite>
-      </blockquote>
-
-      <div style="text-align:center; margin: 40px 0;">
-        <a href="https://hnrqqt-an.myshopify.com/products/speedster-sport" class="btn btn-primary" style="font-size: 1.15rem; padding: 16px 48px; display: inline-block; text-decoration: none; border-radius: 8px;">Buy Now — $2,499</a>
-        <p style="margin-top: 12px; color: var(--color-text-muted); font-size: 0.9rem;">Free shipping · 30-day test ride guarantee · 2-year warranty</p>
-      </div>
-    `,
+  'the-science-of-better-sleep': {
+    title: 'The Science of Better Sleep: A Complete Guide',
+    description: 'Sleep is the foundation of health. Evidence-based strategies to optimize your sleep environment.',
+    image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=1200&q=80',
+    category: 'Wellness',
+    date: '2024-12-08',
+    author: 'Dr. Amara Lee',
+    readTime: '9',
+    tags: ['wellness', 'sleep', 'health', 'science'],
+    content: `<p class="lead">Sleep is the foundation of health. Explore evidence-based strategies to optimize your sleep environment and habits for deeper, more restorative rest.</p>`,
   },
 
-  'shop-fat-tire-explorer': {
-    title: 'Fat Tire Explorer — Go Anywhere, Any Season',
-    description: 'Sand, snow, trails, pavement — nothing stops the Fat Tire Explorer. 750W motor, 4" fat tires, full suspension, and 55 miles of range.',
-    image: 'https://images.unsplash.com/photo-1557032589-82a4e5e9e8ad?w=1200&q=80',
-    category: 'E-Bikes',
-    date: '2025-01-15',
-    author: 'The Electric Bike Superstore',
-    readTime: '4',
-    tags: ['fat tire ebike', 'all terrain', 'snow bike', 'beach cruiser', 'adventure bike'],
-    shopifyUrl: 'https://hnrqqt-an.myshopify.com/products/fat-tire-explorer',
-    price: '$1,999',
-    originalPrice: '$2,399',
-    content: `
-      <p class="lead">Four-inch-wide tires. 750 watts of power. Full suspension. The Fat Tire Explorer doesn't ask what the terrain looks like — it just goes. From sandy beaches to snowy trails, from muddy singletrack to potholed city streets, this bike laughs at surfaces that stop other bikes cold.</p>
-
-      <h2>The Magic of Fat Tires</h2>
-      <p>Fat tires aren't just for show. The massive 4" contact patch floats over sand and snow that would swallow a normal tire. At low pressure (8-15 PSI), they act like natural suspension, absorbing bumps and smoothing out rough terrain. On pavement at higher pressure, they roll surprisingly fast and corner with confidence.</p>
-
-      <h2>Key Specifications</h2>
-      <ul>
-        <li><strong>Motor:</strong> 750W Bafang hub motor — tackle any grade</li>
-        <li><strong>Battery:</strong> 48V 16Ah (768 Wh) — 55-mile range</li>
-        <li><strong>Tires:</strong> 26" x 4.0" all-terrain fat tires</li>
-        <li><strong>Suspension:</strong> Front fork with 120mm travel</li>
-        <li><strong>Brakes:</strong> Tektro mechanical disc brakes</li>
-        <li><strong>Controls:</strong> Twist throttle + 5-level pedal assist</li>
-        <li><strong>Lighting:</strong> Integrated headlight and taillight</li>
-      </ul>
-
-      <h2>Year-Round Riding</h2>
-      <p>Unlike fair-weather bikes that gather dust from November to March, the Fat Tire Explorer thrives in conditions that keep other riders inside. Studded tire compatibility means you can ride through winter with confidence. The IP65 water-resistant rating means rain, mud, and slush won't faze the electronics.</p>
-
-      <blockquote>
-        <p>"I ride my Fat Tire Explorer on the beach every weekend. The looks I get are priceless — and it handles the sand like it's pavement."</p>
-        <cite>— Verified Buyer</cite>
-      </blockquote>
-
-      <div style="text-align:center; margin: 40px 0;">
-        <a href="https://hnrqqt-an.myshopify.com/products/fat-tire-explorer" class="btn btn-primary" style="font-size: 1.15rem; padding: 16px 48px; display: inline-block; text-decoration: none; border-radius: 8px;">Buy Now — $1,999 <s style="opacity:0.6; font-size:0.85rem;">$2,399</s></a>
-        <p style="margin-top: 12px; color: var(--color-text-muted); font-size: 0.9rem;">Free shipping · 30-day test ride guarantee · 2-year warranty</p>
-      </div>
-    `,
+  'sustainable-fashion-wardrobe-essentials': {
+    title: 'Building a Sustainable Fashion Wardrobe: The Essentials',
+    description: 'Fast fashion is out. Learn how to build a timeless, ethical wardrobe that looks great and lasts.',
+    image: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1200&q=80',
+    category: 'Lifestyle',
+    date: '2024-12-01',
+    author: 'James Kwan',
+    readTime: '7',
+    tags: ['lifestyle', 'fashion', 'sustainability', 'wardrobe'],
+    content: `<p class="lead">Fast fashion is out. Learn how to build a timeless, ethical wardrobe that looks great and lasts for years.</p>`,
   },
 
-  'shop-premium-helmet': {
-    title: 'Smart Helmet with LED Turn Signals — Ride Smarter & Safer',
-    description: 'MIPS protection, wireless LED turn signals controlled by a handlebar remote, magnetic buckle, and USB-C charging. The smartest helmet you\'ll ever wear.',
-    image: 'https://images.unsplash.com/photo-1557806141-08dcce615639?w=1200&q=80',
-    category: 'Accessories',
-    date: '2025-01-15',
-    author: 'The Electric Bike Superstore',
-    readTime: '4',
-    tags: ['helmet', 'safety gear', 'smart helmet', 'ebike accessory', 'commuter safety'],
-    shopifyUrl: 'https://hnrqqt-an.myshopify.com/products/premium-helmet',
-    price: '$149',
-    content: `
-      <p class="lead">A helmet is the most important piece of gear you'll buy. Our Smart Helmet goes beyond basic protection — with integrated LED turn signals, MIPS brain protection, and a magnetic Fidlock buckle, it's the most advanced cycling helmet you can put on your head.</p>
-
-      <h2>See and Be Seen</h2>
-      <p>The wireless LED turn signals in the front and rear of the helmet are controlled by a compact handlebar remote. Signal your turns with a thumb press — no more hand signals in traffic, no more wondering if drivers behind you know what you're doing. The built-in brake light brightens automatically when you decelerate.</p>
-
-      <h2>Key Features</h2>
-      <ul>
-        <li><strong>Protection:</strong> MIPS brain protection system — reduces rotational forces during impact</li>
-        <li><strong>Signals:</strong> Wireless LED turn signals (front + rear) + automatic brake light</li>
-        <li><strong>Remote:</strong> Handlebar-mounted wireless remote for hands-free signal control</li>
-        <li><strong>Battery:</strong> USB-C rechargeable — 10-hour battery life per charge</li>
-        <li><strong>Buckle:</strong> Magnetic Fidlock buckle — one-hand operation, even with gloves</li>
-        <li><strong>Ventilation:</strong> 16 channels for airflow on hot days</li>
-        <li><strong>Fit:</strong> Adjustable dial system for a custom fit</li>
-        <li><strong>Certification:</strong> CPSC & EN 1078 certified</li>
-      </ul>
-
-      <h2>MIPS: The Brain-Saving Technology</h2>
-      <p>MIPS (Multi-directional Impact Protection System) adds a low-friction layer between the helmet shell and liner. In an angled impact — the most common type — this layer allows the helmet to rotate slightly, reducing the rotational forces transmitted to your brain. Studies show MIPS can reduce rotational motion by up to 40% in certain impacts.</p>
-
-      <blockquote>
-        <p>"I feel so much more visible with the turn signals. Drivers actually notice me now. Worth every penny for the peace of mind."</p>
-        <cite>— Verified Buyer</cite>
-      </blockquote>
-
-      <div style="text-align:center; margin: 40px 0;">
-        <a href="https://hnrqqt-an.myshopify.com/products/premium-helmet" class="btn btn-primary" style="font-size: 1.15rem; padding: 16px 48px; display: inline-block; text-decoration: none; border-radius: 8px;">Buy Now — $149</a>
-        <p style="margin-top: 12px; color: var(--color-text-muted); font-size: 0.9rem;">Free shipping · 30-day returns · 2-year warranty</p>
-      </div>
-    `,
+  'digital-detox-reclaiming-your-attention': {
+    title: 'Digital Detox: A Practical Guide to Reclaiming Your Attention',
+    description: 'Screen fatigue is real. Reset your relationship with technology and rediscover life offline.',
+    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80',
+    category: 'Wellness',
+    date: '2024-11-25',
+    author: 'Dr. Amara Lee',
+    readTime: '8',
+    tags: ['wellness', 'digital detox', 'technology', 'mindfulness'],
+    content: `<p class="lead">Screen fatigue is real. Here's how to reset your relationship with technology and rediscover life offline.</p>`,
   },
 
-  'shop-e-bike-security-bundle': {
-    title: 'E-Bike Security Bundle — Lock, Alarm & GPS Tracker',
-    description: 'Protect your investment with a premium folding lock, 120dB motion-sensing alarm, and concealed GPS tracker with 30-day battery life.',
-    image: 'https://images.unsplash.com/photo-1594120491678-750a5e64f0b3?w=1200&q=80',
-    category: 'Accessories',
-    date: '2025-01-15',
-    author: 'The Electric Bike Superstore',
-    readTime: '4',
-    tags: ['bike security', 'bike lock', 'GPS tracker', 'alarm', 'theft prevention'],
-    shopifyUrl: 'https://hnrqqt-an.myshopify.com/products/e-bike-security-bundle',
-    price: '$89',
-    originalPrice: '$110',
-    content: `
-      <p class="lead">Your e-bike is a serious investment — protect it with serious security. This three-piece bundle combines a Sold Secure Silver-rated folding lock, a 120dB motion-sensing alarm, and a concealed GPS tracker that lets you locate your bike anywhere in the world from your phone.</p>
-
-      <h2>Three Layers of Protection</h2>
-      <p>No single security measure is enough. This bundle gives you three layers: a physical lock that resists bolt cutters and angle grinders, an ear-splitting alarm that deters thieves the moment they touch your bike, and a GPS tracker that leads police directly to your stolen bike if someone somehow gets through the first two layers.</p>
-
-      <h2>Bundle Contents</h2>
-
-      <h3>1. Premium Folding Lock</h3>
-      <ul>
-        <li>Sold Secure Silver rated — tested against common attack tools</li>
-        <li>Hardened steel links with drill-resistant rivets</li>
-        <li>Weighs only 2.5 lbs — folds compact for easy carrying</li>
-        <li>Includes 3 keys + frame mounting bracket</li>
-      </ul>
-
-      <h3>2. 120dB Disc Brake Alarm</h3>
-      <ul>
-        <li>Motion-sensing — triggers at the slightest movement</li>
-        <li>120dB siren — as loud as a jet engine at takeoff</li>
-        <li>Attaches discreetly to disc brake rotor</li>
-        <li>Weatherproof IP65 construction</li>
-      </ul>
-
-      <h3>3. GPS Tracker</h3>
-      <ul>
-        <li>4G + Bluetooth tracking — real-time location updates</li>
-        <li>30-day battery life per charge</li>
-        <li>SIM card included — no separate data plan needed</li>
-        <li>Concealed mounting — thieves won't know it's there</li>
-        <li>iOS & Android app with geofence alerts</li>
-      </ul>
-
-      <h2>The Cost of Not Having Security</h2>
-      <p>E-bike theft is soaring. In major cities, a locked e-bike has roughly a 3-5% chance of being stolen per year — and that's with a basic lock. Without security, it's far higher. This $89 bundle protects a $1,500-5,000 investment. That's less than 2% of your bike's value for complete peace of mind.</p>
-
-      <blockquote>
-        <p>"The GPS tracker already paid for itself. Someone tried to steal my bike and I tracked it to their apartment in 20 minutes. Police recovered it the same day."</p>
-        <cite>— Verified Buyer</cite>
-      </blockquote>
-
-      <div style="text-align:center; margin: 40px 0;">
-        <a href="https://hnrqqt-an.myshopify.com/products/e-bike-security-bundle" class="btn btn-primary" style="font-size: 1.15rem; padding: 16px 48px; display: inline-block; text-decoration: none; border-radius: 8px;">Buy Now — $89 <s style="opacity:0.6; font-size:0.85rem;">$110</s></a>
-        <p style="margin-top: 12px; color: var(--color-text-muted); font-size: 0.9rem;">Free shipping · 30-day returns · 2-year warranty</p>
-      </div>
-    `,
+  'the-perfect-home-office-setup': {
+    title: 'The Perfect Home Office Setup: Ergonomics Meets Style',
+    description: 'Working from home? Design a workspace that boosts productivity and inspires creativity.',
+    image: 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=1200&q=80',
+    category: 'Tech & Gadgets',
+    date: '2024-11-18',
+    author: 'Alex Rivera',
+    readTime: '10',
+    tags: ['home office', 'ergonomics', 'productivity', 'WFH'],
+    content: `<p class="lead">Working from home? Design a workspace that boosts productivity, supports your body, and inspires creativity every day.</p>`,
   },
 };
 
@@ -881,167 +608,30 @@ const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
 </BaseLayout>
 
 <style>
-  .container-narrow {
-    max-width: 720px;
-  }
-
-  .article-section {
-    padding: 40px 0 80px;
-  }
-
-  .article-header {
-    margin-bottom: 32px;
-  }
-
-  .article-header .badge {
-    margin-bottom: 16px;
-  }
-
-  .article-header h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 16px;
-    line-height: 1.15;
-  }
-
-  .article-meta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
-  }
-
-  .author {
-    color: var(--color-accent);
-    font-weight: 500;
-  }
-
-  .article-featured-image {
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    margin-bottom: 40px;
-    box-shadow: var(--shadow-card);
-  }
-
-  .article-featured-image img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-  }
-
-  .article-content {
-    font-size: 1.05rem;
-    line-height: 1.85;
-    color: var(--color-text-secondary);
-  }
-
-  .article-content :global(.lead) {
-    font-size: 1.2rem;
-    color: var(--color-text-primary);
-    line-height: 1.75;
-    margin-bottom: 32px;
-    font-weight: 500;
-  }
-
-  .article-content :global(h2) {
-    color: var(--color-text-primary);
-    margin: 48px 0 16px;
-    font-size: 1.8rem;
-  }
-
-  .article-content :global(h3) {
-    color: var(--color-text-primary);
-    margin: 32px 0 12px;
-    font-size: 1.35rem;
-  }
-
-  .article-content :global(p) {
-    margin-bottom: 20px;
-  }
-
-  .article-content :global(ul), .article-content :global(ol) {
-    margin: 16px 0 24px;
-    padding-left: 24px;
-  }
-
-  .article-content :global(li) {
-    margin-bottom: 10px;
-  }
-
-  .article-content :global(strong) {
-    color: var(--color-text-primary);
-  }
-
-  .article-content :global(blockquote) {
-    border-left: 3px solid var(--color-accent);
-    padding: 24px 32px;
-    margin: 32px 0;
-    background: var(--color-bg-card);
-    border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  }
-
-  .article-content :global(blockquote p) {
-    font-style: italic;
-    font-size: 1.1rem;
-    color: var(--color-text-primary);
-    margin-bottom: 8px;
-  }
-
-  .article-content :global(blockquote cite) {
-    font-style: normal;
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
-  }
-
-  .article-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 40px 0;
-    padding-top: 24px;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .tag {
-    padding: 6px 14px;
-    border-radius: 100px;
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    font-size: 0.8rem;
-    color: var(--color-text-secondary);
-  }
-
-  .share-section {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--color-text-muted);
-    font-size: 0.85rem;
-  }
-
-  .share-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: var(--radius-sm);
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    color: var(--color-text-secondary);
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    font-size: 0;
-  }
-
-  .share-btn:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-  }
-
-  .copy-btn {
-    font-size: 1rem;
-    background: none;
-    border: none;
-  }
+  .container-narrow { max-width: 720px; }
+  .article-section { padding: 40px 0 80px; }
+  .article-header { margin-bottom: 32px; }
+  .article-header .badge { margin-bottom: 16px; }
+  .article-header h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; line-height: 1.15; }
+  .article-meta { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--color-text-muted); }
+  .author { color: var(--color-accent); font-weight: 500; }
+  .article-featured-image { border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 40px; box-shadow: var(--shadow-card); }
+  .article-featured-image img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+  .article-content { font-size: 1.05rem; line-height: 1.85; color: var(--color-text-secondary); }
+  .article-content :global(.lead) { font-size: 1.2rem; color: var(--color-text-primary); line-height: 1.75; margin-bottom: 32px; font-weight: 500; }
+  .article-content :global(h2) { color: var(--color-text-primary); margin: 48px 0 16px; font-size: 1.8rem; }
+  .article-content :global(h3) { color: var(--color-text-primary); margin: 32px 0 12px; font-size: 1.35rem; }
+  .article-content :global(p) { margin-bottom: 20px; }
+  .article-content :global(ul), .article-content :global(ol) { margin: 16px 0 24px; padding-left: 24px; }
+  .article-content :global(li) { margin-bottom: 10px; }
+  .article-content :global(strong) { color: var(--color-text-primary); }
+  .article-content :global(blockquote) { border-left: 3px solid var(--color-accent); padding: 24px 32px; margin: 32px 0; background: var(--color-bg-card); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+  .article-content :global(blockquote p) { font-style: italic; font-size: 1.1rem; color: var(--color-text-primary); margin-bottom: 8px; }
+  .article-content :global(blockquote cite) { font-style: normal; font-size: 0.85rem; color: var(--color-text-muted); }
+  .article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 40px 0; padding-top: 24px; border-top: 1px solid var(--color-border); }
+  .tag { padding: 6px 14px; border-radius: 100px; background: var(--color-bg-card); border: 1px solid var(--color-border); font-size: 0.8rem; color: var(--color-text-secondary); }
+  .share-section { display: flex; align-items: center; gap: 12px; color: var(--color-text-muted); font-size: 0.85rem; }
+  .share-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: var(--radius-sm); background: var(--color-bg-card); border: 1px solid var(--color-border); color: var(--color-text-secondary); cursor: pointer; transition: all var(--transition-fast); font-size: 0; }
+  .share-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  .copy-btn { font-size: 1rem; background: none; border: none; }
 </style>
