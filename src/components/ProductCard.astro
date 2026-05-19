@@ -12,6 +12,7 @@ export interface Props {
   reviews?: number;
 }
 
+const base = import.meta.env.BASE_URL;
 const { title, slug, price, originalPrice, image, category, badge, rating = 4.5, reviews = 0 } = Astro.props;
 const stars = Math.round(rating);
 const hasDiscount = originalPrice && originalPrice > price;
@@ -19,7 +20,7 @@ const discountPercent = hasDiscount ? Math.round(((originalPrice - price) / orig
 ---
 
 <div class="product-card card animate-fade-up">
-  <a href={`/products/${slug}`} class="product-image-link" aria-label={`View ${title}`}>
+  <a href={`${base}products/${slug}`} class="product-image-link" aria-label={`View ${title}`}>
     <div class="product-image">
       <img src={image} alt={title} loading="lazy" width="400" height="400" />
       {badge && <span class={`badge badge-${badge}`}>{badge === 'sale' ? `${discountPercent}% OFF` : badge}</span>}
@@ -27,7 +28,7 @@ const discountPercent = hasDiscount ? Math.round(((originalPrice - price) / orig
   </a>
   <div class="product-body">
     <span class="product-category">{category}</span>
-    <a href={`/products/${slug}`} class="product-title-link">
+    <a href={`${base}products/${slug}`} class="product-title-link">
       <h4>{title}</h4>
     </a>
     <div class="product-rating">

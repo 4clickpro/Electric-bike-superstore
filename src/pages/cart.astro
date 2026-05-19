@@ -1,6 +1,8 @@
 ---
 // Cart Page — full shopping cart management
 import BaseLayout from '@layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -21,7 +23,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         </svg>
         <h2>Your cart is empty</h2>
         <p>Looks like you haven't added anything yet. Browse our curated collection to find something you'll love.</p>
-        <a href="/products" class="btn btn-primary">Shop Now</a>
+        <a href={`${base}products`} class="btn btn-primary">Shop Now</a>
       </div>
 
       <div id="cart-content" style="display:none;">

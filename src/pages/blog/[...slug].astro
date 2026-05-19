@@ -2,6 +2,8 @@
 // Blog Post — dynamic route for all blog posts
 import BaseLayout from '@layouts/BaseLayout.astro';
 
+const base = import.meta.env.BASE_URL;
+
 export async function getStaticPaths() {
   return [
     { params: { slug: 'transform-your-home-with-biophilic-design' } },
@@ -422,7 +424,7 @@ const posts: Record<string, any> = {
 const post = posts[slug as string];
 
 if (!post) {
-  return Astro.redirect('/blog');
+  return Astro.redirect(`${base}blog`);
 }
 
 const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
