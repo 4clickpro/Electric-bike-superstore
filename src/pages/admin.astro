@@ -4,7 +4,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Admin — Blog Editor | Celestial Goods"
+  title="Admin — Blog Editor | The Electric Bike Superstore"
   description="Create and publish new blog posts."
   noindex={true}
 >
@@ -27,10 +27,10 @@ import BaseLayout from '@layouts/BaseLayout.astro';
             <div class="form-group">
               <label for="post-category">Category</label>
               <select id="post-category">
-                <option value="Home Decor">Home Decor</option>
-                <option value="Lifestyle">Lifestyle</option>
-                <option value="Wellness">Wellness</option>
-                <option value="Tech & Gadgets">Tech & Gadgets</option>
+                <option value="E-Bikes">E-Bikes</option>
+                <option value="Scooters">Scooters</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Guides">Guides</option>
               </select>
             </div>
             <div class="form-group">
@@ -42,7 +42,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
           <div class="form-row">
             <div class="form-group">
               <label for="post-author">Author</label>
-              <input type="text" id="post-author" value="Celestial Goods" />
+              <input type="text" id="post-author" value="The Electric Bike Superstore" />
             </div>
             <div class="form-group">
               <label for="post-readtime">Read Time (minutes)</label>
@@ -513,9 +513,9 @@ ${content}
       content: (document.getElementById('post-content') as HTMLTextAreaElement).value,
       saved: new Date().toISOString(),
     };
-    const drafts = JSON.parse(localStorage.getItem('celestial-drafts') || '[]');
+    const drafts = JSON.parse(localStorage.getItem('ebike-drafts') || '[]');
     drafts.push(draft);
-    localStorage.setItem('celestial-drafts', JSON.stringify(drafts));
+    localStorage.setItem('ebike-drafts', JSON.stringify(drafts));
     renderDrafts();
 
     const status = document.getElementById('status-message') as HTMLElement;
@@ -526,7 +526,7 @@ ${content}
   };
 
   function loadDraft(index: number) {
-    const drafts = JSON.parse(localStorage.getItem('celestial-drafts') || '[]');
+    const drafts = JSON.parse(localStorage.getItem('ebike-drafts') || '[]');
     const d = drafts[index];
     if (!d) return;
     (document.getElementById('post-title') as HTMLInputElement).value = d.title;
@@ -542,14 +542,14 @@ ${content}
   }
 
   function deleteDraft(index: number) {
-    const drafts = JSON.parse(localStorage.getItem('celestial-drafts') || '[]');
+    const drafts = JSON.parse(localStorage.getItem('ebike-drafts') || '[]');
     drafts.splice(index, 1);
-    localStorage.setItem('celestial-drafts', JSON.stringify(drafts));
+    localStorage.setItem('ebike-drafts', JSON.stringify(drafts));
     renderDrafts();
   }
 
   function renderDrafts() {
-    const drafts = JSON.parse(localStorage.getItem('celestial-drafts') || '[]');
+    const drafts = JSON.parse(localStorage.getItem('ebike-drafts') || '[]');
     const list = document.getElementById('drafts-list') as HTMLElement;
     if (drafts.length === 0) {
       list.innerHTML = '<p style="color: var(--color-text-muted);">No saved drafts yet.</p>';

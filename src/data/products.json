@@ -1,182 +1,519 @@
 [
   {
-    "slug": "commuter-pro-500",
-    "title": "Commuter Pro 500 — Urban Electric Bike",
-    "price": 1899.00,
-    "originalPrice": 2199.00,
-    "image": "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&q=80",
-    "category": "Commuter",
-    "badge": "sale",
+    "slug": "ebike-boys-fat-tire-electric-bike-1200w-motor-30-mph-speed",
+    "title": "eBike Boys Fat Tire Electric Bike - 1200W Motor, 30+ MPH Speed",
+    "price": 1101.99,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Scd3bd33467fa4043becc18698a4f408ff_21bc8384-e2bc-4bc5-9928-07b4419888f5.webp?v=1773797188",
+    "category": "Fat Tire",
+    "badge": null,
     "featured": true,
-    "rating": 4.8,
-    "reviews": 327,
-    "description": "The Commuter Pro 500 is the ultimate urban electric bike. With a 500W brushless motor, 50-mile range, and lightweight aluminum frame, it's built to transform your daily commute. Cruise at 20 mph with pedal-assist or twist the throttle for full electric mode.",
+    "rating": 4.7,
+    "reviews": 76,
+    "description": "SPECIFICATIONS Brand Name : NoEnName_Null Color : Black Foldable : No Frame Material : Alloy Steel Hign-concerned Chemical : None Included Components : Pump Number of Speeds : 7 Origin : US(Origin) Power Supply : Storage Battery Special ...",
     "details": [
-      "500W brushless rear hub motor",
-      "48V 14Ah lithium battery — 50 mile range",
-      "20 mph top speed with pedal assist",
-      "6061 aluminum frame — only 48 lbs",
-      "Shimano 7-speed drivetrain",
-      "Hydraulic disc brakes",
-      "Integrated LED lights & LCD display",
-      "26\" puncture-resistant tires"
+      "\u3010Powerful Motor for Versatile Riding\u3011 Equipped with a robust 1200W high-performance motor, this electric bike can rea...",
+      "\u3010Extended Range &amp; Quick Charge\u3011Experience worry-free travel with an impressive range of 30+ miles on a single cha...",
+      "\u3010Durable Design\u3011Built to last, the carbon steel frame combines classic aesthetics with modern durability, supporting ...",
+      "\u3010All-Terrain Stability &amp; Safety\u3011Ride confidently across any terrain with Double full suspension system that absor...",
+      "\u3010Easy Setup &amp; Ready to Ride\u3011Skip the hassle with a design that's 90% pre-assembled, allowing for a straightforwar..."
     ]
   },
   {
-    "slug": "trail-blazer-elite",
-    "title": "Trail Blazer Elite — Mountain E-Bike",
-    "price": 2799.00,
-    "image": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=800&q=80",
-    "category": "Mountain",
-    "badge": "new",
+    "slug": "ebike-boys-coroma-electric-scooter-foldable-adjustable-handlebar-20-mph",
+    "title": "eBike Boys COROMA Electric Scooter - Foldable, Adjustable Handlebar, 20 MPH",
+    "price": 369.99,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S51b50d431666406ebd5e5d624d367d5e6_c0bc50d5-0178-4077-af72-c369b91c30a7.webp?v=1773797168",
+    "category": "Scooters",
+    "badge": null,
     "featured": true,
-    "rating": 4.9,
-    "reviews": 198,
-    "description": "Conquer any trail with the Trail Blazer Elite. Featuring a 750W mid-drive motor, full suspension, and fat tires, this e-MTB delivers unstoppable performance. 60-mile range and advanced torque sensing give you the power and control to tackle the toughest terrain.",
+    "rating": 5.0,
+    "reviews": 410,
+    "description": "SPECIFICATIONS Applicable People : WOMEN Brand Name : CAROMA Category : Two-wheel Scooter Certification : ce Charging Time : 6-8h Foldable : YES Hign-concerned Chemical : None Model Number : SPA000247 Origin : Mainland China Power : 201-...",
     "details": [
-      "750W Bafang mid-drive motor",
-      "48V 17.5Ah battery — 60 mile range",
-      "Full suspension: RockShox front + rear",
-      "27.5\" x 2.8\" fat tires for all-terrain grip",
-      "Shimano Deore 10-speed groupset",
-      "4-piston hydraulic disc brakes",
-      "Torque sensor for natural ride feel",
-      "IP65 water-resistant rating"
+      "\u3010High Performance\u3011E22 PRO electric scooter has a rated 350W motor with 630W output, which can easily accelerate to 20...",
+      "\u3010Height Adjustable Handlebar\u3011Caroma Electric Scooter E22 PRO has an adjustable handlebar, which can be adjusted from ...",
+      "\u3010Smart Riding Experience\u3011Pair the scooter app with your phone to control the electric scooter. Select cruise control,...",
+      "\u3010Triple Lighting System\u3011Caroma electric adult scooter is UL2272 certified. Equipped with self-sensing device, the 3W ...",
+      "\u3010Portable &amp; Foldable\u3011This foldable electric scooter has a quick-release folding system, and the front bar snaps o...",
+      "\u3010Quality Assurance\u3011If you need any help, please contact us. We provide professional technical support. Different part..."
+    ],
+    "maxPrice": 377.99
+  },
+  {
+    "slug": "coroma-electric-scooter-for-women-foldable-40-60km-range",
+    "title": "COROMA Electric Scooter for Women - Foldable, 40-60km Range",
+    "price": 369.99,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S51b50d431666406ebd5e5d624d367d5e6.webp?v=1773797167",
+    "category": "Scooters",
+    "badge": null,
+    "featured": true,
+    "rating": 4.7,
+    "reviews": 135,
+    "description": "SPECIFICATIONS Applicable People : WOMEN Brand Name : CAROMA Category : Two-wheel Scooter Certification : ce Charging Time : 6-8h Foldable : YES Hign-concerned Chemical : None Model Number : SPA000247 Origin : Mainland China Power : 201-...",
+    "details": [
+      "SPECIFICATIONS Applicable People : WOMEN Brand Name : CAROMA Category : Two-wheel Scooter Certification : ce Charging Ti"
     ]
   },
   {
-    "slug": "fold-commute-x1",
-    "title": "Fold Commute X1 — Portable E-Bike",
-    "price": 1299.00,
-    "originalPrice": 1499.00,
-    "image": "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800&q=80",
+    "slug": "ebike-boys-20-fat-tire-full-suspension-e-bike-30mph-speed",
+    "title": "eBike Boys 20\" Fat Tire Full Suspension E-Bike - 30MPH Speed",
+    "price": 1101.99,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S307ba28ba4bd4c76a63d95c5002c16ad6_e4a4df89-614a-40f7-8834-1800ad4ad75d.webp?v=1773797167",
+    "category": "Fat Tire",
+    "badge": null,
+    "featured": true,
+    "rating": 4.2,
+    "reviews": 404,
+    "description": "SPECIFICATIONS Age Range (Description) : Adult Brand Name : NoEnName_Null Color : Gray Foldable : No Frame Material : Hight Carbon Steel Hign-concerned Chemical : None Included Components : Horn, Tool Kit Number of Speeds : 7 Origin : US...",
+    "details": [
+      "SPECIFICATIONS Age Range (Description) : Adult Brand Name : NoEnName_Null Color : Gray Foldable : No Frame Material : Hi"
+    ]
+  },
+  {
+    "slug": "ebike-boys-m6max-dual-motor-scooter-5600w-60v-fast-charging",
+    "title": "eBike Boys M6Max Dual Motor Scooter - 5600W, 60V, Fast Charging",
+    "price": 2031.99,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Sda5ebf3dbe25402fa8dcbf7dc5d50da4o_eb1a9dd3-485f-4d8e-aced-288e43306a91.webp?v=1773797168",
+    "category": "Scooters",
+    "badge": null,
+    "featured": true,
+    "rating": 4.6,
+    "reviews": 279,
+    "description": "SPECIFICATIONS Applicable People : Unisex Battery : 60V27AH Brand Name : NoEnName_Null Charging Time : 6-8h,6-8h Foldable : YES Gross weight : 43kg Hign-concerned Chemical : None Max load : 150 Kg Model Number : M6Max Motor power : 5600W...",
+    "details": [
+      "SPECIFICATIONS Applicable People : Unisex Battery : 60V27AH Brand Name : NoEnName_Null Charging Time : 6-8h,6-8h Foldabl"
+    ]
+  },
+  {
+    "slug": "ebike-boys-750w-motor-electric-bike-48v-battery-20-wheels",
+    "title": "eBike Boys 750W Motor Electric Bike - 48V Battery, 20\" Wheels",
+    "price": 1399.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S160a8b1f441d484ba123af10f1c343fd2_7b3a2c11-73eb-45ba-8293-a6e94f23d66c.webp?v=1773797167",
+    "category": "eBike Boys",
+    "badge": null,
+    "featured": true,
+    "rating": 4.2,
+    "reviews": 369,
+    "description": "SPECIFICATIONS Brand Name : NoEnName_Null Foldable : No Frame Material : Aluminum Alloy Hign-concerned Chemical : None Model Number : 53800287 Origin : US(Origin) Power Supply : lithium battery Rated Passenger Capacity : One Seat Voltage...",
+    "details": [
+      "SPECIFICATIONS Brand Name : NoEnName_Null Foldable : No Frame Material : Aluminum Alloy Hign-concerned Chemical : None M"
+    ]
+  },
+  {
+    "slug": "terrosor-715w-peak-folding-electric-bicycle-max-speed-50km-h",
+    "title": "Terrosor 715W Peak Folding Electric Bicycle - Max Speed 50km/h",
+    "price": 936.99,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Se209eb9828ad45df9dcb13b0cab07915Z.webp?v=1773797168",
     "category": "Folding",
-    "badge": "sale",
+    "badge": null,
     "featured": true,
-    "rating": 4.6,
-    "reviews": 412,
-    "description": "The Fold Commute X1 folds in 15 seconds and fits under your desk, in a car trunk, or on public transit. Don't let its size fool you — the 350W motor delivers a peppy 18 mph, and the 35-mile range makes it a true car replacement for city dwellers.",
+    "rating": 4.2,
+    "reviews": 309,
+    "description": "SPECIFICATIONS Brand Name : Terrosor Max Speed : 30-50km/h Model Number : W3 Origin : Mainland China Power Supply : lithium battery Range per Power : 31 - 60 km Voltage : 36V Wheel Size : 1",
     "details": [
-      "350W geared hub motor",
-      "36V 10.4Ah battery — 35 mile range",
-      "Folds to 28\" x 22\" x 14\" in 15 seconds",
-      "Only 39 lbs — carry it anywhere",
-      "18 mph top speed",
-      "20\" wheels with wide comfort tires",
-      "Front suspension fork",
-      "Includes carrying bag and fenders"
+      "Premium eBike Boys electric ride",
+      "Powerful motor for versatile riding",
+      "Durable construction built to last",
+      "All-terrain stability and safety",
+      "Price: $936.99",
+      "Available now at The Electric Bike Superstore"
     ]
   },
   {
-    "slug": "cargo-hauler-pro",
-    "title": "Cargo Hauler Pro — Family Electric Cargo Bike",
-    "price": 3299.00,
-    "image": "https://images.unsplash.com/photo-1559348349-86f1f65817fe?w=800&q=80",
-    "category": "Cargo",
-    "badge": "new",
+    "slug": "high-quality-ebike-with-52v-750w-motor-17ah-long-range",
+    "title": "High-Quality eBike with 52V 750W Motor - 17AH Long Range",
+    "price": 2923.99,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Se065c78aa51d4ae0a86b15c6b99c5e53G.webp?v=1773797167",
+    "category": "eBike Boys",
+    "badge": null,
+    "featured": true,
+    "rating": 4.2,
+    "reviews": 74,
+    "description": "SPECIFICATIONS Battery : 17AH LG high-quality battery cell 18650 Material : Aluminum alloy 6061 Max Speed : 30-50km/h Model Number : Z20 Motor power : 52V 750W Origin : Mainland China Power Supply : lithium battery Range : 80-100km Range...",
+    "details": [
+      "SPECIFICATIONS Battery : 17AH LG high-quality battery cell 18650 Material : Aluminum alloy 6061 Max Speed : 30-50km/h Mo"
+    ]
+  },
+  {
+    "slug": "ebike-boys-715w-peak-folding-electric-bicycle-fast-powerful-ride",
+    "title": "eBike Boys 715W Peak Folding Electric Bicycle - Fast & Powerful Ride",
+    "price": 543.99,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Se209eb9828ad45df9dcb13b0cab07915Z_08c6ac8f-7c28-40ef-84a1-bec6a942bf78.webp?v=1773797168",
+    "category": "Folding",
+    "badge": null,
+    "featured": true,
+    "rating": 4.4,
+    "reviews": 232,
+    "description": "SPECIFICATIONS Brand Name : Terrosor Max Speed : 30-50km/h Model Number : W3 Origin : Mainland China Power Supply : lithium battery Range per Power : 31 - 60 km Voltage : 36V Wheel Size : 1 Maximum load: 330 pounds Speed limit: 15.5 mile...",
+    "details": [
+      "SPECIFICATIONS Brand Name : Terrosor Max Speed : 30-50km/h Model Number : W3 Origin : Mainland China Power Supply : lith"
+    ]
+  },
+  {
+    "slug": "ebike-boys-1200w-peak-electric-bike-powerful-20-inch-motor",
+    "title": "eBike Boys 1200W Peak Electric Bike - Powerful 20-Inch Motor",
+    "price": 1197.99,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S2172a3aafa54458f9d6b2b51f262e649n.webp?v=1773797166",
+    "category": "eBike Boys",
+    "badge": null,
     "featured": true,
     "rating": 4.7,
-    "reviews": 89,
-    "description": "Haul groceries, kids, or gear with ease. The Cargo Hauler Pro features an extended rear rack rated for 400 lbs, a powerful 750W motor, and dual-battery capability for up to 80 miles of range. The ultimate car replacement for families.",
+    "reviews": 289,
+    "description": "SPECIFICATIONS Brand Name : NoEnName_Null Foldable : No Frame Material : Carbon Steel Hign-concerned Chemical : None Origin : Mainland China Power Supply : lithium battery Voltage : 48V Wattage : &gt; 500w Wheel Size : 20 Inches",
     "details": [
-      "750W geared hub motor — 28 mph",
-      "Dual battery ready: up to 80 mile range",
-      "400 lb payload capacity (rider + cargo)",
-      "Heavy-duty chromoly steel frame",
-      "Extended rear rack with passenger kit",
-      "Hydraulic disc brakes with 203mm rotors",
-      "24\" x 2.4\" heavy-duty tires",
-      "Integrated front basket and running boards"
+      "Premium eBike Boys electric ride",
+      "Powerful motor for versatile riding",
+      "Durable construction built to last",
+      "All-terrain stability and safety",
+      "Price: $1,197.99",
+      "Available now at The Electric Bike Superstore"
     ]
   },
   {
-    "slug": "speedster-sport",
-    "title": "Speedster Sport — Performance Road E-Bike",
-    "price": 2499.00,
-    "image": "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=800&q=80",
-    "category": "Commuter",
-    "badge": "new",
+    "slug": "ebike-boys-20-fat-tire-e-bike-full-suspension-for-all-terrain-use",
+    "title": "eBike Boys 20\" Fat Tire E-Bike - Full Suspension for All-Terrain Use",
+    "price": 1056.99,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S307ba28ba4bd4c76a63d95c5002c16ad6.webp?v=1773797166",
+    "category": "Fat Tire",
+    "badge": null,
+    "featured": true,
+    "rating": 4.7,
+    "reviews": 98,
+    "description": "SPECIFICATIONS Age Range (Description) : Adult Brand Name : NoEnName_Null Color : Gray Foldable : No Frame Material : Hight Carbon Steel Hign-concerned Chemical : None Included Components : Horn, Tool Kit Number of Speeds : 7 Origin : US...",
+    "details": [
+      "SPECIFICATIONS Age Range (Description) : Adult Brand Name : NoEnName_Null Color : Gray Foldable : No Frame Material : Hi"
+    ]
+  },
+  {
+    "slug": "ebike-boys-750w-electric-bike-48v-13ah-lithium-battery-aluminum-frame",
+    "title": "eBike Boys 750W Electric Bike - 48V 13Ah Lithium Battery, Aluminum Frame",
+    "price": 2873.99,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S160a8b1f441d484ba123af10f1c343fd2.webp?v=1773797166",
+    "category": "eBike Boys",
+    "badge": null,
+    "featured": true,
+    "rating": 4.8,
+    "reviews": 177,
+    "description": "SPECIFICATIONS Brand Name : NoEnName_Null Foldable : No Frame Material : Aluminum Alloy Hign-concerned Chemical : None Model Number : 53800287 Origin : US(Origin) Power Supply : lithium battery Rated Passenger Capacity : One Seat Voltage...",
+    "details": [
+      "SPECIFICATIONS Brand Name : NoEnName_Null Foldable : No Frame Material : Aluminum Alloy Hign-concerned Chemical : None M"
+    ]
+  },
+  {
+    "slug": "ebike-boys-1200w-peak-electric-bike-30mph-fat-tires-ipx6-waterproof",
+    "title": "eBike Boys 1200W Peak Electric Bike - 30MPH, Fat Tires, IPX6 Waterproof",
+    "price": 1200.99,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S2172a3aafa54458f9d6b2b51f262e649n_3b8c181e-bfa1-4e4a-b159-c6c4b60c3984.webp?v=1773797167",
+    "category": "Fat Tire",
+    "badge": null,
     "featured": false,
-    "rating": 4.5,
-    "reviews": 156,
-    "description": "For riders who want speed and style. The Speedster Sport combines road bike agility with a 500W motor for effortless cruising at 28 mph. The hidden battery design keeps the sleek look while delivering a 45-mile range.",
+    "rating": 4.2,
+    "reviews": 272,
+    "description": "SPECIFICATIONS Brand Name : NoEnName_Null Foldable : No Frame Material : Carbon Steel Hign-concerned Chemical : None Origin : Mainland China Power Supply : lithium battery Voltage : 48V Wattage : &gt; 500w Wheel Size : 20 Inches About th...",
     "details": [
-      "500W ultra-quiet rear hub motor",
-      "Integrated 48V 14Ah downtube battery",
-      "28 mph Class 3 pedal assist",
-      "Carbon belt drive — zero maintenance",
-      "Shimano Alfine 8-speed internal hub",
-      "Hydraulic disc brakes",
-      "700c x 38mm road tires",
-      "Weighs only 42 lbs"
+      "[Powerful Brushless Motor &amp; 30MPH Max Speed]- RetroVolt ebikes for adults is equipped with a 750W high-speed brus...",
+      "[Carefree Travel]- The 48V/13AH removable battery with IPX6 waterproof offers up to 70 miles of travel (PAS mode) on ...",
+      "[Safety &amp; Stability for Exceptional Riding Experience]-The full front &amp; rear suspension system of this fat ti...",
+      "[Retro Electric Bicycle Style &amp; Durable Reliable Materials]-RetroVolt adult electric bike is adopt of high-qualit...",
+      "[Hassle-free Assembly &amp; LCD Display &amp; Bright Headlight Taillights]-Our adult electric bicycle is equipped wit..."
     ]
   },
   {
-    "slug": "fat-tire-explorer",
-    "title": "Fat Tire Explorer — All-Terrain E-Bike",
-    "price": 1999.00,
-    "originalPrice": 2399.00,
-    "image": "https://images.unsplash.com/photo-1557032589-82a4e5e9e8ad?w=800&q=80",
+    "slug": "ebike-boys-1200w-lithium-electric-bike-48v-20-wheel-fast-speed",
+    "title": "eBike Boys 1200W Lithium Electric Bike - 48V, 20\" Wheel, Fast Speed",
+    "price": 2293.99,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S5aa511eff4f341dca8b56750b8fd28e8R_6c887236-e402-48e3-b76e-cd019ac3fc3e.webp?v=1773797167",
+    "category": "eBike Boys",
+    "badge": null,
+    "featured": false,
+    "rating": 5.0,
+    "reviews": 234,
+    "description": "SPECIFICATIONS Brand Name : HEZZO Max Speed : &gt;50km/h Model Number : ZM21 Origin : Mainland China Power Supply : lithium battery Range per Power : 31 - 60 km Voltage : 48V Wheel Size : 20\u201c 1. Headlights, electric motorcycle 2. Motor: ...",
+    "details": [
+      "SPECIFICATIONS Brand Name : HEZZO Max Speed : &gt;50km/h Model Number : ZM21 Origin : Mainland China Power Supply : lith",
+      "Headlights, electric motorcycle 2."
+    ]
+  },
+  {
+    "slug": "deepower-s7pro-off-road-electric-bike",
+    "title": "DEEPOWER S7Pro Off-Road Electric Bike",
+    "price": 1246.98,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Sde3fda6fca5f43a382673e802e637d44j_jpg_220x220q75_jpg.jpg?v=1773797166",
     "category": "Mountain",
-    "badge": "sale",
+    "badge": null,
     "featured": false,
-    "rating": 4.7,
-    "reviews": 278,
-    "description": "Sand, snow, trails, or pavement — the Fat Tire Explorer handles it all. With massive 4\" tires, a 750W motor, and full suspension, there's no terrain too extreme. 55-mile range for all-day adventures.",
+    "rating": 4.2,
+    "reviews": 129,
+    "description": "Whether for leisure or work S7Pro can bring you convenience and joy Big battery 48V60AH / Auxiliary range 220KM / Motor power 1500W 48V60AH LG Battery 48V60AH large capacity, auxiliary mode 200KM, electric mode 160KM. This battery can sa...",
     "details": [
-      "750W Bafang hub motor",
-      "48V 16Ah battery — 55 mile range",
-      "4\" wide fat tires for any surface",
-      "Front suspension fork with 120mm travel",
-      "26\" alloy rims",
-      "Tektro mechanical disc brakes",
-      "Twist throttle + pedal assist",
-      "Integrated headlight & taillight"
+      "Whether for leisure or work S7Pro can bring you convenience and joy Big battery 48V60AH / Auxiliary range 220KM / Motor ",
+      "This battery can sa."
     ]
   },
   {
-    "slug": "premium-helmet",
-    "title": "Smart Helmet with LED Turn Signals",
-    "price": 149.00,
-    "image": "https://images.unsplash.com/photo-1557806141-08dcce615639?w=800&q=80",
-    "category": "Accessories",
-    "badge": "new",
+    "slug": "hezzo-1200w-electric-bike-48v-lithium-battery-over-50km-h-speed",
+    "title": "HEZZO 1200W Electric Bike - 48V Lithium Battery, Over 50km/h Speed",
+    "price": 4097.99,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S5aa511eff4f341dca8b56750b8fd28e8R.webp?v=1773797168",
+    "category": "eBike Boys",
+    "badge": null,
+    "featured": false,
+    "rating": 4.2,
+    "reviews": 204,
+    "description": "SPECIFICATIONS Brand Name : HEZZO Max Speed : &gt;50km/h Model Number : ZM21 Origin : Mainland China Power Supply : lithium battery Range per Power : 31 - 60 km Voltage : 48V Wheel Size : 20\u201c",
+    "details": [
+      "Premium eBike Boys electric ride",
+      "Powerful motor for versatile riding",
+      "Durable construction built to last",
+      "All-terrain stability and safety",
+      "Price: $4,097.99",
+      "Available now at The Electric Bike Superstore"
+    ]
+  },
+  {
+    "slug": "aniioki-a9-pro-max-60v-dual-motor-ebike",
+    "title": "Aniioki A9 Pro Max 60V Dual Motor eBike",
+    "price": 3799.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Aniioki_a9_awd_25_15_Black_d96624aa-3493-43d1-b7bb-c5aaeee27aa9.webp?v=1773797008",
+    "category": "Rex E-Bikes",
+    "badge": "sale",
+    "featured": false,
+    "rating": 4.2,
+    "reviews": 291,
+    "description": "The A9 Pro Max Dual Motor is built for tall outdoor enthusiasts looking for thrills and speed. With seven core technologies, including direct-drive motors, ultra-safe batteries, CBS brakes and multimedia features color display, we've ele...",
+    "details": [
+      "The A9 Pro Max Dual Motor is built for tall outdoor enthusiasts looking for thrills and speed.",
+      "With seven core technologies, including direct-drive motors, ultra-safe batteries, CBS brakes and multimedia features co"
+    ],
+    "originalPrice": 4499.0
+  },
+  {
+    "slug": "eahora-romeo-ii",
+    "title": "Eahora Romeo II",
+    "price": 2299.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/romeoii_upgraded_front_fork_8023c826-83fc-41dc-bede-55ab7712ee23.webp?v=1773797008",
+    "category": "Rex E-Bikes",
+    "badge": null,
+    "featured": false,
+    "rating": 4.7,
+    "reviews": 236,
+    "description": "Don't be fooled by this small bike's size. It has more more power in each wheel than many diminutive bikes have in total. It will take you there and back. Embracing the new riding trend, Eahora Romeo II uses the dual-wheel-drive system a...",
+    "details": [
+      "Don't be fooled by this small bike's size.",
+      "It has more more power in each wheel than many diminutive bikes have in total.",
+      "It will take you there and back.",
+      "Embracing the new riding trend, Eahora Romeo II uses the dual-wheel-drive system a."
+    ]
+  },
+  {
+    "slug": "rawrr-mantix-x-pro",
+    "title": "RawRR Mantix X Pro",
+    "price": 4399.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Rawrr_xpro3.webp?v=1773797007",
+    "category": "Rex E-Bikes",
+    "badge": null,
+    "featured": false,
+    "rating": 4.7,
+    "reviews": 129,
+    "description": "Pro-Level Performance. No Pretending. The Mantis X Pro is a new class of electric dirt bike. Designed for riders who demand real speed, real control, and real tech, the X Pro delivers race-ready performance with everyday rideability.",
+    "details": [
+      "Pro-Level Performance.",
+      "The Mantis X Pro is a new class of electric dirt bike.",
+      "Designed for riders who demand real speed, real control, and real tech, the X Pro delivers race-ready performance with e"
+    ]
+  },
+  {
+    "slug": "rawrr-mini",
+    "title": "Rawrr Mini",
+    "price": 2899.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/MiniRDefault.webp?v=1773797007",
+    "category": "Rex E-Bikes",
+    "badge": null,
+    "featured": false,
+    "rating": 4.2,
+    "reviews": 140,
+    "description": "Dual Fit Choose the perfect fit with the Mantis Mini R and Mantis Mini R17, designed for different rider heights and riding needs. Powered by a 72V battery and 6000W PMSM motor , this beast launches from 0-30MPH in just 3.6s . Topping ou...",
+    "details": [
+      "Dual Fit Choose the perfect fit with the Mantis Mini R and Mantis Mini R17, designed for different rider heights and rid",
+      "Powered by a 72V battery and 6000W PMSM motor , this beast launches from 0-30MPH in just 3."
+    ],
+    "maxPrice": 2999.0
+  },
+  {
+    "slug": "eahora-romeo-ultra",
+    "title": "Eahora Romeo Ultra",
+    "price": 2599.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/eahora_romeo_Ultra_electric_bike_black_2_ca6b1156-c5ca-4629-b6d3-920120b28840.webp?v=1773797008",
+    "category": "Rex E-Bikes",
+    "badge": "sale",
+    "featured": false,
+    "rating": 4.6,
+    "reviews": 411,
+    "description": "The Eahora Romeo Ultra 2025 introduces a groundbreaking 60V motor system, designed to deliver an unparalleled riding experience for skilled adventurers. Join Eahora in transforming every journey into an extraordinary adventure with cutti...",
+    "details": [
+      "The Eahora Romeo Ultra 2025 introduces a groundbreaking 60V motor system, designed to deliver an unparalleled riding exp",
+      "Join Eahora in transforming every journey into an extraordinary adventure with cutti."
+    ],
+    "originalPrice": 2999.0
+  },
+  {
+    "slug": "ubco-2x2-special-edition-1",
+    "title": "UBCO 2X2 Special Edition",
+    "price": 6999.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_SE_Front_800x_30897c7f-07a1-4b3b-b64f-e28a3c575a7b.jpg?v=1773797007",
+    "category": "Rex E-Bikes",
+    "badge": null,
+    "featured": false,
+    "rating": 4.2,
+    "reviews": 374,
+    "description": "https://ubco.com/collections/electric-bikes/products/2x2-special-edition-incl-3-1kw-battery",
+    "details": [
+      "Premium Rex E-Bikes electric ride",
+      "Powerful motor for versatile riding",
+      "Durable construction built to last",
+      "All-terrain stability and safety",
+      "Price: $6,999.00",
+      "Available now at The Electric Bike Superstore"
+    ]
+  },
+  {
+    "slug": "2x2-adventure-bike-black",
+    "title": "2x2 Adventure Bike - Black",
+    "price": 5499.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_ADV_Black-Front3_4_1200x_d0a77142-feab-495b-a436-091510b6d5ff.png?v=1773797007",
+    "category": "Rex E-Bikes",
+    "badge": null,
+    "featured": false,
+    "rating": 4.2,
+    "reviews": 280,
+    "description": "https://ubco.com/products/2x2-adventure-bike-black?srsltid=AfmBOorDTRl-HYSC1iJU7gP3pl-J0Yhyh5r-muL17UtmzMDHFq2LuZPW",
+    "details": [
+      "com/products/2x2-adventure-bike-black?"
+    ]
+  },
+  {
+    "slug": "eahora-knight-m1ps-black",
+    "title": "Eahora Knight M1PS - Black",
+    "price": 4980.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Eahora_M1PS_Basic.webp?v=1773797006",
+    "category": "Rex E-Bikes",
+    "badge": null,
+    "featured": false,
+    "rating": 5.0,
+    "reviews": 423,
+    "description": "M1PS Chopper with rear seat transforms solo rides into shared journeys. Crafted as a modern heir to those precious rear seat moments, where yesterday's child passenger becomes today's guide, passing forward the thrill of open roads and t...",
+    "details": [
+      "M1PS Chopper with rear seat transforms solo rides into shared journeys.",
+      "Crafted as a modern heir to those precious rear seat moments, where yesterday's child passenger becomes today's guide, p"
+    ],
+    "maxPrice": 5140.0
+  },
+  {
+    "slug": "quietkat-apex-hd",
+    "title": "QuietKat Apex HD",
+    "price": 2799.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/QuietKat_HD_Grey_098_1024x1024_ed1a10c2-4b32-4b25-b9b6-58c0b3dcb653.webp?v=1773796933",
+    "category": "Rex E-Bikes",
+    "badge": null,
     "featured": false,
     "rating": 4.8,
-    "reviews": 503,
-    "description": "Ride safer and smarter. This premium helmet features integrated LED turn signals controlled by a wireless handlebar remote, MIPS protection, and a magnetic visor. USB-C rechargeable with 10-hour battery life.",
+    "reviews": 355,
+    "description": "Discover The Future The Apex HD &amp; XD revolutionize off road eBikes with upgrades across the board. New internally geared \"automatic\" transmissions enable us to get rid of the derailleur and upgrade the chain, delivering more power to...",
     "details": [
-      "MIPS brain protection system",
-      "Wireless LED turn signals & brake light",
-      "Handlebar-mounted remote control",
-      "USB-C rechargeable — 10 hour battery",
-      "Magnetic Fidlock buckle",
-      "16 ventilation channels",
-      "Adjustable fit with dial system",
-      "CPSC & EN 1078 certified"
+      "Discover The Future The Apex HD &amp; XD revolutionize off road eBikes with upgrades across the board.",
+      "New internally geared \"automatic\" transmissions enable us to get rid of the derailleur and upgrade the chain, delivering"
+    ],
+    "maxPrice": 2999.0
+  },
+  {
+    "slug": "quietkat-apex-xd",
+    "title": "QuietKat Apex XD",
+    "price": 3799.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/QuietKat_HD_Grey_098_1024x1024_64a64c05-1e35-4ae5-b2e9-7a48a0c69436.webp?v=1773796934",
+    "category": "Rex E-Bikes",
+    "badge": null,
+    "featured": false,
+    "rating": 4.4,
+    "reviews": 324,
+    "description": "Discover The Future A New Apex And A Whole New Animal Unlock next level backcountry freedom with the Apex XD and the first ever 5 speed internally geared mid-drive motor",
+    "details": [
+      "Premium Rex E-Bikes electric ride",
+      "Powerful motor for versatile riding",
+      "Durable construction built to last",
+      "All-terrain stability and safety",
+      "Price: From $3,799.00 - $ 3,999.00",
+      "Available now at The Electric Bike Superstore"
+    ],
+    "maxPrice": 3999.0
+  },
+  {
+    "slug": "eahora-romeo-ultra-ii",
+    "title": "Eahora Romeo Ultra II",
+    "price": 3599.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/eahora_romeo_Ultra_II_electric_bike_black_2.webp?v=1773796933",
+    "category": "Rex E-Bikes",
+    "badge": "sale",
+    "featured": false,
+    "rating": 5.0,
+    "reviews": 149,
+    "description": "Eahora Romeo Ultra II features a 60V dual-motor system and an 80Ah high-capacity battery, delivering exceptional speed and endurance for adventure riding. This setup ensures a thrilling, long-lasting experience, making it ideal for enthu...",
+    "details": [
+      "Eahora Romeo Ultra II features a 60V dual-motor system and an 80Ah high-capacity battery, delivering exceptional speed a",
+      "This setup ensures a thrilling, long-lasting experience, making it ideal for enthu."
+    ],
+    "originalPrice": 3999.0
+  },
+  {
+    "slug": "ubco-hunt-2x2",
+    "title": "UBCO Hunt 2X2",
+    "price": 6499.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_HE_Top34_2000x_2b1d5ff5-157d-47a4-9a9f-18e831aeb9aa.webp?v=1773796934",
+    "category": "Rex E-Bikes",
+    "badge": null,
+    "featured": false,
+    "rating": 4.2,
+    "reviews": 419,
+    "description": "We\u2019ve taken the ultimate utility vehicle and retrofitted it to the exact specifications of hunters. The 2X2 Hunt Edition is an all-wheel drive electric motorbike designed for the hunt and built for the wild. We worked closely with hunter...",
+    "details": [
+      "We\u2019ve taken the ultimate utility vehicle and retrofitted it to the exact specifications of hunters.",
+      "The 2X2 Hunt Edition is an all-wheel drive electric motorbike designed for the hunt and built for the wild.",
+      "We worked closely with hunter."
     ]
   },
   {
-    "slug": "e-bike-security-bundle",
-    "title": "E-Bike Security Bundle",
-    "price": 89.00,
-    "originalPrice": 110.00,
-    "image": "https://images.unsplash.com/photo-1594120491678-750a5e64f0b3?w=800&q=80",
-    "category": "Accessories",
-    "badge": "sale",
+    "slug": "ubco-2x2-special-edition",
+    "title": "UBCO 2X2 Special Edition",
+    "price": 6999.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_SE_Front3_4_2000x_ff1cb602-95f1-4bf8-b7b3-15169ae5abd7.webp?v=1773796933",
+    "category": "Rex E-Bikes",
+    "badge": null,
+    "featured": false,
+    "rating": 4.2,
+    "reviews": 374,
+    "description": "Introducing the 2023 Special Edition. Accessorized and ready to go, whether you\u2019re running essential errands or heading out into the wild. The Special Edition reflects your adventurous life. TWIST AND GO No clutch, no gears, no emissions...",
+    "details": [
+      "Introducing the 2023 Special Edition.",
+      "Accessorized and ready to go, whether you\u2019re running essential errands or heading out into the wild.",
+      "The Special Edition reflects your adventurous life.",
+      "TWIST AND GO No clutch, no gears, no emissions."
+    ]
+  },
+  {
+    "slug": "ubco-work-bike",
+    "title": "UBCO Work Bike",
+    "price": 3999.0,
+    "image": "https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_WORK_Black-RHS_98718b74-1d71-4f23-a5b9-2a832ea10a82.webp?v=1773796932",
+    "category": "Rex E-Bikes",
+    "badge": null,
     "featured": false,
     "rating": 4.6,
-    "reviews": 634,
-    "description": "Protect your investment. This bundle includes a heavy-duty folding lock (sold secure silver rated), a motion-sensing 120dB disc brake alarm, and a concealed GPS tracker with 30-day battery life.",
+    "reviews": 294,
+    "description": "Designed tough and built for hard work and adventure. With all-wheel drive traction the 2X2 Work Bike can handle the hills, the mud, and the daily grind without disturbing the sounds of nature. Carry your tools, your equipment, or your t...",
     "details": [
-      "Premium folding lock — Sold Secure Silver rated",
-      "120dB motion-sensing disc brake alarm",
-      "GPS tracker — 4G + Bluetooth (SIM included)",
-      "30-day GPS tracker battery life",
-      "Lock weighs only 2.5 lbs",
-      "Includes 3 keys + mounting bracket",
-      "GPS app for iOS & Android",
-      "Weatherproof IP65 construction"
-    ]
+      "Designed tough and built for hard work and adventure.",
+      "With all-wheel drive traction the 2X2 Work Bike can handle the hills, the mud, and the daily grind without disturbing th",
+      "Carry your tools, your equipment, or your t."
+    ],
+    "maxPrice": 4999.0
   }
 ]

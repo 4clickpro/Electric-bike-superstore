@@ -1,4 +1,6 @@
 // Sitemap generation for SEO
+import productsData from '@data/products.json';
+
 export async function GET() {
   const siteUrl = 'https://theelectricbikesuperstore.com';
   
@@ -12,6 +14,39 @@ export async function GET() {
   ];
 
   const blogPosts = [
+    'shop-ebike-boys-fat-tire-1200w',
+    'shop-ebike-boys-20-fat-tire-full-suspension',
+    'shop-ebike-boys-750w-48v-20in',
+    'shop-terrosor-715w-folding',
+    'shop-ebike-boys-715w-folding',
+    'shop-ebike-boys-1200w-peak-20in',
+    'shop-ebike-boys-20-fat-tire-all-terrain',
+    'shop-ebike-boys-750w-48v-13ah',
+    'shop-ebike-boys-1200w-peak-fat-tire',
+    'shop-ebike-boys-1200w-lithium-48v',
+    'shop-deepower-s7pro',
+    'shop-hezzo-1200w',
+    'shop-high-quality-52v-750w',
+    'shop-aniioki-a9-pro-max',
+    'shop-eahora-romeo-ii',
+    'shop-rawrr-mantix-x-pro',
+    'shop-rawrr-mini',
+    'shop-eahora-romeo-ultra',
+    'shop-ubco-2x2-special-edition',
+    'shop-2x2-adventure-bike',
+    'shop-eahora-knight-m1ps',
+    'shop-quietkat-apex-hd',
+    'shop-quietkat-apex-xd',
+    'shop-eahora-romeo-ultra-ii',
+    'shop-ubco-hunt-2x2',
+    'shop-ubco-2x2-se',
+    'shop-ubco-work-bike',
+    'shop-ebike-boys-coroma-scooter',
+    'shop-coroma-scooter-women',
+    'shop-ebike-boys-m6max-scooter',
+    'how-to-choose-your-first-electric-bike',
+    'ebike-commuting-save-time-money',
+    'ebike-maintenance-checklist',
     'transform-your-home-with-biophilic-design',
     'morning-rituals-for-a-mindful-day',
     'the-art-of-curated-minimalism',
@@ -23,16 +58,7 @@ export async function GET() {
     'the-perfect-home-office-setup',
   ];
 
-  const productPages = [
-    'celestial-diffuser',
-    'handwoven-throw-blanket',
-    'mindfulness-journal',
-    'ceramic-tea-set',
-    'sustainable-linen-bedding',
-    'desk-zen-garden',
-    'smart-mood-lamp',
-    'organic-skincare-set',
-  ];
+  const productPages = (productsData as Array<{ slug: string }>).map(p => p.slug);
 
   const urls = [
     ...staticPages.map(page => ({

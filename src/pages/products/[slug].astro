@@ -20,7 +20,7 @@ if (!product) {
 
 const hasDiscount = product.originalPrice && product.originalPrice > product.price;
 const discountPercent = hasDiscount ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100) : 0;
-const siteUrl = Astro.site?.toString() || 'https://celestial-goods.com';
+const siteUrl = Astro.site?.toString() || 'https://theelectricbikesuperstore.com';
 const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 
 // Breadcrumb structured data
@@ -415,14 +415,14 @@ const relatedProducts = productsData
   // Add to cart
   document.getElementById('add-to-cart-main')?.addEventListener('click', function(this: HTMLElement) {
     const product = JSON.parse(this.dataset.product || '{}');
-    const cart = JSON.parse(localStorage.getItem('celestial-cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('ebike-cart') || '[]');
     const existing = cart.find((item: any) => item.slug === product.slug);
     if (existing) {
       existing.quantity += qty;
     } else {
       cart.push({ ...product, quantity: qty });
     }
-    localStorage.setItem('celestial-cart', JSON.stringify(cart));
+    localStorage.setItem('ebike-cart', JSON.stringify(cart));
     // Dispatch custom event for same-tab cart updates
     window.dispatchEvent(new CustomEvent('cart-updated'));
 

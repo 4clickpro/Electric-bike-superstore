@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
-  title="Shopping Cart — Celestial Goods"
+  title="Shopping Cart — The Electric Bike Superstore"
   description="Review your cart, adjust quantities, and proceed to checkout."
   noindex={true}
 >
@@ -236,7 +236,7 @@ const base = import.meta.env.BASE_URL;
 
 <script>
   function renderCart() {
-    const cart: any[] = JSON.parse(localStorage.getItem('celestial-cart') || '[]');
+    const cart: any[] = JSON.parse(localStorage.getItem('ebike-cart') || '[]');
     const empty = document.getElementById('cart-empty');
     const content = document.getElementById('cart-content');
     const items = document.getElementById('cart-items');
@@ -279,18 +279,18 @@ const base = import.meta.env.BASE_URL;
   }
 
   (window as any).updateQty = function(index: number, delta: number) {
-    const cart: any[] = JSON.parse(localStorage.getItem('celestial-cart') || '[]');
+    const cart: any[] = JSON.parse(localStorage.getItem('ebike-cart') || '[]');
     cart[index].quantity += delta;
     if (cart[index].quantity <= 0) cart.splice(index, 1);
-    localStorage.setItem('celestial-cart', JSON.stringify(cart));
+    localStorage.setItem('ebike-cart', JSON.stringify(cart));
     window.dispatchEvent(new Event('storage'));
     renderCart();
   };
 
   (window as any).removeItem = function(index: number) {
-    const cart: any[] = JSON.parse(localStorage.getItem('celestial-cart') || '[]');
+    const cart: any[] = JSON.parse(localStorage.getItem('ebike-cart') || '[]');
     cart.splice(index, 1);
-    localStorage.setItem('celestial-cart', JSON.stringify(cart));
+    localStorage.setItem('ebike-cart', JSON.stringify(cart));
     window.dispatchEvent(new CustomEvent('cart-updated'));
     renderCart();
   };
