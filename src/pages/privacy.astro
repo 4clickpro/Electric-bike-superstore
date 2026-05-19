@@ -6,6 +6,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
   title="Privacy Policy | The Electric Bike Superstore"
   description="The Electric Bike Superstore privacy policy — how we collect, use, and protect your data."
   type="website"
+  canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
 >
   <section class="section-sm">
     <div class="container" style="max-width: 750px;">

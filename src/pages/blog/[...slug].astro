@@ -1,11 +1,17 @@
 ---
 // Blog Post — dynamic route for all blog posts
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
 
 const base = import.meta.env.BASE_URL;
 
 export async function getStaticPaths() {
+  // Add content collection posts to static paths
+  const contentPosts = await getCollection('blog');
+  const contentPaths = contentPosts.map(p => ({ params: { slug: p.data.slug } }));
   return [
+    // ── Auto-generated content collection posts ──
+    ...contentPaths,
     // ── Product Blog Posts (27 real e-bikes from Shopify) ──
     { params: { slug: 'shop-ebike-boys-fat-tire-1200w' } },
     { params: { slug: 'shop-ebike-boys-20-fat-tire-full-suspension' } },
@@ -634,7 +640,28 @@ const posts: Record<string, any> = {
   },
 };
 
-const post = posts[slug as string];
+let post = posts[slug as string];
+
+// If not in hardcoded posts, check content collection
+if (!post) {
+  const contentPost = contentPosts.find(p => p.data.slug === slug);
+  if (contentPost) {
+    const d = contentPost.data;
+    const rendered = await contentPost.render();
+    post = {
+      title: d.title,
+      description: d.description,
+      image: d.image || 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1200&q=80',
+      category: d.category,
+      date: d.date,
+      author: d.author,
+      readTime: '5',
+      tags: d.tags,
+      isContentPost: true,
+      renderedContent: rendered.html,
+    };
+  }
+}
 
 if (!post) {
   return Astro.redirect(`${base}blog`);
@@ -678,7 +705,11 @@ const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
       </div>
 
       <!-- Article Content -->
-      <div class="article-content" set:html={post.content} />
+      {post.isContentPost ? (
+        <div class="article-content" set:html={post.renderedContent} />
+      ) : (
+        <div class="article-content" set:html={post.content} />
+      )}
 
       <!-- Tags -->
       <div class="article-tags">

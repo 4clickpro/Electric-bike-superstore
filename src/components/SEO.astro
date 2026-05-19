@@ -117,8 +117,17 @@ if (type === 'article') {
 <meta property="og:image" content={fullImage} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={fullTitle} />
 <meta property="og:url" content={canonical} />
 <meta property="og:locale" content="en_US" />
+{type === 'article' && modifiedTime && <meta property="og:updated_time" content={modifiedTime} />}
+{type === 'article' && <meta property="article:section" content={tags.length > 0 ? tags[0] : 'General'} />}
+{type === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+{type === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+{type === 'product' && price && <meta property="product:price:amount" content={price} />}
+{type === 'product' && <meta property="product:price:currency" content={currency} />}
+{type === 'product' && availability && <meta property="product:availability" content={availability} />}
+{type === 'product' && <meta property="product:condition" content="https://schema.org/NewCondition" />}
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -128,6 +137,10 @@ if (type === 'article') {
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={fullImage} />
 <meta name="twitter:image:alt" content={title} />
+{type === 'product' && price && <meta name="twitter:label1" content="Price" />}
+{type === 'product' && price && <meta name="twitter:data1" content={`${currency} ${price}`} />}
+{type === 'product' && availability && <meta name="twitter:label2" content="Availability" />}
+{type === 'product' && availability && <meta name="twitter:data2" content={availability === 'https://schema.org/InStock' ? 'In Stock' : availability === 'https://schema.org/OutOfStock' ? 'Out of Stock' : 'Available'} />}
 
 <!-- Additional SEO -->
 <meta name="theme-color" content="#0a0a0f" />
@@ -135,6 +148,10 @@ if (type === 'article') {
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content={siteName} />
+<meta name="format-detection" content="telephone=no" />
+
+<!-- RSS Feed -->
+<link rel="alternate" type="application/rss+xml" title={`${siteName} — Blog RSS Feed`} href="/rss.xml" />
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json" set:html={JSON.stringify(structuredData, null, 2)} />

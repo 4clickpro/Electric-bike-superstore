@@ -6,6 +6,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
   title="Shipping Information | Celestial Goods"
   description="Learn about our shipping options, rates, and delivery times."
   type="website"
+  canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
 >
   <section class="section-sm">
     <div class="container" style="max-width: 750px;">

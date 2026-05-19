@@ -9,6 +9,7 @@ const base = import.meta.env.BASE_URL;
   title="Shopping Cart — The Electric Bike Superstore"
   description="Review your cart, adjust quantities, and proceed to checkout."
   noindex={true}
+  canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
 >
   <section class="section-sm">
     <div class="container">

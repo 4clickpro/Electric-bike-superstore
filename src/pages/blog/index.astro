@@ -1,6 +1,21 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import BlogCard from '@components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+// Load auto-generated posts from content collection
+const contentPosts = await getCollection('blog');
+const contentPostItems = contentPosts.map(p => ({
+  slug: p.data.slug,
+  title: p.data.title,
+  excerpt: p.data.description,
+  image: p.data.image || 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&q=80',
+  category: p.data.category,
+  date: p.data.date,
+  readTime: '5',
+  author: p.data.author,
+  isContentPost: true,
+}));
 
 const allPosts = [
   // ── All E-Bikes from Store ──
@@ -428,7 +443,11 @@ const allPosts = [
   },
 ];
 
-const categories = [...new Set(allPosts.map(p => p.category))];
+// Merge hardcoded + content collection posts, sort by date (newest first)
+const mergedPosts = [...allPosts, ...contentPostItems]
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+const categories = [...new Set(mergedPosts.map(p => p.category))];
 ---
 
 <BaseLayout
@@ -462,7 +481,7 @@ const categories = [...new Set(allPosts.map(p => p.category))];
 
       <!-- Posts Grid -->
       <div class="grid-3" id="posts-grid">
-        {allPosts.map(post => (
+        {mergedPosts.map(post => (
           <div class="post-item" data-category={post.category} data-title={post.title.toLowerCase()}>
             <BlogCard {...post} />
           </div>

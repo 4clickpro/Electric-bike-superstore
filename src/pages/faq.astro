@@ -15,6 +15,7 @@ const faqs = [
   title="FAQ — Frequently Asked Questions | Celestial Goods"
   description="Find answers to common questions about shipping, returns, products, and more."
   type="website"
+  canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
 >
   <section class="section-sm">
     <div class="container" style="max-width: 750px;">
