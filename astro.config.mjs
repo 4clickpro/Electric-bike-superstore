@@ -2,8 +2,8 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 
 export default defineConfig({
-  site: 'https://4clickpro.github.io',
-  base: '/Electric-bike-superstore/',
+  site: 'https://theelectricbikesuperstore.com',
+  base: '/',
   integrations: [mdx()],
   output: 'static',
   build: {
