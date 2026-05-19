@@ -11,6 +11,7 @@ const navItems = [
 ---
 
 <header class="header" id="header">
+  <div class="domain-bar">TheElectricBikeSuperStore.com</div>
   <div class="container header-inner">
     <a href={base} class="logo" aria-label="The Electric Bike Superstore Home">
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
@@ -62,14 +63,26 @@ const navItems = [
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid var(--color-border);
-    height: var(--header-height);
+  }
+
+  .domain-bar {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    padding: 6px 16px;
+    background: rgba(167, 139, 250, 0.08);
+    border-bottom: 1px solid rgba(167, 139, 250, 0.12);
+    font-family: var(--font-sans);
   }
 
   .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
+    height: var(--header-height);
+    width: 100%;
   }
 
   .logo {
@@ -158,7 +171,7 @@ const navItems = [
   @media (max-width: 768px) {
     .nav {
       position: fixed;
-      top: var(--header-height);
+      top: 100%;
       left: 0;
       right: 0;
       background: var(--color-bg-elevated);
