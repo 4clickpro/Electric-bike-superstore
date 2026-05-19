@@ -2,11 +2,13 @@
 // Header — sticky nav with glassmorphism & mobile menu
 const base = import.meta.env.BASE_URL;
 
+const shopifyBase = 'https://hnrqqt-an.myshopify.com';
+
 const navItems = [
-  { href: '', label: 'Home' },
-  { href: 'products', label: 'E-Bikes' },
-  { href: 'blog', label: 'Guides' },
-  { href: 'about', label: 'About' },
+  { href: shopifyBase, label: 'Home' },
+  { href: `${shopifyBase}/collections/all`, label: 'E-Bikes' },
+  { href: `${shopifyBase}/blogs/news`, label: 'Guides' },
+  { href: `${shopifyBase}/pages/about-us`, label: 'About' },
 ];
 ---
 
@@ -19,7 +21,7 @@ const navItems = [
 
     <nav class="nav" id="nav" aria-label="Main navigation">
       {navItems.map(item => (
-        <a href={`${base}${item.href}`} class="nav-link" aria-current={Astro.url.pathname === `${base}${item.href}` || Astro.url.pathname === `${base}${item.href}/` ? 'page' : undefined}>
+        <a href={item.href} class="nav-link" target="_blank" rel="noopener noreferrer">
           {item.label}
         </a>
       ))}

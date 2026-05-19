@@ -1,6 +1,7 @@
 ---
 // Footer — links, social, contact, copyright
 const base = import.meta.env.BASE_URL;
+const sf = 'https://hnrqqt-an.myshopify.com';
 ---
 
 <footer class="footer">
@@ -40,26 +41,26 @@ const base = import.meta.env.BASE_URL;
 
       <div class="footer-col">
         <h4>Explore</h4>
-        <a href={`${base}blog`}>Buying Guides</a>
-        <a href={`${base}products`}>E-Bikes</a>
-        <a href={`${base}about`}>About Us</a>
-        <a href={`${base}contact`}>Contact</a>
+        <a href={`${sf}/blogs/news`} target="_blank" rel="noopener noreferrer">Buying Guides</a>
+        <a href={`${sf}/collections/all`} target="_blank" rel="noopener noreferrer">E-Bikes</a>
+        <a href={`${sf}/pages/about-us`} target="_blank" rel="noopener noreferrer">About Us</a>
+        <a href={`${sf}/pages/contact`} target="_blank" rel="noopener noreferrer">Contact</a>
       </div>
 
       <div class="footer-col">
         <h4>Categories</h4>
-        <a href={`${base}products?category=Commuter`}>Commuter E-Bikes</a>
-        <a href={`${base}products?category=Mountain`}>Mountain E-Bikes</a>
-        <a href={`${base}products?category=Folding`}>Folding E-Bikes</a>
-        <a href={`${base}products?category=Cargo`}>Cargo E-Bikes</a>
+        <a href={`${sf}/collections/all`} target="_blank" rel="noopener noreferrer">All E-Bikes</a>
+        <a href={`${sf}/collections/all`} target="_blank" rel="noopener noreferrer">Electric Scooters</a>
+        <a href={`${sf}/collections/all`} target="_blank" rel="noopener noreferrer">Accessories</a>
+        <a href={`${sf}/collections/all`} target="_blank" rel="noopener noreferrer">Sale Items</a>
       </div>
 
       <div class="footer-col">
         <h4>Support</h4>
-        <a href={`${base}faq`}>FAQ</a>
-        <a href={`${base}shipping`}>Shipping</a>
-        <a href={`${base}returns`}>Returns & Warranty</a>
-        <a href={`${base}privacy`}>Privacy Policy</a>
+        <a href={`${sf}/policies/shipping-policy`} target="_blank" rel="noopener noreferrer">Shipping</a>
+        <a href={`${sf}/policies/refund-policy`} target="_blank" rel="noopener noreferrer">Returns & Warranty</a>
+        <a href={`${sf}/policies/privacy-policy`} target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <a href={`${sf}/policies/terms-of-service`} target="_blank" rel="noopener noreferrer">Terms of Service</a>
       </div>
     </div>
 
