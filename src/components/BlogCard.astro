@@ -12,6 +12,7 @@ export interface Props {
 }
 
 const base = import.meta.env.BASE_URL;
+const shopifyBase = 'https://hnrqqt-an.myshopify.com';
 const { title, slug, excerpt, image, category, date, author = 'Celestial Goods', readTime } = Astro.props;
 const formattedDate = new Date(date).toLocaleDateString('en-US', {
   year: 'numeric',
@@ -21,7 +22,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
 ---
 
 <article class="blog-card card animate-fade-up">
-  <a href={`${base}blog/${slug}`} class="card-image-link" aria-label={`Read ${title}`}>
+  <a href={`${shopifyBase}/blogs/news/${slug}`} target="_blank" rel="noopener noreferrer" class="card-image-link" aria-label={`Read ${title}`}>
     <div class="card-image">
       <img src={image} alt={title} loading="lazy" width="600" height="400" />
       {category && <span class="badge badge-new card-badge">{category}</span>}
@@ -33,11 +34,11 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
       {readTime && <span class="dot">·</span>}
       {readTime && <span>{readTime} min read</span>}
     </div>
-    <a href={`${base}blog/${slug}`} class="card-title-link">
+    <a href={`${shopifyBase}/blogs/news/${slug}`} target="_blank" rel="noopener noreferrer" class="card-title-link">
       <h3>{title}</h3>
     </a>
     <p class="card-excerpt">{excerpt}</p>
-    <a href={`${base}blog/${slug}`} class="read-more">
+    <a href={`${shopifyBase}/blogs/news/${slug}`} target="_blank" rel="noopener noreferrer" class="read-more">
       Read more
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>

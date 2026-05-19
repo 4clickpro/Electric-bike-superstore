@@ -13,6 +13,7 @@ export interface Props {
 }
 
 const base = import.meta.env.BASE_URL;
+const shopifyBase = 'https://hnrqqt-an.myshopify.com';
 const { title, slug, price, originalPrice, image, category, badge, rating = 4.5, reviews = 0 } = Astro.props;
 const stars = Math.round(rating);
 const hasDiscount = originalPrice && originalPrice > price;
@@ -20,7 +21,7 @@ const discountPercent = hasDiscount ? Math.round(((originalPrice - price) / orig
 ---
 
 <div class="product-card card animate-fade-up">
-  <a href={`${base}products/${slug}`} class="product-image-link" aria-label={`View ${title}`}>
+  <a href={`${shopifyBase}/products/${slug}`} target="_blank" rel="noopener noreferrer" class="product-image-link" aria-label={`View ${title}`}>
     <div class="product-image">
       <img src={image} alt={title} loading="lazy" width="400" height="400" />
       {badge && <span class={`badge badge-${badge}`}>{badge === 'sale' ? `${discountPercent}% OFF` : badge}</span>}
@@ -28,7 +29,7 @@ const discountPercent = hasDiscount ? Math.round(((originalPrice - price) / orig
   </a>
   <div class="product-body">
     <span class="product-category">{category}</span>
-    <a href={`${base}products/${slug}`} class="product-title-link">
+    <a href={`${shopifyBase}/products/${slug}`} target="_blank" rel="noopener noreferrer" class="product-title-link">
       <h4>{title}</h4>
     </a>
     <div class="product-rating">
@@ -43,13 +44,13 @@ const discountPercent = hasDiscount ? Math.round(((originalPrice - price) / orig
       <span class="price">${price.toFixed(2)}</span>
       {hasDiscount && <span class="original-price">${originalPrice.toFixed(2)}</span>}
     </div>
-    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product={JSON.stringify({ slug, title, price, image })}>
+    <a href={`${shopifyBase}/cart/add?id=&quantity=1`} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm add-to-cart-btn">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
       </svg>
       Add to Cart
-    </button>
+    </a>
   </div>
 </div>
 
@@ -164,27 +165,4 @@ const discountPercent = hasDiscount ? Math.round(((originalPrice - price) / orig
   }
 </style>
 
-<script>
-  document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const product = JSON.parse(btn.dataset.product || '{}');
-      const cart = JSON.parse(localStorage.getItem('ebike-cart') || '[]');
-      const existing = cart.find((item: any) => item.slug === product.slug);
-      if (existing) {
-        existing.quantity += 1;
-      } else {
-        cart.push({ ...product, quantity: 1 });
-      }
-      localStorage.setItem('ebike-cart', JSON.stringify(cart));
-      window.dispatchEvent(new CustomEvent('cart-updated'));
 
-      // Feedback animation
-      btn.textContent = '✓ Added!';
-      btn.classList.add('added');
-      setTimeout(() => {
-        btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg> Add to Cart`;
-        btn.classList.remove('added');
-      }, 1500);
-    });
-  });
-</script>
