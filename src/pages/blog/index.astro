@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 // Load auto-generated posts from content collection
 const contentPosts = await getCollection('blog');
 const contentPostItems = contentPosts.map(p => ({
-  slug: p.data.slug,
+  slug: p.id.replace(/\.mdx?$/, ''),
   title: p.data.title,
   excerpt: p.data.description,
   image: p.data.image || 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&q=80',

@@ -10,7 +10,6 @@ const blog = defineCollection({
     category: z.string().default('General'),
     tags: z.array(z.string()).default([]),
     image: z.string().optional(),
-    slug: z.string(),
   }),
 });
 

@@ -6,9 +6,9 @@ import { getCollection } from 'astro:content';
 const base = import.meta.env.BASE_URL;
 
 export async function getStaticPaths() {
-  // Add content collection posts to static paths
+  // Load content collection posts for static paths
   const contentPosts = await getCollection('blog');
-  const contentPaths = contentPosts.map(p => ({ params: { slug: p.data.slug } }));
+  const contentPaths = contentPosts.map(p => ({ params: { slug: p.id.replace(/\.mdx?$/, '') } }));
   return [
     // ── Auto-generated content collection posts ──
     ...contentPaths,
@@ -644,7 +644,8 @@ let post = posts[slug as string];
 
 // If not in hardcoded posts, check content collection
 if (!post) {
-  const contentPost = contentPosts.find(p => p.data.slug === slug);
+  const contentPosts = await getCollection('blog');
+  const contentPost = contentPosts.find(p => p.id.replace(/\.mdx?$/, '') === slug);
   if (contentPost) {
     const d = contentPost.data;
     const rendered = await contentPost.render();
