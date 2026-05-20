@@ -31,7 +31,7 @@ if [ -z "$OPENROUTER_API_KEY" ]; then
 fi
 
 # Run the generator
-node "$SITE_DIR/scripts/generate-blog-posts.js" >> "$LOG_FILE" 2>&1
+node "$SITE_DIR/scripts/generate-blog-posts.cjs" >> "$LOG_FILE" 2>&1
 
 # Check if any new posts were created
 NEW_POSTS=$(git status --porcelain "$BLOG_DIR" | grep "^??" | wc -l)
