@@ -55,7 +55,12 @@ if (type === 'article') {
     description: description,
     image: fullImage,
     author: { '@type': 'Person', name: author },
-    publisher: { '@type': 'Organization', name: siteName },
+    publisher: {
+      '@type': 'Organization',
+      name: siteName,
+      url: siteUrl,
+      logo: { '@type': 'ImageObject', url: `${siteUrl}/og-default.png` }
+    },
     datePublished: publishedTime || new Date().toISOString(),
     dateModified: modifiedTime || publishedTime || new Date().toISOString(),
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
@@ -68,11 +73,13 @@ if (type === 'article') {
     name: title,
     description: description,
     image: fullImage,
+    brand: { '@type': 'Brand', name: siteName },
     ...(rating && reviews ? {
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: rating,
         reviewCount: reviews,
+        bestRating: '5',
       },
     } : {}),
     offers: {
@@ -80,6 +87,12 @@ if (type === 'article') {
       price: price,
       priceCurrency: currency,
       availability: availability || 'https://schema.org/InStock',
+      url: canonical,
+      seller: {
+        '@type': 'Organization',
+        name: siteName,
+        url: siteUrl,
+      },
     },
   };
 } else {
@@ -89,6 +102,16 @@ if (type === 'article') {
     name: siteName,
     url: siteUrl,
     description: description,
+    publisher: {
+      '@type': 'Organization',
+      name: siteName,
+      url: siteUrl,
+      logo: { '@type': 'ImageObject', url: `${siteUrl}/og-default.png` },
+      sameAs: [
+        'https://twitter.com/ebikesuperstore',
+        'https://www.instagram.com/theelectricbikesuperstore/',
+      ],
+    },
     potentialAction: {
       '@type': 'SearchAction',
       target: `${siteUrl}/search?q={search_term_string}`,
@@ -145,7 +168,7 @@ if (type === 'article') {
 {type === 'product' && availability && <meta name="twitter:data2" content={availability === 'https://schema.org/InStock' ? 'In Stock' : availability === 'https://schema.org/OutOfStock' ? 'Out of Stock' : 'Available'} />}
 
 <!-- Additional SEO -->
-<meta name="theme-color" content="#0a0a0f" />
+<meta name="theme-color" content="#2d8a4e" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
