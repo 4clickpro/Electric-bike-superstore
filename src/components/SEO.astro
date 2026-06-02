@@ -123,14 +123,18 @@ if (type === 'article') {
 
 <!-- Primary meta tags -->
 <meta name="msvalidate.01" content="FA7016B63FCF7C9CA111AA4CE6AE76DF" />
+<meta name="google-site-verification" content="PASTE_YOUR_GOOGLE_VERIFICATION_CODE" />
 
 <title>{fullTitle}</title>
 <meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
 <meta name="author" content={author} />
+<meta name="keywords" content="electric bike, e-bike, ebike, electric bicycle, best electric bikes 2026, top electric bikes, electric bike reviews, buy electric bike online, electric bike store, commuter electric bike, mountain electric bike, folding electric bike, cargo electric bike, fat tire electric bike, electric road bike, electric gravel bike, electric mountain bike, EMTB, e-mtb, bosch electric bike, shimano electric bike, rad power bikes, aventon, specialized turbo, trek e-bike, gazelle, vanmoof, cannondale e-bike, giant e-bike, merida e-bike, scott e-bike, cube bike, raleigh e-bike, himiway, ectric bikes, juiced bikes, Lectric XP, radrunner, radwagon, aventon level, aventon pace, specialized turbo vado, specialized turbo levo, trek domane+, gazelle ultimate, vanmoof s5, cannondale synapse, electric scooter, electric motorcycle, velotric, ackmotor, qwicy, r1-up, fire bike, qiolor, gyrocycle, scooter electric, best e-bike for commuting, best e-bike for hills, best e-bike for seniors, e-bike for women, e-bike for men, e-bike for heavy rider, long range electric bike, budget electric bike, cheap electric bike, electric bike under 1000, electric bike under 500, e-bike with bag, class 1 e-bike, class 2 e-bike, class 3 e-bike, pedal assist e-bike, throttle e-bike, hub motor e-bike, mid drive e-bike, e-bike conversion kit, e-bike battery, e-bike accessories, e-bike helmet, the electric bike superstore, electric bike deals, electric bike sale, e-bike discounts, electric bike financing, e-bike insurance, e-bike laws, e-bike speed limits, e-bike battery recycling, green transportation, eco-friendly commuting, sustainable transport, carbon neutral travel, urban mobility, last mile solution, zero emissions vehicle, electric bike tax credit, e-bike rebate, e-bike grant program, ChatGPT search, best e-bike Perplexity, electric bike Claude, Gemini e-bike search, LLM e-bike recommendations, AI e-bike advisor" />
 <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'} />
 <meta name="googlebot" content={noindex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large'} />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="rating" content="general" />
+<meta name="revisit-after" content="3 days" />
 {tags.length > 0 && <meta name="keywords" content={tags.join(', ')} />}
 <link rel="canonical" href={canonical} />
 
@@ -166,6 +170,17 @@ if (type === 'article') {
 {type === 'product' && price && <meta name="twitter:data1" content={`${currency} ${price}`} />}
 {type === 'product' && availability && <meta name="twitter:label2" content="Availability" />}
 {type === 'product' && availability && <meta name="twitter:data2" content={availability === 'https://schema.org/InStock' ? 'In Stock' : availability === 'https://schema.org/OutOfStock' ? 'Out of Stock' : 'Available'} />}
+
+<!-- AI Search Engine Meta Tags (ChatGPT, Perplexity, Claude, Gemini) -->
+<meta name="subject" content="Electric bikes, e-bikes, electric bicycles — buying guides, reviews, and premium e-bike store" />
+<meta name="abstract" content="The Electric Bike Superstore offers premium electric bikes for commuting, mountain, folding, and cargo. Features expert buying guides, reviews, and curated e-bike selection with free shipping." />
+<meta name="topic" content="Electric Bikes, E-Bikes, Electric Cycling, Green Transportation, Urban Mobility" />
+<meta name="classification" content="Shopping, Sports & Recreation, Technology, Green Transportation" />
+<meta name="category" content="Electric Bikes & Bicycles" />
+<meta name="summary" content="Premium electric bike store with commuter, mountain, folding, cargo, and fat tire e-bikes. Expert guides, honest reviews, free shipping over $75, 30-day returns." />
+<meta name="target" content="cyclists, commuters, outdoor enthusiasts, eco-conscious consumers, e-bike buyers, urban riders, seniors, fitness riders, cargo bike families" />
+<meta name="audience" content="all" />
+<meta name="coverage" content="United States" />
 
 <!-- Additional SEO -->
 <meta name="theme-color" content="#2d8a4e" />
