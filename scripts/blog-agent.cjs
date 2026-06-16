@@ -240,7 +240,7 @@ function generateRoundup(category, posts, index) {
   const filePath = path.join(CONTENT_DIR, `${slug}.mdx`);
   if (fs.existsSync(filePath)) return null;
 
-  const aff = pick([`https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733`, `https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733`, `https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733`]);
+  const aff = 'https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733';
 
   const picks = catPosts.map((p, i) => `
 ### ${i + 1}. ${p.shortTitle} — ${p.price}
@@ -309,7 +309,7 @@ function generateGuide(index) {
       title: 'E-Bike Maintenance Checklist: Keep Your Ride Running Like New',
       category: 'Maintenance',
       image: 'https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800&q=80',
-      aff: 'https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733',
+      aff: 'https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733',
       content: `<p class="lead">Your e-bike is an investment. With proper care, a quality e-bike can last 5-10 years and tens of thousands of miles.</p>
 <h2>Before Every Ride (2 Minutes)</h2><ul><li>Tire pressure check with a gauge</li><li>Brake test — squeeze both levers firmly</li><li>Quick visual scan for loose bolts or damage</li><li>Battery locked in place and charged</li></ul>
 <h2>Weekly (15 Minutes)</h2><ul><li>Clean and lubricate the chain</li><li>Wipe down the frame</li><li>Check brake pad thickness</li></ul>
@@ -321,7 +321,7 @@ function generateGuide(index) {
       title: 'How E-Bike Commuting Saves You Time & Money (With Real Numbers)',
       category: 'Commuting',
       image: 'https://images.unsplash.com/photo-1559348349-86f1f65817fe?w=800&q=80',
-      aff: 'https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733',
+      aff: 'https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733',
       content: `<p class="lead">Most people think e-bikes are expensive. But when you compare the real costs against driving a car, the math tells a completely different story.</p>
 <h2>The Real Cost of Car Commuting</h2><p>The IRS estimates the true cost of driving at 67 cents per mile. For a 10-mile commute, that's $13.40 per day — or $3,350 per year. Add parking at $50-300/month and you're spending serious money.</p>
 <h2>The E-Bike Alternative</h2><p>A typical setup: e-bike ($1,899), helmet ($80), lock ($60), accessories ($100). Total upfront: $2,139. Annual ongoing: electricity ($25), maintenance ($200-350).</p>
