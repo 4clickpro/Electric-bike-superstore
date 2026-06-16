@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.9",
-    "astro": "^4.16.17"
+    "astro": "^4.16.17",
+    "glob": "^13.0.6"
   },
   "devDependencies": {
     "@types/node": "^22.10.5",

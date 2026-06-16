@@ -1,181 +1,149 @@
 #!/usr/bin/env node
 /**
- * Short Video Agent — Generates 2-second bike video clips from inventory images
+ * Video Agent — 24/7 Automated Video Generation
  *
- * Takes product images and creates short animated previews:
- * - Downloads/copies product images
- * - Creates 2-second MP4/GIF clips with Ken Burns zoom effect
- * - Outputs to public/videos/ directory
+ * Runs continuously, generating product promo videos via Remotion:
+ * - Renders product promo videos for products missing them
+ * - Re-renders existing videos periodically with fresh templates
+ * - Outputs MP4 to public/videos/ directory
  *
- * Requirements: ffmpeg installed (apt install ffmpeg)
- *
- * Usage: node scripts/video-agent.cjs [--all] [--slug shop-ebike-boys-fat-tire-1200w]
+ * Usage:
+ *   node scripts/video-agent.cjs           # Render missing videos once
+ *   node scripts/video-agent.cjs --daemon  # Run 24/7 (every 2 hours)
+ *   node scripts/video-agent.cjs --all     # Re-render all videos
  */
 
+const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
-const https = require('https');
-const http = require('http');
-const { execSync } = require('child_process');
 
-const PUBLIC_DIR = path.join(__dirname, '..', 'public');
-const VIDEOS_DIR = path.join(PUBLIC_DIR, 'videos');
-const IMAGES_DIR = path.join(PUBLIC_DIR, 'videos', 'thumbs');
+const PRODUCTS_FILE = path.join(__dirname, '..', 'src', 'data', 'products.json');
+const VIDEOS_DIR = path.join(__dirname, '..', 'public', 'videos');
+const REMOTION_DIR = '/home/ubuntu/remotion-studio';
+const STATE_FILE = path.join(__dirname, '.video-agent-state.json');
 
-// Product images from the blog posts (subset of best images)
-const INVENTORY = [
-  {
-    slug: 'ebike-boys-1200w',
-    images: [
-      'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Scd3bd33467fa4043becc18698a4f408ff_21bc8384-e2bc-4bc5-9928-07b4419888f5.webp?v=1773797188',
-      'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S1401583e5f3a459ea81d9ccfc247e244q_9881836d-feb6-45bb-b932-0d51d3a24221.webp?v=1773797188',
-    ],
-  },
-  {
-    slug: 'ebike-boys-750w',
-    images: [
-      'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S160a8b1f441d484ba123af10f1c343fd2_7b3a2c11-73eb-45ba-8293-a6e94f23d66c.webp?v=1773797167',
-      'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Sd631b56bb63b4648bf99ba681dd12368V_b7c8d594-daff-4082-ba5a-9f9ce94eaf38.webp?v=1773797167',
-    ],
-  },
-  {
-    slug: 'terrosor-folding',
-    images: [
-      'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S4783b0c9be314445952f8bd90d26f625i.webp?v=1773797167',
-      'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S87acc45f0d7c4c71aee0ff1685d178b4T.webp?v=1773797168',
-    ],
-  },
-  {
-    slug: 'aniioki-a9',
-    images: [
-      'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Aniioki_a9_awd_25_15_Black_d96624aa-3493-43d1-b7bb-c5aaeee27aa9.webp?v=1773797008',
-      'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Aniioki_a9_awd_25_14_Gray_b6ebbcc6-65cd-4421-955d-f59f4b8f3ce0.webp?v=1773797007',
-    ],
-  },
-  {
-    slug: 'quietkat-apex',
-    images: [
-      'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/QuietKat_HD_Grey_098_1024x1024_ed1a10c2-4b32-4b25-b9b6-58c0b3dcb653.webp?v=1773796933',
-      'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/QuietKat_HD_Green_114_1024x1024_c6748c96-7645-408d-9408-1a845168034f.webp?v=1773796934',
-    ],
-  },
-];
+// ── State ═══
+function loadState() {
+  try { return JSON.parse(fs.readFileSync(STATE_FILE, 'utf-8')); }
+  catch { return { runs: 0, lastRun: null, rendered: [], failed: 0 }; }
+}
+function saveState(state) { fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2)); }
 
-// ── Utility Functions ═══
+// ── Load products ═══
+let products = [];
+try {
+  const raw = JSON.parse(fs.readFileSync(PRODUCTS_FILE, 'utf-8'));
+  products = raw.filter(p => p.price && p.image);
+} catch (e) {
+  console.error('❌ Could not load products.json:', e.message);
+  process.exit(1);
+}
 
-function downloadImage(url, destPath) {
+// ── Render a single video ═══
+function renderVideo(product) {
   return new Promise((resolve, reject) => {
-    const proto = url.startsWith('https') ? https : http;
-    proto.get(url, (response) => {
-      if (response.statusCode === 301 || response.statusCode === 302) {
-        return downloadImage(response.headers.location, destPath).then(resolve).catch(reject);
+    const outputFile = path.join(VIDEOS_DIR, `${product.slug}-promo.mp4`);
+
+    const props = {
+      title: product.title,
+      shortTitle: product.shortTitle,
+      price: product.price,
+      oldPrice: product.oldPrice || '',
+      rating: product.rating,
+      reviews: product.reviews,
+      image: product.image,
+      specs: product.specs || {},
+      store: product.store,
+      affiliateUrl: product.affiliateUrl,
+    };
+
+    console.log(`  🎬 Rendering: ${product.shortTitle}`);
+
+    const proc = spawn('npx', [
+      'remotion', 'render',
+      'src/index.ts',
+      'ProductPromo',
+      outputFile,
+      '--props', JSON.stringify(props),
+    ], {
+      cwd: REMOTION_DIR,
+      stdio: ['pipe', 'pipe', 'pipe'],
+      env: { ...process.env, PUPPETEER_EXECUTABLE_PATH: '/usr/bin/chromium-browser' },
+    });
+
+    let stderr = '';
+    proc.stdout.on('data', (d) => { const t = d.toString(); if (t.includes('Rendered') || t.includes('%')) process.stdout.write(`    ${t.trim()}\n`); });
+    proc.stderr.on('data', (d) => { stderr += d.toString(); });
+
+    proc.on('close', (code) => {
+      if (code === 0) {
+        const size = fs.existsSync(outputFile) ? (fs.statSync(outputFile).size / 1024 / 1024).toFixed(1) + ' MB' : '?';
+        console.log(`  ✅ Done: ${product.shortTitle} (${size})`);
+        resolve({ slug: product.slug, size });
+      } else {
+        console.error(`  ❌ Failed: ${product.shortTitle}`);
+        reject(new Error(`Exit code ${code}: ${stderr.substring(0, 200)}`));
       }
-      if (response.statusCode !== 200) {
-        return reject(new Error(`Download failed: ${response.statusCode} for ${url}`));
-      }
-      const file = fs.createWriteStream(destPath);
-      response.pipe(file);
-      file.on('finish', () => { file.close(); resolve(destPath); });
-    }).on('error', reject);
+    });
   });
 }
 
-function createKenBurnsVideo(inputImage, outputPath, duration = 2) {
-  // Ken Burns effect: slow zoom + pan using ffmpeg
-  const cmd = `ffmpeg -y -loop 1 -i "${inputImage}" -vf "zoompan=z='min(zoom+0.0015,1.2)':d=${duration * 25}:s=640x480" -t ${duration} -c:v libx264 -pix_fmt yuv420p -movflags +faststart "${outputPath}" 2>&1`;
-  try {
-    execSync(cmd, { stdio: 'pipe' });
-    return true;
-  } catch (e) {
-    return false;
+// ── Main render cycle ═══
+async function renderMissing() {
+  if (!fs.existsSync(VIDEOS_DIR)) fs.mkdirSync(VIDEOS_DIR, { recursive: true });
+
+  const missing = products.filter(p => !fs.existsSync(path.join(VIDEOS_DIR, `${p.slug}-promo.mp4`)));
+
+  if (missing.length === 0) {
+    console.log('  ✅ All product videos already rendered.');
+    return { rendered: 0, failed: 0 };
   }
+
+  console.log(`\n🎬 Video Agent — Rendering ${missing.length} missing video(s)...\n`);
+
+  let success = 0, failed = 0;
+  for (const product of missing) {
+    try {
+      await renderVideo(product);
+      success++;
+    } catch (e) { failed++; }
+  }
+
+  const state = loadState();
+  state.runs++;
+  state.lastRun = new Date().toISOString();
+  state.rendered.push(...missing.map(p => p.slug));
+  state.failed += failed;
+  saveState(state);
+
+  console.log(`\n📊 Video render complete: ${success} success, ${failed} failed\n`);
+  return { rendered: success, failed };
 }
 
-function createGifPreview(inputImage, outputPath, duration = 2) {
-  // Create animated GIF as fallback
-  const cmd = `ffmpeg -y -loop 1 -i "${inputImage}" -vf "scale=480:-1,fps=25" -t "${duration}" "${outputPath}" 2>&1`;
-  try {
-    execSync(cmd, { stdio: 'pipe' });
-    return true;
-  } catch (e) {
-    return false;
-  }
+// ── Daemon Mode ═══
+function runDaemon() {
+  console.log('\n🎬 Video Agent — 24/7 Daemon Mode Started');
+  console.log('   Rendering missing videos every 2 hours...\n');
+
+  renderMissing().catch(e => console.error('❌ Error:', e.message));
+
+  setInterval(() => {
+    console.log(`\n[${new Date().toLocaleString()}] Running video render cycle...`);
+    renderMissing().catch(e => console.error('❌ Error:', e.message));
+  }, 2 * 60 * 60 * 1000);
 }
 
-// ── Main ═══
-
-async function main() {
-  const args = process.argv.slice(2);
-  const doAll = args.includes('--all');
-  const slugArg = args.indexOf('--slug');
-  const targetSlug = slugArg >= 0 ? args[slugArg + 1] : null;
-
-  console.log('\n🎬 Video Agent — Generating 2-second bike video clips...\n');
-
-  // Check ffmpeg
-  try {
-    execSync('ffmpeg -version', { stdio: 'pipe' });
-  } catch {
-    console.log('  ❌ ffmpeg not found. Install it: sudo apt install ffmpeg\n');
-    process.exit(1);
+// ── CLI ──═
+const args = process.argv.slice(2);
+if (args.includes('--daemon')) {
+  runDaemon();
+} else if (args.includes('--all')) {
+  // Re-render all
+  for (const p of products) {
+    const f = path.join(VIDEOS_DIR, `${p.slug}-promo.mp4`);
+    if (fs.existsSync(f)) fs.unlinkSync(f);
   }
-
-  // Ensure output dirs
-  fs.mkdirSync(VIDEOS_DIR, { recursive: true });
-  fs.mkdirSync(IMAGES_DIR, { recursive: true });
-
-  const items = doAll ? INVENTORY : targetSlug ? INVENTORY.filter(i => i.slug === targetSlug) : INVENTORY.slice(0, 2);
-
-  if (items.length === 0) {
-    console.log('  ⚠️  No matching products found.\n');
-    process.exit(0);
-  }
-
-  let created = 0;
-  for (const item of items) {
-    for (let idx = 0; idx < item.images.length; idx++) {
-      const url = item.images[idx];
-      const imgFile = path.join(IMAGES_DIR, `${item.slug}-${idx}.jpg`);
-      const mp4File = path.join(VIDEOS_DIR, `${item.slug}-${idx}.mp4`);
-      const gifFile = path.join(VIDEOS_DIR, `${item.slug}-${idx}.gif`);
-
-      // Skip if already exists
-      if (fs.existsSync(mp4File)) {
-        console.log(`  ⏭️  ${item.slug}-${idx}.mp4 exists — skipping`);
-        continue;
-      }
-
-      try {
-        // Download image
-        process.stdout.write(`  📥 Downloading ${item.slug}-${idx}... `);
-        await downloadImage(url, imgFile);
-        console.log('✓');
-
-        // Create MP4 video
-        process.stdout.write(`  🎥 Creating ${item.slug}-${idx}.mp4... `);
-        const ok = createKenBurnsVideo(imgFile, mp4File);
-        if (ok) {
-          console.log('✓');
-          created++;
-        } else {
-          // Fallback to GIF
-          console.log('falling back to GIF...');
-          createGifPreview(imgFile, gifFile);
-          console.log(`  🎞️  Created GIF: ${gifFile}`);
-          created++;
-        }
-      } catch (err) {
-        console.log(`\n  ❌ Error: ${err.message}`);
-      }
-    }
-  }
-
-  console.log(`\n📊 Summary: ${created} video clip(s) created in public/videos/`);
-  console.log('   Use in blog posts:');
-  console.log('   <video autoplay muted loop playsinline src="/videos/ebike-boys-1200w-0.mp4" style="width:100%;border-radius:8px;">\n');
+  renderMissing().catch(e => { console.error('❌ Error:', e.message); process.exit(1); });
+} else {
+  renderMissing().catch(e => { console.error('❌ Error:', e.message); process.exit(1); });
 }
-
-main().catch(err => {
-  console.error('❌ Error:', err.message);
-  process.exit(1);
-});
