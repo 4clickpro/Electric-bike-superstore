@@ -3,6 +3,8 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import BlogCard from '@components/BlogCard.astro';
 import { getCollection } from 'astro:content';
 
+const base = import.meta.env.BASE_URL;
+
 // Load auto-generated posts from content collection
 const contentPosts = await getCollection('blog');
 const contentPostItems = contentPosts.map(p => ({
@@ -17,455 +19,66 @@ const contentPostItems = contentPosts.map(p => ({
   isContentPost: true,
 }));
 
+// Only e-bike posts — removed lifestyle content
 const allPosts = [
-  // ── All E-Bikes from Store ──
-  {
-    slug: 'shop-ebike-boys-fat-tire-1200w',
-    title: 'eBike Boys Fat Tire Electric Bike — 1200W, 30+ MPH',
-    excerpt: '1200W motor, fat tires, and 30+ MPH top speed. The ultimate fat tire e-bike for all-terrain domination. $1,101.99.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Scd3bd33467fa4043becc18698a4f408ff_21bc8384-e2bc-4bc5-9928-07b4419888f5.webp?v=1773797188',
-    category: 'eBike Boys',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-ebike-boys-20-fat-tire-full-suspension',
-    title: 'eBike Boys 20" Fat Tire Full Suspension E-Bike — 30MPH',
-    excerpt: 'Full suspension, 20" fat tires, and 30 MPH speed. Built to handle any terrain with confidence. $1,101.99.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S307ba28ba4bd4c76a63d95c5002c16ad6_e4a4df89-614a-40f7-8834-1800ad4ad75d.webp?v=1773797167',
-    category: 'eBike Boys',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-ebike-boys-750w-48v-20in',
-    title: 'eBike Boys 750W Electric Bike — 48V Battery, 20" Wheels',
-    excerpt: '750W motor with 48V battery on 20" wheels. The perfect balance of power and portability. $1,399.00.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S160a8b1f441d484ba123af10f1c343fd2_7b3a2c11-73eb-45ba-8293-a6e94f23d66c.webp?v=1773797167',
-    category: 'eBike Boys',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-terrosor-715w-folding',
-    title: 'Terrosor 715W Peak Folding Electric Bicycle — 50km/h',
-    excerpt: '715W peak power in a folding frame. Max speed 50km/h. Commute or adventure — this bike does both. $936.99.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S4783b0c9be314445952f8bd90d26f625i.webp?v=1773797167',
-    category: 'eBike Boys',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-ebike-boys-715w-folding',
-    title: 'eBike Boys 715W Peak Folding Electric Bicycle',
-    excerpt: 'Fast, powerful, and folds for easy storage. 715W peak motor at an incredible price. $543.99.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S4783b0c9be314445952f8bd90d26f625i_21e9c161-2f22-45e4-b959-6681d3dc9554.webp?v=1773797167',
-    category: 'eBike Boys',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-ebike-boys-1200w-peak-20in',
-    title: 'eBike Boys 1200W Peak Electric Bike — 20" Motor',
-    excerpt: '1200W peak power in a compact 20" frame. Serious speed and torque for urban riding. $1,197.99.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Sf7dfb97231eb4e168429fb78b77a485bt.webp?v=1773797168',
-    category: 'eBike Boys',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-ebike-boys-20-fat-tire-all-terrain',
-    title: 'eBike Boys 20" Fat Tire E-Bike — Full Suspension All-Terrain',
-    excerpt: 'Full suspension meets fat tires for unstoppable all-terrain capability. $1,056.99.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S307ba28ba4bd4c76a63d95c5002c16ad6.webp?v=1773797166',
-    category: 'eBike Boys',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-ebike-boys-750w-48v-13ah',
-    title: 'eBike Boys 750W Electric Bike — 48V 13Ah, Aluminum Frame',
-    excerpt: '750W motor with 48V 13Ah lithium battery and lightweight aluminum frame. Range and power combined. $2,873.99.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S160a8b1f441d484ba123af10f1c343fd2.webp?v=1773797166',
-    category: 'eBike Boys',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-ebike-boys-1200w-peak-fat-tire',
-    title: 'eBike Boys 1200W Peak Electric Bike — 30MPH, Fat Tires, IPX6',
-    excerpt: '1200W peak, 30MPH top speed, fat tires, and IPX6 waterproof rating. Built to ride in any conditions. $1,200.99.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Sf7dfb97231eb4e168429fb78b77a485bt_c8dec797-cd51-4e27-bd47-01f67754019c.webp?v=1773797167',
-    category: 'eBike Boys',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-ebike-boys-1200w-lithium-48v',
-    title: 'eBike Boys 1200W Lithium Electric Bike — 48V, 20" Wheel',
-    excerpt: '1200W of lithium-powered performance on 20" wheels. Fast, reliable, and ready to ride. $2,293.99.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S5aa511eff4f341dca8b56750b8fd28e8R_6c887236-e402-48e3-b76e-cd019ac3fc3e.webp?v=1773797167',
-    category: 'eBike Boys',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-deepower-s7pro',
-    title: 'DEEPOWER S7Pro Off-Road Electric Bike',
-    excerpt: 'Purpose-built for off-road adventures. The DEEPOWER S7Pro delivers rugged performance at a great price. $1,246.98.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Sde3fda6fca5f43a382673e802e637d44j_jpg_220x220q75_jpg.jpg?v=1773797166',
-    category: 'eBike Boys',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-hezzo-1200w',
-    title: 'HEZZO 1200W Electric Bike — 48V Lithium, 50+ km/h',
-    excerpt: 'HEZZO 1200W powerhouse with 48V lithium battery. Over 50 km/h top speed for thrill seekers. $4,097.99.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S5aa511eff4f341dca8b56750b8fd28e8R.webp?v=1773797168',
-    category: 'eBike Boys',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-high-quality-52v-750w',
-    title: 'High-Quality eBike — 52V 750W Motor, 17AH Long Range',
-    excerpt: 'Premium build with 52V 750W motor and massive 17AH battery for extended range. $2,923.99.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S39b3003dbc5f4eed9495e500abf0c3f4L.webp?v=1773797167',
-    category: 'eBike Boys',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-aniioki-a9-pro-max',
-    title: 'Aniioki A9 Pro Max — 60V Dual Motor eBike',
-    excerpt: 'Dual 60V motors for unstoppable power. The Aniioki A9 Pro Max is the ultimate high-performance e-bike. From $3,799.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Aniioki_a9_awd_25_15_Black_d96624aa-3493-43d1-b7bb-c5aaeee27aa9.webp?v=1773797008',
-    category: 'Rex E-Bikes',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-eahora-romeo-ii',
-    title: 'Eahora Romeo II — Compact Powerhouse',
-    excerpt: 'Don\'t let the size fool you — the Eahora Romeo II packs serious power in a compact frame. $2,299.00.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/romeoii_upgraded_front_fork_8023c826-83fc-41dc-bede-55ab7712ee23.webp?v=1773797008',
-    category: 'Rex E-Bikes',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-rawrr-mantix-x-pro',
-    title: 'RawRR Mantix X Pro — Pro-Level Electric Dirt Bike',
-    excerpt: 'Pro-level performance with no compromises. The Mantix X Pro is a new class of electric dirt bike. $4,399.00.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Rawrr_xpro3.webp?v=1773797007',
-    category: 'Rex E-Bikes',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-rawrr-mini',
-    title: 'Rawrr Mini — Electric Dirt Bike, Compact & Capable',
-    excerpt: 'All the Rawrr attitude in a smaller package. Perfect for younger riders or tight trails. From $2,899.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/MiniRDefault.webp?v=1773797007',
-    category: 'Rex E-Bikes',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-eahora-romeo-ultra',
-    title: 'Eahora Romeo Ultra — 60V Motor System, 2027 Edition',
-    excerpt: 'The 2027 Eahora Romeo Ultra introduces a groundbreaking 60V motor system for unparalleled riding. $2,599.00.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/eahora_romeo_Ultra_electric_bike_gray_3_2afd4cea-95f4-4518-8a09-e10c8e923fe8.webp?v=1773797008',
-    category: 'Rex E-Bikes',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-ubco-2x2-special-edition',
-    title: 'UBCO 2X2 Special Edition — Accessorized & Ready',
-    excerpt: 'The 2023 Special Edition UBCO 2X2 — accessorized and ready for errands or adventure. $6,999.00.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_SE_Front_800x_30897c7f-07a1-4b3b-b64f-e28a3c575a7b.jpg?v=1773797007',
-    category: 'Rex E-Bikes',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-2x2-adventure-bike',
-    title: 'UBCO 2x2 Adventure Bike — Black',
-    excerpt: 'The ultimate adventure machine. UBCO\'s 2x2 Adventure Bike in sleek black — go anywhere, do anything. $5,499.00.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_ADV_Black-Front3_4_1200x_d0a77142-feab-495b-a436-091510b6d5ff.png?v=1773797007',
-    category: 'Rex E-Bikes',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-eahora-knight-m1ps',
-    title: 'Eahora Knight M1PS — Black, Premium Electric Motorcycle',
-    excerpt: 'The Eahora Knight M1PS is a premium electric motorcycle with stunning design and serious performance. From $4,980.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Eahora_M1PS_Basic.webp?v=1773797006',
-    category: 'Rex E-Bikes',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-quietkat-apex-hd',
-    title: 'QuietKat Apex HD — Premium Hunting & Off-Road E-Bike',
-    excerpt: 'The QuietKat Apex HD is built for hunters and off-road enthusiasts who demand the best. From $2,799.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/QuietKat_HD_Grey_098_1024x1024_ed1a10c2-4b32-4b25-b9b6-58c0b3dcb653.webp?v=1773796933',
-    category: 'Rex E-Bikes',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-quietkat-apex-xd',
-    title: 'QuietKat Apex XD — Extreme Duty Off-Road E-Bike',
-    excerpt: 'The QuietKat Apex XD takes off-road capability to the extreme. Built for the toughest terrain. From $3,799.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/QuietKat_HD_Grey_098_1024x1024_64a64c05-1e35-4ae5-b2e9-7a48a0c69436.webp?v=1773796934',
-    category: 'Rex E-Bikes',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-eahora-romeo-ultra-ii',
-    title: 'Eahora Romeo Ultra II — 60V Dual Motor, 80Ah Battery',
-    excerpt: '60V dual-motor system with an 80Ah high-capacity battery for exceptional speed and range. $3,599.00.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/eahora_romeo_Ultra_II_electric_bike_black_2.webp?v=1773796933',
-    category: 'Rex E-Bikes',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-ubco-hunt-2x2',
-    title: 'UBCO Hunt 2X2 — The Ultimate Hunting Utility Bike',
-    excerpt: 'The UBCO Hunt 2X2 is retrofitted specifically for hunters. Silent, powerful, and ready for the backcountry. $6,499.00.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_HE_Top34_2000x_2b1d5ff5-157d-47a4-9a9f-18e831aeb9aa.webp?v=1773796934',
-    category: 'Rex E-Bikes',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-ubco-2x2-se',
-    title: 'UBCO 2X2 Special Edition — Accessorized & Adventure-Ready',
-    excerpt: 'The 2023 Special Edition 2X2 — fully accessorized for errands, adventure, and everything in between. $6,999.00.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_SE_Front3_4_2000x_ff1cb602-95f1-4bf8-b7b3-15169ae5abd7.webp?v=1773796933',
-    category: 'Rex E-Bikes',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-ubco-work-bike',
-    title: 'UBCO Work Bike — Tough, Built for Hard Work & Adventure',
-    excerpt: 'Designed tough for hard work and adventure. The UBCO Work Bike handles any job you throw at it. From $3,999.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_WORK_Black-RHS_98718b74-1d71-4f23-a5b9-2a832ea10a82.webp?v=1773796932',
-    category: 'Rex E-Bikes',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-ebike-boys-coroma-scooter',
-    title: 'eBike Boys COROMA Electric Scooter — Foldable, 20 MPH',
-    excerpt: 'Foldable electric scooter with adjustable handlebar, 20 MPH top speed, and 40-60km range. Perfect for daily commuting. $369.99.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S9a7b0f3b73cd41fca33fedc0363e8f82s_ddb311e8-bcb9-4831-a135-eaf840363a30.webp?v=1773797167',
-    category: 'Scooters',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-coroma-scooter-women',
-    title: 'COROMA Electric Scooter for Women — Foldable, 40-60km Range',
-    excerpt: 'Designed for women riders with a foldable frame, 40-60km range, and smooth electric power for effortless commuting. $369.99.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S9a7b0f3b73cd41fca33fedc0363e8f82s.webp?v=1773797167',
-    category: 'Scooters',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  {
-    slug: 'shop-ebike-boys-m6max-scooter',
-    title: 'eBike Boys M6Max Dual Motor Scooter — 5600W, 60V',
-    excerpt: 'Dual 5600W motors with 60V fast-charging system. The M6Max is the ultimate high-performance electric scooter. $2,031.99.',
-    image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Sa9ebd2e972b64eda950c3be81ad13cd0b_88c000ff-eb32-464c-b466-2ece4c99b270.webp?v=1773797168',
-    category: 'Scooters',
-    date: '2027-01-20',
-    readTime: '3',
-    author: 'The Electric Bike Superstore',
-  },
-  // ── E-Bike Guides ──
-  {
-    slug: 'how-to-choose-your-first-electric-bike',
-    title: 'How to Choose Your First Electric Bike: The Ultimate 2027 Guide',
-    excerpt: 'Everything you need to know before buying your first e-bike — motor types, battery range, classes, and the questions most first-time buyers forget to ask.',
-    image: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&q=80',
-    category: 'Buying Guide',
-    date: '2027-01-12',
-    readTime: '10',
-    author: 'Mike Torres',
-  },
-  {
-    slug: 'ebike-commuting-save-time-money',
-    title: 'How E-Bike Commuting Saves You Time & Money (With Real Numbers)',
-    excerpt: 'We crunched the numbers. A $1,899 e-bike pays for itself in 8 months compared to driving — and you get there faster too.',
-    image: 'https://images.unsplash.com/photo-1559348349-86f1f65817fe?w=800&q=80',
-    category: 'Commuting',
-    date: '2027-01-08',
-    readTime: '7',
-    author: 'Sarah Chen',
-  },
-  {
-    slug: 'ebike-maintenance-checklist',
-    title: 'The Complete E-Bike Maintenance Checklist: Keep Your Ride Running Like New',
-    excerpt: 'From battery care to chain lube, brake adjustments to tire pressure — this maintenance routine will extend your e-bike\'s lifespan by years.',
-    image: 'https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800&q=80',
-    category: 'Maintenance',
-    date: '2027-01-02',
-    readTime: '8',
-    author: 'Dave Kim',
-  },
-  // ── Legacy Lifestyle Posts ──
-  {
-    slug: 'transform-your-home-with-biophilic-design',
-    title: 'Transform Your Home with Biophilic Design Principles',
-    excerpt: 'Discover how bringing nature indoors can dramatically improve your wellbeing, productivity, and the aesthetic appeal of your living space.',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80',
-    category: 'Home Decor',
-    date: '2027-01-10',
-    readTime: '7',
-    author: 'Olivia Hart',
-  },
-  {
-    slug: 'morning-rituals-for-a-mindful-day',
-    title: 'Morning Rituals That Set the Tone for a Mindful Day',
-    excerpt: 'Start each day with intention. These science-backed morning practices will help you cultivate focus, gratitude, and inner calm.',
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
-    category: 'Wellness',
-    date: '2027-01-05',
-    readTime: '5',
-    author: 'Dr. Amara Lee',
-  },
-  {
-    slug: 'the-art-of-curated-minimalism',
-    title: 'The Art of Curated Minimalism: Less Stuff, More Meaning',
-    excerpt: 'Minimalism isn\'t about deprivation — it\'s about making room for what truly matters. Learn how to curate a meaningful space.',
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
-    category: 'Lifestyle',
-    date: '2024-12-28',
-    readTime: '6',
-    author: 'James Kwan',
-  },
-  {
-    slug: 'smart-home-tech-that-actually-improves-your-life',
-    title: 'Smart Home Tech That Actually Improves Your Life',
-    excerpt: 'Forget gimmicks. These are the smart home devices that genuinely enhance comfort, security, and energy efficiency.',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80',
-    category: 'Tech & Gadgets',
-    date: '2024-12-20',
-    readTime: '8',
-    author: 'Alex Rivera',
-  },
-  {
-    slug: 'seasonal-tablescaping-for-every-occasion',
-    title: 'Seasonal Tablescaping: Create Stunning Tables for Every Occasion',
-    excerpt: 'Master the art of the tablescape. From intimate dinners to holiday feasts, learn how to set a table that wows.',
-    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&q=80',
-    category: 'Home Decor',
-    date: '2024-12-15',
-    readTime: '6',
-    author: 'Olivia Hart',
-  },
-  {
-    slug: 'the-science-of-better-sleep',
-    title: 'The Science of Better Sleep: A Complete Guide',
-    excerpt: 'Sleep is the foundation of health. Explore evidence-based strategies to optimize your sleep environment and habits.',
-    image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80',
-    category: 'Wellness',
-    date: '2024-12-08',
-    readTime: '9',
-    author: 'Dr. Amara Lee',
-  },
-  {
-    slug: 'sustainable-fashion-wardrobe-essentials',
-    title: 'Building a Sustainable Fashion Wardrobe: The Essentials',
-    excerpt: 'Fast fashion is out. Learn how to build a timeless, ethical wardrobe that looks great and lasts for years.',
-    image: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80',
-    category: 'Lifestyle',
-    date: '2024-12-01',
-    readTime: '7',
-    author: 'James Kwan',
-  },
-  {
-    slug: 'digital-detox-reclaiming-your-attention',
-    title: 'Digital Detox: A Practical Guide to Reclaiming Your Attention',
-    excerpt: 'Screen fatigue is real. Here\'s how to reset your relationship with technology and rediscover life offline.',
-    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80',
-    category: 'Wellness',
-    date: '2024-11-25',
-    readTime: '8',
-    author: 'Dr. Amara Lee',
-  },
-  {
-    slug: 'the-perfect-home-office-setup',
-    title: 'The Perfect Home Office Setup: Ergonomics Meets Style',
-    excerpt: 'Working from home? Design a workspace that boosts productivity, supports your body, and inspires creativity.',
-    image: 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=800&q=80',
-    category: 'Tech & Gadgets',
-    date: '2024-11-18',
-    readTime: '10',
-    author: 'Alex Rivera',
-  },
+  // ── E-Bike Product Reviews (from Shopify store) ──
+  { slug: 'shop-ebike-boys-fat-tire-1200w', title: 'eBike Boys Fat Tire Electric Bike — 1200W, 30+ MPH', excerpt: '1200W motor, fat tires, and 30+ MPH top speed. The ultimate fat tire e-bike for all-terrain domination.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Scd3bd33467fa4043becc18698a4f408ff_21bc8384-e2bc-4bc5-9928-07b4419888f5.webp?v=1773797188', category: 'Fat Tire', date: '2027-01-20', readTime: '5' },
+  { slug: 'shop-ebike-boys-20-fat-tire-full-suspension', title: 'eBike Boys 20" Fat Tire Full Suspension E-Bike — 30MPH', excerpt: 'Full suspension, 20" fat tires, and 30 MPH speed. Built to handle any terrain with confidence.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S307ba28ba4bd4c76a63d95c5002c16ad6_e4a4df89-614a-40f7-8834-1800ad4ad75d.webp?v=1773797167', category: 'Off-Road', date: '2027-01-20', readTime: '4' },
+  { slug: 'shop-ebike-boys-750w-48v-20in', title: 'eBike Boys 750W Electric Bike — 48V Battery, 20" Wheels', excerpt: '750W motor with 48V battery on 20" wheels. The perfect balance of power and portability.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S160a8b1f441d484ba123af10f1c343fd2_7b3a2c11-73eb-45ba-8293-a6e94f23d66c.webp?v=1773797167', category: 'Commuter', date: '2027-01-18', readTime: '4' },
+  { slug: 'shop-terrosor-715w-folding', title: 'Terrosor 715W Peak Folding Electric Bicycle — 50km/h', excerpt: '715W peak power in a folding frame. Max speed 50km/h. Commute or adventure — this bike does both.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S4783b0c9be314445952f8bd90d26f625i.webp?v=1773797167', category: 'Folding', date: '2027-01-17', readTime: '4' },
+  { slug: 'shop-ebike-boys-715w-folding', title: 'eBike Boys 715W Peak Folding Electric Bicycle', excerpt: 'Fast, powerful, and folds for easy storage. 715W peak motor at an incredible price.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S4783b0c9be314445952f8bd90d26f625i_21e9c161-2f22-45e4-b959-6681d3dc9554.webp?v=1773797167', category: 'Folding', date: '2027-01-16', readTime: '3' },
+  { slug: 'shop-ebike-boys-1200w-peak-fat-tire', title: 'eBike Boys 1200W Peak E-Bike — 30MPH, Fat Tires, IPX6', excerpt: '1200W peak, 30MPH top speed, fat tires, and IPX6 waterproof rating. Built to ride in any conditions.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Sf7dfb97231eb4e168429fb78b77a485bt_c8dec797-cd51-4e27-bd47-01f67754019c.webp?v=1773797167', category: 'Off-Road', date: '2027-01-15', readTime: '4' },
+  { slug: 'shop-ebike-boys-1200w-peak-20in', title: 'eBike Boys 1200W Peak Electric Bike — 20" Motor', excerpt: '1200W peak power in a compact 20" frame. Serious speed and torque for urban riding.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Sf7dfb97231eb4e168429fb78b77a485bt.webp?v=1773797168', category: 'Urban', date: '2027-01-14', readTime: '3' },
+  { slug: 'shop-ebike-boys-20-fat-tire-all-terrain', title: 'eBike Boys 20" Fat Tire E-Bike — Full Suspension All-Terrain', excerpt: 'Full suspension meets fat tires for unstoppable all-terrain capability.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S307ba28ba4bd4c76a63d95c5002c16ad6.webp?v=1773797166', category: 'Off-Road', date: '2027-01-13', readTime: '4' },
+  { slug: 'shop-ebike-boys-1200w-lithium-48v', title: 'eBike Boys 1200W Lithium Electric Bike — 48V, 20" Wheel', excerpt: '1200W of lithium-powered performance on 20" wheels. Fast, reliable, and ready to ride.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S5aa511eff4f341dca8b56750b8fd28e8R_6c887236-e402-48e3-b76e-cd019ac3fc3e.webp?v=1773797167', category: 'Urban', date: '2027-01-12', readTime: '3' },
+  { slug: 'shop-deepower-s7pro', title: 'DEEPOWER S7Pro Off-Road Electric Bike', excerpt: 'Purpose-built for off-road adventures. Rugged performance at a great price.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Sde3fda6fca5f43a382673e802e637d44j_jpg_220x220q75_jpg.jpg?v=1773797166', category: 'Off-Road', date: '2027-01-11', readTime: '4' },
+  { slug: 'shop-hezzo-1200w', title: 'HEZZO 1200W Electric Bike — 48V Lithium, 50+ km/h', excerpt: 'HEZZO 1200W powerhouse with 48V lithium battery. Over 50 km/h top speed for thrill seekers.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S5aa511eff4f341dca8b56750b8fd28e8R.webp?v=1773797168', category: 'Speed', date: '2027-01-10', readTime: '4' },
+  { slug: 'shop-high-quality-52v-750w', title: 'High-Quality eBike — 52V 750W Motor, 17AH Long Range', excerpt: 'Premium build with 52V 750W motor and massive 17AH battery for extended range.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S39b3003dbc5f4eed9495e500abf0c3f4L.webp?v=1773797167', category: 'Long Range', date: '2027-01-09', readTime: '4' },
+  { slug: 'shop-aniioki-a9-pro-max', title: 'Aniioki A9 Pro Max — 60V Dual Motor eBike', excerpt: 'Dual 60V motors for unstoppable power. The ultimate high-performance e-bike.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Aniioki_a9_awd_25_15_Black_d96624aa-3493-43d1-b7bb-c5aaeee27aa9.webp?v=1773797008', category: 'Premium', date: '2027-01-08', readTime: '5' },
+  { slug: 'shop-eahora-romeo-ii', title: 'Eahora Romeo II — Compact Powerhouse', excerpt: "Don't let the size fool you — packs serious power in a compact frame.", image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/romeoii_upgraded_front_fork_8023c826-83fc-41dc-bede-55ab7712ee23.webp?v=1773797008', category: 'Compact', date: '2027-01-07', readTime: '4' },
+  { slug: 'shop-rawrr-mantix-x-pro', title: 'RawRR Mantix X Pro — Pro-Level Electric Dirt Bike', excerpt: 'Pro-level performance with no compromises. A new class of electric dirt bike.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Rawrr_xpro3.webp?v=1773797007', category: 'Dirt Bike', date: '2027-01-06', readTime: '5' },
+  { slug: 'shop-rawrr-mini', title: 'Rawrr Mini — Electric Dirt Bike, Compact & Capable', excerpt: 'All the Rawrr attitude in a smaller package. Perfect for younger riders or tight trails.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/MiniRDefault.webp?v=1773797007', category: 'Dirt Bike', date: '2027-01-05', readTime: '3' },
+  { slug: 'shop-eahora-romeo-ultra', title: 'Eahora Romeo Ultra — 60V Motor System, 2027 Edition', excerpt: 'Groundbreaking 60V motor system for unparalleled riding.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/eahora_romeo_Ultra_electric_bike_gray_3_2afd4cea-95f4-4518-8a09-e10c8e923fe8.webp?v=1773797008', category: 'Premium', date: '2027-01-04', readTime: '4' },
+  { slug: 'shop-ubco-2x2-special-edition', title: 'UBCO 2X2 Special Edition — Accessorized & Ready', excerpt: 'The Special Edition — accessorized and ready for errands or adventure.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_SE_Front_800x_30897c7f-07a1-4b3b-b64f-e28a3c575a7b.jpg?v=1773797007', category: 'Utility', date: '2027-01-03', readTime: '4' },
+  { slug: 'shop-2x2-adventure-bike', title: 'UBCO 2x2 Adventure Bike — Black', excerpt: "The ultimate adventure machine — go anywhere, do anything.", image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_ADV_Black-Front3_4_1200x_d0a77142-feab-495b-a436-091510b6d5ff.png?v=1773797007', category: 'Adventure', date: '2027-01-02', readTime: '4' },
+  { slug: 'shop-eahora-knight-m1ps', title: 'Eahora Knight M1PS — Premium Electric Motorcycle', excerpt: 'Premium electric motorcycle with stunning design and serious performance.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Eahora_M1PS_Basic.webp?v=1773797006', category: 'Motorcycle', date: '2027-01-01', readTime: '5' },
+  { slug: 'shop-quietkat-apex-hd', title: 'QuietKat Apex HD — Premium Hunting & Off-Road E-Bike', excerpt: 'Built for hunters and off-road enthusiasts who demand the best.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/QuietKat_HD_Grey_098_1024x1024_ed1a10c2-4b32-4b25-b9b6-58c0b3dcb653.webp?v=1773796933', category: 'Off-Road', date: '2026-12-28', readTime: '4' },
+  { slug: 'shop-quietkat-apex-xd', title: 'QuietKat Apex XD — Extreme Duty Off-Road E-Bike', excerpt: 'Takes off-road capability to the extreme. Built for the toughest terrain.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/QuietKat_HD_Grey_098_1024x1024_64a64c05-1e35-4ae5-b2e9-7a48a0c69436.webp?v=1773796934', category: 'Off-Road', date: '2026-12-25', readTime: '4' },
+  { slug: 'shop-eahora-romeo-ultra-ii', title: 'Eahora Romeo Ultra II — 60V Dual Motor, 80Ah Battery', excerpt: '60V dual-motor system with an 80Ah high-capacity battery for exceptional speed and range.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/eahora_romeo_Ultra_II_electric_bike_black_2.webp?v=1773796933', category: 'Premium', date: '2026-12-22', readTime: '5' },
+  { slug: 'shop-ubco-hunt-2x2', title: 'UBCO Hunt 2X2 — The Ultimate Hunting Utility Bike', excerpt: 'Silent, powerful, and purpose-built for the backcountry.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_HE_Top34_2000x_2b1d5ff5-157d-47a4-9a9f-18e831aeb9aa.webp?v=1773796934', category: 'Hunting', date: '2026-12-20', readTime: '4' },
+  { slug: 'shop-ubco-work-bike', title: 'UBCO Work Bike — Tough, Built for Hard Work & Adventure', excerpt: 'Designed tough for hard work and adventure. Handles any job you throw at it.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/UBCO_WORK_Black-RHS_98718b74-1d71-4f23-a5b9-2a832ea10a82.webp?v=1773796932', category: 'Utility', date: '2026-12-18', readTime: '4' },
+  // ── Scooters ──
+  { slug: 'shop-ebike-boys-coroma-scooter', title: 'eBike Boys COROMA Electric Scooter — Foldable, 20 MPH', excerpt: 'Foldable electric scooter with 20 MPH top speed and 40-60km range. Perfect for daily commuting.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S9a7b0f3b73cd41fca33fedc0363e8f82s_ddb311e8-bcb9-4831-a135-eaf840363a30.webp?v=1773797167', category: 'Scooter', date: '2026-12-15', readTime: '3' },
+  { slug: 'shop-coroma-scooter-women', title: 'COROMA Electric Scooter for Women — Foldable', excerpt: 'Designed for women riders with a foldable frame, 40-60km range.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/S9a7b0f3b73cd41fca33fedc0363e8f82s.webp?v=1773797167', category: 'Scooter', date: '2026-12-12', readTime: '3' },
+  { slug: 'shop-ebike-boys-m6max-scooter', title: 'eBike Boys M6Max Dual Motor Scooter — 5600W, 60V', excerpt: 'Dual 5600W motors with 60V fast-charging. The ultimate high-performance electric scooter.', image: 'https://cdn.shopify.com/s/files/1/0981/0703/1918/files/Sa9ebd2e972b64eda950c3be81ad13cd0b_88c000ff-eb32-464c-b466-2ece4c99b270.webp?v=1773797168', category: 'Scooter', date: '2026-12-10', readTime: '4' },
+  // ── Buying Guides ──
+  { slug: 'how-to-choose-your-first-electric-bike', title: 'How to Choose Your First Electric Bike: The Complete 2027 Guide', excerpt: 'Everything you need to know — motor types, battery range, classes, and the questions most first-time buyers forget to ask.', image: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&q=80', category: 'Buying Guide', date: '2027-01-12', readTime: '10' },
+  { slug: 'ebike-commuting-save-time-money', title: 'How E-Bike Commuting Saves You Time & Money (With Real Numbers)', excerpt: "We crunched the numbers. An e-bike pays for itself in 8 months compared to driving — and you get there faster too.", image: 'https://images.unsplash.com/photo-1559348349-86f1f65817fe?w=800&q=80', category: 'Commuting', date: '2027-01-08', readTime: '7' },
+  { slug: 'ebike-maintenance-checklist', title: 'E-Bike Maintenance Checklist: Keep Your Ride Running Like New', excerpt: "From battery care to chain lube, brake adjustments to tire pressure — this routine will extend your e-bike's lifespan by years.", image: 'https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800&q=80', category: 'Maintenance', date: '2027-01-02', readTime: '8' },
 ];
 
 // Merge hardcoded + content collection posts, sort by date (newest first)
 const mergedPosts = [...allPosts, ...contentPostItems]
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-const categories = [...new Set(mergedPosts.map(p => p.category))];
+const categories = ['All', ...new Set(mergedPosts.map(p => p.category))];
 ---
 
 <BaseLayout
-  title="Blog — Expert Guides & Lifestyle Inspiration"
-  description="Explore expert guides on home decor, wellness, lifestyle, and tech. Elevate your everyday with Celestial Goods."
+  title="Electric Bike Reviews & Buying Guides — The Electric Bike Superstore"
+  description="Read our in-depth reviews of the best electric bikes, buying guides, and maintenance tips. Tested by real riders."
   type="website"
   canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
 >
-  <section class="section-sm">
+  <section class="section-sm" style="padding-top: 40px;">
     <div class="container">
       <div class="page-header">
-        <h1>The <span class="gradient-text">Blog</span></h1>
-        <p>Expert guides, curated inspiration, and stories to elevate your everyday life.</p>
+        <h1>Electric Bike <span class="gradient-text">Reviews & Guides</span></h1>
+        <p>Honest reviews, expert buying advice, and maintenance tips — tested by real riders, not marketing teams.</p>
       </div>
 
       <!-- Category Filter -->
       <div class="filter-bar">
-        <button class="filter-btn active" data-category="all">All</button>
         {categories.map(cat => (
           <button class="filter-btn" data-category={cat}>{cat}</button>
         ))}
@@ -476,11 +89,11 @@ const categories = [...new Set(mergedPosts.map(p => p.category))];
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
         </svg>
-        <input type="text" id="blog-search" placeholder="Search articles..." aria-label="Search articles" />
+        <input type="text" id="blog-search" placeholder="Search reviews & guides..." aria-label="Search articles" />
       </div>
 
       <!-- Posts Grid -->
-      <div class="grid-3" id="posts-grid">
+      <div class="grid-3" id="posts-grid" style="margin-top: 32px;">
         {mergedPosts.map(post => (
           <div class="post-item" data-category={post.category} data-title={post.title.toLowerCase()}>
             <BlogCard {...post} />
@@ -490,7 +103,7 @@ const categories = [...new Set(mergedPosts.map(p => p.category))];
 
       <!-- No Results -->
       <div id="no-results" style="display:none; text-align:center; padding: 64px 0;">
-        <p style="color: var(--color-text-muted); font-size: 1.1rem;">No articles found. Try a different search or filter.</p>
+        <p style="color: var(--color-text-muted); font-size: 1.1rem;">No reviews found. Try a different search or filter.</p>
       </div>
     </div>
   </section>
@@ -499,17 +112,19 @@ const categories = [...new Set(mergedPosts.map(p => p.category))];
 <style>
   .page-header {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
+    padding: 40px 0 20px;
+    border-bottom: 1px solid var(--color-border);
   }
 
   .page-header h1 {
-    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 4vw, 2.8rem);
     margin-bottom: 12px;
   }
 
   .page-header p {
     color: var(--color-text-secondary);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .filter-bar {
@@ -517,7 +132,7 @@ const categories = [...new Set(mergedPosts.map(p => p.category))];
     gap: 8px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 
   .filter-btn {
@@ -535,17 +150,17 @@ const categories = [...new Set(mergedPosts.map(p => p.category))];
 
   .filter-btn:hover,
   .filter-btn.active {
-    background: var(--color-bg-hover);
+    background: var(--color-accent);
     border-color: var(--color-accent);
-    color: var(--color-accent);
+    color: #fff;
   }
 
   .search-bar {
     display: flex;
     align-items: center;
     gap: 12px;
-    max-width: 400px;
-    margin: 0 auto 48px;
+    max-width: 420px;
+    margin: 0 auto 0;
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
@@ -555,7 +170,7 @@ const categories = [...new Set(mergedPosts.map(p => p.category))];
 
   .search-bar:focus-within {
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.1);
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.15);
   }
 
   .search-bar svg {
@@ -583,12 +198,17 @@ const categories = [...new Set(mergedPosts.map(p => p.category))];
 
 <script>
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const posts = document.querySelectorAll<HTMLElement>('.post-item');
-  const search = document.getElementById('blog-search') as HTMLInputElement;
+  const posts = document.querySelectorAll('.post-item');
+  const search = document.getElementById('blog-search');
   const noResults = document.getElementById('no-results');
   const grid = document.getElementById('posts-grid');
 
   let activeCategory = 'all';
+
+  // Set "All" as active by default
+  filterBtns.forEach(btn => {
+    if (btn.dataset.category === 'All') btn.classList.add('active');
+  });
 
   function filterPosts() {
     const query = search?.value.toLowerCase() || '';
@@ -597,7 +217,7 @@ const categories = [...new Set(mergedPosts.map(p => p.category))];
     posts.forEach(post => {
       const cat = post.dataset.category || '';
       const title = post.dataset.title || '';
-      const matchCat = activeCategory === 'all' || cat === activeCategory;
+      const matchCat = activeCategory === 'all' || activeCategory === 'All' || cat === activeCategory;
       const matchSearch = !query || title.includes(query);
       const show = matchCat && matchSearch;
       post.style.display = show ? '' : 'none';

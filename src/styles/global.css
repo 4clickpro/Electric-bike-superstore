@@ -1,27 +1,31 @@
-/* ===== CSS Custom Properties — EBR-inspired Professional White Theme ===== */
+/* ===== CSS Custom Properties — Ocean Blue Dark Blog Theme ===== */
 :root {
-  /* Clean white background — not dark */
-  --color-bg: #ffffff;
-  --color-bg-elevated: #f8f9fa;
-  --color-bg-card: #ffffff;
-  --color-bg-hover: #f1f3f5;
-  --color-bg-sidebar: #f8f9fa;
+  /* Deep ocean blue background — not white */
+  --color-bg: #0a1628;
+  --color-bg-elevated: #132240;
+  --color-bg-card: #1a2d4a;
+  --color-bg-hover: #1e3a5f;
+  --color-bg-sidebar: #132240;
 
-  --color-border: #e1e5e9;
-  --color-border-light: #eef0f2;
+  --color-border: #1e3a5f;
+  --color-border-light: #1a2f4a;
+  --color-border-glow: #2196f3;
 
-  --color-text-primary: #1a1a2e;
-  --color-text-secondary: #4a5568;
-  --color-text-muted: #718096;
+  --color-text-primary: #e8eaf6;
+  --color-text-secondary: #90a4ae;
+  --color-text-muted: #546e7a;
 
-  /* EBR-style green accent */
-  --color-accent: #2d8a4e;
-  --color-accent-hover: #236b3d;
-  --color-accent-light: #e8f5e9;
+  /* Ocean blue accent — replaces EBR green */
+  --color-accent: #2196F3;
+  --color-accent-hover: #1976D2;
+  --color-accent-light: rgba(33, 150, 243, 0.12);
 
-  --color-success: #38a169;
-  --color-warning: #d69e2e;
-  --color-danger: #e53e3e;
+  --color-success: #4CAF50;
+  --color-warning: #ffca28;
+  --color-danger: #ef5350;
+
+  --color-accent-2: #00BCD4;
+  --color-accent-glow: rgba(33, 150, 243, 0.15);
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-serif: Georgia, 'Times New Roman', serif;
@@ -32,9 +36,9 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(33, 150, 243, 0.05);
+  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(33, 150, 243, 0.15), 0 0 20px rgba(33, 150, 243, 0.08);
 
   --transition-fast: 150ms ease;
   --transition-smooth: 200ms ease;
@@ -68,6 +72,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Subtle ocean gradient background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(33, 150, 243, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 188, 212, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(33, 150, 243, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* ===== Typography ===== */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
@@ -90,7 +107,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-accent-hover);
+  color: #64B5F6;
 }
 
 img {
@@ -106,6 +123,7 @@ img {
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
+  z-index: 1;
 }
 
 .sr-only {
@@ -118,6 +136,14 @@ img {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* Ocean blue gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #2196F3, #00BCD4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ===== Buttons ===== */
@@ -145,7 +171,7 @@ img {
   background: var(--color-accent-hover);
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: 0 4px 16px rgba(33, 150, 243, 0.35);
 }
 
 .btn-outline {
@@ -165,7 +191,7 @@ img {
   font-size: 0.8rem;
 }
 
-/* ===== Cards — clean white with subtle border ===== */
+/* ===== Cards — ocean blue dark ===== */
 .card {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
@@ -175,7 +201,7 @@ img {
 }
 
 .card:hover {
-  border-color: #cbd5e0;
+  border-color: rgba(33, 150, 243, 0.3);
   box-shadow: var(--shadow-card-hover);
 }
 
@@ -197,16 +223,16 @@ img {
 }
 
 .badge-sale {
-  background: #fef2f2;
+  background: rgba(239, 83, 80, 0.15);
   color: var(--color-danger);
 }
 
 .badge-featured {
-  background: rgba(214, 158, 46, 0.1);
+  background: rgba(255, 202, 40, 0.15);
   color: var(--color-warning);
 }
 
-/* ===== Animations — subtle only ===== */
+/* ===== Animations — subtle ===== */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -238,20 +264,20 @@ img {
   padding: 32px 0;
 }
 
-/* ===== Scrollbar ===== */
+/* ===== Scrollbar — ocean blue ===== */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-elevated);
+  background: var(--color-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e0;
+  background: var(--color-border);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-muted);
+  background: var(--color-accent);
 }
