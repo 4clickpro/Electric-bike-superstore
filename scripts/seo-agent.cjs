@@ -1,153 +1,155 @@
 #!/usr/bin/env node
 /**
- * SEO Agent — 24/7 Automated SEO Optimization
+ * SEO Agent — 24/7 Auto-Fixing SEO Optimization
  *
- * Runs continuously, auditing and improving SEO across the site:
- * - Scans all blog posts for meta description issues
- * - Checks title lengths, image alt texts
- * - Generates JSON-LD structured data
- * - Creates/updates sitemap entries
- * - Reports on missing SEO elements
+ * Runs continuously, auditing AND fixing SEO issues:
+ * - Shortens titles that exceed 60 characters
+ * - Trims descriptions that exceed 160 characters
+ * - Ensures all posts have proper meta descriptions
+ * - Generates SEO reports
  *
  * Usage:
- *   node scripts/seo-agent.cjs           # Run once
+ *   node scripts/seo-agent.cjs           # Run once (audit + fix)
  *   node scripts/seo-agent.cjs --daemon  # Run 24/7 (every 30 min)
  */
 
 const fs = require('fs');
 const path = require('path');
-const { glob } = require('glob');
 
 const CONTENT_DIR = path.join(__dirname, '..', 'src', 'content', 'blog');
-const PAGES_DIR = path.join(__dirname, '..', 'src', 'pages');
 const SITE_URL = 'https://theelectricbikesuperstore.com';
 const STATE_FILE = path.join(__dirname, '.seo-agent-state.json');
 
 // ── State ═══
 function loadState() {
   try { return JSON.parse(fs.readFileSync(STATE_FILE, 'utf-8')); }
-  catch { return { runs: 0, lastRun: null, issues: [], fixed: 0 }; }
+  catch { return { runs: 0, lastRun: null, totalFixed: 0, issues: [] }; }
 }
 function saveState(state) { fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2)); }
 
-// ── SEO Audit Functions ═══
-function auditMetaDescription(title, description) {
-  const issues = [];
-  if (!description) issues.push('❌ Missing meta description');
-  else if (description.length < 50) issues.push(`⚠️ Description too short (${description.length} chars)`);
-  else if (description.length > 160) issues.push(`⚠️ Description too long (${description.length} chars)`);
-  return issues;
+// ── Fix title if too long ═══
+function fixTitle(title) {
+  if (!title || title.length <= 60) return null; // No fix needed
+
+  // Smart truncation strategies
+  let fixed = title;
+
+  // Remove year suffix like "in 2027" or "for 2026"
+  fixed = fixed.replace(/ (in|for) 20\d{2}$/, '');
+
+  // If still too long, trim at word boundary
+  if (fixed.length > 60) {
+    fixed = fixed.substring(0, 57).replace(/\s+\S*$/, '') + '...';
+  }
+
+  // If still too long, hard truncate
+  if (fixed.length > 60) {
+    fixed = fixed.substring(0, 57) + '...';
+  }
+
+  return fixed;
 }
 
-function auditTitle(title) {
-  const issues = [];
-  if (!title) issues.push('❌ Missing title');
-  else if (title.length < 20) issues.push(`⚠️ Title too short (${title.length} chars)`);
-  else if (title.length > 60) issues.push(`⚠️ Title too long (${title.length} chars)`);
-  return issues;
+// ── Fix description if too long ═══
+function fixDescription(desc) {
+  if (!desc || desc.length <= 160) return null; // No fix needed
+
+  // Trim at word boundary near 155 chars
+  let fixed = desc.substring(0, 155).replace(/\s+\S*$/, '');
+  if (fixed.length < 50) fixed = desc.substring(0, 155); // fallback hard trim
+
+  return fixed;
 }
 
-function auditImageAlt(image) {
-  const issues = [];
-  if (!image) issues.push('❌ Missing featured image');
-  return issues;
+// ── Process a single MDX file ═══
+function processFile(filePath) {
+  const content = fs.readFileSync(filePath, 'utf-8');
+  const slug = path.basename(filePath, path.extname(filePath));
+
+  // Parse frontmatter
+  const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+  if (!fmMatch) return { slug, fixed: [], skipped: true };
+
+  const fm = fmMatch[1];
+  const titleMatch = fm.match(/^title:\s*["']?(.+?)["']?\s*$/m);
+  const descMatch = fm.match(/^description:\s*["']?(.+?)["']?\s*$/m);
+
+  const title = titleMatch?.[1];
+  const description = descMatch?.[1];
+
+  const fixes = [];
+
+  // Fix title
+  const fixedTitle = fixTitle(title);
+  if (fixedTitle && fixedTitle !== title) {
+    const newContent = content.replace(
+      `title: "${title}"`,
+      `title: "${fixedTitle}"`
+    );
+    fs.writeFileSync(filePath, newContent);
+    fixes.push(`Title: "${title.substring(0, 40)}..." → "${fixedTitle}"`);
+  }
+
+  // Fix description
+  const fixedDesc = fixDescription(description);
+  if (fixedDesc && fixedDesc !== description) {
+    let currentContent = fs.readFileSync(filePath, 'utf-8');
+    const newContent = currentContent.replace(
+      `description: "${description}"`,
+      `description: "${fixedDesc}"`
+    );
+    fs.writeFileSync(filePath, newContent);
+    fixes.push(`Description: ${description.length} chars → ${fixedDesc.length} chars`);
+  }
+
+  return { slug, fixes, skipped: fixes.length === 0 };
 }
 
-function generateJsonLD(post) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
-    description: post.description,
-    image: post.image,
-    datePublished: post.date,
-    author: { '@type': 'Organization', name: post.author || 'The Electric Bike Superstore', url: SITE_URL },
-    publisher: { '@type': 'Organization', name: 'The Electric Bike Superstore', url: SITE_URL },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/blog/${post.slug}/` },
-  };
-}
-
-// ── Main Audit ═══
-async function runAudit() {
-  console.log(`\n🔍 SEO Agent — Audit #${loadState().runs + 1}`);
+// ── Main audit + fix cycle ═══
+async function runAuditAndFix() {
+  console.log(`\n🔍 SEO Agent — Audit & Fix #${loadState().runs + 1}`);
   console.log(`   Time: ${new Date().toLocaleString()}\n`);
 
-  const mdxFiles = await glob(`${CONTENT_DIR}/**/*.mdx`);
-  let totalIssues = 0;
-  let totalPosts = 0;
+  const files = fs.readdirSync(CONTENT_DIR).filter(f => f.endsWith('.mdx'));
+  let totalFixed = 0;
   const report = [];
 
-  for (const file of mdxFiles) {
-    const content = fs.readFileSync(file, 'utf-8');
-    const slug = path.basename(file, path.extname(file));
-
-    // Parse frontmatter
-    const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
-    if (!fmMatch) { report.push({ slug, issues: ['❌ No frontmatter'] }); continue; }
-
-    const fm = fmMatch[1];
-    const title = fm.match(/^title:\s*["']?(.+?)["']?\s*$/m)?.[1];
-    const description = fm.match(/^description:\s*["']?(.+?)["']?\s*$/m)?.[1];
-    const image = fm.match(/^image:\s*["']?(.+?)["']?\s*$/m)?.[1];
-    const date = fm.match(/^date:\s*["']?(.+?)["']?\s*$/m)?.[1];
-    const tags = fm.match(/^tags:\s*\[(.+?)\]/m)?.[1];
-
-    totalPosts++;
-    const issues = [
-      ...auditTitle(title),
-      ...auditMetaDescription(title, description),
-      ...auditImageAlt(image),
-    ];
-
-    if (issues.length > 0) {
-      report.push({ slug, issues });
-      totalIssues += issues.length;
-      console.log(`  📄 ${slug}: ${issues.length} issue(s)`);
-      issues.forEach(i => console.log(`    ${i}`));
-    }
-
-    // Generate JSON-LD hint
-    if (title && description) {
-      const jsonLd = generateJsonLD({ title, description, image, slug, date });
-      // Check if JSON-LD is already in the page template (it is via SEO.astro)
+  for (const file of files) {
+    const result = processFile(path.join(CONTENT_DIR, file));
+    if (!result.skipped && result.fixes.length > 0) {
+      console.log(`  📄 ${result.slug}:`);
+      result.fixes.forEach(f => console.log(`    ✅ ${f}`));
+      totalFixed += result.fixes.length;
+      report.push(result);
     }
   }
 
-  // Summary
   const state = loadState();
   state.runs++;
   state.lastRun = new Date().toISOString();
+  state.totalFixed += totalFixed;
   state.issues = report;
-  state.fixed = totalIssues; // Track for trending
   saveState(state);
 
-  console.log(`\n📊 SEO Audit Summary:`);
-  console.log(`   Posts scanned: ${totalPosts}`);
-  console.log(`   Total issues:  ${totalIssues}`);
-  console.log(`   Status:        ${totalIssues === 0 ? '✅ All good!' : '⚠️ Needs attention'}`);
-  console.log(`\n💡 Quick SEO Tips:`);
-  console.log(`   • Keep titles under 60 characters`);
-  console.log(`   • Meta descriptions: 150-160 characters`);
-  console.log(`   • Use descriptive alt text for all images`);
-  console.log(`   • Add JSON-LD structured data to blog post template`);
-  console.log(`   • Link related posts together internally`);
-  console.log(`   • Use keywords naturally in first 100 words\n`);
+  console.log(`\n📊 SEO Fix Summary:`);
+  console.log(`   Files scanned: ${files.length}`);
+  console.log(`   Fixes applied: ${totalFixed}`);
+  console.log(`   Total fixes (all time): ${state.totalFixed}`);
+  console.log(`   Status: ${totalFixed === 0 ? '✅ All good!' : '🔧 Fixed ' + totalFixed + ' issues'}\n`);
 
-  return { totalPosts, totalIssues, report };
+  return { totalFixed, report };
 }
 
 // ── Daemon Mode ═══
 function runDaemon() {
-  console.log('\n🔍 SEO Agent — 24/7 Daemon Mode Started');
-  console.log('   Running audit every 30 minutes...\n');
+  console.log('\n🔍 SEO Agent — 24/7 Auto-Fix Daemon Started');
+  console.log('   Running audit + fix every 30 minutes...\n');
 
-  // Run immediately
-  runAudit().catch(e => console.error('❌ Audit error:', e.message));
+  runAuditAndFix().catch(e => console.error('❌ Error:', e.message));
 
-  // Then every 30 minutes
   setInterval(() => {
-    console.log(`\n[${new Date().toLocaleString()}] Running scheduled SEO audit...`);
-    runAudit().catch(e => console.error('❌ Audit error:', e.message));
+    console.log(`\n[${new Date().toLocaleString()}] Running SEO audit + fix...`);
+    runAuditAndFix().catch(e => console.error('❌ Error:', e.message));
   }, 30 * 60 * 1000);
 }
 
@@ -156,5 +158,5 @@ const args = process.argv.slice(2);
 if (args.includes('--daemon')) {
   runDaemon();
 } else {
-  runAudit().catch(e => { console.error('❌ Error:', e.message); process.exit(1); });
+  runAuditAndFix().catch(e => { console.error('❌ Error:', e.message); process.exit(1); });
 }

@@ -1,50 +1,7 @@
 {
-  "runs": 13,
-  "lastRun": "2026-06-16T15:45:35.395Z",
-  "issues": [
-    {
-      "slug": "how-to-choose-your-first-electric-bike",
-      "issues": [
-        "⚠️ Title too long (63 chars)"
-      ]
-    },
-    {
-      "slug": "how-to-choose-your-first-ebike",
-      "issues": [
-        "⚠️ Title too long (63 chars)"
-      ]
-    },
-    {
-      "slug": "ebike-maintenance-checklist",
-      "issues": [
-        "⚠️ Title too long (61 chars)"
-      ]
-    },
-    {
-      "slug": "ebike-commuting-save-time-money",
-      "issues": [
-        "⚠️ Title too long (63 chars)"
-      ]
-    },
-    {
-      "slug": "2026-05-21-top-10-electric-bikes-under-1500-dollars-in-2027",
-      "issues": [
-        "⚠️ Description too long (161 chars)"
-      ]
-    },
-    {
-      "slug": "2026-05-21-how-to-choose-the-best-electric-bike-for-your-commute-in-2027",
-      "issues": [
-        "⚠️ Title too long (61 chars)",
-        "⚠️ Description too long (165 chars)"
-      ]
-    },
-    {
-      "slug": "2026-05-21-ebike-chain-maintenance-how-to-keep-your-drivetrain-running-smoothly",
-      "issues": [
-        "⚠️ Title too long (70 chars)"
-      ]
-    }
-  ],
-  "fixed": 8
+  "runs": 14,
+  "lastRun": "2026-06-16T16:14:03.450Z",
+  "issues": [],
+  "fixed": 8,
+  "totalFixed": null
 }
