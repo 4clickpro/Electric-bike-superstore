@@ -45,54 +45,6 @@ const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire
     </div>
   </section>
 
-  <!-- ===== QUIZ ===== -->
-  <section class="section" style="padding: 28px 0; background: var(--color-accent-light); border-bottom: 1px solid var(--color-border);">
-    <div class="container" style="max-width: 640px;">
-      <div style="text-align: center; margin-bottom: 20px;">
-        <span class="badge badge-new" style="margin-bottom: 6px;">Interactive</span>
-        <h2 style="font-size: 1.2rem; margin-bottom: 4px; font-weight: 600;">Find Your Perfect E-Bike in 30 Seconds</h2>
-        <p style="color: var(--color-text-secondary); font-size: 0.88rem;">Answer 3 quick questions and we'll match you with the ideal ride.</p>
-      </div>
-      <div class="quiz-widget" id="quiz-widget" style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 24px;">
-        <div class="quiz-progress" style="width: 100%; height: 4px; background: var(--color-border-light); border-radius: 4px; margin-bottom: 20px; overflow: hidden;">
-          <div class="quiz-progress-bar" id="quiz-progress-bar" style="height: 100%; width: 0%; background: var(--color-accent); border-radius: 4px; transition: width 0.4s ease;"></div>
-        </div>
-        <div class="quiz-step active" data-step="1">
-          <h3 style="font-size: 1rem; margin-bottom: 14px; text-align: center; font-weight: 600;">What's your primary riding style?</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-            <button class="quiz-opt" onclick="quizAnswer(1,'commuter',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">🏙️ City Commuting</button>
-            <button class="quiz-opt" onclick="quizAnswer(1,'mountain',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">⛰️ Off-Road Trails</button>
-            <button class="quiz-opt" onclick="quizAnswer(1,'folding',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">🎒 Compact & Portable</button>
-            <button class="quiz-opt" onclick="quizAnswer(1,'cargo',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">📦 Hauling & Utility</button>
-          </div>
-        </div>
-        <div class="quiz-step" data-step="2" style="display: none;">
-          <h3 style="font-size: 1rem; margin-bottom: 14px; text-align: center; font-weight: 600;">What's your budget range?</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
-            <button class="quiz-opt" onclick="quizAnswer(2,'budget',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">Under $1,000</button>
-            <button class="quiz-opt" onclick="quizAnswer(2,'mid',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">$1,000 – $2,000</button>
-            <button class="quiz-opt" onclick="quizAnswer(2,'premium',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">$2,000+</button>
-          </div>
-        </div>
-        <div class="quiz-step" data-step="3" style="display: none;">
-          <h3 style="font-size: 1rem; margin-bottom: 14px; text-align: center; font-weight: 600;">How far do you need to ride per charge?</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
-            <button class="quiz-opt" onclick="quizAnswer(3,'short',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">Under 30 miles</button>
-            <button class="quiz-opt" onclick="quizAnswer(3,'medium',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">30–60 miles</button>
-            <button class="quiz-opt" onclick="quizAnswer(3,'long',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">60+ miles</button>
-          </div>
-        </div>
-        <div class="quiz-step" data-step="4" style="display: none; text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 12px;" id="quiz-result-emoji">🎉</div>
-          <h3 style="font-size: 1.2rem; margin-bottom: 8px; font-weight: 700;" id="quiz-result-title">Your Perfect Match!</h3>
-          <p style="color: var(--color-text-secondary); margin-bottom: 20px;" id="quiz-result-desc"></p>
-          <a class="btn btn-primary" id="quiz-result-link" href={aff2} target="_blank" rel="noopener noreferrer">Shop Your Match →</a>
-          <button style="display: block; margin: 16px auto 0; background: none; border: none; color: var(--color-text-muted); font-size: 0.82rem; cursor: pointer; text-decoration: underline;" onclick="quizReset()">↻ Retake Quiz</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== MAIN 2-COLUMN LAYOUT ===== -->
   <section class="section" style="padding-top: 32px;">
     <div class="container">
@@ -260,6 +212,54 @@ const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire
           </p>
         </aside>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUIZ — Bottom of page ===== -->
+  <section style="padding: 48px 0; background: var(--color-accent-light); border-top: 2px solid var(--color-accent); margin-top: 48px;">
+    <div class="container" style="max-width: 640px;">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <span class="badge badge-new" style="margin-bottom: 8px;">Interactive</span>
+        <h2 style="font-size: 1.4rem; margin-bottom: 6px; font-weight: 700;">Find Your Perfect E-Bike in 30 Seconds</h2>
+        <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Answer 3 quick questions and we'll match you with the ideal ride.</p>
+      </div>
+      <div class="quiz-widget" id="quiz-widget" style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+        <div class="quiz-progress" style="width: 100%; height: 6px; background: var(--color-border-light); border-radius: 6px; margin-bottom: 24px; overflow: hidden;">
+          <div class="quiz-progress-bar" id="quiz-progress-bar" style="height: 100%; width: 0%; background: var(--color-accent); border-radius: 6px; transition: width 0.4s ease;"></div>
+        </div>
+        <div class="quiz-step active" data-step="1">
+          <h3 style="font-size: 1.05rem; margin-bottom: 16px; text-align: center; font-weight: 600;">What's your primary riding style?</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <button class="quiz-opt" onclick="quizAnswer(1,'commuter',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">🏙️ City Commuting</button>
+            <button class="quiz-opt" onclick="quizAnswer(1,'mountain',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">⛰️ Off-Road Trails</button>
+            <button class="quiz-opt" onclick="quizAnswer(1,'folding',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">🎒 Compact & Portable</button>
+            <button class="quiz-opt" onclick="quizAnswer(1,'cargo',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">📦 Hauling & Utility</button>
+          </div>
+        </div>
+        <div class="quiz-step" data-step="2" style="display: none;">
+          <h3 style="font-size: 1.05rem; margin-bottom: 16px; text-align: center; font-weight: 600;">What's your budget range?</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+            <button class="quiz-opt" onclick="quizAnswer(2,'budget',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">Under $1,000</button>
+            <button class="quiz-opt" onclick="quizAnswer(2,'mid',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">$1,000 – $2,000</button>
+            <button class="quiz-opt" onclick="quizAnswer(2,'premium',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">$2,000+</button>
+          </div>
+        </div>
+        <div class="quiz-step" data-step="3" style="display: none;">
+          <h3 style="font-size: 1.05rem; margin-bottom: 16px; text-align: center; font-weight: 600;">How far do you need to ride per charge?</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+            <button class="quiz-opt" onclick="quizAnswer(3,'short',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">Under 30 miles</button>
+            <button class="quiz-opt" onclick="quizAnswer(3,'medium',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">30–60 miles</button>
+            <button class="quiz-opt" onclick="quizAnswer(3,'long',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">60+ miles</button>
+          </div>
+        </div>
+        <div class="quiz-step" data-step="4" style="display: none; text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 12px;" id="quiz-result-emoji">🎉</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 8px; font-weight: 700;" id="quiz-result-title">Your Perfect Match!</h3>
+          <p style="color: var(--color-text-secondary); margin-bottom: 24px; font-size: 1rem;" id="quiz-result-desc"></p>
+          <a class="btn btn-primary" id="quiz-result-link" href={aff2} target="_blank" rel="noopener noreferrer" style="font-size: 1.1rem; padding: 14px 40px;">Shop Your Match →</a>
+          <button style="display: block; margin: 20px auto 0; background: none; border: none; color: var(--color-text-muted); font-size: 0.85rem; cursor: pointer; text-decoration: underline;" onclick="quizReset()">↻ Retake Quiz</button>
+        </div>
       </div>
     </div>
   </section>
