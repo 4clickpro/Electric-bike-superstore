@@ -1,119 +1,42 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import BlogCard from '@components/BlogCard.astro';
+import productsData from '@data/products.json';
 
 const base = import.meta.env.BASE_URL;
 
-// Awin affiliate links
+// Affiliate links
 const aff1 = 'https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733';
 const aff2 = 'https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733';
 const aff3 = 'https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733';
 
-const featuredPosts = [
-  {
-    slug: 'shop-ebike-boys-fat-tire-1200w',
-    title: 'eBike Boys Fat Tire Electric Bike — 1200W, 30+ MPH',
-    excerpt: '1200W motor, fat tires, and 30+ MPH top speed. The ultimate fat tire e-bike for all-terrain domination.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80',
-    category: 'Fat Tire',
-    date: '2027-01-20',
-    readTime: '5',
-  },
-  {
-    slug: 'shop-ebike-boys-750w-48v-20in',
-    title: 'eBike Boys 750W Electric Bike — 48V Battery, 20" Wheels',
-    excerpt: '750W motor with 48V battery on 20" wheels. The perfect balance of power and portability for commuters.',
-    image: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&q=80',
-    category: 'Commuter',
-    date: '2027-01-18',
-    readTime: '4',
-  },
-  {
-    slug: 'how-to-choose-your-first-electric-bike',
-    title: 'How to Choose Your First Electric Bike: The Complete Guide',
-    excerpt: 'Everything you need to know before buying your first e-bike — motor types, battery range, classes, and the questions most first-time buyers forget to ask.',
-    image: 'https://images.unsplash.com/photo-1559348349-86f1f65817fe?w=800&q=80',
-    category: 'Buying Guide',
-    date: '2027-01-12',
-    readTime: '10',
-  },
-];
+// Separate products from guides
+const products = productsData.filter(p => p.price);
+const guides = productsData.filter(p => !p.price);
 
-const latestReviews = [
-  {
-    slug: 'shop-terrosor-715w-folding',
-    title: 'Terrosor 715W Peak Folding Electric Bicycle',
-    excerpt: '715W peak power in a folding frame. Max speed 50km/h. Commute or adventure — this bike does both.',
-    image: 'https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800&q=80',
-    category: 'Folding',
-    date: '2027-01-15',
-    readTime: '4',
-  },
-  {
-    slug: 'shop-ebike-boys-1200w-peak-fat-tire',
-    title: 'eBike Boys 1200W Peak Fat Tire E-Bike — IPX6 Waterproof',
-    excerpt: '1200W peak, 30MPH top speed, fat tires, and IPX6 waterproof rating. Built to ride in any conditions.',
-    image: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&q=80',
-    category: 'Off-Road',
-    date: '2027-01-14',
-    readTime: '4',
-  },
-  {
-    slug: 'shop-aniioki-a9-pro-max',
-    title: 'Aniioki A9 Pro Max — 60V Dual Motor eBike',
-    excerpt: 'Dual 60V motors for unstoppable power. The Aniioki A9 Pro Max is the ultimate high-performance e-bike.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80',
-    category: 'Premium',
-    date: '2027-01-13',
-    readTime: '5',
-  },
-  {
-    slug: 'ebike-commuting-save-time-money',
-    title: 'How E-Bike Commuting Saves You Time & Money (With Real Numbers)',
-    excerpt: 'We crunched the numbers. A $1,899 e-bike pays for itself in 8 months compared to driving.',
-    image: 'https://images.unsplash.com/photo-1559348349-86f1f65817fe?w=800&q=80',
-    category: 'Commuting',
-    date: '2027-01-08',
-    readTime: '7',
-  },
-  {
-    slug: 'shop-quietkat-apex-hd',
-    title: 'QuietKat Apex HD — Premium Hunting & Off-Road E-Bike',
-    excerpt: 'Purpose-built for hunters and off-road enthusiasts who demand the best in silent electric power.',
-    image: 'https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800&q=80',
-    category: 'Off-Road',
-    date: '2027-01-06',
-    readTime: '4',
-  },
-  {
-    slug: 'ebike-maintenance-checklist',
-    title: 'E-Bike Maintenance Checklist: Keep Your Ride Running Like New',
-    excerpt: 'From battery care to chain lube, brake adjustments to tire pressure — this routine will extend your e-bike\'s lifespan.',
-    image: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&q=80',
-    category: 'Maintenance',
-    date: '2027-01-02',
-    readTime: '8',
-  },
-];
+// Featured: top 3 by rating
+const featured = products.slice(0, 3);
+
+// Categories for sidebar
+const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire', 'Premium'];
 ---
 
 <BaseLayout
   title="The Electric Bike Superstore — Best Electric Bike Reviews & Buying Guides 2026"
-  description="Honest electric bike reviews, expert buying guides, and maintenance tips. Find the perfect e-bike for your commute, trails, or adventure."
+  description="Honest electric bike reviews, expert buying guides, and maintenance tips. Find the perfect e-bike from Burchda, King Bull, and Vivi."
   canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
 >
 
   <!-- ===== HERO — Clean, text-focused ===== -->
-  <section style="padding: 60px 0 48px; background: var(--color-bg-elevated); border-bottom: 1px solid var(--color-border);">
+  <section style="padding: 48px 0 40px; background: var(--color-bg-elevated); border-bottom: 1px solid var(--color-border);">
     <div class="container">
       <div style="max-width: 700px;">
-        <h1 style="font-size: 2.4rem; margin-bottom: 16px; font-weight: 800;">
-          Best Electric Bike <span class="gradient-text">Reviews & Guides</span>
+        <h1 style="font-size: 2.2rem; margin-bottom: 12px; font-weight: 800;">
+          Best Electric Bike <span class="gradient-text">Reviews & Buying Guides</span>
         </h1>
-        <p style="font-size: 1.1rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 32px;">
-          Honest, in-depth reviews of the best e-bikes — from commuter and mountain bikes to folding and cargo. Backed by real testing, not marketing hype.
+        <p style="font-size: 1.05rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 28px;">
+          Honest, in-depth reviews of the best e-bikes from Burchda, King Bull, and Vivi. Real specs, real prices, real testing — not marketing hype.
         </p>
-        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
           <a href={`${base}blog`} class="btn btn-primary">Read Reviews</a>
           <a href={`${base}blog?category=Buying+Guide`} class="btn btn-outline">Buying Guides</a>
           <a href={aff1} target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #38a169; color: #38a169;">🛒 Shop E-Bikes</a>
@@ -122,41 +45,41 @@ const latestReviews = [
     </div>
   </section>
 
-  <!-- ===== QUIZ — Green restyled ===== -->
-  <section class="section" style="padding: 32px 0; background: var(--color-accent-light); border-bottom: 1px solid var(--color-border);">
+  <!-- ===== QUIZ ===== -->
+  <section class="section" style="padding: 28px 0; background: var(--color-accent-light); border-bottom: 1px solid var(--color-border);">
     <div class="container" style="max-width: 640px;">
-      <div style="text-align: center; margin-bottom: 24px;">
-        <span class="badge badge-new" style="margin-bottom: 8px;">Interactive</span>
-        <h2 style="font-size: 1.3rem; margin-bottom: 4px; font-weight: 600;">Find Your Perfect E-Bike in 30 Seconds</h2>
-        <p style="color: var(--color-text-secondary); font-size: 0.9rem;">Answer 3 quick questions and we'll match you with the ideal ride.</p>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <span class="badge badge-new" style="margin-bottom: 6px;">Interactive</span>
+        <h2 style="font-size: 1.2rem; margin-bottom: 4px; font-weight: 600;">Find Your Perfect E-Bike in 30 Seconds</h2>
+        <p style="color: var(--color-text-secondary); font-size: 0.88rem;">Answer 3 quick questions and we'll match you with the ideal ride.</p>
       </div>
-      <div class="quiz-widget" id="quiz-widget" style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 28px;">
-        <div class="quiz-progress" style="width: 100%; height: 4px; background: var(--color-border-light); border-radius: 4px; margin-bottom: 24px; overflow: hidden;">
+      <div class="quiz-widget" id="quiz-widget" style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 24px;">
+        <div class="quiz-progress" style="width: 100%; height: 4px; background: var(--color-border-light); border-radius: 4px; margin-bottom: 20px; overflow: hidden;">
           <div class="quiz-progress-bar" id="quiz-progress-bar" style="height: 100%; width: 0%; background: var(--color-accent); border-radius: 4px; transition: width 0.4s ease;"></div>
         </div>
         <div class="quiz-step active" data-step="1">
-          <h3 style="font-size: 1.1rem; margin-bottom: 16px; text-align: center; font-weight: 600;">What's your primary riding style?</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <button class="quiz-opt" onclick="quizAnswer(1, 'commuter', this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">🏙️ City Commuting</button>
-            <button class="quiz-opt" onclick="quizAnswer(1, 'mountain', this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">⛰️ Off-Road Trails</button>
-            <button class="quiz-opt" onclick="quizAnswer(1, 'folding', this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">🎒 Compact & Portable</button>
-            <button class="quiz-opt" onclick="quizAnswer(1, 'cargo', this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">📦 Hauling & Utility</button>
+          <h3 style="font-size: 1rem; margin-bottom: 14px; text-align: center; font-weight: 600;">What's your primary riding style?</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <button class="quiz-opt" onclick="quizAnswer(1,'commuter',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">🏙️ City Commuting</button>
+            <button class="quiz-opt" onclick="quizAnswer(1,'mountain',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">⛰️ Off-Road Trails</button>
+            <button class="quiz-opt" onclick="quizAnswer(1,'folding',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">🎒 Compact & Portable</button>
+            <button class="quiz-opt" onclick="quizAnswer(1,'cargo',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">📦 Hauling & Utility</button>
           </div>
         </div>
         <div class="quiz-step" data-step="2" style="display: none;">
-          <h3 style="font-size: 1.1rem; margin-bottom: 16px; text-align: center; font-weight: 600;">What's your budget range?</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-            <button class="quiz-opt" onclick="quizAnswer(2, 'budget', this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">Under $1,000</button>
-            <button class="quiz-opt" onclick="quizAnswer(2, 'mid', this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">$1,000 – $2,500</button>
-            <button class="quiz-opt" onclick="quizAnswer(2, 'premium', this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">$2,500+</button>
+          <h3 style="font-size: 1rem; margin-bottom: 14px; text-align: center; font-weight: 600;">What's your budget range?</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+            <button class="quiz-opt" onclick="quizAnswer(2,'budget',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">Under $1,000</button>
+            <button class="quiz-opt" onclick="quizAnswer(2,'mid',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">$1,000 – $2,000</button>
+            <button class="quiz-opt" onclick="quizAnswer(2,'premium',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">$2,000+</button>
           </div>
         </div>
         <div class="quiz-step" data-step="3" style="display: none;">
-          <h3 style="font-size: 1.1rem; margin-bottom: 16px; text-align: center; font-weight: 600;">How far do you need to ride per charge?</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-            <button class="quiz-opt" onclick="quizAnswer(3, 'short', this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">Under 30 miles</button>
-            <button class="quiz-opt" onclick="quizAnswer(3, 'medium', this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">30–60 miles</button>
-            <button class="quiz-opt" onclick="quizAnswer(3, 'long', this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">60+ miles</button>
+          <h3 style="font-size: 1rem; margin-bottom: 14px; text-align: center; font-weight: 600;">How far do you need to ride per charge?</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+            <button class="quiz-opt" onclick="quizAnswer(3,'short',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">Under 30 miles</button>
+            <button class="quiz-opt" onclick="quizAnswer(3,'medium',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">30–60 miles</button>
+            <button class="quiz-opt" onclick="quizAnswer(3,'long',this)" style="padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">60+ miles</button>
           </div>
         </div>
         <div class="quiz-step" data-step="4" style="display: none; text-align: center;">
@@ -173,28 +96,121 @@ const latestReviews = [
   <!-- ===== MAIN 2-COLUMN LAYOUT ===== -->
   <section class="section" style="padding-top: 32px;">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: start;">
+      <div style="display: grid; grid-template-columns: 1fr 280px; gap: 40px; align-items: start;">
 
-        <!-- CENTER CONTENT -->
+        <!-- CENTER: EBR-Style Product Reviews -->
         <main>
-          <!-- Featured Posts -->
-          <div style="margin-bottom: 48px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--color-accent);">
-              <h2 style="font-size: 1.3rem; margin: 0; font-weight: 700;">Featured Reviews</h2>
-              <a href={`${base}blog`} style="font-size: 0.85rem; color: var(--color-accent); font-weight: 600;">View All →</a>
-            </div>
-            <div class="grid-2">
-              {featuredPosts.map(post => <BlogCard {...post} />)}
-            </div>
+          <div style="margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--color-accent);">
+            <h2 style="font-size: 1.3rem; margin: 0; font-weight: 700;">Best Electric Bikes We've Tested</h2>
+            <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 4px;">Updated June 2026 — Prices and availability subject to change</p>
           </div>
 
-          <!-- Latest Reviews -->
-          <div style="margin-bottom: 48px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--color-border);">
-              <h2 style="font-size: 1.3rem; margin: 0; font-weight: 700;">Latest Reviews</h2>
+          {products.map(product => (
+            <article class="bike-review" style="margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--color-border);">
+              <!-- Product Header -->
+              <div style="display: grid; grid-template-columns: 200px 1fr; gap: 24px; margin-bottom: 16px;">
+                <a href={`${base}blog/${product.slug}/`} style="display: block; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border);">
+                  <img src={product.image} alt={product.title} loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+                </a>
+                <div>
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                    <span class="badge badge-new">{product.category}</span>
+                    <span style="font-size: 0.78rem; color: var(--color-text-muted);">{product.store}</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-weight: 700; line-height: 1.3;">
+                    <a href={`${base}blog/${product.slug}/`} style="color: var(--color-text-primary); text-decoration: none;">
+                      {product.title}
+                    </a>
+                  </h3>
+                  <!-- Star Rating -->
+                  <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+                    <div style="display: flex; gap: 1px;">
+                      {[1,2,3,4,5].map(i => (
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill={i <= Math.round(product.rating) ? "#d69e2e" : "#e1e5e9"} stroke="#d69e2e" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                      ))}
+                    </div>
+                    <span style="font-size: 0.82rem; color: var(--color-text-muted);">{product.rating}/5 ({product.reviews} reviews)</span>
+                  </div>
+                  <!-- Price -->
+                  <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px;">
+                    {product.oldPrice && <span style="font-size: 0.88rem; color: var(--color-text-muted); text-decoration: line-through;">{product.oldPrice}</span>}
+                    <span style="font-size: 1.3rem; font-weight: 800; color: var(--color-accent);">{product.price}</span>
+                  </div>
+                  <!-- CTA -->
+                  <a href={product.affiliateUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    Best Price at {product.store} →
+                  </a>
+                </div>
+              </div>
+
+              <!-- Specs Table -->
+              <div style="background: var(--color-bg-elevated); border-radius: var(--radius-md); padding: 16px; margin-bottom: 16px;">
+                <h4 style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-bottom: 10px; font-weight: 700;">Key Specs</h4>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 16px;">
+                  {Object.entries(product.specs).slice(0, 6).map(([key, value]) => (
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+                      <span style="color: var(--color-text-muted);">{key}:</span>
+                      <span style="font-weight: 600; color: var(--color-text-primary);">{value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Excerpt -->
+              <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 12px;">
+                {product.excerpt}
+              </p>
+
+              <!-- Pros/Cons -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                <div>
+                  <h4 style="font-size: 0.82rem; color: var(--color-success); font-weight: 700; margin-bottom: 6px;">👍 PROS</h4>
+                  <ul style="list-style: none; padding: 0; margin: 0;">
+                    {product.pros.map(pro => (
+                      <li style="font-size: 0.82rem; color: var(--color-text-secondary); padding: 3px 0; border-bottom: 1px solid var(--color-border-light);">✓ {pro}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 style="font-size: 0.82rem; color: var(--color-danger); font-weight: 700; margin-bottom: 6px;">👎 CONS</h4>
+                  <ul style="list-style: none; padding: 0; margin: 0;">
+                    {product.cons.map(con => (
+                      <li style="font-size: 0.82rem; color: var(--color-text-secondary); padding: 3px 0; border-bottom: 1px solid var(--color-border-light);">✗ {con}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Bottom CTA -->
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <a href={product.affiliateUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  Check Price at {product.store} →
+                </a>
+                <a href={`${base}blog/${product.slug}/`} class="btn btn-outline btn-sm">
+                  Read Full Review
+                </a>
+              </div>
+            </article>
+          ))}
+
+          <!-- Guides Section -->
+          <div style="margin-top: 48px;">
+            <div style="margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--color-border);">
+              <h2 style="font-size: 1.3rem; margin: 0; font-weight: 700;">Expert Buying Guides</h2>
             </div>
             <div class="grid-2">
-              {latestReviews.map(post => <BlogCard {...post} />)}
+              {guides.map(guide => (
+                <article class="card" style="padding: 20px;">
+                  <span class="badge badge-new" style="margin-bottom: 8px;">{guide.category}</span>
+                  <h3 style="font-size: 1.05rem; margin-bottom: 8px; font-weight: 700;">
+                    <a href={`${base}blog/${guide.slug}/`} style="color: var(--color-text-primary);">{guide.title}</a>
+                  </h3>
+                  <p style="color: var(--color-text-secondary); font-size: 0.88rem; line-height: 1.6;">{guide.excerpt}</p>
+                  <a href={`${base}blog/${guide.slug}/`} class="read-more" style="margin-top: 12px; display: inline-flex;">
+                    Read Guide →
+                  </a>
+                </article>
+              ))}
             </div>
           </div>
         </main>
@@ -202,42 +218,46 @@ const latestReviews = [
         <!-- RIGHT SIDEBAR -->
         <aside style="position: sticky; top: 96px;">
           <!-- Browse By Type -->
-          <div style="background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px;">
-            <h3 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-bottom: 12px; font-weight: 700;">Browse By Type</h3>
+          <div style="background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 18px; margin-bottom: 16px;">
+            <h3 style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-bottom: 10px; font-weight: 700;">Browse By Type</h3>
             <nav>
               <ul style="list-style: none; padding: 0; margin: 0;">
-                {['Commuter', 'Mountain', 'Folding', 'Fat Tire', 'Cargo', 'Scooters'].map((type) => (
-                  <li style="margin-bottom: 2px;">
-                    <a href={`${base}blog?category=${type}`} style="display: block; padding: 8px 0; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light); transition: color 150ms;">{type} E-Bikes</a>
+                {categories.filter(c => c !== 'All').map(cat => (
+                  <li>
+                    <a href={`${base}blog?category=${cat}`} style="display: block; padding: 7px 0; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light); transition: color 150ms;">{cat} E-Bikes</a>
                   </li>
                 ))}
               </ul>
             </nav>
           </div>
 
-          <!-- Quick Links -->
-          <div style="background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px;">
-            <h3 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-bottom: 12px; font-weight: 700;">Quick Links</h3>
+          <!-- Affiliate Stores -->
+          <div style="background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 18px; margin-bottom: 16px;">
+            <h3 style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-bottom: 10px; font-weight: 700;">Shop By Store</h3>
             <nav>
               <ul style="list-style: none; padding: 0; margin: 0;">
-                <li><a href={aff1} target="_blank" rel="noopener noreferrer" style="display: block; padding: 8px 0; color: var(--color-accent); font-size: 0.9rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light);">🛒 Shop All E-Bikes</a></li>
-                <li><a href={aff2} target="_blank" rel="noopener noreferrer" style="display: block; padding: 8px 0; color: var(--color-accent); font-size: 0.9rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light);">💰 Best Under $1,000</a></li>
-                <li><a href={aff3} target="_blank" rel="noopener noreferrer" style="display: block; padding: 8px 0; color: var(--color-accent); font-size: 0.9rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light);">🏆 Premium Picks</a></li>
-                <li><a href={`${base}blog?category=Buying+Guide`} style="display: block; padding: 8px 0; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500;">📖 Buying Guides</a></li>
+                <li><a href={aff1} target="_blank" rel="noopener noreferrer" style="display: block; padding: 7px 0; color: var(--color-accent); font-size: 0.88rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light);">🏪 Burchda Bikes</a></li>
+                <li><a href={aff2} target="_blank" rel="noopener noreferrer" style="display: block; padding: 7px 0; color: var(--color-accent); font-size: 0.88rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light);">🏪 King Bull Bike</a></li>
+                <li><a href={aff3} target="_blank" rel="noopener noreferrer" style="display: block; padding: 7px 0; color: var(--color-accent); font-size: 0.88rem; font-weight: 500;">🏪 Vivi Bikes</a></li>
               </ul>
             </nav>
           </div>
 
           <!-- Newsletter -->
-          <div style="background: var(--color-accent); border-radius: var(--radius-md); padding: 24px; color: #fff;">
-            <h3 style="font-size: 0.95rem; margin-bottom: 6px; font-weight: 700; color: #fff;">E-Bike Deals Newsletter</h3>
-            <p style="font-size: 0.82rem; color: rgba(255,255,255,0.85); margin-bottom: 14px; line-height: 1.5;">Get weekly deals, new model alerts, and expert riding tips.</p>
-            <form onsubmit="event.preventDefault(); alert('Thanks for subscribing!');" style="display: flex; flex-direction: column; gap: 8px;">
-              <input type="email" placeholder="your@email.com" required aria-label="Email" style="padding: 10px 14px; border-radius: var(--radius-sm); border: none; font-size: 0.88rem; font-family: var(--font-sans);" />
-              <button type="submit" class="btn" style="background: #fff; color: var(--color-accent); justify-content: center; font-weight: 700;">Subscribe</button>
+          <div style="background: var(--color-accent); border-radius: var(--radius-md); padding: 20px; color: #fff;">
+            <h3 style="font-size: 0.9rem; margin-bottom: 4px; font-weight: 700; color: #fff;">E-Bike Deals Newsletter</h3>
+            <p style="font-size: 0.78rem; color: rgba(255,255,255,0.85); margin-bottom: 12px; line-height: 1.5;">Get weekly deals, new model alerts, and expert riding tips.</p>
+            <form onsubmit="event.preventDefault(); alert('Thanks for subscribing!');" style="display: flex; flex-direction: column; gap: 6px;">
+              <input type="email" placeholder="your@email.com" required aria-label="Email" style="padding: 8px 12px; border-radius: var(--radius-sm); border: none; font-size: 0.85rem; font-family: var(--font-sans);" />
+              <button type="submit" class="btn" style="background: #fff; color: var(--color-accent); justify-content: center; font-weight: 700; font-size: 0.85rem;">Subscribe</button>
             </form>
-            <p style="font-size: 0.72rem; color: rgba(255,255,255,0.7); margin-top: 10px;">No spam. Unsubscribe anytime.</p>
+            <p style="font-size: 0.68rem; color: rgba(255,255,255,0.7); margin-top: 8px;">No spam. Unsubscribe anytime.</p>
           </div>
+
+          <!-- Disclaimer -->
+          <p style="font-size: 0.72rem; color: var(--color-text-muted); margin-top: 12px; line-height: 1.5;">
+            <em>As an affiliate partner of Burchda, King Bull, and Vivi, we may earn a small commission on qualifying purchases. This does not affect our reviews or recommendations.</em>
+          </p>
         </aside>
 
       </div>
@@ -259,14 +279,13 @@ const latestReviews = [
     setTimeout(function() {
       document.querySelectorAll('.quiz-step[data-step="' + step + '"]')[0].style.display = 'none';
       document.querySelectorAll('.quiz-step[data-step="' + (step + 1) + '"]')[0].style.display = 'block';
-      document.querySelector('.quiz-step[data-step="' + (step + 1) + '"]').classList.add('active');
       if (step === 3) {
         var q1 = quizState.q1;
         var map = {
-          commuter: { emoji: '🏙️', title: 'The Urban Commuter', desc: 'You need a sleek, reliable e-bike that makes city riding effortless. Integrated lights, fenders, and racks — your daily commute just got an upgrade.' },
-          mountain: { emoji: '⛰️', title: 'The Trail Blazer', desc: 'You live for off-road adventure. Our mountain e-bikes feature full suspension, fat tires, and powerful motors for any terrain.' },
-          folding: { emoji: '🎒', title: 'The City Minimalist', desc: 'Portability is everything. Our folding e-bikes pack down small, ride big, and are perfect for mixed commutes.' },
-          cargo: { emoji: '📦', title: 'The Family Hauler', desc: 'You need to move people and stuff. Our cargo e-bikes have the power, range, and carrying capacity for local trips.' }
+          commuter: { emoji: '🏙️', title: 'The Urban Commuter', desc: 'You need a sleek, reliable e-bike for daily commuting. Check out our top commuter picks.' },
+          mountain: { emoji: '⛰️', title: 'The Trail Blazer', desc: 'You live for off-road adventure. Our mountain e-bikes are built for any terrain.' },
+          folding: { emoji: '🎒', title: 'The City Minimalist', desc: 'Portability is everything. Our folding e-bikes pack down small and ride big.' },
+          cargo: { emoji: '📦', title: 'The Family Hauler', desc: 'You need to move people and stuff. Our cargo e-bikes have the power and capacity.' }
         };
         var r = map[q1] || map.commuter;
         document.getElementById('quiz-result-emoji').textContent = r.emoji;
@@ -290,19 +309,13 @@ const latestReviews = [
     border-color: var(--color-accent) !important;
     background: var(--color-accent-light) !important;
   }
-
   @media (max-width: 1024px) {
-    .container > div[style*="grid-template-columns: 1fr 300px"] {
-      grid-template-columns: 1fr !important;
-    }
-    aside[style*="position: sticky"] {
-      position: static !important;
-    }
+    .container > div[style*="grid-template-columns: 1fr 280px"] { grid-template-columns: 1fr !important; }
+    aside[style*="position: sticky"] { position: static !important; }
+    .bike-review > div[style*="grid-template-columns: 200px 1fr"] { grid-template-columns: 1fr !important; }
+    .bike-review > div[style*="grid-template-columns: 200px 1fr"] img { max-height: 240px; }
   }
-
   @media (max-width: 768px) {
-    div[style*="grid-template-columns: repeat(4, 1fr)"] {
-      grid-template-columns: repeat(2, 1fr) !important;
-    }
+    .bike-review > div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
   }
 </style>

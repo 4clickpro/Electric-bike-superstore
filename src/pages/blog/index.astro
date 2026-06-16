@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import BlogCard from '@components/BlogCard.astro';
 import { getCollection } from 'astro:content';
+import productsData from '@data/products.json';
 
 const base = import.meta.env.BASE_URL;
 
-// Load auto-generated posts from content collection
+// Load content collection posts
 const contentPosts = await getCollection('blog');
 const contentPostItems = contentPosts.map(p => ({
   slug: p.id.replace(/\.mdx?$/, ''),
@@ -19,62 +19,24 @@ const contentPostItems = contentPosts.map(p => ({
   isContentPost: true,
 }));
 
-// Only e-bike posts — removed lifestyle content
-const allPosts = [
-  // ── E-Bike Product Reviews ──
-  { slug: 'shop-ebike-boys-fat-tire-1200w', title: 'eBike Boys Fat Tire Electric Bike — 1200W, 30+ MPH', excerpt: '1200W motor, fat tires, and 30+ MPH top speed. The ultimate fat tire e-bike for all-terrain domination.', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80', category: 'Fat Tire', date: '2027-01-20', readTime: '5' },
-  { slug: 'shop-ebike-boys-20-fat-tire-full-suspension', title: 'eBike Boys 20" Fat Tire Full Suspension E-Bike — 30MPH', excerpt: 'Full suspension, 20" fat tires, and 30 MPH speed. Built to handle any terrain with confidence.', image: 'https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800&q=80', category: 'Off-Road', date: '2027-01-20', readTime: '4' },
-  { slug: 'shop-ebike-boys-750w-48v-20in', title: 'eBike Boys 750W Electric Bike — 48V Battery, 20" Wheels', excerpt: '750W motor with 48V battery on 20" wheels. The perfect balance of power and portability.', image: 'https://images.unsplash.com/photo-1559348349-86f1f65817fe?w=800&q=80', category: 'Commuter', date: '2027-01-18', readTime: '4' },
-  { slug: 'shop-terrosor-715w-folding', title: 'Terrosor 715W Peak Folding Electric Bicycle — 50km/h', excerpt: '715W peak power in a folding frame. Max speed 50km/h. Commute or adventure — this bike does both.', image: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&q=80', category: 'Folding', date: '2027-01-17', readTime: '4' },
-  { slug: 'shop-ebike-boys-715w-folding', title: 'eBike Boys 715W Peak Folding Electric Bicycle', excerpt: 'Fast, powerful, and folds for easy storage. 715W peak motor at an incredible price.', image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&q=80', category: 'Folding', date: '2027-01-16', readTime: '3' },
-  { slug: 'shop-ebike-boys-1200w-peak-fat-tire', title: 'eBike Boys 1200W Peak E-Bike — 30MPH, Fat Tires, IPX6', excerpt: '1200W peak, 30MPH top speed, fat tires, and IPX6 waterproof rating. Built to ride in any conditions.', image: 'https://images.unsplash.com/photo-1544191696-15693072f5a5?w=800&q=80', category: 'Off-Road', date: '2027-01-15', readTime: '4' },
-  { slug: 'shop-ebike-boys-1200w-peak-20in', title: 'eBike Boys 1200W Peak Electric Bike — 20" Motor', excerpt: '1200W peak power in a compact 20" frame. Serious speed and torque for urban riding.', image: 'https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=800&q=80', category: 'Urban', date: '2027-01-14', readTime: '3' },
-  { slug: 'shop-ebike-boys-20-fat-tire-all-terrain', title: 'eBike Boys 20" Fat Tire E-Bike — Full Suspension All-Terrain', excerpt: 'Full suspension meets fat tires for unstoppable all-terrain capability.', image: 'https://images.unsplash.com/photo-1517654132693-487942e66b8b?w=800&q=80', category: 'Off-Road', date: '2027-01-13', readTime: '4' },
-  { slug: 'shop-ebike-boys-1200w-lithium-48v', title: 'eBike Boys 1200W Lithium Electric Bike — 48V, 20" Wheel', excerpt: '1200W of lithium-powered performance on 20" wheels. Fast, reliable, and ready to ride.', image: 'https://images.unsplash.com/photo-1583467875263-d50dec37a88c?w=800&q=80', category: 'Urban', date: '2027-01-12', readTime: '3' },
-  { slug: 'shop-deepower-s7pro', title: 'DEEPOWER S7Pro Off-Road Electric Bike', excerpt: 'Purpose-built for off-road adventures. Rugged performance at a great price.', image: 'https://images.unsplash.com/photo-1611095973763-4140be02880d?w=800&q=80', category: 'Off-Road', date: '2027-01-11', readTime: '4' },
-  { slug: 'shop-hezzo-1200w', title: 'HEZZO 1200W Electric Bike — 48V Lithium, 50+ km/h', excerpt: 'HEZZO 1200W powerhouse with 48V lithium battery. Over 50 km/h top speed for thrill seekers.', image: 'https://images.unsplash.com/photo-1636243282262-796248326876?w=800&q=80', category: 'Speed', date: '2027-01-10', readTime: '4' },
-  { slug: 'shop-high-quality-52v-750w', title: 'High-Quality eBike — 52V 750W Motor, 17AH Long Range', excerpt: 'Premium build with 52V 750W motor and massive 17AH battery for extended range.', image: 'https://images.unsplash.com/photo-1616963277284-72c14948277c?w=800&q=80', category: 'Long Range', date: '2027-01-09', readTime: '4' },
-  { slug: 'shop-aniioki-a9-pro-max', title: 'Aniioki A9 Pro Max — 60V Dual Motor eBike', excerpt: 'Dual 60V motors for unstoppable power. The ultimate high-performance e-bike.', image: 'https://images.unsplash.com/photo-1646243169615-3d2a02d76e81?w=800&q=80', category: 'Premium', date: '2027-01-08', readTime: '5' },
-  { slug: 'shop-eahora-romeo-ii', title: 'Eahora Romeo II — Compact Powerhouse', excerpt: "Don't let the size fool you — packs serious power in a compact frame.", image: 'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=800&q=80', category: 'Compact', date: '2027-01-07', readTime: '4' },
-  { slug: 'shop-rawrr-mantix-x-pro', title: 'RawRR Mantix X Pro — Pro-Level Electric Dirt Bike', excerpt: 'Pro-level performance with no compromises. A new class of electric dirt bike.', image: 'https://images.unsplash.com/photo-1622445275576-721325763afe?w=800&q=80', category: 'Dirt Bike', date: '2027-01-06', readTime: '5' },
-  { slug: 'shop-rawrr-mini', title: 'Rawrr Mini — Electric Dirt Bike, Compact & Capable', excerpt: 'All the Rawrr attitude in a smaller package. Perfect for younger riders or tight trails.', image: 'https://images.unsplash.com/photo-1616963277284-72c14948277c?w=800&q=80', category: 'Dirt Bike', date: '2027-01-05', readTime: '3' },
-  { slug: 'shop-eahora-romeo-ultra', title: 'Eahora Romeo Ultra — 60V Motor System, 2027 Edition', excerpt: 'Groundbreaking 60V motor system for unparalleled riding.', image: 'https://images.unsplash.com/photo-1646243169615-3d2a02d76e81?w=800&q=80', category: 'Premium', date: '2027-01-04', readTime: '4' },
-  { slug: 'shop-ubco-2x2-special-edition', title: 'UBCO 2X2 Special Edition — Accessorized & Ready', excerpt: 'The Special Edition — accessorized and ready for errands or adventure.', image: 'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=800&q=80', category: 'Utility', date: '2027-01-03', readTime: '4' },
-  { slug: 'shop-2x2-adventure-bike', title: 'UBCO 2x2 Adventure Bike — Black', excerpt: "The ultimate adventure machine — go anywhere, do anything.", image: 'https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=800&q=80', category: 'Adventure', date: '2027-01-02', readTime: '4' },
-  { slug: 'shop-eahora-knight-m1ps', title: 'Eahora Knight M1PS — Premium Electric Motorcycle', excerpt: 'Premium electric motorcycle with stunning design and serious performance.', image: 'https://images.unsplash.com/photo-1636243282262-796248326876?w=800&q=80', category: 'Motorcycle', date: '2027-01-01', readTime: '5' },
-  { slug: 'shop-quietkat-apex-hd', title: 'QuietKat Apex HD — Premium Hunting & Off-Road E-Bike', excerpt: 'Built for hunters and off-road enthusiasts who demand the best.', image: 'https://images.unsplash.com/photo-1611095973763-4140be02880d?w=800&q=80', category: 'Off-Road', date: '2026-12-28', readTime: '4' },
-  { slug: 'shop-quietkat-apex-xd', title: 'QuietKat Apex XD — Extreme Duty Off-Road E-Bike', excerpt: 'Takes off-road capability to the extreme. Built for the toughest terrain.', image: 'https://images.unsplash.com/photo-1517654132693-487942e66b8b?w=800&q=80', category: 'Off-Road', date: '2026-12-25', readTime: '4' },
-  { slug: 'shop-eahora-romeo-ultra-ii', title: 'Eahora Romeo Ultra II — 60V Dual Motor, 80Ah Battery', excerpt: '60V dual-motor system with an 80Ah high-capacity battery for exceptional speed and range.', image: 'https://images.unsplash.com/photo-1646243169615-3d2a02d76e81?w=800&q=80', category: 'Premium', date: '2026-12-22', readTime: '5' },
-  { slug: 'shop-ubco-hunt-2x2', title: 'UBCO Hunt 2X2 — The Ultimate Hunting Utility Bike', excerpt: 'Silent, powerful, and purpose-built for the backcountry.', image: 'https://images.unsplash.com/photo-1622445275576-721325763afe?w=800&q=80', category: 'Hunting', date: '2026-12-20', readTime: '4' },
-  { slug: 'shop-ubco-work-bike', title: 'UBCO Work Bike — Tough, Built for Hard Work & Adventure', excerpt: 'Designed tough for hard work and adventure. Handles any job you throw at it.', image: 'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=800&q=80', category: 'Utility', date: '2026-12-18', readTime: '4' },
-  // ── Scooters ──
-  { slug: 'shop-ebike-boys-coroma-scooter', title: 'eBike Boys COROMA Electric Scooter — Foldable, 20 MPH', excerpt: 'Foldable electric scooter with 20 MPH top speed and 40-60km range. Perfect for daily commuting.', image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&q=80', category: 'Scooter', date: '2026-12-15', readTime: '3' },
-  { slug: 'shop-coroma-scooter-women', title: 'COROMA Electric Scooter for Women — Foldable', excerpt: 'Designed for women riders with a foldable frame, 40-60km range.', image: 'https://images.unsplash.com/photo-1583467875263-d50dec37a88c?w=800&q=80', category: 'Scooter', date: '2026-12-12', readTime: '3' },
-  { slug: 'shop-ebike-boys-m6max-scooter', title: 'eBike Boys M6Max Dual Motor Scooter — 5600W, 60V', excerpt: 'Dual 5600W motors with 60V fast-charging. The ultimate high-performance electric scooter.', image: 'https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=800&q=80', category: 'Scooter', date: '2026-12-10', readTime: '4' },
-  // ── Buying Guides ──
-  { slug: 'how-to-choose-your-first-electric-bike', title: 'How to Choose Your First Electric Bike: The Complete 2027 Guide', excerpt: 'Everything you need to know — motor types, battery range, classes, and the questions most first-time buyers forget to ask.', image: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&q=80', category: 'Buying Guide', date: '2027-01-12', readTime: '10' },
-  { slug: 'ebike-commuting-save-time-money', title: 'How E-Bike Commuting Saves You Time & Money (With Real Numbers)', excerpt: "We crunched the numbers. An e-bike pays for itself in 8 months compared to driving — and you get there faster too.", image: 'https://images.unsplash.com/photo-1559348349-86f1f65817fe?w=800&q=80', category: 'Commuting', date: '2027-01-08', readTime: '7' },
-  { slug: 'ebike-maintenance-checklist', title: 'E-Bike Maintenance Checklist: Keep Your Ride Running Like New', excerpt: "From battery care to chain lube, brake adjustments to tire pressure — this routine will extend your e-bike's lifespan by years.", image: 'https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800&q=80', category: 'Maintenance', date: '2027-01-02', readTime: '8' },
-];
-
-// Merge hardcoded + content collection posts, sort by date (newest first)
-const mergedPosts = [...allPosts, ...contentPostItems]
+// Merge products + content posts, sort by date
+const allPosts = [...productsData, ...contentPostItems]
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-const categories = ['All', ...new Set(mergedPosts.map(p => p.category))];
+const categories = ['All', ...new Set(allPosts.map(p => p.category))];
 ---
 
 <BaseLayout
   title="Electric Bike Reviews & Buying Guides — The Electric Bike Superstore"
-  description="Read our in-depth reviews of the best electric bikes, buying guides, and maintenance tips. Tested by real riders."
+  description="Read our in-depth reviews of the best electric bikes from Burchda, King Bull, and Vivi. Real specs, real prices, real testing."
   type="website"
   canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
 >
-  <section class="section-sm" style="padding-top: 40px;">
+  <section class="section-sm" style="padding-top: 32px;">
     <div class="container">
       <div class="page-header">
         <h1>Electric Bike <span class="gradient-text">Reviews & Guides</span></h1>
-        <p>Honest reviews, expert buying advice, and maintenance tips — tested by real riders, not marketing teams.</p>
+        <p>Honest reviews, expert buying advice, and maintenance tips — tested by real riders.</p>
       </div>
 
       <!-- Category Filter -->
@@ -86,22 +48,57 @@ const categories = ['All', ...new Set(mergedPosts.map(p => p.category))];
 
       <!-- Search -->
       <div class="search-bar">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-        </svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         <input type="text" id="blog-search" placeholder="Search reviews & guides..." aria-label="Search articles" />
       </div>
 
-      <!-- Posts Grid -->
-      <div class="grid-3" id="posts-grid" style="margin-top: 32px;">
-        {mergedPosts.map(post => (
+      <!-- Posts List (EBR-style) -->
+      <div id="posts-grid" style="margin-top: 28px;">
+        {allPosts.map(post => (
           <div class="post-item" data-category={post.category} data-title={post.title.toLowerCase()}>
-            <BlogCard {...post} />
+            <article class="blog-card" style="margin-bottom: 24px;">
+              <a href={`${base}blog/${post.slug}/`} style="display: block;">
+                <div style="display: grid; grid-template-columns: 240px 1fr; gap: 20px; align-items: start;">
+                  <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border);">
+                    <img src={post.image} alt={post.title} loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+                  </div>
+                  <div>
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                      <span class="badge badge-new">{post.category}</span>
+                      {post.store && <span style="font-size: 0.75rem; color: var(--color-text-muted);">{post.store}</span>}
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 6px; font-weight: 700; line-height: 1.3;">
+                      {post.title}
+                    </h3>
+                    {post.rating > 0 && (
+                      <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
+                        <div style="display: flex; gap: 1px;">
+                          {[1,2,3,4,5].map(i => (
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill={i <= Math.round(post.rating) ? "#d69e2e" : "#e1e5e9"} stroke="#d69e2e" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                          ))}
+                        </div>
+                        <span style="font-size: 0.78rem; color: var(--color-text-muted);">{post.rating}/5</span>
+                      </div>
+                    )}
+                    {post.price && (
+                      <div style="margin-bottom: 8px;">
+                        {post.oldPrice && <span style="font-size: 0.82rem; color: var(--color-text-muted); text-decoration: line-through; margin-right: 6px;">{post.oldPrice}</span>}
+                        <span style="font-size: 1.15rem; font-weight: 800; color: var(--color-accent);">{post.price}</span>
+                      </div>
+                    )}
+                    <p style="color: var(--color-text-secondary); font-size: 0.88rem; line-height: 1.6;">{post.excerpt}</p>
+                    <span style="display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; font-size: 0.85rem; font-weight: 600; color: var(--color-accent);">
+                      Read Review
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
           </div>
         ))}
       </div>
 
-      <!-- No Results -->
       <div id="no-results" style="display:none; text-align:center; padding: 64px 0;">
         <p style="color: var(--color-text-muted); font-size: 1.1rem;">No reviews found. Try a different search or filter.</p>
       </div>
@@ -110,89 +107,20 @@ const categories = ['All', ...new Set(mergedPosts.map(p => p.category))];
 </BaseLayout>
 
 <style>
-  .page-header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding: 40px 0 20px;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .page-header h1 {
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    margin-bottom: 12px;
-  }
-
-  .page-header p {
-    color: var(--color-text-secondary);
-    font-size: 1.05rem;
-  }
-
-  .filter-bar {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 24px;
-  }
-
-  .filter-btn {
-    padding: 8px 20px;
-    border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    font-family: var(--font-sans);
-    cursor: pointer;
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    color: var(--color-text-secondary);
-    transition: all var(--transition-fast);
-  }
-
-  .filter-btn:hover,
-  .filter-btn.active {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    color: #fff;
-  }
-
-  .search-bar {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    max-width: 420px;
-    margin: 0 auto 0;
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 12px 20px;
-    transition: border-color var(--transition-fast);
-  }
-
-  .search-bar:focus-within {
-    border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(45, 138, 78, 0.12);
-  }
-
-  .search-bar svg {
-    color: var(--color-text-muted);
-    flex-shrink: 0;
-  }
-
-  .search-bar input {
-    flex: 1;
-    background: none;
-    border: none;
-    color: var(--color-text-primary);
-    font-size: 0.9rem;
-    font-family: var(--font-sans);
-  }
-
-  .search-bar input:focus {
-    outline: none;
-  }
-
-  .search-bar input::placeholder {
-    color: var(--color-text-muted);
+  .page-header { text-align: center; margin-bottom: 32px; padding: 32px 0 16px; border-bottom: 1px solid var(--color-border); }
+  .page-header h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 8px; }
+  .page-header p { color: var(--color-text-secondary); font-size: 1rem; }
+  .filter-bar { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; }
+  .filter-btn { padding: 6px 16px; border-radius: 100px; font-size: 0.82rem; font-weight: 500; font-family: var(--font-sans); cursor: pointer; background: var(--color-bg-card); border: 1px solid var(--color-border); color: var(--color-text-secondary); transition: all var(--transition-fast); }
+  .filter-btn:hover, .filter-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
+  .search-bar { display: flex; align-items: center; gap: 10px; max-width: 400px; margin: 0 auto; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 10px 16px; transition: border-color var(--transition-fast); }
+  .search-bar:focus-within { border-color: var(--color-accent); box-shadow: 0 0 0 3px rgba(45,138,78,0.12); }
+  .search-bar svg { color: var(--color-text-muted); flex-shrink: 0; }
+  .search-bar input { flex: 1; background: none; border: none; color: var(--color-text-primary); font-size: 0.88rem; font-family: var(--font-sans); }
+  .search-bar input:focus { outline: none; }
+  .search-bar input::placeholder { color: var(--color-text-muted); }
+  @media (max-width: 768px) {
+    .blog-card > a > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
   }
 </style>
 
@@ -202,18 +130,11 @@ const categories = ['All', ...new Set(mergedPosts.map(p => p.category))];
   const search = document.getElementById('blog-search');
   const noResults = document.getElementById('no-results');
   const grid = document.getElementById('posts-grid');
-
   let activeCategory = 'all';
-
-  // Set "All" as active by default
-  filterBtns.forEach(btn => {
-    if (btn.dataset.category === 'All') btn.classList.add('active');
-  });
-
+  filterBtns.forEach(btn => { if (btn.dataset.category === 'All') btn.classList.add('active'); });
   function filterPosts() {
     const query = search?.value.toLowerCase() || '';
     let visible = 0;
-
     posts.forEach(post => {
       const cat = post.dataset.category || '';
       const title = post.dataset.title || '';
@@ -223,11 +144,9 @@ const categories = ['All', ...new Set(mergedPosts.map(p => p.category))];
       post.style.display = show ? '' : 'none';
       if (show) visible++;
     });
-
     if (noResults) noResults.style.display = visible === 0 ? '' : 'none';
     if (grid) grid.style.display = visible === 0 ? 'none' : '';
   }
-
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
@@ -236,6 +155,5 @@ const categories = ['All', ...new Set(mergedPosts.map(p => p.category))];
       filterPosts();
     });
   });
-
   search?.addEventListener('input', filterPosts);
 </script>
