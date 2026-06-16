@@ -118,7 +118,25 @@ const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
         )}
       </header>
 
-      <!-- Featured Image -->
+      {/* Video embed for products — video rendered separately by Remotion */}
+      {post.product?.slug && (
+        <div style="margin-bottom: 24px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+          <video
+            controls
+            preload="metadata"
+            poster={post.image}
+            style="width: 100%; display: block; background: #0a0a0f;"
+          >
+            <source src={`/videos/${post.product.slug}-promo.mp4`} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div style="background: #2d8a4e; color: #fff; padding: 8px 16px; font-size: 0.82rem; font-weight: 600; text-align: center;">
+            🎬 Product Promo Video — {post.product.shortTitle}
+          </div>
+        </div>
+      )}
+
+      {/* Featured Image */}
       <div class="article-featured-image">
         <img src={post.image} alt={post.title} loading="eager" />
       </div>

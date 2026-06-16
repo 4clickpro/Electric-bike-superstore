@@ -26,8 +26,8 @@ const STATE_FILE = path.join(__dirname, '.blog-agent-state.json');
 // ── Load data ═══
 let products = [];
 try { products = JSON.parse(fs.readFileSync(PRODUCTS_FILE, 'utf-8')); } catch (e) { console.error('❌ products.json:', e.message); process.exit(1); }
-const reviews = products.filter(p => p.product);
-const guides = products.filter(p => !p.product);
+const reviews = products.filter(p => p.price && p.image);
+const guides = products.filter(p => !p.price);
 
 // ── State management ═══
 function loadState() {
