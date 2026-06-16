@@ -21,7 +21,31 @@ const CONTENT_DIR = path.join(__dirname, '..', 'src', 'content', 'blog');
 const PRODUCTS_FILE = path.join(__dirname, '..', 'src', 'data', 'products.json');
 const SITE_URL = 'https://theelectricbikesuperstore.com';
 const STATE_FILE = path.join(__dirname, '.seo-agent-state.json');
-const AFF_URL = 'https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733';
+
+// Per-store affiliate links — match by keyword content
+const AFF = {
+  burchda:  'https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733',
+  kingbull: 'https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733',
+  vivi:     'https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733',
+};
+
+function getAffiliateUrl(keyword) {
+  const k = keyword.toLowerCase();
+  // King Bull keywords
+  if (k.includes('king bull') || k.includes('kingbull') || k.includes('ranger') || k.includes('literider') || k.includes('rover') || k.includes('voyager') || k.includes('discover') || k.includes('hunter')) {
+    return AFF.kingbull;
+  }
+  // Vivi keywords
+  if (k.includes('vivi') || k.includes('ace01') || k.includes('ace07') || k.includes('ace01 pro')) {
+    return AFF.vivi;
+  }
+  // Burchda keywords
+  if (k.includes('burchda') || k.includes('y3') || k.includes('hc26') || k.includes('r5') || k.includes('awd')) {
+    return AFF.burchda;
+  }
+  // Default to Burchda for general/guide content
+  return AFF.burchda;
+}
 
 // ── State ═══
 function loadState() {
@@ -81,9 +105,10 @@ function generatePost(keyword, existingSlugs) {
   const slug = keyword.keyword.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
   if (existingSlugs.includes(slug)) return null; // Already exists
 
+  const affUrl = getAffiliateUrl(keyword.keyword);
   const title = generateTitle(keyword);
   const description = generateDescription(keyword);
-  const body = generateBody(keyword);
+  const body = generateBody(keyword, affUrl);
 
   return {
     slug,
@@ -106,7 +131,7 @@ ${body}
 <div style="text-align:center; margin: 40px 0; padding: 28px; background: #e8f5e9; border: 2px solid #2d8a4e; border-radius: 12px;">
   <h3 style="margin-bottom: 8px; color: #2d8a4e;">Ready to Find Your Perfect E-Bike?</h3>
   <p style="color: #4a5568; margin-bottom: 16px;">Browse our top-rated electric bikes with free shipping and 2-year warranty.</p>
-  <a href="${AFF_URL}" class="btn btn-primary" style="font-size:1.1rem;padding:14px 40px;display:inline-block;text-decoration:none;border-radius:8px;" target="_blank" rel="noopener noreferrer">Shop E-Bikes →</a>
+  <a href="${affUrl}" class="btn btn-primary" style="font-size:1.1rem;padding:14px 40px;display:inline-block;text-decoration:none;border-radius:8px;" target="_blank" rel="noopener noreferrer">Shop E-Bikes →</a>
 </div>
 
 *As an affiliate partner, we may earn a small commission on qualifying purchases. This does not affect our recommendations.*`,
@@ -157,11 +182,11 @@ function generateDescription(kw) {
   return `Everything you need to know about ${k}. Expert advice, real testing, and honest recommendations.`;
 }
 
-function generateBody(kw) {
+function generateBody(kw, affUrl) {
   const k = kw.keyword;
   const relatedProducts = products.slice(0, 3);
   const productLinks = relatedProducts.map(p =>
-    `- [${p.shortTitle}](${AFF_URL}) — ${p.price}, ${p.rating}/5 stars`
+    `- [${p.shortTitle}](${affUrl}) — ${p.price}, ${p.rating}/5 stars`
   ).join('\n');
 
   let sections = '';
