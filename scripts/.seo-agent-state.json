@@ -1,6 +1,6 @@
 {
-  "runs": 1,
-  "lastRun": "2026-06-16T17:39:40.170Z",
+  "runs": 2,
+  "lastRun": "2026-06-16T18:09:40.266Z",
   "keywords": [
     {
       "keyword": "fat tire electric bike review",
@@ -11,8 +11,18 @@
       "keyword": "folding electric bike for apartment",
       "slug": "folding-electric-bike-for-apartment",
       "created": "2026-06-16T17:39:40.168Z"
+    },
+    {
+      "keyword": "electric cargo bike for families",
+      "slug": "electric-cargo-bike-for-families",
+      "created": "2026-06-16T18:09:40.264Z"
+    },
+    {
+      "keyword": "electric mountain bike under $1500",
+      "slug": "electric-mountain-bike-under-1500",
+      "created": "2026-06-16T18:09:40.264Z"
     }
   ],
-  "postsCreated": 2,
+  "postsCreated": 4,
   "optimizations": 0
 }
