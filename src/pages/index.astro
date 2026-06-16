@@ -4,14 +4,14 @@ import productsData from '@data/products.json';
 
 const base = import.meta.env.BASE_URL;
 
-// Affiliate links — each store has its own
-const affBurchda = 'https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733';
-const affKingBull = 'https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733';
-const affVivi = 'https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733';
-// Short aliases for templates that use aff1/aff2/aff3
-const aff1 = affBurchda;
-const aff2 = affKingBull;
-const aff3 = affVivi;
+// Per-store affiliate links
+const AFF_BURCHDA = 'https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733';
+const AFF_KINGBULL = 'https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733';
+const AFF_VIVI = 'https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733';
+// Aliases for templates
+const aff1 = AFF_BURCHDA;
+const aff2 = AFF_KINGBULL;
+const aff3 = AFF_VIVI;
 
 // Separate products from guides
 const products = productsData.filter(p => p.price);
@@ -192,9 +192,9 @@ const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire
             <h3 style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-bottom: 10px; font-weight: 700;">Shop By Store</h3>
             <nav>
               <ul style="list-style: none; padding: 0; margin: 0;">
-                <li><a href={affBurchda} target="_blank" rel="noopener noreferrer" style="display: block; padding: 7px 0; color: var(--color-accent); font-size: 0.88rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light);">🏪 Burchda Bikes</a></li>
-                <li><a href={affKingBull} target="_blank" rel="noopener noreferrer" style="display: block; padding: 7px 0; color: var(--color-accent); font-size: 0.88rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light);">🏪 King Bull Bike</a></li>
-                <li><a href={affVivi} target="_blank" rel="noopener noreferrer" style="display: block; padding: 7px 0; color: var(--color-accent); font-size: 0.88rem; font-weight: 500;">🏪 Vivi Bikes</a></li>
+                <li><a href={AFF_BURCHDA} target="_blank" rel="noopener noreferrer" style="display: block; padding: 7px 0; color: var(--color-accent); font-size: 0.88rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light);">🏪 Burchda Bikes</a></li>
+                <li><a href={AFF_KINGBULL} target="_blank" rel="noopener noreferrer" style="display: block; padding: 7px 0; color: var(--color-accent); font-size: 0.88rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light);">🏪 King Bull Bike</a></li>
+                <li><a href={AFF_VIVI} target="_blank" rel="noopener noreferrer" style="display: block; padding: 7px 0; color: var(--color-accent); font-size: 0.88rem; font-weight: 500;">🏪 Vivi Bikes</a></li>
               </ul>
             </nav>
           </div>
