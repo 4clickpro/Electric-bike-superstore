@@ -8,32 +8,50 @@ const base = import.meta.env.BASE_URL;
 
 export async function getStaticPaths() {
   const contentPosts = await getCollection('blog');
+  const contentSlugs = new Set(contentPosts.map(p => p.id.replace(/\.mdx?$/, '')));
   const contentPaths = contentPosts.map(p => ({ params: { slug: p.id.replace(/\.mdx?$/, '') } }));
-  const productPaths = productsData.map(p => ({ params: { slug: p.slug } }));
+  // Only add product paths for products that DON'T have MDX content yet
+  const productPaths = productsData
+    .filter(p => !contentSlugs.has(p.slug))
+    .map(p => ({ params: { slug: p.slug } }));
   return [...contentPaths, ...productPaths];
 }
 
 const { slug } = Astro.params;
 
 // Look up product from our data
-let product = productsData.find(p => p.slug === slug);
+const product = productsData.find(p => p.slug === slug);
 
-// If not in product data, check content collection
+// Check content collection for MDX posts
+const contentPosts = await getCollection('blog');
+const cp = contentPosts.find(p => p.id.replace(/\.mdx?$/, '') === slug);
 let contentPost = null;
-let isContentPost = false;
-if (!product) {
-  const contentPosts = await getCollection('blog');
-  const cp = contentPosts.find(p => p.id.replace(/\.mdx?$/, '') === slug);
-  if (cp) {
-    const rendered = await cp.render();
-    contentPost = { ...cp, rendered };
-    isContentPost = true;
-  }
+if (cp) {
+  const rendered = await cp.render();
+  contentPost = { ...cp, rendered };
 }
 
-// Build the post object
+// Build the post object — prefer MDX content when available, supplement with product data
 let post: any;
-if (product) {
+if (contentPost) {
+  const d = contentPost.data;
+  // Use product data to enrich the post if available
+  const prodInfo = product || {};
+  post = {
+    title: d.title || prodInfo.title,
+    description: d.description || prodInfo.excerpt,
+    image: d.image || prodInfo.image || 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1200&q=80',
+    category: d.category || prodInfo.category || 'Reviews',
+    date: d.date || '2026-01-15',
+    author: d.author || 'The Electric Bike Superstore',
+    readTime: '8',
+    tags: d.tags || ['ebike', 'review'],
+    content: contentPost.rendered.html,
+    isContentPost: true,
+    renderedContent: contentPost.rendered.html,
+    product: product || null,
+  };
+} else if (product) {
   post = {
     title: product.title,
     description: product.excerpt,
@@ -45,24 +63,7 @@ if (product) {
     tags: ['ebike', 'review', product.category.toLowerCase(), product.store.toLowerCase()],
     content: product.body,
     isContentPost: false,
-    // Extra product data
     product,
-  };
-} else if (contentPost) {
-  const d = contentPost.data;
-  post = {
-    title: d.title,
-    description: d.description,
-    image: d.image || 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1200&q=80',
-    category: d.category,
-    date: d.date,
-    author: d.author || 'The Electric Bike Superstore',
-    readTime: '8',
-    tags: d.tags || [],
-    content: '',
-    isContentPost: true,
-    renderedContent: contentPost.rendered.html,
-    product: null,
   };
 }
 
