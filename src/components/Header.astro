@@ -1,5 +1,5 @@
 ---
-// Header — ocean blue dark nav, blog-style
+// Header — clean white nav, EBR-style, large logo
 const base = import.meta.env.BASE_URL;
 
 const navItems = [
@@ -14,7 +14,7 @@ const navItems = [
 <header class="header" id="header">
   <div class="container header-inner">
     <a href={base} class="logo" aria-label="The Electric Bike Superstore Home">
-      <img src="https://hnrqqt-an.myshopify.com/cdn/shop/files/Electric_bike_adventure_at_sunset_1.png?v=1773351390" alt="TheElectricBikeSuperstore.com" width="160" height="40" class="logo-img" />
+      <img src="https://hnrqqt-an.myshopify.com/cdn/shop/files/Electric_bike_adventure_at_sunset_1.png?v=1773351390" alt="TheElectricBikeSuperstore.com" width="220" height="60" class="logo-img" />
     </a>
 
     <nav class="nav" id="nav" aria-label="Main navigation">
@@ -38,28 +38,27 @@ const navItems = [
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(10, 22, 40, 0.92);
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: #fff;
     border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   }
 
   .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 72px;
+    height: 80px;
     width: 100%;
   }
 
   .logo {
     display: flex;
     align-items: center;
-    margin-right: 12px;
+    margin-right: 16px;
   }
 
   .logo-img {
-    height: 56px;
+    height: 72px;
     width: auto;
     display: block;
   }
@@ -71,9 +70,9 @@ const navItems = [
   }
 
   .nav-link {
-    padding: 6px 16px;
+    padding: 8px 18px;
     border-radius: var(--radius-sm);
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
     font-size: 0.9rem;
     font-weight: 500;
     transition: all var(--transition-fast);
@@ -81,7 +80,7 @@ const navItems = [
 
   .nav-link:hover {
     color: var(--color-accent);
-    background: var(--color-accent-light);
+    background: var(--color-bg-elevated);
   }
 
   .mobile-toggle {
@@ -105,19 +104,18 @@ const navItems = [
   @media (max-width: 768px) {
     .nav {
       position: fixed;
-      top: 0;
+      top: 80px;
       left: 0;
       right: 0;
-      bottom: 0;
-      background: rgba(10, 22, 40, 0.98);
-      backdrop-filter: blur(20px);
+      background: #fff;
       flex-direction: column;
-      justify-content: center;
-      padding: 24px;
+      padding: 16px;
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       transform: translateY(-100%);
       opacity: 0;
       pointer-events: none;
-      transition: all var(--transition-smooth);
+      transition: all 200ms ease;
       z-index: 99;
     }
 
@@ -129,14 +127,15 @@ const navItems = [
 
     .nav-link {
       width: 100%;
-      padding: 14px 16px;
-      font-size: 1.1rem;
-      text-align: center;
+      padding: 10px 12px;
     }
 
     .mobile-toggle {
       display: flex;
-      z-index: 100;
+    }
+
+    .logo-img {
+      height: 56px;
     }
   }
 </style>
