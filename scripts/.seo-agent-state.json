@@ -1,6 +1,6 @@
 {
-  "runs": 2,
-  "lastRun": "2026-06-16T18:09:40.266Z",
+  "runs": 3,
+  "lastRun": "2026-06-16T18:39:40.363Z",
   "keywords": [
     {
       "keyword": "fat tire electric bike review",
@@ -21,8 +21,18 @@
       "keyword": "electric mountain bike under $1500",
       "slug": "electric-mountain-bike-under-1500",
       "created": "2026-06-16T18:09:40.264Z"
+    },
+    {
+      "keyword": "best electric bike for heavy riders",
+      "slug": "best-electric-bike-for-heavy-riders",
+      "created": "2026-06-16T18:39:40.362Z"
+    },
+    {
+      "keyword": "electric bike battery care tips",
+      "slug": "electric-bike-battery-care-tips",
+      "created": "2026-06-16T18:39:40.362Z"
     }
   ],
-  "postsCreated": 4,
+  "postsCreated": 6,
   "optimizations": 0
 }

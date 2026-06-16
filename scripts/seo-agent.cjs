@@ -184,10 +184,16 @@ function generateDescription(kw) {
 
 function generateBody(kw, affUrl) {
   const k = kw.keyword;
-  const relatedProducts = products.slice(0, 3);
-  const productLinks = relatedProducts.map(p =>
-    `- [${p.shortTitle}](${affUrl}) — ${p.price}, ${p.rating}/5 stars`
-  ).join('\n');
+  // Pick diverse products — one from each store if available
+  const burchda = products.find(p => p.store === 'Burchda');
+  const kingbull = products.find(p => p.store === 'King Bull');
+  const vivi = products.find(p => p.store === 'Vivi');
+  const relatedProducts = [burchda, kingbull, vivi].filter(Boolean).slice(0, 3);
+  // Each product uses its OWN affiliate URL
+  const productLinks = relatedProducts.map(p => {
+    const pAff = p.affiliateUrl || affUrl;
+    return `- [${p.shortTitle}](${pAff}) — ${p.price}, ${p.rating}/5 stars`;
+  }).join('\n');
 
   let sections = '';
 
