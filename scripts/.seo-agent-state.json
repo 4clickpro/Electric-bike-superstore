@@ -1,6 +1,6 @@
 {
-  "runs": 12,
-  "lastRun": "2026-06-16T23:09:41.216Z",
+  "runs": 16,
+  "lastRun": "2026-06-17T01:09:41.585Z",
   "keywords": [
     {
       "keyword": "fat tire electric bike review",
@@ -121,8 +121,23 @@
       "keyword": "cheap electric bikes that are actually good",
       "slug": "cheap-electric-bikes-that-are-actually-good",
       "created": "2026-06-16T23:09:41.215Z"
+    },
+    {
+      "keyword": "best electric bike for city riding",
+      "slug": "best-electric-bike-for-city-riding",
+      "created": "2026-06-16T23:39:41.314Z"
+    },
+    {
+      "keyword": "electric bike accessories you need",
+      "slug": "electric-bike-accessories-you-need",
+      "created": "2026-06-16T23:39:41.314Z"
+    },
+    {
+      "keyword": "electric bike chain maintenance",
+      "slug": "electric-bike-chain-maintenance",
+      "created": "2026-06-17T00:09:41.405Z"
     }
   ],
-  "postsCreated": 24,
+  "postsCreated": 27,
   "optimizations": 4
 }

@@ -52,6 +52,7 @@ if (contentPost) {
     product: product || null,
   };
 } else if (product) {
+  const affMatch = product.affiliateUrl.match(/awinmid=(\d+)/);
   post = {
     title: product.title,
     description: product.excerpt,
@@ -63,7 +64,10 @@ if (contentPost) {
     tags: ['ebike', 'review', product.category.toLowerCase(), product.store.toLowerCase()],
     content: product.body,
     isContentPost: false,
-    product,
+    product: {
+      ...product,
+      affiliateId: affMatch ? affMatch[1] : '123118',
+    },
   };
 }
 
@@ -151,9 +155,11 @@ const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
               <span style="font-size: 1.6rem; font-weight: 800; color: var(--color-accent);">{post.product.price}</span>
             </div>
           </div>
-          <a href={post.product.affiliateUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.05rem; padding: 12px 32px;">
-            Buy Now at {post.product.store} →
+          <!-- START ADVERTISER: {post.product.store} from awin.com -->
+          <a rel="sponsored" href={`https://www.awin1.com/cread.php?s=3682925&v=${post.product.affiliateId}&q=494573&r=2915733`} target="_blank" rel="noopener noreferrer">
+            <img src={`https://www.awin1.com/cshow.php?s=3682925&v=${post.product.affiliateId}&q=494573&r=2915733`} border="0" alt={`Buy ${post.product.shortTitle} at ${post.product.store}`} style="max-width:100%;height:auto;" />
           </a>
+          <!-- END ADVERTISER: {post.product.store} from awin.com -->
         </div>
       )}
 
@@ -218,13 +224,15 @@ const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
       )}
 
       <!-- Bottom CTA -->
-      {post.product?.affiliateUrl && (
+      {post.product?.affiliateId && (
         <div style="text-align: center; margin: 40px 0; padding: 32px; background: var(--color-bg-elevated); border: 2px solid var(--color-accent); border-radius: var(--radius-lg);">
           <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Ready to Buy the {post.product.shortTitle}?</h3>
           <p style="color: var(--color-text-secondary); margin-bottom: 16px;">Get the best price at {post.product.store} with free shipping and 2-year warranty.</p>
-          <a href={post.product.affiliateUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.1rem; padding: 14px 40px;">
-            Check Price at {post.product.store} →
+          <!-- START ADVERTISER: {post.product.store} from awin.com -->
+          <a rel="sponsored" href={`https://www.awin1.com/cread.php?s=3682925&v=${post.product.affiliateId}&q=494573&r=2915733`} target="_blank" rel="noopener noreferrer">
+            <img src={`https://www.awin1.com/cshow.php?s=3682925&v=${post.product.affiliateId}&q=494573&r=2915733`} border="0" alt={`Check Price at ${post.product.store}`} style="max-width:100%;height:auto;" />
           </a>
+          <!-- END ADVERTISER: {post.product.store} from awin.com -->
         </div>
       )}
 
