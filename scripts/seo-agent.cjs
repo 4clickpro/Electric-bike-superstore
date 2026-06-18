@@ -19,15 +19,25 @@ const path = require('path');
 
 const CONTENT_DIR = path.join(__dirname, '..', 'src', 'content', 'blog');
 const PRODUCTS_FILE = path.join(__dirname, '..', 'src', 'data', 'products.json');
+const KEYWORDS_FILE = path.join(__dirname, 'seo-keywords.json');
 const SITE_URL = 'https://theelectricbikesuperstore.com';
 const STATE_FILE = path.join(__dirname, '.seo-agent-state.json');
 
-// Per-store affiliate links — match by keyword content
+// Per-store affiliate links
 const AFF = {
   burchda:  'https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733',
   kingbull: 'https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733',
   vivi:     'https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733',
 };
+
+// Load keywords from file
+let KEYWORDS = [];
+try {
+  const kwData = JSON.parse(fs.readFileSync(KEYWORDS_FILE, 'utf-8'));
+  KEYWORDS = kwData.keywords || [];
+} catch (e) {
+  console.error('⚠️ Could not load seo-keywords.json:', e.message);
+}
 
 function getAffiliateUrl(keyword) {
   const k = keyword.toLowerCase();
@@ -57,42 +67,6 @@ function saveState(state) { fs.writeFileSync(STATE_FILE, JSON.stringify(state, n
 // ── Load products ═══
 let products = [];
 try { products = JSON.parse(fs.readFileSync(PRODUCTS_FILE, 'utf-8')).filter(p => p.price); } catch (e) {}
-
-// ── Easy-to-rank keyword database ═══
-// These are long-tail, low-competition keywords that are realistic to rank for
-const KEYWORD_DATABASE = [
-  // Product-specific long-tail keywords
-  { keyword: 'best electric bike for commuting 2026', intent: 'buying', difficulty: 'low' },
-  { keyword: 'electric bike under $1000', intent: 'buying', difficulty: 'low' },
-  { keyword: 'electric bike for beginners', intent: 'informational', difficulty: 'low' },
-  { keyword: 'fat tire electric bike review', intent: 'review', difficulty: 'low' },
-  { keyword: 'folding electric bike for apartment', intent: 'buying', difficulty: 'low' },
-  { keyword: 'electric cargo bike for families', intent: 'buying', difficulty: 'low' },
-  { keyword: 'electric mountain bike under $1500', intent: 'buying', difficulty: 'low' },
-  { keyword: 'best electric bike for heavy riders', intent: 'buying', difficulty: 'low' },
-  { keyword: 'electric bike battery care tips', intent: 'informational', difficulty: 'low' },
-  { keyword: 'electric bike maintenance guide', intent: 'informational', difficulty: 'low' },
-  { keyword: 'electric bike vs regular bike', intent: 'informational', difficulty: 'low' },
-  { keyword: 'is an electric bike worth it', intent: 'informational', difficulty: 'low' },
-  { keyword: 'electric bike laws by state', intent: 'informational', difficulty: 'low' },
-  { keyword: 'how fast can an electric bike go', intent: 'informational', difficulty: 'low' },
-  { keyword: 'electric bike range per charge', intent: 'informational', difficulty: 'low' },
-  { keyword: 'best electric bike for seniors', intent: 'buying', difficulty: 'low' },
-  { keyword: 'electric bike for hunting', intent: 'buying', difficulty: 'low' },
-  { keyword: 'electric bike commuting savings calculator', intent: 'informational', difficulty: 'low' },
-  { keyword: 'how to choose an electric bike', intent: 'informational', difficulty: 'low' },
-  { keyword: 'electric bike safety tips', intent: 'informational', difficulty: 'low' },
-  { keyword: 'best electric bike brands 2026', intent: 'informational', difficulty: 'low' },
-  { keyword: 'electric bike insurance', intent: 'informational', difficulty: 'low' },
-  { keyword: 'can you ride an electric bike in the rain', intent: 'informational', difficulty: 'low' },
-  { keyword: 'electric bike weight limit', intent: 'informational', difficulty: 'low' },
-  { keyword: 'how long do electric bike batteries last', intent: 'informational', difficulty: 'low' },
-  { keyword: 'electric bike for college students', intent: 'buying', difficulty: 'low' },
-  { keyword: 'cheap electric bikes that are actually good', intent: 'buying', difficulty: 'low' },
-  { keyword: 'best electric bike for city riding', intent: 'buying', difficulty: 'low' },
-  { keyword: 'electric bike accessories you need', intent: 'buying', difficulty: 'low' },
-  { keyword: 'electric bike chain maintenance', intent: 'informational', difficulty: 'low' },
-];
 
 // ── Get existing slugs ═══
 function getExistingSlugs() {
@@ -429,7 +403,7 @@ async function runCycle() {
 
   // 1. Create new posts for uncovered keywords
   const existingSlugs = getExistingSlugs();
-  const uncoveredKeywords = KEYWORD_DATABASE.filter(k => {
+  const uncoveredKeywords = KEYWORDS.filter(k => {
     const slug = k.keyword.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
     return !existingSlugs.includes(slug);
   });

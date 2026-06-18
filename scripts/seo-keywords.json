@@ -1,0 +1,6004 @@
+{
+  "keywords": [
+    {
+      "keyword": "best electric bike for commuting",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "commuting"
+    },
+    {
+      "keyword": "best electric bike for beginners",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "beginners"
+    },
+    {
+      "keyword": "best electric bike for seniors",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "seniors"
+    },
+    {
+      "keyword": "best electric bike for women",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "women"
+    },
+    {
+      "keyword": "best electric bike for men",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "men"
+    },
+    {
+      "keyword": "best electric bike for kids",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "kids"
+    },
+    {
+      "keyword": "best electric bike for tall riders",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tall riders"
+    },
+    {
+      "keyword": "best electric bike for short riders",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "short riders"
+    },
+    {
+      "keyword": "best electric bike for heavy riders",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "heavy riders"
+    },
+    {
+      "keyword": "best electric bike for plus size",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "plus size"
+    },
+    {
+      "keyword": "best electric bike for petite",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "petite"
+    },
+    {
+      "keyword": "best electric bike for tall",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tall"
+    },
+    {
+      "keyword": "best electric bike for short",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "short"
+    },
+    {
+      "keyword": "best electric bike for big guys",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "big guys"
+    },
+    {
+      "keyword": "best electric bike for large frame",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "large frame"
+    },
+    {
+      "keyword": "best electric bike for mountain biking",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mountain biking"
+    },
+    {
+      "keyword": "best electric bike for off-road",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "off-road"
+    },
+    {
+      "keyword": "best electric bike for trail riding",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "trail riding"
+    },
+    {
+      "keyword": "best electric bike for gravel",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "gravel"
+    },
+    {
+      "keyword": "best electric bike for sand",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "sand"
+    },
+    {
+      "keyword": "best electric bike for mud",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mud"
+    },
+    {
+      "keyword": "best electric bike for snow",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "snow"
+    },
+    {
+      "keyword": "best electric bike for hunting",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hunting"
+    },
+    {
+      "keyword": "best electric bike for fishing",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fishing"
+    },
+    {
+      "keyword": "best electric bike for camping",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "camping"
+    },
+    {
+      "keyword": "best electric bike for bike packing",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bike packing"
+    },
+    {
+      "keyword": "best electric bike for touring",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "touring"
+    },
+    {
+      "keyword": "best electric bike for long distance",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "long distance"
+    },
+    {
+      "keyword": "best electric bike for city riding",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "city riding"
+    },
+    {
+      "keyword": "best electric bike for urban",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "urban"
+    },
+    {
+      "keyword": "best electric bike for suburban",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "suburban"
+    },
+    {
+      "keyword": "best electric bike for rural",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rural"
+    },
+    {
+      "keyword": "best electric bike for delivery",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "delivery"
+    },
+    {
+      "keyword": "best electric bike for college students",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "college students"
+    },
+    {
+      "keyword": "best electric bike for high school",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "high school"
+    },
+    {
+      "keyword": "best electric bike for middle school",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "middle school"
+    },
+    {
+      "keyword": "best electric bike for teens",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "teens"
+    },
+    {
+      "keyword": "best electric bike for dog walking",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "dog walking"
+    },
+    {
+      "keyword": "best electric bike for pet carrier",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pet carrier"
+    },
+    {
+      "keyword": "best electric bike for grocery shopping",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "grocery shopping"
+    },
+    {
+      "keyword": "best electric bike for errands",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "errands"
+    },
+    {
+      "keyword": "best electric bike for farmers market",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "farmers market"
+    },
+    {
+      "keyword": "best electric bike for food delivery",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "food delivery"
+    },
+    {
+      "keyword": "best electric bike for Uber Eats",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Uber Eats"
+    },
+    {
+      "keyword": "best electric bike for DoorDash",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "DoorDash"
+    },
+    {
+      "keyword": "best electric bike for Amazon Flex",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Amazon Flex"
+    },
+    {
+      "keyword": "best electric bike for real estate agents",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "real estate agents"
+    },
+    {
+      "keyword": "best electric bike for photographers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "photographers"
+    },
+    {
+      "keyword": "best electric bike for journalists",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "journalists"
+    },
+    {
+      "keyword": "best electric bike for sales reps",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "sales reps"
+    },
+    {
+      "keyword": "best electric bike for plumbers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "plumbers"
+    },
+    {
+      "keyword": "best electric bike for electricians",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "electricians"
+    },
+    {
+      "keyword": "best electric bike for HVAC",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "HVAC"
+    },
+    {
+      "keyword": "best electric bike for landscapers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "landscapers"
+    },
+    {
+      "keyword": "best electric bike for contractors",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "contractors"
+    },
+    {
+      "keyword": "best electric bike for security guards",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "security guards"
+    },
+    {
+      "keyword": "best electric bike for police",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "police"
+    },
+    {
+      "keyword": "best electric bike for fire department",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fire department"
+    },
+    {
+      "keyword": "best electric bike for EMS",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "EMS"
+    },
+    {
+      "keyword": "best electric bike for teachers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "teachers"
+    },
+    {
+      "keyword": "best electric bike for nurses",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "nurses"
+    },
+    {
+      "keyword": "best electric bike for doctors",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "doctors"
+    },
+    {
+      "keyword": "best electric bike for therapists",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "therapists"
+    },
+    {
+      "keyword": "best electric bike for social workers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "social workers"
+    },
+    {
+      "keyword": "best electric bike for knee problems",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "knee problems"
+    },
+    {
+      "keyword": "best electric bike for back pain",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "back pain"
+    },
+    {
+      "keyword": "best electric bike for arthritis",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "arthritis"
+    },
+    {
+      "keyword": "best electric bike for fibromyalgia",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fibromyalgia"
+    },
+    {
+      "keyword": "best electric bike for MS",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "MS"
+    },
+    {
+      "keyword": "best electric bike for Parkinson's",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Parkinson's"
+    },
+    {
+      "keyword": "best electric bike for stroke recovery",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "stroke recovery"
+    },
+    {
+      "keyword": "best electric bike for cardiac rehab",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cardiac rehab"
+    },
+    {
+      "keyword": "best electric bike for COPD",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "COPD"
+    },
+    {
+      "keyword": "best electric bike for asthma",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "asthma"
+    },
+    {
+      "keyword": "best electric bike for anxiety",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "anxiety"
+    },
+    {
+      "keyword": "best electric bike for depression",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "depression"
+    },
+    {
+      "keyword": "best electric bike for ADHD",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "ADHD"
+    },
+    {
+      "keyword": "best electric bike for autism",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "autism"
+    },
+    {
+      "keyword": "best electric bike for PTSD",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "PTSD"
+    },
+    {
+      "keyword": "best electric bike for weight loss",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "weight loss"
+    },
+    {
+      "keyword": "best electric bike for fitness",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fitness"
+    },
+    {
+      "keyword": "best electric bike for exercise",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "exercise"
+    },
+    {
+      "keyword": "best electric bike for cardio",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cardio"
+    },
+    {
+      "keyword": "best electric bike for HIIT",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "HIIT"
+    },
+    {
+      "keyword": "best electric bike for diabetes",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "diabetes"
+    },
+    {
+      "keyword": "best electric bike for heart disease",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "heart disease"
+    },
+    {
+      "keyword": "best electric bike for high blood pressure",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "high blood pressure"
+    },
+    {
+      "keyword": "best electric bike for obesity",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "obesity"
+    },
+    {
+      "keyword": "best electric bike for pregnancy",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pregnancy"
+    },
+    {
+      "keyword": "best electric bike for postpartum",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "postpartum"
+    },
+    {
+      "keyword": "best electric bike for menopause",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "menopause"
+    },
+    {
+      "keyword": "best electric bike for aging",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "aging"
+    },
+    {
+      "keyword": "best electric bike for disability",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "disability"
+    },
+    {
+      "keyword": "best electric bike for handicap",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "handicap"
+    },
+    {
+      "keyword": "best electric bike for wheelchair",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "wheelchair"
+    },
+    {
+      "keyword": "best electric bike for amputee",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "amputee"
+    },
+    {
+      "keyword": "best electric bike for prosthetic",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "prosthetic"
+    },
+    {
+      "keyword": "best electric bike for blind",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "blind"
+    },
+    {
+      "keyword": "best electric bike for deaf",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "deaf"
+    },
+    {
+      "keyword": "best electric bike for hearing impaired",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hearing impaired"
+    },
+    {
+      "keyword": "best electric bike for visually impaired",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "visually impaired"
+    },
+    {
+      "keyword": "best electric bike for veterans",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "veterans"
+    },
+    {
+      "keyword": "best electric bike for military",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "military"
+    },
+    {
+      "keyword": "best electric bike for first responders",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "first responders"
+    },
+    {
+      "keyword": "best electric bike for essential workers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "essential workers"
+    },
+    {
+      "keyword": "best electric bike for RV travel",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "RV travel"
+    },
+    {
+      "keyword": "best electric bike for van life",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "van life"
+    },
+    {
+      "keyword": "best electric bike for boat",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "boat"
+    },
+    {
+      "keyword": "best electric bike for airport",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "airport"
+    },
+    {
+      "keyword": "best electric bike for train station",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "train station"
+    },
+    {
+      "keyword": "best electric bike for apartment",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "apartment"
+    },
+    {
+      "keyword": "best electric bike for small space",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "small space"
+    },
+    {
+      "keyword": "best electric bike for storage",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "storage"
+    },
+    {
+      "keyword": "best electric bike for garage",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "garage"
+    },
+    {
+      "keyword": "best electric bike for dorm",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "dorm"
+    },
+    {
+      "keyword": "best electric bike for night riding",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "night riding"
+    },
+    {
+      "keyword": "best electric bike for low visibility",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "low visibility"
+    },
+    {
+      "keyword": "best electric bike for rain",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rain"
+    },
+    {
+      "keyword": "best electric bike for ice",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "ice"
+    },
+    {
+      "keyword": "best electric bike for wind",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "wind"
+    },
+    {
+      "keyword": "best electric bike for hot weather",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hot weather"
+    },
+    {
+      "keyword": "best electric bike for cold weather",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cold weather"
+    },
+    {
+      "keyword": "best electric bike for humidity",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "humidity"
+    },
+    {
+      "keyword": "best electric bike for altitude",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "altitude"
+    },
+    {
+      "keyword": "best electric bike for hills",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hills"
+    },
+    {
+      "keyword": "best electric bike for steep grades",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "steep grades"
+    },
+    {
+      "keyword": "best electric bike for mountains",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mountains"
+    },
+    {
+      "keyword": "best electric bike for flat terrain",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "flat terrain"
+    },
+    {
+      "keyword": "best electric bike for mixed terrain",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mixed terrain"
+    },
+    {
+      "keyword": "best electric bike for pavement",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pavement"
+    },
+    {
+      "keyword": "best electric bike for dirt",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "dirt"
+    },
+    {
+      "keyword": "best electric bike for grass",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "grass"
+    },
+    {
+      "keyword": "best electric bike for cobblestone",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cobblestone"
+    },
+    {
+      "keyword": "best electric bike for bike lanes",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bike lanes"
+    },
+    {
+      "keyword": "best electric bike for shared roads",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "shared roads"
+    },
+    {
+      "keyword": "best electric bike for trails",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "trails"
+    },
+    {
+      "keyword": "best electric bike for paths",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "paths"
+    },
+    {
+      "keyword": "best electric bike for sidewalks",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "sidewalks"
+    },
+    {
+      "keyword": "best electric bike for theft prevention",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "theft prevention"
+    },
+    {
+      "keyword": "best electric bike for security",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "security"
+    },
+    {
+      "keyword": "best electric bike for GPS tracking",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "GPS tracking"
+    },
+    {
+      "keyword": "best electric bike for alarm",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "alarm"
+    },
+    {
+      "keyword": "best electric bike for lock",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "lock"
+    },
+    {
+      "keyword": "best electric bike for insurance",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "insurance"
+    },
+    {
+      "keyword": "best electric bike for warranty",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "warranty"
+    },
+    {
+      "keyword": "best electric bike for financing",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "financing"
+    },
+    {
+      "keyword": "best electric bike for leasing",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "leasing"
+    },
+    {
+      "keyword": "best electric bike for rental",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rental"
+    },
+    {
+      "keyword": "best electric bike for tax credit",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tax credit"
+    },
+    {
+      "keyword": "best electric bike for rebate",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rebate"
+    },
+    {
+      "keyword": "best electric bike for incentive",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "incentive"
+    },
+    {
+      "keyword": "best electric bike for employer benefit",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "employer benefit"
+    },
+    {
+      "keyword": "best electric bike for battery care",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "battery care"
+    },
+    {
+      "keyword": "best electric bike for battery replacement",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "battery replacement"
+    },
+    {
+      "keyword": "best electric bike for battery upgrade",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "battery upgrade"
+    },
+    {
+      "keyword": "best electric bike for battery recycling",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "battery recycling"
+    },
+    {
+      "keyword": "best electric bike for motor types",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "motor types"
+    },
+    {
+      "keyword": "best electric bike for hub motor",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hub motor"
+    },
+    {
+      "keyword": "best electric bike for mid drive",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mid drive"
+    },
+    {
+      "keyword": "best electric bike for direct drive",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "direct drive"
+    },
+    {
+      "keyword": "best electric bike for geared",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "geared"
+    },
+    {
+      "keyword": "best electric bike for torque sensor",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "torque sensor"
+    },
+    {
+      "keyword": "best electric bike for cadence sensor",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cadence sensor"
+    },
+    {
+      "keyword": "best electric bike for throttle",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "throttle"
+    },
+    {
+      "keyword": "best electric bike for pedal assist",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pedal assist"
+    },
+    {
+      "keyword": "best electric bike for display",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "display"
+    },
+    {
+      "keyword": "best electric bike for LCD",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "LCD"
+    },
+    {
+      "keyword": "best electric bike for OLED",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "OLED"
+    },
+    {
+      "keyword": "best electric bike for app connectivity",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "app connectivity"
+    },
+    {
+      "keyword": "best electric bike for Bluetooth",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Bluetooth"
+    },
+    {
+      "keyword": "best electric bike for GPS",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "GPS"
+    },
+    {
+      "keyword": "best electric bike for suspension",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "suspension"
+    },
+    {
+      "keyword": "best electric bike for full suspension",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "full suspension"
+    },
+    {
+      "keyword": "best electric bike for front suspension",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "front suspension"
+    },
+    {
+      "keyword": "best electric bike for rigid",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rigid"
+    },
+    {
+      "keyword": "best electric bike for brakes",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "brakes"
+    },
+    {
+      "keyword": "best electric bike for hydraulic disc",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hydraulic disc"
+    },
+    {
+      "keyword": "best electric bike for mechanical disc",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mechanical disc"
+    },
+    {
+      "keyword": "best electric bike for rim brakes",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rim brakes"
+    },
+    {
+      "keyword": "best electric bike for regenerative",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "regenerative"
+    },
+    {
+      "keyword": "best electric bike for tires",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tires"
+    },
+    {
+      "keyword": "best electric bike for fat tires",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fat tires"
+    },
+    {
+      "keyword": "best electric bike for skinny tires",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "skinny tires"
+    },
+    {
+      "keyword": "best electric bike for tubeless",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tubeless"
+    },
+    {
+      "keyword": "best electric bike for puncture resistant",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "puncture resistant"
+    },
+    {
+      "keyword": "best electric bike for frame",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "frame"
+    },
+    {
+      "keyword": "best electric bike for aluminum",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "aluminum"
+    },
+    {
+      "keyword": "best electric bike for steel",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "steel"
+    },
+    {
+      "keyword": "best electric bike for carbon fiber",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "carbon fiber"
+    },
+    {
+      "keyword": "best electric bike for titanium",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "titanium"
+    },
+    {
+      "keyword": "best electric bike for step through",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "step through"
+    },
+    {
+      "keyword": "best electric bike for step over",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "step over"
+    },
+    {
+      "keyword": "best electric bike for low step",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "low step"
+    },
+    {
+      "keyword": "best electric bike for high step",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "high step"
+    },
+    {
+      "keyword": "best electric bike for folding",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "folding"
+    },
+    {
+      "keyword": "best electric bike for collapsible",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "collapsible"
+    },
+    {
+      "keyword": "best electric bike for portable",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "portable"
+    },
+    {
+      "keyword": "best electric bike for compact",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "compact"
+    },
+    {
+      "keyword": "best electric bike for lightweight",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "lightweight"
+    },
+    {
+      "keyword": "best electric bike for cargo",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cargo"
+    },
+    {
+      "keyword": "best electric bike for longtail",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "longtail"
+    },
+    {
+      "keyword": "best electric bike for front loader",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "front loader"
+    },
+    {
+      "keyword": "best electric bike for box bike",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "box bike"
+    },
+    {
+      "keyword": "best electric bike for bakfiets",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bakfiets"
+    },
+    {
+      "keyword": "best electric bike for trike",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "trike"
+    },
+    {
+      "keyword": "best electric bike for tadpole",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tadpole"
+    },
+    {
+      "keyword": "best electric bike for delta",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "delta"
+    },
+    {
+      "keyword": "best electric bike for recumbent",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "recumbent"
+    },
+    {
+      "keyword": "best electric bike for hand cycle",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hand cycle"
+    },
+    {
+      "keyword": "best electric bike for speed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "speed"
+    },
+    {
+      "keyword": "best electric bike for 20 mph",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "20 mph"
+    },
+    {
+      "keyword": "best electric bike for 28 mph",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "28 mph"
+    },
+    {
+      "keyword": "best electric bike for 30 mph",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "30 mph"
+    },
+    {
+      "keyword": "best electric bike for 40 mph",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "40 mph"
+    },
+    {
+      "keyword": "best electric bike for 50 mph",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "50 mph"
+    },
+    {
+      "keyword": "best electric bike for range",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "range"
+    },
+    {
+      "keyword": "best electric bike for miles per charge",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "miles per charge"
+    },
+    {
+      "keyword": "best electric bike for battery life",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "battery life"
+    },
+    {
+      "keyword": "best electric bike for charging time",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "charging time"
+    },
+    {
+      "keyword": "best electric bike for weight",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "weight"
+    },
+    {
+      "keyword": "best electric bike for payload capacity",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "payload capacity"
+    },
+    {
+      "keyword": "best electric bike for max weight",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "max weight"
+    },
+    {
+      "keyword": "best electric bike for load capacity",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "load capacity"
+    },
+    {
+      "keyword": "best electric bike for accessories",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "accessories"
+    },
+    {
+      "keyword": "best electric bike for rack",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rack"
+    },
+    {
+      "keyword": "best electric bike for panniers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "panniers"
+    },
+    {
+      "keyword": "best electric bike for basket",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "basket"
+    },
+    {
+      "keyword": "best electric bike for bag",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bag"
+    },
+    {
+      "keyword": "best electric bike for lights",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "lights"
+    },
+    {
+      "keyword": "best electric bike for headlight",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "headlight"
+    },
+    {
+      "keyword": "best electric bike for tail light",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tail light"
+    },
+    {
+      "keyword": "best electric bike for turn signals",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "turn signals"
+    },
+    {
+      "keyword": "best electric bike for reflectors",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "reflectors"
+    },
+    {
+      "keyword": "best electric bike for mirror",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mirror"
+    },
+    {
+      "keyword": "best electric bike for horn",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "horn"
+    },
+    {
+      "keyword": "best electric bike for bell",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bell"
+    },
+    {
+      "keyword": "best electric bike for phone mount",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "phone mount"
+    },
+    {
+      "keyword": "best electric bike for GPS mount",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "GPS mount"
+    },
+    {
+      "keyword": "best electric bike for fenders",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fenders"
+    },
+    {
+      "keyword": "best electric bike for mudguards",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mudguards"
+    },
+    {
+      "keyword": "best electric bike for chain guard",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "chain guard"
+    },
+    {
+      "keyword": "best electric bike for kickstand",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "kickstand"
+    },
+    {
+      "keyword": "best electric bike for stand",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "stand"
+    },
+    {
+      "keyword": "best electric bike for seat",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "seat"
+    },
+    {
+      "keyword": "best electric bike for saddle",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "saddle"
+    },
+    {
+      "keyword": "best electric bike for seatpost",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "seatpost"
+    },
+    {
+      "keyword": "best electric bike for suspension seatpost",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "suspension seatpost"
+    },
+    {
+      "keyword": "best electric bike for cushioned",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cushioned"
+    },
+    {
+      "keyword": "best electric bike for handlebars",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "handlebars"
+    },
+    {
+      "keyword": "best electric bike for upright",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "upright"
+    },
+    {
+      "keyword": "best electric bike for drop",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "drop"
+    },
+    {
+      "keyword": "best electric bike for flat",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "flat"
+    },
+    {
+      "keyword": "best electric bike for riser",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "riser"
+    },
+    {
+      "keyword": "best electric bike for swept back",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "swept back"
+    },
+    {
+      "keyword": "best electric bike for gears",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "gears"
+    },
+    {
+      "keyword": "best electric bike for single speed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "single speed"
+    },
+    {
+      "keyword": "best electric bike for 7 speed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "7 speed"
+    },
+    {
+      "keyword": "best electric bike for 8 speed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "8 speed"
+    },
+    {
+      "keyword": "best electric bike for 9 speed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "9 speed"
+    },
+    {
+      "keyword": "best electric bike for 10 speed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "10 speed"
+    },
+    {
+      "keyword": "best electric bike for 11 speed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "11 speed"
+    },
+    {
+      "keyword": "best electric bike for shimano",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "shimano"
+    },
+    {
+      "keyword": "best electric bike for SRAM",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "SRAM"
+    },
+    {
+      "keyword": "best electric bike for enviolo",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "enviolo"
+    },
+    {
+      "keyword": "best electric bike for nuvinci",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "nuvinci"
+    },
+    {
+      "keyword": "best electric bike for internal hub",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "internal hub"
+    },
+    {
+      "keyword": "best electric bike for belt drive",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "belt drive"
+    },
+    {
+      "keyword": "best electric bike for chain drive",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "chain drive"
+    },
+    {
+      "keyword": "best electric bike for shaft drive",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "shaft drive"
+    },
+    {
+      "keyword": "best electric bike for waterproof",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "waterproof"
+    },
+    {
+      "keyword": "best electric bike for IP rating",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "IP rating"
+    },
+    {
+      "keyword": "best electric bike for IPX4",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "IPX4"
+    },
+    {
+      "keyword": "best electric bike for IPX5",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "IPX5"
+    },
+    {
+      "keyword": "best electric bike for IPX6",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "IPX6"
+    },
+    {
+      "keyword": "best electric bike for IP67",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "IP67"
+    },
+    {
+      "keyword": "best electric bike for certified",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "certified"
+    },
+    {
+      "keyword": "best electric bike for UL certified",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "UL certified"
+    },
+    {
+      "keyword": "best electric bike for SGS certified",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "SGS certified"
+    },
+    {
+      "keyword": "best electric bike for CE certified",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "CE certified"
+    },
+    {
+      "keyword": "best electric bike for brands",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "brands"
+    },
+    {
+      "keyword": "best electric bike for Burchda",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Burchda"
+    },
+    {
+      "keyword": "best electric bike for King Bull",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "King Bull"
+    },
+    {
+      "keyword": "best electric bike for Vivi",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Vivi"
+    },
+    {
+      "keyword": "best electric bike for Aventon",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Aventon"
+    },
+    {
+      "keyword": "best electric bike for Rad Power",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Rad Power"
+    },
+    {
+      "keyword": "best electric bike for Lectric",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Lectric"
+    },
+    {
+      "keyword": "best electric bike for Ride1Up",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Ride1Up"
+    },
+    {
+      "keyword": "best electric bike for Juiced",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Juiced"
+    },
+    {
+      "keyword": "best electric bike for Vtuvia",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Vtuvia"
+    },
+    {
+      "keyword": "best electric bike for Swagtron",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Swagtron"
+    },
+    {
+      "keyword": "best electric bike for reviews",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "reviews"
+    },
+    {
+      "keyword": "best electric bike for ratings",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "ratings"
+    },
+    {
+      "keyword": "best electric bike for comparison",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "comparison"
+    },
+    {
+      "keyword": "best electric bike for vs",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "vs"
+    },
+    {
+      "keyword": "best electric bike for versus",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "versus"
+    },
+    {
+      "keyword": "best electric bike for best",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "best"
+    },
+    {
+      "keyword": "best electric bike for top rated",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "top rated"
+    },
+    {
+      "keyword": "best electric bike for 2026",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "2026"
+    },
+    {
+      "keyword": "best electric bike for 2027",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "2027"
+    },
+    {
+      "keyword": "best electric bike for new models",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "new models"
+    },
+    {
+      "keyword": "best electric bike for latest",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "latest"
+    },
+    {
+      "keyword": "best electric bike for upcoming",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "upcoming"
+    },
+    {
+      "keyword": "best electric bike for released",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "released"
+    },
+    {
+      "keyword": "best electric bike for black friday",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "black friday"
+    },
+    {
+      "keyword": "best electric bike for prime day",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "prime day"
+    },
+    {
+      "keyword": "best electric bike for cyber monday",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cyber monday"
+    },
+    {
+      "keyword": "best electric bike for holiday deals",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "holiday deals"
+    },
+    {
+      "keyword": "best electric bike for sales",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "sales"
+    },
+    {
+      "keyword": "best electric bike for discount",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "discount"
+    },
+    {
+      "keyword": "best electric bike for coupon",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "coupon"
+    },
+    {
+      "keyword": "best electric bike for promo code",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "promo code"
+    },
+    {
+      "keyword": "best electric bike for deal",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "deal"
+    },
+    {
+      "keyword": "best electric bike for clearance",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "clearance"
+    },
+    {
+      "keyword": "best electric bike for used",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "used"
+    },
+    {
+      "keyword": "best electric bike for refurbished",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "refurbished"
+    },
+    {
+      "keyword": "best electric bike for open box",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "open box"
+    },
+    {
+      "keyword": "best electric bike for demo",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "demo"
+    },
+    {
+      "keyword": "best electric bike for pre-owned",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pre-owned"
+    },
+    {
+      "keyword": "best electric bike for DIY",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "DIY"
+    },
+    {
+      "keyword": "best electric bike for build your own",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "build your own"
+    },
+    {
+      "keyword": "best electric bike for conversion kit",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "conversion kit"
+    },
+    {
+      "keyword": "best electric bike for upgrade",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "upgrade"
+    },
+    {
+      "keyword": "best electric bike for modify",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "modify"
+    },
+    {
+      "keyword": "best electric bike for repair",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "repair"
+    },
+    {
+      "keyword": "best electric bike for fix",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fix"
+    },
+    {
+      "keyword": "best electric bike for troubleshoot",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "troubleshoot"
+    },
+    {
+      "keyword": "best electric bike for diagnose",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "diagnose"
+    },
+    {
+      "keyword": "best electric bike for service",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "service"
+    },
+    {
+      "keyword": "best electric bike for tune up",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tune up"
+    },
+    {
+      "keyword": "best electric bike for install",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "install"
+    },
+    {
+      "keyword": "best electric bike for setup",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "setup"
+    },
+    {
+      "keyword": "best electric bike for assembly",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "assembly"
+    },
+    {
+      "keyword": "best electric bike for unboxing",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "unboxing"
+    },
+    {
+      "keyword": "best electric bike for first ride",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "first ride"
+    },
+    {
+      "keyword": "best electric bike for test ride",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "test ride"
+    },
+    {
+      "keyword": "best electric bike for demo ride",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "demo ride"
+    },
+    {
+      "keyword": "best electric bike for try before you buy",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "try before you buy"
+    },
+    {
+      "keyword": "best electric bike for return policy",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "return policy"
+    },
+    {
+      "keyword": "best electric bike for shipping",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "shipping"
+    },
+    {
+      "keyword": "best electric bike for free shipping",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "free shipping"
+    },
+    {
+      "keyword": "best electric bike for assembly service",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "assembly service"
+    },
+    {
+      "keyword": "best electric bike for local dealer",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "local dealer"
+    },
+    {
+      "keyword": "best electric bike for near me",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "near me"
+    },
+    {
+      "keyword": "best electric bike for store",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "store"
+    },
+    {
+      "keyword": "best electric bike for showroom",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "showroom"
+    },
+    {
+      "keyword": "best electric bike for test ride location",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "test ride location"
+    },
+    {
+      "keyword": "best electric bike for online purchase",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "online purchase"
+    },
+    {
+      "keyword": "best electric bike for buy online",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "buy online"
+    },
+    {
+      "keyword": "best electric bike for direct to consumer",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "direct to consumer"
+    },
+    {
+      "keyword": "best electric bike for DTC",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "DTC"
+    },
+    {
+      "keyword": "best electric bike for subscription",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "subscription"
+    },
+    {
+      "keyword": "best electric bike for monthly payment",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "monthly payment"
+    },
+    {
+      "keyword": "best electric bike for lease",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "lease"
+    },
+    {
+      "keyword": "best electric bike for rent to own",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rent to own"
+    },
+    {
+      "keyword": "best electric bike for trade in",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "trade in"
+    },
+    {
+      "keyword": "best electric bike for upgrade program",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "upgrade program"
+    },
+    {
+      "keyword": "best electric bike for loyalty program",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "loyalty program"
+    },
+    {
+      "keyword": "best electric bike for referral",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "referral"
+    },
+    {
+      "keyword": "best electric bike for community",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "community"
+    },
+    {
+      "keyword": "best electric bike for forum",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "forum"
+    },
+    {
+      "keyword": "best electric bike for group ride",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "group ride"
+    },
+    {
+      "keyword": "best electric bike for club",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "club"
+    },
+    {
+      "keyword": "best electric bike for meetup",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "meetup"
+    },
+    {
+      "keyword": "best electric bike for event",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "event"
+    },
+    {
+      "keyword": "best electric bike for charity ride",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "charity ride"
+    },
+    {
+      "keyword": "best electric bike for fundraiser",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fundraiser"
+    },
+    {
+      "keyword": "best electric bike for century ride",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "century ride"
+    },
+    {
+      "keyword": "best electric bike for gran fondo",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "gran fondo"
+    },
+    {
+      "keyword": "best electric bike for commute challenge",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "commute challenge"
+    },
+    {
+      "keyword": "best electric bike for bike to work",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bike to work"
+    },
+    {
+      "keyword": "best electric bike for bike month",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bike month"
+    },
+    {
+      "keyword": "best electric bike for earth day",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "earth day"
+    },
+    {
+      "keyword": "best electric bike for safety course",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "safety course"
+    },
+    {
+      "keyword": "best electric bike for riding lessons",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "riding lessons"
+    },
+    {
+      "keyword": "best electric bike for training",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "training"
+    },
+    {
+      "keyword": "best electric bike for certification",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "certification"
+    },
+    {
+      "keyword": "best electric bike for laws",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "laws"
+    },
+    {
+      "keyword": "best electric bike for regulations",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "regulations"
+    },
+    {
+      "keyword": "best electric bike for legal",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "legal"
+    },
+    {
+      "keyword": "best electric bike for illegal",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "illegal"
+    },
+    {
+      "keyword": "best electric bike for permit",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "permit"
+    },
+    {
+      "keyword": "best electric bike for license",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "license"
+    },
+    {
+      "keyword": "best electric bike for registration",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "registration"
+    },
+    {
+      "keyword": "best electric bike for title",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "title"
+    },
+    {
+      "keyword": "best electric bike for VIN",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "VIN"
+    },
+    {
+      "keyword": "best electric bike for serial number",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "serial number"
+    },
+    {
+      "keyword": "best electric bike for helmet laws",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "helmet laws"
+    },
+    {
+      "keyword": "best electric bike for age restrictions",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "age restrictions"
+    },
+    {
+      "keyword": "best electric bike for speed limits",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "speed limits"
+    },
+    {
+      "keyword": "best electric bike for trail access",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "trail access"
+    },
+    {
+      "keyword": "best electric bike for liability",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "liability"
+    },
+    {
+      "keyword": "best electric bike for coverage",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "coverage"
+    },
+    {
+      "keyword": "best electric bike for claim",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "claim"
+    },
+    {
+      "keyword": "best electric bike for accident",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "accident"
+    },
+    {
+      "keyword": "best electric bike for theft",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "theft"
+    },
+    {
+      "keyword": "best electric bike for stolen",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "stolen"
+    },
+    {
+      "keyword": "best electric bike for recovery",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "recovery"
+    },
+    {
+      "keyword": "best electric bike for police report",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "police report"
+    },
+    {
+      "keyword": "best electric bike for crash",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "crash"
+    },
+    {
+      "keyword": "best electric bike for injury",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "injury"
+    },
+    {
+      "keyword": "best electric bike for safety gear",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "safety gear"
+    },
+    {
+      "keyword": "best electric bike for protective equipment",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "protective equipment"
+    },
+    {
+      "keyword": "best electric bike for visibility",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "visibility"
+    },
+    {
+      "keyword": "best electric bike for reflective",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "reflective"
+    },
+    {
+      "keyword": "best electric bike for bright",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bright"
+    },
+    {
+      "keyword": "best electric bike for flags",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "flags"
+    },
+    {
+      "keyword": "best electric bike for group riding",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "group riding"
+    },
+    {
+      "keyword": "best electric bike for drafting",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "drafting"
+    },
+    {
+      "keyword": "best electric bike for pace line",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pace line"
+    },
+    {
+      "keyword": "best electric bike for safety in numbers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "safety in numbers"
+    },
+    {
+      "keyword": "best electric bike for dawn",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "dawn"
+    },
+    {
+      "keyword": "best electric bike for dusk",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "dusk"
+    },
+    {
+      "keyword": "best electric bike for low light",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "low light"
+    },
+    {
+      "keyword": "best electric bike for headlights",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "headlights"
+    },
+    {
+      "keyword": "best electric bike for weather",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "weather"
+    },
+    {
+      "keyword": "best electric bike for rain gear",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rain gear"
+    },
+    {
+      "keyword": "best electric bike for terrain",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "terrain"
+    },
+    {
+      "keyword": "best electric bike for mixed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mixed"
+    },
+    {
+      "keyword": "best electric bike for surfaces",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "surfaces"
+    },
+    {
+      "keyword": "best electric bike for distance",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "distance"
+    },
+    {
+      "keyword": "best electric bike for medium",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "medium"
+    },
+    {
+      "keyword": "best electric bike for long",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "long"
+    },
+    {
+      "keyword": "best electric bike for ultra",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "ultra"
+    },
+    {
+      "keyword": "best electric bike for endurance",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "endurance"
+    },
+    {
+      "keyword": "best electric bike for slow",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "slow"
+    },
+    {
+      "keyword": "best electric bike for moderate",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "moderate"
+    },
+    {
+      "keyword": "best electric bike for fast",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fast"
+    },
+    {
+      "keyword": "best electric bike for racing",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "racing"
+    },
+    {
+      "keyword": "best electric bike for competitive",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "competitive"
+    },
+    {
+      "keyword": "best electric bike for leisure",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "leisure"
+    },
+    {
+      "keyword": "best electric bike for recreation",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "recreation"
+    },
+    {
+      "keyword": "best electric bike for fun",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fun"
+    },
+    {
+      "keyword": "best electric bike for enjoyment",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "enjoyment"
+    },
+    {
+      "keyword": "best electric bike for relaxation",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "relaxation"
+    },
+    {
+      "keyword": "best electric bike for health",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "health"
+    },
+    {
+      "keyword": "best electric bike for wellness",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "wellness"
+    },
+    {
+      "keyword": "best electric bike for mental health",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mental health"
+    },
+    {
+      "keyword": "best electric bike for stress relief",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "stress relief"
+    },
+    {
+      "keyword": "best electric bike for environment",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "environment"
+    },
+    {
+      "keyword": "best electric bike for green",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "green"
+    },
+    {
+      "keyword": "best electric bike for eco",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "eco"
+    },
+    {
+      "keyword": "best electric bike for sustainable",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "sustainable"
+    },
+    {
+      "keyword": "best electric bike for carbon footprint",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "carbon footprint"
+    },
+    {
+      "keyword": "best electric bike for savings",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "savings"
+    },
+    {
+      "keyword": "best electric bike for cost",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cost"
+    },
+    {
+      "keyword": "best electric bike for price",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "price"
+    },
+    {
+      "keyword": "best electric bike for value",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "value"
+    },
+    {
+      "keyword": "best electric bike for ROI",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "ROI"
+    },
+    {
+      "keyword": "best electric bike for payback",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "payback"
+    },
+    {
+      "keyword": "best electric bike for convenience",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "convenience"
+    },
+    {
+      "keyword": "best electric bike for time savings",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "time savings"
+    },
+    {
+      "keyword": "best electric bike for parking",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "parking"
+    },
+    {
+      "keyword": "best electric bike for traffic",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "traffic"
+    },
+    {
+      "keyword": "best electric bike for freedom",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "freedom"
+    },
+    {
+      "keyword": "best electric bike for independence",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "independence"
+    },
+    {
+      "keyword": "best electric bike for mobility",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mobility"
+    },
+    {
+      "keyword": "best electric bike for accessibility",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "accessibility"
+    },
+    {
+      "keyword": "best electric bike for inclusion",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "inclusion"
+    },
+    {
+      "keyword": "best electric bike for aging in place",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "aging in place"
+    },
+    {
+      "keyword": "best electric bike for active aging",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "active aging"
+    },
+    {
+      "keyword": "best electric bike for retirement",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "retirement"
+    },
+    {
+      "keyword": "best electric bike for golden years",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "golden years"
+    },
+    {
+      "keyword": "best electric bike for family",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "family"
+    },
+    {
+      "keyword": "best electric bike for spouse",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "spouse"
+    },
+    {
+      "keyword": "best electric bike for partner",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "partner"
+    },
+    {
+      "keyword": "best electric bike for friends",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "friends"
+    },
+    {
+      "keyword": "best electric bike for social",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "social"
+    },
+    {
+      "keyword": "best electric bike for pets",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pets"
+    },
+    {
+      "keyword": "best electric bike for dogs",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "dogs"
+    },
+    {
+      "keyword": "best electric bike for cats",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cats"
+    },
+    {
+      "keyword": "best electric bike for animals",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "animals"
+    },
+    {
+      "keyword": "best electric bike for pet friendly",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pet friendly"
+    },
+    {
+      "keyword": "best electric bike for work",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "work"
+    },
+    {
+      "keyword": "best electric bike for job",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "job"
+    },
+    {
+      "keyword": "best electric bike for career",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "career"
+    },
+    {
+      "keyword": "best electric bike for profession",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "profession"
+    },
+    {
+      "keyword": "best electric bike for business",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "business"
+    },
+    {
+      "keyword": "best electric bike for side hustle",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "side hustle"
+    },
+    {
+      "keyword": "best electric bike for travel",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "travel"
+    },
+    {
+      "keyword": "best electric bike for vacation",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "vacation"
+    },
+    {
+      "keyword": "best electric bike for adventure",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "adventure"
+    },
+    {
+      "keyword": "best electric bike for explore",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "explore"
+    },
+    {
+      "keyword": "best electric bike for tourism",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tourism"
+    },
+    {
+      "keyword": "best electric bike for nature",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "nature"
+    },
+    {
+      "keyword": "best electric bike for outdoors",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "outdoors"
+    },
+    {
+      "keyword": "best electric bike for wildlife",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "wildlife"
+    },
+    {
+      "keyword": "best electric bike for birds",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "birds"
+    },
+    {
+      "keyword": "best electric bike for scenery",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "scenery"
+    },
+    {
+      "keyword": "best electric bike for photography",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "photography"
+    },
+    {
+      "keyword": "best electric bike for videography",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "videography"
+    },
+    {
+      "keyword": "best electric bike for content creation",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "content creation"
+    },
+    {
+      "keyword": "best electric bike for blogging",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "blogging"
+    },
+    {
+      "keyword": "best electric bike for courier",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "courier"
+    },
+    {
+      "keyword": "best electric bike for messenger",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "messenger"
+    },
+    {
+      "keyword": "best electric bike for postal",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "postal"
+    },
+    {
+      "keyword": "best electric bike for logistics",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "logistics"
+    },
+    {
+      "keyword": "best electric bike for agriculture",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "agriculture"
+    },
+    {
+      "keyword": "best electric bike for farming",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "farming"
+    },
+    {
+      "keyword": "best electric bike for ranching",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "ranching"
+    },
+    {
+      "keyword": "best electric bike for vineyard",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "vineyard"
+    },
+    {
+      "keyword": "best electric bike for orchard",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "orchard"
+    },
+    {
+      "keyword": "best electric bike for construction",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "construction"
+    },
+    {
+      "keyword": "best electric bike for inspection",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "inspection"
+    },
+    {
+      "keyword": "best electric bike for surveying",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "surveying"
+    },
+    {
+      "keyword": "best electric bike for mapping",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mapping"
+    },
+    {
+      "keyword": "best electric bike for emergency",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "emergency"
+    },
+    {
+      "keyword": "best electric bike for disaster",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "disaster"
+    },
+    {
+      "keyword": "best electric bike for relief",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "relief"
+    },
+    {
+      "keyword": "best electric bike for preparedness",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "preparedness"
+    },
+    {
+      "keyword": "best electric bike for survival",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "survival"
+    },
+    {
+      "keyword": "best electric bike for education",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "education"
+    },
+    {
+      "keyword": "best electric bike for school",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "school"
+    },
+    {
+      "keyword": "best electric bike for university",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "university"
+    },
+    {
+      "keyword": "best electric bike for campus",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "campus"
+    },
+    {
+      "keyword": "best electric bike for student",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "student"
+    },
+    {
+      "keyword": "best electric bike for research",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "research"
+    },
+    {
+      "keyword": "best electric bike for data collection",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "data collection"
+    },
+    {
+      "keyword": "best electric bike for field work",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "field work"
+    },
+    {
+      "keyword": "best electric bike for entertainment",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "entertainment"
+    },
+    {
+      "keyword": "best electric bike for events",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "events"
+    },
+    {
+      "keyword": "best electric bike for festivals",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "festivals"
+    },
+    {
+      "keyword": "best electric bike for concerts",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "concerts"
+    },
+    {
+      "keyword": "best electric bike for sports",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "sports"
+    },
+    {
+      "keyword": "best electric bike for food",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "food"
+    },
+    {
+      "keyword": "best electric bike for restaurant",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "restaurant"
+    },
+    {
+      "keyword": "best electric bike for catering",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "catering"
+    },
+    {
+      "keyword": "best electric bike for bakery",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bakery"
+    },
+    {
+      "keyword": "best electric bike for cafe",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cafe"
+    },
+    {
+      "keyword": "best electric bike for retail",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "retail"
+    },
+    {
+      "keyword": "best electric bike for shopping",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "shopping"
+    },
+    {
+      "keyword": "best electric bike for mall",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mall"
+    },
+    {
+      "keyword": "best electric bike for market",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "market"
+    },
+    {
+      "keyword": "best electric bike for medical",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "medical"
+    },
+    {
+      "keyword": "best electric bike for hospital",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hospital"
+    },
+    {
+      "keyword": "best electric bike for clinic",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "clinic"
+    },
+    {
+      "keyword": "best electric bike for pharmacy",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pharmacy"
+    },
+    {
+      "keyword": "best electric bike for lab",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "lab"
+    },
+    {
+      "keyword": "best electric bike for government",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "government"
+    },
+    {
+      "keyword": "best electric bike for federal",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "federal"
+    },
+    {
+      "keyword": "best electric bike for state",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "state"
+    },
+    {
+      "keyword": "best electric bike for local",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "local"
+    },
+    {
+      "keyword": "best electric bike for nonprofit",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "nonprofit"
+    },
+    {
+      "keyword": "best electric bike for charity",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "charity"
+    },
+    {
+      "keyword": "best electric bike for volunteer",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "volunteer"
+    },
+    {
+      "keyword": "best electric bike for community service",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "community service"
+    },
+    {
+      "keyword": "best electric bike for religious",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "religious"
+    },
+    {
+      "keyword": "best electric bike for church",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "church"
+    },
+    {
+      "keyword": "best electric bike for mission",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mission"
+    },
+    {
+      "keyword": "best electric bike for outreach",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "outreach"
+    },
+    {
+      "keyword": "best electric bike for ministry",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "ministry"
+    },
+    {
+      "keyword": "best electric bike for under $500",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Budget"
+    },
+    {
+      "keyword": "best electric bike for under $750",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Budget"
+    },
+    {
+      "keyword": "best electric bike for under $1000",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Budget"
+    },
+    {
+      "keyword": "best electric bike for under $1200",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Budget"
+    },
+    {
+      "keyword": "best electric bike for under $1500",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Budget"
+    },
+    {
+      "keyword": "best electric bike for under $2000",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Budget"
+    },
+    {
+      "keyword": "best electric bike for under $2500",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Budget"
+    },
+    {
+      "keyword": "best electric bike for under $3000",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Budget"
+    },
+    {
+      "keyword": "best electric bike for under $3500",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Budget"
+    },
+    {
+      "keyword": "best electric bike for under $4000",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Budget"
+    },
+    {
+      "keyword": "best electric bike for under $5000",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Budget"
+    },
+    {
+      "keyword": "electric bike for commuting",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "commuting"
+    },
+    {
+      "keyword": "electric bike for beginners",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "beginners"
+    },
+    {
+      "keyword": "electric bike for seniors",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "seniors"
+    },
+    {
+      "keyword": "electric bike for women",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "women"
+    },
+    {
+      "keyword": "electric bike for men",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "men"
+    },
+    {
+      "keyword": "electric bike for kids",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "kids"
+    },
+    {
+      "keyword": "electric bike for tall riders",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tall riders"
+    },
+    {
+      "keyword": "electric bike for short riders",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "short riders"
+    },
+    {
+      "keyword": "electric bike for heavy riders",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "heavy riders"
+    },
+    {
+      "keyword": "electric bike for plus size",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "plus size"
+    },
+    {
+      "keyword": "electric bike for petite",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "petite"
+    },
+    {
+      "keyword": "electric bike for tall",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tall"
+    },
+    {
+      "keyword": "electric bike for short",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "short"
+    },
+    {
+      "keyword": "electric bike for big guys",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "big guys"
+    },
+    {
+      "keyword": "electric bike for large frame",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "large frame"
+    },
+    {
+      "keyword": "electric bike for mountain biking",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mountain biking"
+    },
+    {
+      "keyword": "electric bike for off-road",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "off-road"
+    },
+    {
+      "keyword": "electric bike for trail riding",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "trail riding"
+    },
+    {
+      "keyword": "electric bike for gravel",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "gravel"
+    },
+    {
+      "keyword": "electric bike for sand",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "sand"
+    },
+    {
+      "keyword": "electric bike for mud",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mud"
+    },
+    {
+      "keyword": "electric bike for snow",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "snow"
+    },
+    {
+      "keyword": "electric bike for hunting",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hunting"
+    },
+    {
+      "keyword": "electric bike for fishing",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fishing"
+    },
+    {
+      "keyword": "electric bike for camping",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "camping"
+    },
+    {
+      "keyword": "electric bike for bike packing",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bike packing"
+    },
+    {
+      "keyword": "electric bike for touring",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "touring"
+    },
+    {
+      "keyword": "electric bike for long distance",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "long distance"
+    },
+    {
+      "keyword": "electric bike for city riding",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "city riding"
+    },
+    {
+      "keyword": "electric bike for urban",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "urban"
+    },
+    {
+      "keyword": "electric bike for suburban",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "suburban"
+    },
+    {
+      "keyword": "electric bike for rural",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rural"
+    },
+    {
+      "keyword": "electric bike for delivery",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "delivery"
+    },
+    {
+      "keyword": "electric bike for college students",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "college students"
+    },
+    {
+      "keyword": "electric bike for high school",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "high school"
+    },
+    {
+      "keyword": "electric bike for middle school",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "middle school"
+    },
+    {
+      "keyword": "electric bike for teens",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "teens"
+    },
+    {
+      "keyword": "electric bike for dog walking",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "dog walking"
+    },
+    {
+      "keyword": "electric bike for pet carrier",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pet carrier"
+    },
+    {
+      "keyword": "electric bike for grocery shopping",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "grocery shopping"
+    },
+    {
+      "keyword": "electric bike for errands",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "errands"
+    },
+    {
+      "keyword": "electric bike for farmers market",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "farmers market"
+    },
+    {
+      "keyword": "electric bike for food delivery",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "food delivery"
+    },
+    {
+      "keyword": "electric bike for Uber Eats",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Uber Eats"
+    },
+    {
+      "keyword": "electric bike for DoorDash",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "DoorDash"
+    },
+    {
+      "keyword": "electric bike for Amazon Flex",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Amazon Flex"
+    },
+    {
+      "keyword": "electric bike for real estate agents",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "real estate agents"
+    },
+    {
+      "keyword": "electric bike for photographers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "photographers"
+    },
+    {
+      "keyword": "electric bike for journalists",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "journalists"
+    },
+    {
+      "keyword": "electric bike for sales reps",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "sales reps"
+    },
+    {
+      "keyword": "electric bike for plumbers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "plumbers"
+    },
+    {
+      "keyword": "electric bike for electricians",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "electricians"
+    },
+    {
+      "keyword": "electric bike for HVAC",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "HVAC"
+    },
+    {
+      "keyword": "electric bike for landscapers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "landscapers"
+    },
+    {
+      "keyword": "electric bike for contractors",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "contractors"
+    },
+    {
+      "keyword": "electric bike for security guards",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "security guards"
+    },
+    {
+      "keyword": "electric bike for police",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "police"
+    },
+    {
+      "keyword": "electric bike for fire department",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fire department"
+    },
+    {
+      "keyword": "electric bike for EMS",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "EMS"
+    },
+    {
+      "keyword": "electric bike for teachers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "teachers"
+    },
+    {
+      "keyword": "electric bike for nurses",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "nurses"
+    },
+    {
+      "keyword": "electric bike for doctors",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "doctors"
+    },
+    {
+      "keyword": "electric bike for therapists",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "therapists"
+    },
+    {
+      "keyword": "electric bike for social workers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "social workers"
+    },
+    {
+      "keyword": "electric bike for knee problems",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "knee problems"
+    },
+    {
+      "keyword": "electric bike for back pain",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "back pain"
+    },
+    {
+      "keyword": "electric bike for arthritis",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "arthritis"
+    },
+    {
+      "keyword": "electric bike for fibromyalgia",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fibromyalgia"
+    },
+    {
+      "keyword": "electric bike for MS",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "MS"
+    },
+    {
+      "keyword": "electric bike for Parkinson's",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Parkinson's"
+    },
+    {
+      "keyword": "electric bike for stroke recovery",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "stroke recovery"
+    },
+    {
+      "keyword": "electric bike for cardiac rehab",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cardiac rehab"
+    },
+    {
+      "keyword": "electric bike for COPD",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "COPD"
+    },
+    {
+      "keyword": "electric bike for asthma",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "asthma"
+    },
+    {
+      "keyword": "electric bike for anxiety",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "anxiety"
+    },
+    {
+      "keyword": "electric bike for depression",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "depression"
+    },
+    {
+      "keyword": "electric bike for ADHD",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "ADHD"
+    },
+    {
+      "keyword": "electric bike for autism",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "autism"
+    },
+    {
+      "keyword": "electric bike for PTSD",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "PTSD"
+    },
+    {
+      "keyword": "electric bike for weight loss",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "weight loss"
+    },
+    {
+      "keyword": "electric bike for fitness",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fitness"
+    },
+    {
+      "keyword": "electric bike for exercise",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "exercise"
+    },
+    {
+      "keyword": "electric bike for cardio",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cardio"
+    },
+    {
+      "keyword": "electric bike for HIIT",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "HIIT"
+    },
+    {
+      "keyword": "electric bike for diabetes",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "diabetes"
+    },
+    {
+      "keyword": "electric bike for heart disease",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "heart disease"
+    },
+    {
+      "keyword": "electric bike for high blood pressure",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "high blood pressure"
+    },
+    {
+      "keyword": "electric bike for obesity",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "obesity"
+    },
+    {
+      "keyword": "electric bike for pregnancy",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pregnancy"
+    },
+    {
+      "keyword": "electric bike for postpartum",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "postpartum"
+    },
+    {
+      "keyword": "electric bike for menopause",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "menopause"
+    },
+    {
+      "keyword": "electric bike for aging",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "aging"
+    },
+    {
+      "keyword": "electric bike for disability",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "disability"
+    },
+    {
+      "keyword": "electric bike for handicap",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "handicap"
+    },
+    {
+      "keyword": "electric bike for wheelchair",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "wheelchair"
+    },
+    {
+      "keyword": "electric bike for amputee",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "amputee"
+    },
+    {
+      "keyword": "electric bike for prosthetic",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "prosthetic"
+    },
+    {
+      "keyword": "electric bike for blind",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "blind"
+    },
+    {
+      "keyword": "electric bike for deaf",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "deaf"
+    },
+    {
+      "keyword": "electric bike for hearing impaired",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hearing impaired"
+    },
+    {
+      "keyword": "electric bike for visually impaired",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "visually impaired"
+    },
+    {
+      "keyword": "electric bike for veterans",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "veterans"
+    },
+    {
+      "keyword": "electric bike for military",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "military"
+    },
+    {
+      "keyword": "electric bike for first responders",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "first responders"
+    },
+    {
+      "keyword": "electric bike for essential workers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "essential workers"
+    },
+    {
+      "keyword": "electric bike for RV travel",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "RV travel"
+    },
+    {
+      "keyword": "electric bike for van life",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "van life"
+    },
+    {
+      "keyword": "electric bike for boat",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "boat"
+    },
+    {
+      "keyword": "electric bike for airport",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "airport"
+    },
+    {
+      "keyword": "electric bike for train station",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "train station"
+    },
+    {
+      "keyword": "electric bike for apartment",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "apartment"
+    },
+    {
+      "keyword": "electric bike for small space",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "small space"
+    },
+    {
+      "keyword": "electric bike for storage",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "storage"
+    },
+    {
+      "keyword": "electric bike for garage",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "garage"
+    },
+    {
+      "keyword": "electric bike for dorm",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "dorm"
+    },
+    {
+      "keyword": "electric bike for night riding",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "night riding"
+    },
+    {
+      "keyword": "electric bike for low visibility",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "low visibility"
+    },
+    {
+      "keyword": "electric bike for rain",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rain"
+    },
+    {
+      "keyword": "electric bike for ice",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "ice"
+    },
+    {
+      "keyword": "electric bike for wind",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "wind"
+    },
+    {
+      "keyword": "electric bike for hot weather",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hot weather"
+    },
+    {
+      "keyword": "electric bike for cold weather",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cold weather"
+    },
+    {
+      "keyword": "electric bike for humidity",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "humidity"
+    },
+    {
+      "keyword": "electric bike for altitude",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "altitude"
+    },
+    {
+      "keyword": "electric bike for hills",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hills"
+    },
+    {
+      "keyword": "electric bike for steep grades",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "steep grades"
+    },
+    {
+      "keyword": "electric bike for mountains",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mountains"
+    },
+    {
+      "keyword": "electric bike for flat terrain",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "flat terrain"
+    },
+    {
+      "keyword": "electric bike for mixed terrain",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mixed terrain"
+    },
+    {
+      "keyword": "electric bike for pavement",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pavement"
+    },
+    {
+      "keyword": "electric bike for dirt",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "dirt"
+    },
+    {
+      "keyword": "electric bike for grass",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "grass"
+    },
+    {
+      "keyword": "electric bike for cobblestone",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cobblestone"
+    },
+    {
+      "keyword": "electric bike for bike lanes",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bike lanes"
+    },
+    {
+      "keyword": "electric bike for shared roads",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "shared roads"
+    },
+    {
+      "keyword": "electric bike for trails",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "trails"
+    },
+    {
+      "keyword": "electric bike for paths",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "paths"
+    },
+    {
+      "keyword": "electric bike for sidewalks",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "sidewalks"
+    },
+    {
+      "keyword": "electric bike for theft prevention",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "theft prevention"
+    },
+    {
+      "keyword": "electric bike for security",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "security"
+    },
+    {
+      "keyword": "electric bike for GPS tracking",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "GPS tracking"
+    },
+    {
+      "keyword": "electric bike for alarm",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "alarm"
+    },
+    {
+      "keyword": "electric bike for lock",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "lock"
+    },
+    {
+      "keyword": "electric bike for insurance",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "insurance"
+    },
+    {
+      "keyword": "electric bike for warranty",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "warranty"
+    },
+    {
+      "keyword": "electric bike for financing",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "financing"
+    },
+    {
+      "keyword": "electric bike for leasing",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "leasing"
+    },
+    {
+      "keyword": "electric bike for rental",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rental"
+    },
+    {
+      "keyword": "electric bike for tax credit",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tax credit"
+    },
+    {
+      "keyword": "electric bike for rebate",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rebate"
+    },
+    {
+      "keyword": "electric bike for incentive",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "incentive"
+    },
+    {
+      "keyword": "electric bike for employer benefit",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "employer benefit"
+    },
+    {
+      "keyword": "electric bike for battery care",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "battery care"
+    },
+    {
+      "keyword": "electric bike for battery replacement",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "battery replacement"
+    },
+    {
+      "keyword": "electric bike for battery upgrade",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "battery upgrade"
+    },
+    {
+      "keyword": "electric bike for battery recycling",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "battery recycling"
+    },
+    {
+      "keyword": "electric bike for motor types",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "motor types"
+    },
+    {
+      "keyword": "electric bike for hub motor",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hub motor"
+    },
+    {
+      "keyword": "electric bike for mid drive",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mid drive"
+    },
+    {
+      "keyword": "electric bike for direct drive",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "direct drive"
+    },
+    {
+      "keyword": "electric bike for geared",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "geared"
+    },
+    {
+      "keyword": "electric bike for torque sensor",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "torque sensor"
+    },
+    {
+      "keyword": "electric bike for cadence sensor",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cadence sensor"
+    },
+    {
+      "keyword": "electric bike for throttle",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "throttle"
+    },
+    {
+      "keyword": "electric bike for pedal assist",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pedal assist"
+    },
+    {
+      "keyword": "electric bike for display",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "display"
+    },
+    {
+      "keyword": "electric bike for LCD",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "LCD"
+    },
+    {
+      "keyword": "electric bike for OLED",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "OLED"
+    },
+    {
+      "keyword": "electric bike for app connectivity",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "app connectivity"
+    },
+    {
+      "keyword": "electric bike for Bluetooth",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Bluetooth"
+    },
+    {
+      "keyword": "electric bike for GPS",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "GPS"
+    },
+    {
+      "keyword": "electric bike for suspension",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "suspension"
+    },
+    {
+      "keyword": "electric bike for full suspension",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "full suspension"
+    },
+    {
+      "keyword": "electric bike for front suspension",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "front suspension"
+    },
+    {
+      "keyword": "electric bike for rigid",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rigid"
+    },
+    {
+      "keyword": "electric bike for brakes",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "brakes"
+    },
+    {
+      "keyword": "electric bike for hydraulic disc",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hydraulic disc"
+    },
+    {
+      "keyword": "electric bike for mechanical disc",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mechanical disc"
+    },
+    {
+      "keyword": "electric bike for rim brakes",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rim brakes"
+    },
+    {
+      "keyword": "electric bike for regenerative",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "regenerative"
+    },
+    {
+      "keyword": "electric bike for tires",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tires"
+    },
+    {
+      "keyword": "electric bike for fat tires",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fat tires"
+    },
+    {
+      "keyword": "electric bike for skinny tires",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "skinny tires"
+    },
+    {
+      "keyword": "electric bike for tubeless",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tubeless"
+    },
+    {
+      "keyword": "electric bike for puncture resistant",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "puncture resistant"
+    },
+    {
+      "keyword": "electric bike for frame",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "frame"
+    },
+    {
+      "keyword": "electric bike for aluminum",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "aluminum"
+    },
+    {
+      "keyword": "electric bike for steel",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "steel"
+    },
+    {
+      "keyword": "electric bike for carbon fiber",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "carbon fiber"
+    },
+    {
+      "keyword": "electric bike for titanium",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "titanium"
+    },
+    {
+      "keyword": "electric bike for step through",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "step through"
+    },
+    {
+      "keyword": "electric bike for step over",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "step over"
+    },
+    {
+      "keyword": "electric bike for low step",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "low step"
+    },
+    {
+      "keyword": "electric bike for high step",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "high step"
+    },
+    {
+      "keyword": "electric bike for folding",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "folding"
+    },
+    {
+      "keyword": "electric bike for collapsible",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "collapsible"
+    },
+    {
+      "keyword": "electric bike for portable",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "portable"
+    },
+    {
+      "keyword": "electric bike for compact",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "compact"
+    },
+    {
+      "keyword": "electric bike for lightweight",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "lightweight"
+    },
+    {
+      "keyword": "electric bike for cargo",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cargo"
+    },
+    {
+      "keyword": "electric bike for longtail",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "longtail"
+    },
+    {
+      "keyword": "electric bike for front loader",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "front loader"
+    },
+    {
+      "keyword": "electric bike for box bike",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "box bike"
+    },
+    {
+      "keyword": "electric bike for bakfiets",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bakfiets"
+    },
+    {
+      "keyword": "electric bike for trike",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "trike"
+    },
+    {
+      "keyword": "electric bike for tadpole",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tadpole"
+    },
+    {
+      "keyword": "electric bike for delta",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "delta"
+    },
+    {
+      "keyword": "electric bike for recumbent",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "recumbent"
+    },
+    {
+      "keyword": "electric bike for hand cycle",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "hand cycle"
+    },
+    {
+      "keyword": "electric bike for speed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "speed"
+    },
+    {
+      "keyword": "electric bike for 20 mph",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "20 mph"
+    },
+    {
+      "keyword": "electric bike for 28 mph",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "28 mph"
+    },
+    {
+      "keyword": "electric bike for 30 mph",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "30 mph"
+    },
+    {
+      "keyword": "electric bike for 40 mph",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "40 mph"
+    },
+    {
+      "keyword": "electric bike for 50 mph",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "50 mph"
+    },
+    {
+      "keyword": "electric bike for range",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "range"
+    },
+    {
+      "keyword": "electric bike for miles per charge",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "miles per charge"
+    },
+    {
+      "keyword": "electric bike for battery life",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "battery life"
+    },
+    {
+      "keyword": "electric bike for charging time",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "charging time"
+    },
+    {
+      "keyword": "electric bike for weight",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "weight"
+    },
+    {
+      "keyword": "electric bike for payload capacity",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "payload capacity"
+    },
+    {
+      "keyword": "electric bike for max weight",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "max weight"
+    },
+    {
+      "keyword": "electric bike for load capacity",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "load capacity"
+    },
+    {
+      "keyword": "electric bike for accessories",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "accessories"
+    },
+    {
+      "keyword": "electric bike for rack",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rack"
+    },
+    {
+      "keyword": "electric bike for panniers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "panniers"
+    },
+    {
+      "keyword": "electric bike for basket",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "basket"
+    },
+    {
+      "keyword": "electric bike for bag",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bag"
+    },
+    {
+      "keyword": "electric bike for lights",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "lights"
+    },
+    {
+      "keyword": "electric bike for headlight",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "headlight"
+    },
+    {
+      "keyword": "electric bike for tail light",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tail light"
+    },
+    {
+      "keyword": "electric bike for turn signals",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "turn signals"
+    },
+    {
+      "keyword": "electric bike for reflectors",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "reflectors"
+    },
+    {
+      "keyword": "electric bike for mirror",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mirror"
+    },
+    {
+      "keyword": "electric bike for horn",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "horn"
+    },
+    {
+      "keyword": "electric bike for bell",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bell"
+    },
+    {
+      "keyword": "electric bike for phone mount",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "phone mount"
+    },
+    {
+      "keyword": "electric bike for GPS mount",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "GPS mount"
+    },
+    {
+      "keyword": "electric bike for fenders",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fenders"
+    },
+    {
+      "keyword": "electric bike for mudguards",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mudguards"
+    },
+    {
+      "keyword": "electric bike for chain guard",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "chain guard"
+    },
+    {
+      "keyword": "electric bike for kickstand",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "kickstand"
+    },
+    {
+      "keyword": "electric bike for stand",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "stand"
+    },
+    {
+      "keyword": "electric bike for seat",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "seat"
+    },
+    {
+      "keyword": "electric bike for saddle",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "saddle"
+    },
+    {
+      "keyword": "electric bike for seatpost",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "seatpost"
+    },
+    {
+      "keyword": "electric bike for suspension seatpost",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "suspension seatpost"
+    },
+    {
+      "keyword": "electric bike for cushioned",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cushioned"
+    },
+    {
+      "keyword": "electric bike for handlebars",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "handlebars"
+    },
+    {
+      "keyword": "electric bike for upright",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "upright"
+    },
+    {
+      "keyword": "electric bike for drop",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "drop"
+    },
+    {
+      "keyword": "electric bike for flat",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "flat"
+    },
+    {
+      "keyword": "electric bike for riser",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "riser"
+    },
+    {
+      "keyword": "electric bike for swept back",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "swept back"
+    },
+    {
+      "keyword": "electric bike for gears",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "gears"
+    },
+    {
+      "keyword": "electric bike for single speed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "single speed"
+    },
+    {
+      "keyword": "electric bike for 7 speed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "7 speed"
+    },
+    {
+      "keyword": "electric bike for 8 speed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "8 speed"
+    },
+    {
+      "keyword": "electric bike for 9 speed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "9 speed"
+    },
+    {
+      "keyword": "electric bike for 10 speed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "10 speed"
+    },
+    {
+      "keyword": "electric bike for 11 speed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "11 speed"
+    },
+    {
+      "keyword": "electric bike for shimano",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "shimano"
+    },
+    {
+      "keyword": "electric bike for SRAM",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "SRAM"
+    },
+    {
+      "keyword": "electric bike for enviolo",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "enviolo"
+    },
+    {
+      "keyword": "electric bike for nuvinci",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "nuvinci"
+    },
+    {
+      "keyword": "electric bike for internal hub",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "internal hub"
+    },
+    {
+      "keyword": "electric bike for belt drive",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "belt drive"
+    },
+    {
+      "keyword": "electric bike for chain drive",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "chain drive"
+    },
+    {
+      "keyword": "electric bike for shaft drive",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "shaft drive"
+    },
+    {
+      "keyword": "electric bike for waterproof",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "waterproof"
+    },
+    {
+      "keyword": "electric bike for IP rating",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "IP rating"
+    },
+    {
+      "keyword": "electric bike for IPX4",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "IPX4"
+    },
+    {
+      "keyword": "electric bike for IPX5",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "IPX5"
+    },
+    {
+      "keyword": "electric bike for IPX6",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "IPX6"
+    },
+    {
+      "keyword": "electric bike for IP67",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "IP67"
+    },
+    {
+      "keyword": "electric bike for certified",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "certified"
+    },
+    {
+      "keyword": "electric bike for UL certified",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "UL certified"
+    },
+    {
+      "keyword": "electric bike for SGS certified",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "SGS certified"
+    },
+    {
+      "keyword": "electric bike for CE certified",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "CE certified"
+    },
+    {
+      "keyword": "electric bike for brands",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "brands"
+    },
+    {
+      "keyword": "electric bike for Burchda",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Burchda"
+    },
+    {
+      "keyword": "electric bike for King Bull",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "King Bull"
+    },
+    {
+      "keyword": "electric bike for Vivi",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Vivi"
+    },
+    {
+      "keyword": "electric bike for Aventon",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Aventon"
+    },
+    {
+      "keyword": "electric bike for Rad Power",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Rad Power"
+    },
+    {
+      "keyword": "electric bike for Lectric",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Lectric"
+    },
+    {
+      "keyword": "electric bike for Ride1Up",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Ride1Up"
+    },
+    {
+      "keyword": "electric bike for Juiced",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Juiced"
+    },
+    {
+      "keyword": "electric bike for Vtuvia",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Vtuvia"
+    },
+    {
+      "keyword": "electric bike for Swagtron",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "Swagtron"
+    },
+    {
+      "keyword": "electric bike for reviews",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "reviews"
+    },
+    {
+      "keyword": "electric bike for ratings",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "ratings"
+    },
+    {
+      "keyword": "electric bike for comparison",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "comparison"
+    },
+    {
+      "keyword": "electric bike for vs",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "vs"
+    },
+    {
+      "keyword": "electric bike for versus",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "versus"
+    },
+    {
+      "keyword": "electric bike for best",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "best"
+    },
+    {
+      "keyword": "electric bike for top rated",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "top rated"
+    },
+    {
+      "keyword": "electric bike for 2026",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "2026"
+    },
+    {
+      "keyword": "electric bike for 2027",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "2027"
+    },
+    {
+      "keyword": "electric bike for new models",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "new models"
+    },
+    {
+      "keyword": "electric bike for latest",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "latest"
+    },
+    {
+      "keyword": "electric bike for upcoming",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "upcoming"
+    },
+    {
+      "keyword": "electric bike for released",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "released"
+    },
+    {
+      "keyword": "electric bike for black friday",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "black friday"
+    },
+    {
+      "keyword": "electric bike for prime day",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "prime day"
+    },
+    {
+      "keyword": "electric bike for cyber monday",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "cyber monday"
+    },
+    {
+      "keyword": "electric bike for holiday deals",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "holiday deals"
+    },
+    {
+      "keyword": "electric bike for sales",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "sales"
+    },
+    {
+      "keyword": "electric bike for discount",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "discount"
+    },
+    {
+      "keyword": "electric bike for coupon",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "coupon"
+    },
+    {
+      "keyword": "electric bike for promo code",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "promo code"
+    },
+    {
+      "keyword": "electric bike for deal",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "deal"
+    },
+    {
+      "keyword": "electric bike for clearance",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "clearance"
+    },
+    {
+      "keyword": "electric bike for used",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "used"
+    },
+    {
+      "keyword": "electric bike for refurbished",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "refurbished"
+    },
+    {
+      "keyword": "electric bike for open box",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "open box"
+    },
+    {
+      "keyword": "electric bike for demo",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "demo"
+    },
+    {
+      "keyword": "electric bike for pre-owned",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pre-owned"
+    },
+    {
+      "keyword": "electric bike for DIY",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "DIY"
+    },
+    {
+      "keyword": "electric bike for build your own",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "build your own"
+    },
+    {
+      "keyword": "electric bike for conversion kit",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "conversion kit"
+    },
+    {
+      "keyword": "electric bike for upgrade",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "upgrade"
+    },
+    {
+      "keyword": "electric bike for modify",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "modify"
+    },
+    {
+      "keyword": "electric bike for repair",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "repair"
+    },
+    {
+      "keyword": "electric bike for fix",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fix"
+    },
+    {
+      "keyword": "electric bike for troubleshoot",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "troubleshoot"
+    },
+    {
+      "keyword": "electric bike for diagnose",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "diagnose"
+    },
+    {
+      "keyword": "electric bike for service",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "service"
+    },
+    {
+      "keyword": "electric bike for tune up",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "tune up"
+    },
+    {
+      "keyword": "electric bike for install",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "install"
+    },
+    {
+      "keyword": "electric bike for setup",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "setup"
+    },
+    {
+      "keyword": "electric bike for assembly",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "assembly"
+    },
+    {
+      "keyword": "electric bike for unboxing",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "unboxing"
+    },
+    {
+      "keyword": "electric bike for first ride",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "first ride"
+    },
+    {
+      "keyword": "electric bike for test ride",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "test ride"
+    },
+    {
+      "keyword": "electric bike for demo ride",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "demo ride"
+    },
+    {
+      "keyword": "electric bike for try before you buy",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "try before you buy"
+    },
+    {
+      "keyword": "electric bike for return policy",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "return policy"
+    },
+    {
+      "keyword": "electric bike for shipping",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "shipping"
+    },
+    {
+      "keyword": "electric bike for free shipping",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "free shipping"
+    },
+    {
+      "keyword": "electric bike for assembly service",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "assembly service"
+    },
+    {
+      "keyword": "electric bike for local dealer",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "local dealer"
+    },
+    {
+      "keyword": "electric bike for near me",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "near me"
+    },
+    {
+      "keyword": "electric bike for store",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "store"
+    },
+    {
+      "keyword": "electric bike for showroom",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "showroom"
+    },
+    {
+      "keyword": "electric bike for test ride location",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "test ride location"
+    },
+    {
+      "keyword": "electric bike for online purchase",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "online purchase"
+    },
+    {
+      "keyword": "electric bike for buy online",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "buy online"
+    },
+    {
+      "keyword": "electric bike for direct to consumer",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "direct to consumer"
+    },
+    {
+      "keyword": "electric bike for DTC",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "DTC"
+    },
+    {
+      "keyword": "electric bike for subscription",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "subscription"
+    },
+    {
+      "keyword": "electric bike for monthly payment",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "monthly payment"
+    },
+    {
+      "keyword": "electric bike for lease",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "lease"
+    },
+    {
+      "keyword": "electric bike for rent to own",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rent to own"
+    },
+    {
+      "keyword": "electric bike for trade in",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "trade in"
+    },
+    {
+      "keyword": "electric bike for upgrade program",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "upgrade program"
+    },
+    {
+      "keyword": "electric bike for loyalty program",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "loyalty program"
+    },
+    {
+      "keyword": "electric bike for referral",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "referral"
+    },
+    {
+      "keyword": "electric bike for community",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "community"
+    },
+    {
+      "keyword": "electric bike for forum",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "forum"
+    },
+    {
+      "keyword": "electric bike for group ride",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "group ride"
+    },
+    {
+      "keyword": "electric bike for club",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "club"
+    },
+    {
+      "keyword": "electric bike for meetup",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "meetup"
+    },
+    {
+      "keyword": "electric bike for event",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "event"
+    },
+    {
+      "keyword": "electric bike for charity ride",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "charity ride"
+    },
+    {
+      "keyword": "electric bike for fundraiser",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fundraiser"
+    },
+    {
+      "keyword": "electric bike for century ride",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "century ride"
+    },
+    {
+      "keyword": "electric bike for gran fondo",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "gran fondo"
+    },
+    {
+      "keyword": "electric bike for commute challenge",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "commute challenge"
+    },
+    {
+      "keyword": "electric bike for bike to work",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bike to work"
+    },
+    {
+      "keyword": "electric bike for bike month",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bike month"
+    },
+    {
+      "keyword": "electric bike for earth day",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "earth day"
+    },
+    {
+      "keyword": "electric bike for safety course",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "safety course"
+    },
+    {
+      "keyword": "electric bike for riding lessons",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "riding lessons"
+    },
+    {
+      "keyword": "electric bike for training",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "training"
+    },
+    {
+      "keyword": "electric bike for certification",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "certification"
+    },
+    {
+      "keyword": "electric bike for laws",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "laws"
+    },
+    {
+      "keyword": "electric bike for regulations",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "regulations"
+    },
+    {
+      "keyword": "electric bike for legal",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "legal"
+    },
+    {
+      "keyword": "electric bike for illegal",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "illegal"
+    },
+    {
+      "keyword": "electric bike for permit",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "permit"
+    },
+    {
+      "keyword": "electric bike for license",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "license"
+    },
+    {
+      "keyword": "electric bike for registration",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "registration"
+    },
+    {
+      "keyword": "electric bike for title",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "title"
+    },
+    {
+      "keyword": "electric bike for VIN",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "VIN"
+    },
+    {
+      "keyword": "electric bike for serial number",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "serial number"
+    },
+    {
+      "keyword": "electric bike for helmet laws",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "helmet laws"
+    },
+    {
+      "keyword": "electric bike for age restrictions",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "age restrictions"
+    },
+    {
+      "keyword": "electric bike for speed limits",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "speed limits"
+    },
+    {
+      "keyword": "electric bike for trail access",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "trail access"
+    },
+    {
+      "keyword": "electric bike for liability",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "liability"
+    },
+    {
+      "keyword": "electric bike for coverage",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "coverage"
+    },
+    {
+      "keyword": "electric bike for claim",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "claim"
+    },
+    {
+      "keyword": "electric bike for accident",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "accident"
+    },
+    {
+      "keyword": "electric bike for theft",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "theft"
+    },
+    {
+      "keyword": "electric bike for stolen",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "stolen"
+    },
+    {
+      "keyword": "electric bike for recovery",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "recovery"
+    },
+    {
+      "keyword": "electric bike for police report",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "police report"
+    },
+    {
+      "keyword": "electric bike for crash",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "crash"
+    },
+    {
+      "keyword": "electric bike for injury",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "injury"
+    },
+    {
+      "keyword": "electric bike for safety gear",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "safety gear"
+    },
+    {
+      "keyword": "electric bike for protective equipment",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "protective equipment"
+    },
+    {
+      "keyword": "electric bike for visibility",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "visibility"
+    },
+    {
+      "keyword": "electric bike for reflective",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "reflective"
+    },
+    {
+      "keyword": "electric bike for bright",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "bright"
+    },
+    {
+      "keyword": "electric bike for flags",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "flags"
+    },
+    {
+      "keyword": "electric bike for group riding",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "group riding"
+    },
+    {
+      "keyword": "electric bike for drafting",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "drafting"
+    },
+    {
+      "keyword": "electric bike for pace line",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "pace line"
+    },
+    {
+      "keyword": "electric bike for safety in numbers",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "safety in numbers"
+    },
+    {
+      "keyword": "electric bike for dawn",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "dawn"
+    },
+    {
+      "keyword": "electric bike for dusk",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "dusk"
+    },
+    {
+      "keyword": "electric bike for low light",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "low light"
+    },
+    {
+      "keyword": "electric bike for headlights",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "headlights"
+    },
+    {
+      "keyword": "electric bike for weather",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "weather"
+    },
+    {
+      "keyword": "electric bike for rain gear",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "rain gear"
+    },
+    {
+      "keyword": "electric bike for terrain",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "terrain"
+    },
+    {
+      "keyword": "electric bike for mixed",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mixed"
+    },
+    {
+      "keyword": "electric bike for surfaces",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "surfaces"
+    },
+    {
+      "keyword": "electric bike for distance",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "distance"
+    },
+    {
+      "keyword": "electric bike for medium",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "medium"
+    },
+    {
+      "keyword": "electric bike for long",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "long"
+    },
+    {
+      "keyword": "electric bike for ultra",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "ultra"
+    },
+    {
+      "keyword": "electric bike for endurance",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "endurance"
+    },
+    {
+      "keyword": "electric bike for slow",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "slow"
+    },
+    {
+      "keyword": "electric bike for moderate",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "moderate"
+    },
+    {
+      "keyword": "electric bike for fast",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fast"
+    },
+    {
+      "keyword": "electric bike for racing",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "racing"
+    },
+    {
+      "keyword": "electric bike for competitive",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "competitive"
+    },
+    {
+      "keyword": "electric bike for leisure",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "leisure"
+    },
+    {
+      "keyword": "electric bike for recreation",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "recreation"
+    },
+    {
+      "keyword": "electric bike for fun",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "fun"
+    },
+    {
+      "keyword": "electric bike for enjoyment",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "enjoyment"
+    },
+    {
+      "keyword": "electric bike for relaxation",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "relaxation"
+    },
+    {
+      "keyword": "electric bike for health",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "health"
+    },
+    {
+      "keyword": "electric bike for wellness",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "wellness"
+    },
+    {
+      "keyword": "electric bike for mental health",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "mental health"
+    },
+    {
+      "keyword": "electric bike for stress relief",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "stress relief"
+    },
+    {
+      "keyword": "electric bike for environment",
+      "intent": "buying",
+      "difficulty": "low",
+      "category": "environment"
+    }
+  ]
+}

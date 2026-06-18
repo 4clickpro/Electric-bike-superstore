@@ -1,6 +1,6 @@
 {
-  "runs": 18,
-  "lastRun": "2026-06-17T01:57:12.004Z",
+  "runs": 107,
+  "lastRun": "2026-06-18T20:39:57.319Z",
   "keywords": [
     {
       "keyword": "fat tire electric bike review",
@@ -136,8 +136,38 @@
       "keyword": "electric bike chain maintenance",
       "slug": "electric-bike-chain-maintenance",
       "created": "2026-06-17T00:09:41.405Z"
+    },
+    {
+      "keyword": "best electric bike for commuting",
+      "slug": "best-electric-bike-for-commuting",
+      "created": "2026-06-18T20:37:01.276Z"
+    },
+    {
+      "keyword": "best electric bike for beginners",
+      "slug": "best-electric-bike-for-beginners",
+      "created": "2026-06-18T20:37:01.276Z"
+    },
+    {
+      "keyword": "best electric bike for women",
+      "slug": "best-electric-bike-for-women",
+      "created": "2026-06-18T20:37:57.197Z"
+    },
+    {
+      "keyword": "best electric bike for men",
+      "slug": "best-electric-bike-for-men",
+      "created": "2026-06-18T20:37:57.197Z"
+    },
+    {
+      "keyword": "best electric bike for kids",
+      "slug": "best-electric-bike-for-kids",
+      "created": "2026-06-18T20:39:57.309Z"
+    },
+    {
+      "keyword": "best electric bike for tall riders",
+      "slug": "best-electric-bike-for-tall-riders",
+      "created": "2026-06-18T20:39:57.311Z"
     }
   ],
-  "postsCreated": 27,
+  "postsCreated": 33,
   "optimizations": 4
 }
