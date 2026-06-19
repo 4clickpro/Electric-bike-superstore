@@ -148,7 +148,15 @@ ${p.body.match(/## Verdict[\s\S]*?$/)?.[0]?.replace('## Verdict', '')?.trim() ||
 
 ${galleryImages ? `## Product Gallery\n\n<div class="product-gallery">\n${galleryImages}\n</div>` : ''}
 
-*As an affiliate partner of ${p.store}, we may earn a small commission on qualifying purchases. This does not affect our reviews — all opinions are our own.*`;
+## 🏪 Shop By Store
+
+Browse electric bikes from our three trusted affiliate partners — all with free shipping, 2-year warranty, and competitive pricing:
+
+- **[Burchda Bikes](https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733)** — High-performance mountain and commuter e-bikes with powerful motors and rugged designs. Known for fat tire and all-terrain models.
+- **[King Bull Bike](https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733)** — One of the most popular direct-to-consumer e-bike brands with an extensive lineup of commuter, mountain, folding, and cargo e-bikes.
+- **[Vivi Bikes](https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733)** — Premium features at accessible prices with commuter, mountain, and folding e-bikes featuring quality components and sleek designs.
+
+*As an affiliate partner, we may earn a small commission on qualifying purchases. This does not affect our reviews — all opinions are our own.*`;
 }
 
 // ── Generate comparison article ═══
@@ -228,6 +236,14 @@ ${(b.pros || []).map(p => `- ✅ ${p}`).join('\n')}
   <a href="${b.affiliateUrl}" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Buy ${b.shortTitle} →</a>
 </div>
 
+## 🏪 Shop By Store
+
+Browse electric bikes from our three trusted affiliate partners:
+
+- **[Burchda Bikes](https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733)** — High-performance MTB & commuter e-bikes with rugged designs.
+- **[King Bull Bike](https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733)** — Top-rated direct-to-consumer brand with an extensive lineup.
+- **[Vivi Bikes](https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733)** — Premium features at accessible prices.
+
 *We may earn a commission on qualifying purchases through our affiliate partners.*` };
 }
 
@@ -284,6 +300,15 @@ Every e-bike we review goes through the same rigorous testing process:
   <h3 style="margin-bottom: 8px;">Shop All ${category} E-Bikes</h3>
   <a href="${aff}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Browse ${category} E-Bikes →</a>
 </div>
+
+
+	## 🏪 Shop By Store
+
+	Browse electric bikes from our three trusted affiliate partners:
+
+	- **[Burchda Bikes](https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733)** — High-performance MTB & commuter e-bikes.
+	- **[King Bull Bike](https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733)** — Top-rated direct-to-consumer brand.
+	- **[Vivi Bikes](https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733)** — Premium features at accessible prices.
 
 *As an affiliate partner, we may earn a commission on qualifying purchases.*` };
 }
@@ -349,6 +374,15 @@ ${guide.content}
 <div style="text-align:center; margin: 40px 0;">
   <a href="${guide.aff}" class="btn btn-primary" style="font-size:1.1rem;padding:14px 40px;" target="_blank" rel="noopener noreferrer">Shop E-Bikes →</a>
 </div>
+
+
+	## 🏪 Shop By Store
+
+	Browse electric bikes from our three trusted affiliate partners:
+
+	- **[Burchda Bikes](https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733)** — High-performance MTB & commuter e-bikes.
+	- **[King Bull Bike](https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733)** — Top-rated direct-to-consumer brand.
+	- **[Vivi Bikes](https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733)** — Premium features at accessible prices.
 
 *As an affiliate partner, we may earn a small commission on qualifying purchases.*` };
 }

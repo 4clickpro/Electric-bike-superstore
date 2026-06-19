@@ -197,7 +197,7 @@ Requirements:
 - Include bullet points and numbered lists where appropriate
 - Write in a conversational, authoritative tone
 - Include practical tips and actionable advice
-- End with a compelling call-to-action linking to the store at https://hnrqqt-an.myshopify.com/collections/all
+- End with a compelling call-to-action section titled "🏪 Shop By Store" that includes links to three affiliate partners: Burchda Bikes (https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733), King Bull Bike (https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733), and Vivi Bikes (https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733)
 - Do NOT include frontmatter — just the article body in markdown
 - Include 2-3 internal links to other blog posts where natural
 - Add a "Key Takeaways" section at the end with 3-5 bullet points

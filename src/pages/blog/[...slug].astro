@@ -236,6 +236,33 @@ const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
         </div>
       )}
 
+      <!-- Shop By Store — 3 Affiliate Partners -->
+      <div style="margin: 48px 0 32px; padding: 28px; background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+        <h3 style="font-size: 1.15rem; margin-bottom: 6px; text-align: center;">🏪 Shop By Store</h3>
+        <p style="color: var(--color-text-muted); font-size: 0.88rem; text-align: center; margin-bottom: 20px;">Browse electric bikes from our three trusted affiliate partners. Free shipping, 2-year warranty, and competitive pricing on every model.</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px;">
+          <a rel="sponsored" href="https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733" target="_blank" rel="noopener noreferrer" style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 20px 16px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); text-decoration: none; transition: all var(--transition-fast);">
+            <span style="font-size: 1.8rem;">🏪</span>
+            <span style="font-weight: 700; color: var(--color-text-primary); font-size: 0.95rem;">Burchda Bikes</span>
+            <span style="font-size: 0.78rem; color: var(--color-text-muted); text-align: center;">High-performance MTB & commuter e-bikes</span>
+            <span style="font-size: 0.82rem; color: var(--color-accent); font-weight: 600;">Shop Burchda →</span>
+          </a>
+          <a rel="sponsored" href="https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733" target="_blank" rel="noopener noreferrer" style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 20px 16px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); text-decoration: none; transition: all var(--transition-fast);">
+            <span style="font-size: 1.8rem;">🏪</span>
+            <span style="font-weight: 700; color: var(--color-text-primary); font-size: 0.95rem;">King Bull Bike</span>
+            <span style="font-size: 0.78rem; color: var(--color-text-muted); text-align: center;">Top-rated direct-to-consumer brand</span>
+            <span style="font-size: 0.82rem; color: var(--color-accent); font-weight: 600;">Shop King Bull →</span>
+          </a>
+          <a rel="sponsored" href="https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733" target="_blank" rel="noopener noreferrer" style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 20px 16px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); text-decoration: none; transition: all var(--transition-fast);">
+            <span style="font-size: 1.8rem;">🏪</span>
+            <span style="font-weight: 700; color: var(--color-text-primary); font-size: 0.95rem;">Vivi Bikes</span>
+            <span style="font-size: 0.78rem; color: var(--color-text-muted); text-align: center;">Premium features at accessible prices</span>
+            <span style="font-size: 0.82rem; color: var(--color-accent); font-weight: 600;">Shop Vivi →</span>
+          </a>
+        </div>
+        <p style="font-size: 0.72rem; color: var(--color-text-muted); text-align: center; margin: 0; font-style: italic;">Disclosure: As an affiliate partner, we may earn a commission from qualifying purchases. This does not influence our reviews or recommendations.</p>
+      </div>
+
       <!-- Tags -->
       <div class="article-tags">
         {post.tags.map((tag: string) => (

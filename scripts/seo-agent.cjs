@@ -108,6 +108,15 @@ ${body}
   <a href="${affUrl}" class="btn btn-primary" style="font-size:1.1rem;padding:14px 40px;display:inline-block;text-decoration:none;border-radius:8px;" target="_blank" rel="noopener noreferrer">Shop E-Bikes →</a>
 </div>
 
+
+  ## 🏪 Shop By Store
+
+  Browse electric bikes from our three trusted affiliate partners — all with free shipping, 2-year warranty, and competitive pricing:
+
+  - **[Burchda Bikes](https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733)** — High-performance mountain and commuter e-bikes with rugged designs.
+  - **[King Bull Bike](https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733)** — Top-rated direct-to-consumer brand with an extensive lineup.
+  - **[Vivi Bikes](https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733)** — Premium features at accessible prices.
+
 *As an affiliate partner, we may earn a small commission on qualifying purchases. This does not affect our recommendations.*`,
   };
 }
