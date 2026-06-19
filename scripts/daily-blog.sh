@@ -5,7 +5,7 @@
 
 set -e
 
-SITE_DIR="/home/ubuntu/.openclaw/workspace/Electric-bike-superstore"
+SITE_DIR="/home/ubuntu/Electric-bike-superstore"
 BLOG_DIR="$SITE_DIR/src/content/blog"
 DATE=$(date +%Y-%m-%d)
 LOG_FILE="$SITE_DIR/scripts/blog-gen.log"
