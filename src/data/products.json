@@ -807,5 +807,50 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-aniioki-a9-pro-max",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GQSQ1VM3?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GQSQ1VM3",
+    "title": "ANIIOKI A9 Pro Max Electric Bike \u2014 6000/7000W Dual Motor, 46MPH, 300-Mile Range, 60/72V 70Ah/80Ah Battery, 26\u00d74.8\" Fat Tire, 7-Speed",
+    "shortTitle": "ANIIOKI A9 Pro Max E-Bike",
+    "category": "Mountain",
+    "price": "$1,799",
+    "oldPrice": "$2,199",
+    "rating": 4.1,
+    "reviews": 0,
+    "excerpt": "6000/7000W peak dual motor electric bike with massive 60/72V 70Ah/80Ah battery delivering up to 300 miles of range at 46 MPH. 26\u00d74.8\" fat tires, 7-speed. One of the most powerful e-bikes on the market.",
+    "image": "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg"
+    ],
+    "specs": {
+      "Motor": "6000/7000W Peak Dual Motor",
+      "Battery": "60/72V 70Ah/80Ah Lithium",
+      "Range": "Up to 300 Miles",
+      "Top Speed": "46 mph",
+      "Tires": "26\" x 4.8\" Fat Tires",
+      "Max Payload": "400 lbs",
+      "Frame": "Aluminum Alloy",
+      "Brakes": "Hydraulic Disc",
+      "Suspension": "Full Suspension",
+      "Gears": "7-Speed"
+    },
+    "pros": [
+      "Extreme 300-mile range with dual battery option",
+      "6000/7000W peak dual motor power",
+      "46 MPH top speed",
+      "Massive 70Ah/80Ah battery capacity",
+      "Full suspension for off-road comfort"
+    ],
+    "cons": [
+      "Premium price point",
+      "Very heavy due to massive battery",
+      "May exceed legal e-bike limits in many areas",
+      "Newer brand with limited reviews"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
