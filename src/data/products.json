@@ -584,5 +584,50 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-pujh-6000w-dual-motor",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GDD4F44Z?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GDD4F44Z",
+    "title": "PUJH 6000W Dual Motor E-Bike \u2014 60V 1200Wh Battery, 24\" Fat Tire, 70-110 Mi Range, Hydraulic Brakes, Cruise Control",
+    "shortTitle": "PUJH 6000W Dual Motor E-Bike",
+    "category": "Mountain",
+    "price": "$1,299",
+    "oldPrice": "$1,599",
+    "rating": 4.3,
+    "reviews": 0,
+    "excerpt": "6000W dual motor electric bike with massive 60V 1200Wh battery, 24\" fat tires, 70-110 mile range, hydraulic disc brakes, cruise control, USB port, phone holder, and color display. Built for serious off-road and commuter riding.",
+    "image": "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg"
+    ],
+    "specs": {
+      "Motor": "6000W Dual Motor",
+      "Battery": "60V 1200Wh (20Ah)",
+      "Range": "70-110 Miles",
+      "Top Speed": "40+ mph",
+      "Tires": "24\" x 4.0\" Fat Tires",
+      "Max Payload": "350 lbs",
+      "Frame": "Aluminum Alloy",
+      "Brakes": "Hydraulic Disc",
+      "Suspension": "Front Fork Suspension",
+      "Gears": "7-Speed Shimano",
+      "Extras": "USB Port, Phone Holder, Color Display, Cruise Control"
+    },
+    "pros": [
+      "Powerful 6000W dual motor for serious off-road performance",
+      "Massive 1200Wh battery for 70-110 mile range",
+      "Hydraulic disc brakes for reliable stopping",
+      "Cruise control for comfortable long rides",
+      "USB port and phone holder for convenience"
+    ],
+    "cons": [
+      "Higher price point than entry-level e-bikes",
+      "Heavier due to dual motor and large battery",
+      "Newer brand with limited long-term reviews"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
