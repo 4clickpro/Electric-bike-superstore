@@ -675,5 +675,49 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-pujh-6000w-100mile",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0F8QGVC89?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0F8QGVC89",
+    "title": "PUJH Peak 6000W Dual Motor Electric Bike \u2014 60V 1200Wh Battery, 110Nm Torque, 100-Mile Range, 24\" Fat Tire, Full Suspension, Snow Commuter E-Bike",
+    "shortTitle": "PUJH 6000W 100-Mile E-Bike",
+    "category": "Mountain",
+    "price": "$1,399",
+    "oldPrice": "$1,699",
+    "rating": 4.3,
+    "reviews": 0,
+    "excerpt": "6000W peak dual motor with 110Nm torque, massive 60V 1200Wh battery delivering 100-mile range, 24\" fat tires, and full suspension. Built for snow, off-road, and long-distance commuting.",
+    "image": "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg"
+    ],
+    "specs": {
+      "Motor": "6000W Peak Dual Motor (110Nm Torque)",
+      "Battery": "60V 1200Wh Lithium",
+      "Range": "Up to 100 Miles",
+      "Top Speed": "40+ mph",
+      "Tires": "24\" x 4.0\" Fat Tires",
+      "Max Payload": "350 lbs",
+      "Frame": "Aluminum Alloy",
+      "Brakes": "Hydraulic Disc",
+      "Suspension": "Full Suspension",
+      "Terrain": "Snow, Off-Road, Commuter"
+    },
+    "pros": [
+      "100-mile range on a single charge",
+      "6000W dual motor with 110Nm torque",
+      "Full suspension for off-road comfort",
+      "Built for snow and all-terrain riding",
+      "Hydraulic disc brakes"
+    ],
+    "cons": [
+      "Premium price point",
+      "Heavy due to dual motor and large battery",
+      "May be overkill for casual riders"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
