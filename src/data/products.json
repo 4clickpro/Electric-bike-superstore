@@ -629,5 +629,51 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-zuttex-9000w-dual-motor",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0FL18TZ5L?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0FL18TZ5L",
+    "title": "ZUTTEX Peak 9000W Ebike for Adults \u2014 Dual Motor, 220NM Torque, 47MPH, 24\" Fat Tire, 58V 36AH Battery, LCD Display",
+    "shortTitle": "ZUTTEX 9000W Dual Motor E-Bike",
+    "category": "Mountain",
+    "price": "$1,499",
+    "oldPrice": "$1,799",
+    "rating": 4.2,
+    "reviews": 0,
+    "excerpt": "9000W peak dual motor electric bike with 220NM torque, 47MPH top speed, 58V 36AH battery, 24\" fat tires, and LCD Display. One of the most powerful e-bikes available.",
+    "image": "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg"
+    ],
+    "specs": {
+      "Motor": "9000W Peak Dual Motor (220NM Torque)",
+      "Battery": "58V 36AH Lithium",
+      "Range": "Up to 80 Miles",
+      "Top Speed": "47 mph",
+      "Tires": "24\" x 4.0\" Fat Tires",
+      "Max Payload": "400 lbs",
+      "Frame": "Aluminum Alloy",
+      "Brakes": "Hydraulic Disc",
+      "Suspension": "Full Suspension",
+      "Display": "LCD Display",
+      "Color": "Blue"
+    },
+    "pros": [
+      "Extremely powerful 9000W dual motor with 220NM torque",
+      "47 MPH top speed \u2014 one of the fastest e-bikes",
+      "Large 58V 36AH battery for extended range",
+      "Full suspension for off-road comfort",
+      "LCD display with ride data"
+    ],
+    "cons": [
+      "Premium price point",
+      "Very heavy due to dual motor and large battery",
+      "May exceed legal e-bike speed limits in some areas",
+      "Newer brand with limited reviews"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
