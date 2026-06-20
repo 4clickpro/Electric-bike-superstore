@@ -763,5 +763,49 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-bigniu-bg-x",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0D8VX8VMH?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0D8VX8VMH",
+    "title": "BIGNIU BG-X Electric Bike for Adults \u2014 1500W Brushless Motor, 48V 31.5Ah Battery, 40 Miles Range, Front/Rear Turn Signals, Dual Suspension, Windshield",
+    "shortTitle": "BIGNIU BG-X E-Bike",
+    "category": "Commuter",
+    "price": "$699",
+    "oldPrice": "$899",
+    "rating": 4.3,
+    "reviews": 0,
+    "excerpt": "1500W brushless motor commuter e-bike with 48V 31.5Ah battery, 40-mile range, front/rear turn signals, dual suspension, and windshield. Gold color.",
+    "image": "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg"
+    ],
+    "specs": {
+      "Motor": "1500W Brushless Motor",
+      "Battery": "48V 31.5Ah Lithium",
+      "Range": "Up to 40 Miles",
+      "Top Speed": "28 mph",
+      "Tires": "20\" Commuter Tires",
+      "Max Payload": "300 lbs",
+      "Frame": "Aluminum Alloy",
+      "Brakes": "Disc Brakes",
+      "Suspension": "Dual Suspension (Front & Rear)",
+      "Extras": "Front/Rear Turn Signals, Windshield, Gold Color"
+    },
+    "pros": [
+      "Turn signals for safer road riding",
+      "Dual suspension for comfort",
+      "Windshield for wind/rain protection",
+      "Large 31.5Ah battery",
+      "Affordable commuter e-bike"
+    ],
+    "cons": [
+      "Lower range than some competitors",
+      "Heavier due to extra features",
+      "Gold color may not appeal to everyone"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
