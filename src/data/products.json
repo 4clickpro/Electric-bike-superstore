@@ -719,5 +719,49 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-happyrun-g300-pro",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0FMQ8ZLZH?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0FMQ8ZLZH",
+    "title": "HAPPYRUN G300 Pro Electric Dirt Bike for Adults \u2014 6500W Motor, 72V 30Ah Battery, 50 MPH, 70 Mile Range, 350 Lbs Load, Hydraulic Brakes",
+    "shortTitle": "HAPPYRUN G300 Pro Dirt Bike",
+    "category": "Mountain",
+    "price": "$1,199",
+    "oldPrice": "$1,499",
+    "rating": 4.4,
+    "reviews": 0,
+    "excerpt": "6500W electric dirt bike built for adults. 72V 30Ah battery delivers 70 miles of range at up to 50 MPH. Hydraulic brakes, 350 lb load capacity. Built for serious off-road riding.",
+    "image": "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg"
+    ],
+    "specs": {
+      "Motor": "6500W Brushless Motor",
+      "Battery": "72V 30Ah Lithium",
+      "Range": "Up to 70 Miles",
+      "Top Speed": "50 mph",
+      "Max Payload": "350 lbs",
+      "Frame": "Steel Dirt Bike Frame",
+      "Brakes": "Hydraulic Disc",
+      "Suspension": "Full Suspension",
+      "Tires": "Off-Road Dirt Bike Tires",
+      "Color": "Black"
+    },
+    "pros": [
+      "Powerful 6500W motor reaches 50 MPH",
+      "Large 72V 30Ah battery for 70-mile range",
+      "True dirt bike frame and suspension",
+      "Hydraulic brakes for reliable stopping",
+      "350 lb load capacity"
+    ],
+    "cons": [
+      "Not street legal in most jurisdictions",
+      "Heavier than traditional e-bikes",
+      "Dirt bike style may not suit all riders"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
