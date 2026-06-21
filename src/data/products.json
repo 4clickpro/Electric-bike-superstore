@@ -975,5 +975,48 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-8500w-electric-dirt-bike",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0F9W1423C?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0F9W1423C",
+    "title": "Electric Dirt Bike for Adults \u2014 72V 8500W Peak Motor, 52MPH Top Speed, 4-Piston Brakes, Off-Road Suspension, Removable Battery, Long Range",
+    "shortTitle": "8500W Electric Dirt Bike",
+    "category": "Mountain",
+    "price": "$1,699",
+    "oldPrice": "$2,099",
+    "rating": 4.2,
+    "reviews": 0,
+    "excerpt": "8500W peak electric dirt bike for adults. 72V removable battery, 52MPH top speed, 4-piston hydraulic brakes, off-road suspension. Built for hills, trails, and wild terrain.",
+    "image": "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg"
+    ],
+    "specs": {
+      "Motor": "8500W Peak Brushless Motor",
+      "Battery": "72V Removable Lithium",
+      "Range": "Long Range",
+      "Top Speed": "52 mph",
+      "Brakes": "4-Piston Hydraulic Disc",
+      "Suspension": "Off-Road Suspension",
+      "Tires": "Off-Road Dirt Bike Tires",
+      "Color": "Black"
+    },
+    "pros": [
+      "Extreme 8500W peak power",
+      "52 MPH top speed",
+      "4-piston hydraulic brakes for serious stopping power",
+      "Removable battery for easy charging",
+      "Built for off-road and trail riding"
+    ],
+    "cons": [
+      "Premium price point",
+      "Very heavy due to powerful motor",
+      "May exceed legal e-bike limits",
+      "Newer brand with limited reviews"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
