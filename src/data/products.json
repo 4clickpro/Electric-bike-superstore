@@ -898,5 +898,82 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-xpro-250cc-pitbike",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B098PXWZP6?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B098PXWZP6",
+    "title": "X-PRO 250cc Dirt Bike \u2014 Zongshen Engine, LED Light, Pit Bike, Gas Adult Pitbike, 21\"/18\" Wheels",
+    "shortTitle": "X-PRO 250cc Dirt Bike",
+    "category": "Gas Motorcycle",
+    "price": "$1,099",
+    "oldPrice": "$1,399",
+    "rating": 4.0,
+    "reviews": 0,
+    "excerpt": "250cc Zongshen engine gas-powered dirt bike for adults. Features LED light, big 21\"/18\" wheels, and pit bike frame. Green color.",
+    "image": "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg"
+    ],
+    "specs": {
+      "Engine": "250cc Zongshen Gas Engine",
+      "Wheels": "21\" Front / 18\" Rear",
+      "Fuel Type": "Gasoline",
+      "Frame": "Steel Pit Bike Frame",
+      "Features": "LED Light, Kick Start",
+      "Color": "Green"
+    },
+    "pros": [
+      "Powerful 250cc Zongshen engine",
+      "Big wheels for off-road capability",
+      "LED light for visibility",
+      "Affordable gas-powered dirt bike"
+    ],
+    "cons": [
+      "Gas-powered (not electric)",
+      "Requires fuel and oil maintenance",
+      "Not street legal in most areas",
+      "Heavier than electric alternatives"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-xpro-hawk-250",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B07Q8KD46P?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B07Q8KD46P",
+    "title": "X-PRO Hawk 250 Dirt Bike Motorcycle \u2014 Enduro Motorcycle (Green)",
+    "shortTitle": "X-PRO Hawk 250 Dirt Bike",
+    "category": "Gas Motorcycle",
+    "price": "$1,299",
+    "oldPrice": "$1,599",
+    "rating": 4.1,
+    "reviews": 0,
+    "excerpt": "X-PRO Hawk 250cc enduro dirt bike motorcycle. Gas-powered off-road bike built for trail riding and enduro racing.",
+    "image": "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg"
+    ],
+    "specs": {
+      "Engine": "250cc Gas Engine",
+      "Type": "Enduro Dirt Bike",
+      "Fuel Type": "Gasoline",
+      "Frame": "Steel Enduro Frame",
+      "Color": "Green"
+    },
+    "pros": [
+      "True enduro dirt bike design",
+      "250cc engine for serious off-road power",
+      "Built for trail and enduro racing"
+    ],
+    "cons": [
+      "Gas-powered (not electric)",
+      "Not street legal",
+      "Requires fuel/oil maintenance"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
