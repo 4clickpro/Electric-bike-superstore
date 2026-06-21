@@ -852,5 +852,51 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-wallke-h7-ultra",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GCLBBM2Y?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GCLBBM2Y",
+    "title": "Wallke H7 Ultra 4000W Long Range Electric Bike for Adults \u2014 Solar Charge Supported, Portable Power Output, All Terrain Fat Tire E-Bike, UL2849 Certified",
+    "shortTitle": "Wallke H7 Ultra 4000W E-Bike",
+    "category": "Mountain",
+    "price": "$1,599",
+    "oldPrice": "$1,999",
+    "rating": 4.2,
+    "reviews": 0,
+    "excerpt": "4000W long range electric bike with solar charging support and portable power output. UL2849 certified for safety. Built for camping, outdoor adventure, and all-terrain riding.",
+    "image": "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71+K3B8zIcL._AC_SX679_.jpg"
+    ],
+    "specs": {
+      "Motor": "4000W Brushless Motor",
+      "Battery": "Long Range Lithium (Solar Charge Supported)",
+      "Range": "Up to 80+ Miles",
+      "Top Speed": "35+ mph",
+      "Tires": "Fat Tire (All Terrain)",
+      "Max Payload": "350 lbs",
+      "Frame": "Aluminum Alloy",
+      "Brakes": "Hydraulic Disc",
+      "Suspension": "Full Suspension",
+      "Certification": "UL2849 Certified",
+      "Extras": "Solar Charge Input, Portable Power Output, White Color"
+    },
+    "pros": [
+      "Solar charge capability for off-grid adventures",
+      "Portable power output to charge devices",
+      "UL2849 certified for electrical safety",
+      "4000W motor for strong off-road performance",
+      "Built for camping and outdoor adventure"
+    ],
+    "cons": [
+      "Premium price point",
+      "Solar charging is slow \u2014 best as backup",
+      "Heavier than standard e-bikes",
+      "Newer brand with limited reviews"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
