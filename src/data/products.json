@@ -1018,5 +1018,47 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-eahora-romeo-pro-iii",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0F32Q5HJ4?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0F32Q5HJ4",
+    "title": "eAhora Romeo Pro III Peak 6000W Electric Bike \u2014 52MPH, 60V 80Ah Battery, 300-Mile Range, 26\"x4.0\" Fat Tire, Full Suspension Mountain E-Bike",
+    "shortTitle": "eAhora Romeo Pro III 6000W",
+    "category": "Mountain",
+    "price": "$1,899",
+    "oldPrice": "$2,299",
+    "rating": 4.3,
+    "reviews": 0,
+    "excerpt": "Peak 6000W dual motor electric bike with massive 60V 80Ah battery delivering up to 300 miles of range at 52 MPH. 26\"x4.0\" fat tires, full suspension, built for men.",
+    "image": "https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Motor": "Peak 6000W Dual Motor",
+      "Battery": "60V 80Ah Lithium",
+      "Range": "Up to 300 Miles",
+      "Top Speed": "52 mph",
+      "Tires": "26\" x 4.0\" Fat Tires",
+      "Max Payload": "350 lbs",
+      "Frame": "Aluminum Alloy",
+      "Brakes": "Hydraulic Disc",
+      "Suspension": "Full Suspension"
+    },
+    "pros": [
+      "Extreme 300-mile range with 80Ah battery",
+      "6000W peak dual motor power",
+      "52 MPH top speed",
+      "Full suspension for off-road comfort"
+    ],
+    "cons": [
+      "Premium price point",
+      "Very heavy due to massive battery",
+      "May exceed legal e-bike limits"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
