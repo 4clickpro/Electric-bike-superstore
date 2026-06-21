@@ -1103,5 +1103,44 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-eahora-urace-carbon",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GWMLF84J?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GWMLF84J",
+    "title": "eAhora Urace Lightweight Carbon Fiber Electric Bike \u2014 T800 Full Carbon Frame, 700C Flat Bar Pedal-Assist E-Bike for Adults, Road & Gravel",
+    "shortTitle": "eAhora Urace Carbon E-Bike",
+    "category": "Premium",
+    "price": "$1,499",
+    "oldPrice": "$1,799",
+    "rating": 4.5,
+    "reviews": 0,
+    "excerpt": "Lightweight carbon fiber electric bike with T800 full carbon frame, 700C flat bar, pedal-assist. Built for road and gravel riding. A premium e-bike for adults who want performance and style.",
+    "image": "https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Frame": "T800 Full Carbon Fiber",
+      "Type": "Pedal-Assist E-Bike",
+      "Handlebar": "Flat Bar",
+      "Wheel Size": "700C",
+      "Terrain": "Road & Gravel",
+      "Weight": "Lightweight (Carbon Frame)"
+    },
+    "pros": [
+      "Ultra-lightweight T800 carbon fiber frame",
+      "Premium road/gravel design",
+      "700C wheels for speed and efficiency",
+      "Flat bar for comfortable riding position"
+    ],
+    "cons": [
+      "Pedal-assist only (no throttle)",
+      "Not suited for off-road/mountain terrain",
+      "Premium price for road bike"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
