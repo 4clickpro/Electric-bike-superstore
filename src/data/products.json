@@ -1473,5 +1473,67 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-goup-stylish-golf-cart",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GR9JYP7M?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GR9JYP7M",
+    "title": "GO-UP Golf Cart \u2014 Stylish Lightweight 4-Seater Electric Golf Cart",
+    "shortTitle": "GO-UP Stylish Golf Cart",
+    "category": "Golf Cart",
+    "price": "$3,899",
+    "oldPrice": "$4,399",
+    "rating": 4.4,
+    "reviews": 0,
+    "excerpt": "Stylish lightweight 4-seater electric golf cart. Modern design with powerful performance.",
+    "image": "https://m.media-amazon.com/images/I/81S685CeDbL._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/81S685CeDbL._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Seating": "4 Adults",
+      "Style": "Stylish Lightweight"
+    },
+    "pros": [
+      "Stylish design",
+      "Lightweight build"
+    ],
+    "cons": [
+      "New brand"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-1200-electric-passenger",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0G4QVZX5R?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0G4QVZX5R",
+    "title": "1200 Electric Golf Cart \u2014 Exterior Passenger Configuration, 4-Seater",
+    "shortTitle": "1200 Electric Passenger Cart",
+    "category": "Golf Cart",
+    "price": "$3,799",
+    "oldPrice": "$4,299",
+    "rating": 4.2,
+    "reviews": 0,
+    "excerpt": "1200W electric golf cart with exterior passenger configuration. 4-seater design.",
+    "image": "https://m.media-amazon.com/images/I/710pbDN5OoL._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/710pbDN5OoL._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Seating": "4 Adults",
+      "Configuration": "Exterior Passenger"
+    },
+    "pros": [
+      "Passenger configuration",
+      "4-seater"
+    ],
+    "cons": [
+      "Limited specs available"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
