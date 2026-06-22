@@ -53,7 +53,7 @@ const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire
           <a href={`${base}blog?category=Buying+Guide`} class="btn btn-outline">Buying Guides</a>
           <a href={aff1} target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #38a169; color: #38a169;">🛒 Shop E-Bikes</a>
 	          <a href="https://amzn.to/4uRplxG" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #FF9900; color: #FF9900;">🏌️ Golf Carts 2026</a>
-	          <a href="https://www.amazon.com/s?k=ebike&amp;i=specialty-aps&amp;srs=219880110011&amp;crid=ZQ76K92RZ54&amp;sprefix=eb%2Cspecialty-aps%2C187&amp;linkCode=ll2&amp;tag=fatcatscooter-20&amp;linkId=54f867e3b646ca0d9edf7bfdf6b0319c&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #FF9900; color: #FF9900;">🔋 Shop All E-Bikes</a>
+	          <button onclick="openOfferModal('all', 'All Products', '')" class="btn btn-outline" style="border-color: #FF9900; color: #FF9900;">💰 Make Offer</button>
         </div>
       </div>
     </div>
@@ -107,9 +107,9 @@ const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire
                     <span style="font-size: 1.3rem; font-weight: 800; color: var(--color-accent);">{product.price}</span>
                   </div>
                   <!-- CTA -->
-                  <a href={product.affiliateUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                    Best Price at {product.store} →
-                  </a>
+                  <button onclick="openOfferModal('{product.slug}', '{product.shortTitle}', '{product.price}')" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center;">
+                    💰 Make Offer
+                  </button>
                 </div>
               </div>
 
@@ -153,9 +153,9 @@ const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire
 
               <!-- Bottom CTA -->
               <div style="display: flex; gap: 10px; align-items: center;">
-                <a href={product.affiliateUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                  Check Price at {product.store} →
-                </a>
+                <button onclick="openOfferModal('{product.slug}', '{product.shortTitle}', '{product.price}')" class="btn btn-primary">
+                  💰 Make Offer
+                </button>
                 <a href={`${base}blog/${product.slug}/`} class="btn btn-outline btn-sm">
                   Read Full Review
                 </a>
@@ -245,7 +245,7 @@ const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire
           <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 4px;">🛍️ Electric Bikes for Adults</h2>
           <p style="color: var(--color-text-muted); font-size: 0.88rem;">Affordable, top-rated e-bikes on Amazon — fast shipping, easy returns.</p>
         </div>
-        <a href="https://amzn.to/4uRplxG" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: #FF9900; border-color: #FF9900; color: #fff;">Shop All on Amazon →</a>
+        <button onclick="openOfferModal('all', 'All E-Bikes', '')" class="btn btn-primary" style="background: #FF9900; border-color: #FF9900; color: #fff;">💰 Make Offer</button>
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px;">
         <a href="https://www.amazon.com/gp/aw/d/B0GLGWZ276?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: all var(--transition-fast);">
@@ -454,10 +454,9 @@ const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire
               <span style="font-size: 0.8rem; color: #888;">4.5/5</span>
             </div>
             <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">X-ARK 4-Seater Golf Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">5000W • 60 Mi Range • 23.5" All-Terrain • 10" Touch</p>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric golf cart with 5000W high-power motor, 60-mile max range, 23.5" all-terr...</p>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$3,999</span>
-              <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$4,499</span>
+              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$12,999</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$45.99</span>
             </div>
           </div>
         </a>
@@ -471,10 +470,9 @@ const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire
               <span style="font-size: 0.8rem; color: #888;">4.6/5</span>
             </div>
             <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">GIYI 4-Seater Golf Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">5KW Motor • 20 MPH • 44 Mi Range • IPS Display</p>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric golf cart with 5KW motor, 20 MPH top speed, 44-mile range, 60V battery, ...</p>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$3,799</span>
-              <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$4,299</span>
+              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$8,299</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$69.99</span>
             </div>
           </div>
         </a>
@@ -488,78 +486,73 @@ const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire
               <span style="font-size: 0.8rem; color: #888;">4.4/5</span>
             </div>
             <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">SDLANCH 4-Seater Golf Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">45 Mi Range • 800 lbs Capacity • LED Lights</p>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric golf cart with 45-mile long range, 60V battery, 800 lbs payload capacity...</p>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$3,499</span>
-              <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$3,999</span>
+              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$9,800</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$3,999</span>
             </div>
           </div>
         </a>
         <a href="https://www.amazon.com/dp/B0GDFMD6QM?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
           <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/81PZzvLNxtL._AC_SL1500_.jpg" alt="4-Seater Golf Cart" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="https://m.media-amazon.com/images/I/81PZzvLNxtL._AC_SL1500_.jpg" alt="4-Seater Golf Cart (B0GDFMD6QM)" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div style="padding: 16px;">
             <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
               <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
               <span style="font-size: 0.8rem; color: #888;">4.3/5</span>
             </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">4-Seater Golf Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">Advanced Suspension • Recreational • Park & Hotel</p>
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">4-Seater Golf Cart (B0GDFMD6QM)</h3>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric golf cart with advanced suspension for recreational use, park, and hotel...</p>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$3,599</span>
-              <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$4,099</span>
+              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$8,299</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$69.99</span>
             </div>
           </div>
         </a>
         <a href="https://www.amazon.com/dp/B0GXKK7PSY?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
           <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71gj1P5NvgL._AC_SL1500_.jpg" alt="ATS POWER 4-Seater" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="https://m.media-amazon.com/images/I/71gj1P5NvgL._AC_SL1500_.jpg" alt="ATS POWER 4-Seater Golf Cart" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div style="padding: 16px;">
             <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
               <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
               <span style="font-size: 0.8rem; color: #888;">4.3/5</span>
             </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">ATS POWER 4-Seater</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">Waterproof • All-Terrain • LED Lights • Quick Charge</p>
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">ATS POWER 4-Seater Golf Cart</h3>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric golf cart with waterproof design, all-terrain capability, LED lights, an...</p>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$3,699</span>
-              <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$4,199</span>
+              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$10,999</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$129.19</span>
             </div>
           </div>
         </a>
         <a href="https://www.amazon.com/dp/B0GL1RC7L1?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
           <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/81myX6hjwfL._AC_SL1500_.jpg" alt="GO-UP Sightseeing Cart" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="https://m.media-amazon.com/images/I/81myX6hjwfL._AC_SL1500_.jpg" alt="GO-UP Sightseeing Golf Cart" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div style="padding: 16px;">
             <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
               <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
               <span style="font-size: 0.8rem; color: #888;">4.5/5</span>
             </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">GO-UP Sightseeing Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">48V 105AH Lithium • Sightseeing Vehicle</p>
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">GO-UP Sightseeing Golf Cart</h3>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric sightseeing vehicle with massive 48V 105AH lithium battery. Built for go...</p>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$4,299</span>
-              <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$4,799</span>
+              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$12,050</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$151</span>
             </div>
           </div>
         </a>
         <a href="https://www.amazon.com/dp/B0GQBL7S4F?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
           <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71ZNL7i6FML._AC_SL1500_.jpg" alt="ATS POWER Golf Cart" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="https://m.media-amazon.com/images/I/71ZNL7i6FML._AC_SL1500_.jpg" alt="ATS POWER Golf Cart (B0GQBL7S4F)" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div style="padding: 16px;">
             <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
               <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
               <span style="font-size: 0.8rem; color: #888;">4.4/5</span>
             </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">ATS POWER Golf Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">All-Terrain • LED Display • Quick Charging</p>
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">ATS POWER Golf Cart (B0GQBL7S4F)</h3>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">ATS POWER electric golf cart with 4-seater capacity, all-terrain tires, LED display, and q...</p>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$3,599</span>
-              <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$4,099</span>
+              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$7,999</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$400</span>
             </div>
           </div>
         </a>
@@ -573,10 +566,9 @@ const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire
               <span style="font-size: 0.8rem; color: #888;">4.6/5</span>
             </div>
             <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">GO-UP Sightseeing Vehicle</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-Seater Leisure Vehicle • Resort & Hotel</p>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric sightseeing leisure vehicle. Premium golf cart for adults, built for res...</p>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$4,499</span>
-              <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$4,999</span>
+              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$7,700</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$4,999</span>
             </div>
           </div>
         </a>
@@ -590,10 +582,9 @@ const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire
               <span style="font-size: 0.8rem; color: #888;">4.4/5</span>
             </div>
             <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">GO-UP Stylish Golf Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">Stylish Lightweight • 4-Seater Electric</p>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">Stylish lightweight 4-seater electric golf cart. Modern design with powerful performance....</p>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$3,899</span>
-              <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$4,399</span>
+              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$7,500</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$129.19</span>
             </div>
           </div>
         </a>
@@ -607,10 +598,105 @@ const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire
               <span style="font-size: 0.8rem; color: #888;">4.2/5</span>
             </div>
             <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">1200 Electric Passenger Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">Exterior Passenger Configuration • 4-Seater</p>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">1200W electric golf cart with exterior passenger configuration. 4-seater design....</p>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$3,799</span>
-              <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$4,299</span>
+              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$4,299.89</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$16.99</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.amazon.com/dp/B0H395JDLD?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
+            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="GOUP 4-Seater Sunroof" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 16px;">
+            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
+              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
+              <span style="font-size: 0.8rem; color: #888;">4.4/5</span>
+            </div>
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">GOUP 4-Seater Sunroof</h3>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">GOUP 4-seater electric golf cart with 48V motor, sunroof, and black finish. Premium comfor...</p>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$9,643.73</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.amazon.com/dp/B0GXKK7PSY?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
+            <img src="https://m.media-amazon.com/images/I/71gj1P5NvgL._AC_SL1500_.jpg" alt="ATS POWER Waterproof" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 16px;">
+            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
+              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
+              <span style="font-size: 0.8rem; color: #888;">4.3/5</span>
+            </div>
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">ATS POWER Waterproof</h3>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">ATS POWER 4-seater electric golf cart with waterproof design and all-terrain capability....</p>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 1.15rem; font-weight: 800; color: #FF6B35;">Make Offer</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.amazon.com/dp/B0GYDQCPVT?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
+            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="GOUP 2-Seater" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 16px;">
+            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
+              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
+              <span style="font-size: 0.8rem; color: #888;">4.2/5</span>
+            </div>
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">GOUP 2-Seater</h3>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">GOUP 2-seater electric golf cart. Compact and efficient for couples or solo riders....</p>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 1.15rem; font-weight: 800; color: #FF6B35;">Make Offer</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.amazon.com/dp/B0CW35HX2Y?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
+            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="Electric Mobility Scooter" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 16px;">
+            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
+              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
+              <span style="font-size: 0.8rem; color: #888;">4.1/5</span>
+            </div>
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Electric Mobility Scooter</h3>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">Electric golf cart with storage, mobility features, and scooter design. Courtesy vehicle f...</p>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 1.15rem; font-weight: 800; color: #FF6B35;">Make Offer</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.amazon.com/dp/B0F8XD5F94?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
+            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="Electric Golf Cart (B0F8XD5F94)" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 16px;">
+            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
+              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
+              <span style="font-size: 0.8rem; color: #888;">4.0/5</span>
+            </div>
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Electric Golf Cart (B0F8XD5F94)</h3>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric golf cart with all-terrain capability. Built for golf courses and off-ro...</p>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 1.15rem; font-weight: 800; color: #FF6B35;">Make Offer</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.amazon.com/dp/B0G53WWVPS?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
+            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="Electric Golf Cart (B0G53WWVPS)" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 16px;">
+            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
+              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
+              <span style="font-size: 0.8rem; color: #888;">4.0/5</span>
+            </div>
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Electric Golf Cart (B0G53WWVPS)</h3>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">Premium 4-seater electric golf cart. High-quality build for serious golfers and commercial...</p>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 1.15rem; font-weight: 800; color: #FF6B35;">Make Offer</span>
             </div>
           </div>
         </a>
