@@ -1142,5 +1142,84 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-amzcycle-paladin",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0FMXQYJPB?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0FMXQYJPB",
+    "title": "Amzcycle Paladin Electric Mountain Bike \u2014 Full Suspension Off-Road E-Bike for Adults",
+    "shortTitle": "Amzcycle Paladin E-Bike",
+    "category": "Mountain",
+    "price": "$1,099",
+    "oldPrice": "$1,399",
+    "rating": 4.2,
+    "reviews": 0,
+    "excerpt": "Amzcycle Paladin electric mountain bike with full suspension for off-road riding. Built for adults who want trail-ready performance.",
+    "image": "https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Type": "Electric Mountain Bike",
+      "Suspension": "Full Suspension",
+      "Terrain": "Off-Road / Trail",
+      "Frame": "Aluminum Alloy"
+    },
+    "pros": [
+      "Full suspension for off-road",
+      "Trail-ready design",
+      "Affordable mountain e-bike"
+    ],
+    "cons": [
+      "Limited brand recognition",
+      "Specs not fully available"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-xark-4-seater-golf-cart",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0DSZY626D?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0DSZY626D",
+    "title": "X-ARK 4-Seater Electric Golf Cart for Adults \u2014 5000W High-Power Motor, 60 Miles Max Range, 23.5\" All-Terrain Off-Road Tires, 10\" Touch Screen, Large Storage Box",
+    "shortTitle": "X-ARK 4-Seater Golf Cart",
+    "category": "Golf Cart",
+    "price": "$3,999",
+    "oldPrice": "$4,499",
+    "rating": 4.5,
+    "reviews": 0,
+    "excerpt": "4-seater electric golf cart with 5000W high-power motor, 60-mile max range, 23.5\" all-terrain off-road tires, 10\" flat touch screen, and large storage box. Perfect for hotel, beach, farm, and park use.",
+    "image": "https://m.media-amazon.com/images/I/710pbDN5OoL._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/710pbDN5OoL._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Motor": "5000W High-Power Motor",
+      "Battery": "Lithium (60V estimated)",
+      "Range": "Up to 60 Miles",
+      "Top Speed": "25 mph (estimated)",
+      "Seating": "4 Adults",
+      "Tires": "23.5\" All-Terrain Off-Road",
+      "Display": "10\" Flat Touch Screen",
+      "Storage": "Large Storage Box",
+      "Use Cases": "Hotel, Beach, Farm, Park"
+    },
+    "pros": [
+      "4-seater capacity for family/group use",
+      "5000W high-power motor",
+      "60-mile range on single charge",
+      "23.5\" all-terrain tires for off-road",
+      "10\" touch screen display",
+      "Large storage box"
+    ],
+    "cons": [
+      "Premium price point",
+      "Not street legal in most areas",
+      "Heavier than standard golf carts"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
