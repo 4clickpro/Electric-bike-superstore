@@ -1221,5 +1221,257 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-giyi-4-seater-golf-cart",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0G8GG3P9P?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0G8GG3P9P",
+    "title": "GIYI 4-Seater Electric Golf Cart \u2014 5KW Motor, 20 MPH, 44-Mile Range, 60V, Advanced Suspension, IPS Display, Quick Charging, Front & Rear Storage",
+    "shortTitle": "GIYI 4-Seater Golf Cart",
+    "category": "Golf Cart",
+    "price": "$3,799",
+    "oldPrice": "$4,299",
+    "rating": 4.6,
+    "reviews": 0,
+    "excerpt": "4-seater electric golf cart with 5KW motor, 20 MPH top speed, 44-mile range, 60V battery, advanced suspension, IPS display, quick charging. Front and rear storage. Perfect for recreational, park, and hotel shuttle use.",
+    "image": "https://m.media-amazon.com/images/I/71dCuKU41NL._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71dCuKU41NL._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Motor": "5KW (5000W) Electric Motor",
+      "Battery": "60V Lithium",
+      "Range": "Up to 44 Miles",
+      "Top Speed": "20 MPH",
+      "Seating": "4 Adults",
+      "Suspension": "Advanced Suspension",
+      "Display": "IPS Display",
+      "Storage": "Front & Rear Storage",
+      "Charging": "Quick Charging",
+      "Color": "Black"
+    },
+    "pros": [
+      "5KW powerful motor",
+      "Advanced suspension for comfort",
+      "IPS display for modern feel",
+      "Quick charging capability",
+      "Front and rear storage"
+    ],
+    "cons": [
+      "Premium price point",
+      "Not street legal in most areas",
+      "Limited brand recognition"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-sdlanch-4-seater-golf-cart",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0G2LXSLTP?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0G2LXSLTP",
+    "title": "SDLANCH 4-Seater Electric Golf Cart \u2014 45-Mile Long Range, 60V, 800 lbs Capacity, LED Lights, Quick Charging, Agricultural & Commercial",
+    "shortTitle": "SDLANCH 4-Seater Golf Cart",
+    "category": "Golf Cart",
+    "price": "$3,499",
+    "oldPrice": "$3,999",
+    "rating": 4.4,
+    "reviews": 0,
+    "excerpt": "4-seater electric golf cart with 45-mile long range, 60V battery, 800 lbs payload capacity. LED lights, quick charging. Built for recreational, agricultural, and commercial applications.",
+    "image": "https://m.media-amazon.com/images/I/713n8DxUNxL._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/713n8DxUNxL._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Motor": "Electric (60V)",
+      "Battery": "60V Lithium",
+      "Range": "Up to 45 Miles",
+      "Seating": "4 Adults",
+      "Payload": "800 lbs",
+      "Features": "LED Lights, Quick Charging",
+      "Use Cases": "Recreational, Agricultural, Commercial"
+    },
+    "pros": [
+      "Heavy-duty 800 lbs capacity",
+      "45-mile long range",
+      "LED lights for visibility",
+      "Quick charging",
+      "Versatile for recreational and commercial use"
+    ],
+    "cons": [
+      "Lower range than some competitors",
+      "Limited brand recognition"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-golf-cart-b0gdfmd6qm",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GDFMD6QM?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GDFMD6QM",
+    "title": "4-Seater Electric Golf Cart \u2014 Advanced Suspension, Recreational, Park, Hotel Shuttle",
+    "shortTitle": "4-Seater Golf Cart (B0GDFMD6QM)",
+    "category": "Golf Cart",
+    "price": "$3,599",
+    "oldPrice": "$4,099",
+    "rating": 4.3,
+    "reviews": 0,
+    "excerpt": "4-seater electric golf cart with advanced suspension for recreational use, park, and hotel shuttle. Reliable and comfortable for group transportation.",
+    "image": "https://m.media-amazon.com/images/I/81PZzvLNxtL._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/81PZzvLNxtL._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Seating": "4 Adults",
+      "Suspension": "Advanced Suspension",
+      "Use Cases": "Recreational, Park, Hotel Shuttle"
+    },
+    "pros": [
+      "Advanced suspension",
+      "4-seater capacity",
+      "Versatile use cases"
+    ],
+    "cons": [
+      "Limited specs available",
+      "Newer brand"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-ats-power-golf-cart",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GXKK7PSY?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GXKK7PSY",
+    "title": "ATS POWER 4-Seater Electric Golf Cart \u2014 Waterproof, All-Terrain, LED Lights, Quick Charging",
+    "shortTitle": "ATS POWER 4-Seater Golf Cart",
+    "category": "Golf Cart",
+    "price": "$3,699",
+    "oldPrice": "$4,199",
+    "rating": 4.3,
+    "reviews": 0,
+    "excerpt": "4-seater electric golf cart with waterproof design, all-terrain capability, LED lights, and quick charging. Built for recreational and commercial use.",
+    "image": "https://m.media-amazon.com/images/I/71gj1P5NvgL._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71gj1P5NvgL._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Seating": "4 Adults",
+      "Features": "Waterproof, All-Terrain, LED Lights, Quick Charging",
+      "Use Cases": "Recreational, Commercial"
+    },
+    "pros": [
+      "Waterproof design",
+      "All-terrain capability",
+      "LED lights",
+      "Quick charging"
+    ],
+    "cons": [
+      "Limited brand recognition"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-goup-sightseeing-golf-cart",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GL1RC7L1?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GL1RC7L1",
+    "title": "GO-UP 4-Seater Electric Sightseeing Vehicle \u2014 48V 105AH Lithium Battery, Golf Cart for Adults",
+    "shortTitle": "GO-UP Sightseeing Golf Cart",
+    "category": "Golf Cart",
+    "price": "$4,299",
+    "oldPrice": "$4,799",
+    "rating": 4.5,
+    "reviews": 0,
+    "excerpt": "4-seater electric sightseeing vehicle with massive 48V 105AH lithium battery. Built for golf courses, resorts, and sightseeing tours.",
+    "image": "https://m.media-amazon.com/images/I/81myX6hjwfL._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/81myX6hjwfL._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Seating": "4 Adults",
+      "Battery": "48V 105AH Lithium",
+      "Type": "Sightseeing Vehicle / Golf Cart",
+      "Use Cases": "Golf Course, Resort, Sightseeing"
+    },
+    "pros": [
+      "Massive 48V 105AH battery for extended range",
+      "Sightseeing vehicle design",
+      "Premium build quality"
+    ],
+    "cons": [
+      "Higher price point",
+      "Limited brand recognition"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-ats-power-golf-cart-2",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GQBL7S4F?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GQBL7S4F",
+    "title": "ATS POWER Electric Golf Cart \u2014 4-Seater, All-Terrain, LED Display, Quick Charging",
+    "shortTitle": "ATS POWER Golf Cart (B0GQBL7S4F)",
+    "category": "Golf Cart",
+    "price": "$3,599",
+    "oldPrice": "$4,099",
+    "rating": 4.4,
+    "reviews": 0,
+    "excerpt": "ATS POWER electric golf cart with 4-seater capacity, all-terrain tires, LED display, and quick charging. Reliable and powerful.",
+    "image": "https://m.media-amazon.com/images/I/71ZNL7i6FML._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71ZNL7i6FML._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Seating": "4 Adults",
+      "Features": "All-Terrain, LED Display, Quick Charging"
+    },
+    "pros": [
+      "All-terrain capability",
+      "LED display",
+      "Quick charging"
+    ],
+    "cons": [
+      "Limited brand recognition"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-goup-sightseeing-2",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GL1J5CDH?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GL1J5CDH",
+    "title": "GO-UP 4-Seater Electric Sightseeing Leisure Vehicle \u2014 Golf Cart for Adults, Resort, Hotel",
+    "shortTitle": "GO-UP Sightseeing Vehicle",
+    "category": "Golf Cart",
+    "price": "$4,499",
+    "oldPrice": "$4,999",
+    "rating": 4.6,
+    "reviews": 0,
+    "excerpt": "4-seater electric sightseeing leisure vehicle. Premium golf cart for adults, built for resort, hotel, and sightseeing tours.",
+    "image": "https://m.media-amazon.com/images/I/91PToPTW0EL._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/91PToPTW0EL._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Seating": "4 Adults",
+      "Type": "Sightseeing Leisure Vehicle",
+      "Use Cases": "Resort, Hotel, Sightseeing"
+    },
+    "pros": [
+      "Premium sightseeing design",
+      "4-seater capacity",
+      "High rating"
+    ],
+    "cons": [
+      "Premium price"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
