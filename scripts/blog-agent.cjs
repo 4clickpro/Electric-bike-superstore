@@ -27,6 +27,8 @@ const STATE_FILE = path.join(__dirname, '.blog-agent-state.json');
 let products = [];
 try { products = JSON.parse(fs.readFileSync(PRODUCTS_FILE, 'utf-8')); } catch (e) { console.error('❌ products.json:', e.message); process.exit(1); }
 const reviews = products.filter(p => p.price && p.image);
+const golfCarts = products.filter(p => p.category === 'Golf Cart' && p.image);
+const eBikes = products.filter(p => p.category !== 'Golf Cart' && p.price && p.image);
 const guides = products.filter(p => !p.price);
 
 // ── State management ═══
@@ -53,34 +55,55 @@ function generateUniqueReview(product, tone, angle) {
     `<div class="gallery-item"><img src="${img}" alt="${p.shortTitle} photo ${i + 2}" loading="lazy" /></div>`
   ).join('\n');
 
+  const isGolfCart = p.category === 'Golf Cart';
+
   const toneIntro = {
-    professional: `In this comprehensive review, we put the ${p.shortTitle} through extensive testing to determine if it lives up to the hype.`,
-    enthusiastic: `We've been riding the ${p.shortTitle} for weeks now, and we can barely contain our excitement about this incredible e-bike!`,
-    practical: `Looking for a no-nonsense e-bike that gets the job done? The ${p.shortTitle} might be exactly what you need.`,
-    'expert-analysis': `After testing dozens of e-bikes this year, the ${p.shortTitle} stands out as one of the most compelling options in its price class.`,
+    professional: isGolfCart
+      ? `In this comprehensive review, we examine the ${p.shortTitle} to see if it delivers on its promises as a premium electric golf cart.`
+      : `In this comprehensive review, we put the ${p.shortTitle} through extensive testing to determine if it lives up to the hype.`,
+    enthusiastic: isGolfCart
+      ? `We've been testing the ${p.shortTitle} on the golf course and around the neighborhood, and we're excited to share our findings!`
+      : `We've been riding the ${p.shortTitle} for weeks now, and we can barely contain our excitement about this incredible e-bike!`,
+    practical: isGolfCart
+      ? `Looking for a reliable electric golf cart for your course, resort, or property? The ${p.shortTitle} might be exactly what you need.`
+      : `Looking for a no-nonsense e-bike that gets the job done? The ${p.shortTitle} might be exactly what you need.`,
+    'expert-analysis': isGolfCart
+      ? `After evaluating dozens of electric golf carts this year, the ${p.shortTitle} stands out as one of the most compelling options in its class.`
+      : `After testing dozens of e-bikes this year, the ${p.shortTitle} stands out as one of the most compelling options in its price class.`,
   };
 
   const angleFocus = {
-    'value-focused': `At ${p.price}${p.oldPrice ? ` (down from ${p.oldPrice})` : ''}, the ${p.shortTitle} offers exceptional value. Every dollar spent translates into real, tangible benefits on the road.`,
-    'performance-focused': `Performance is where the ${p.shortTitle} truly shines. With ${specs['Motor'] || 'serious power'} under the hood, this e-bike delivers an exhilarating riding experience.`,
-    'beginner-friendly': `New to electric bikes? The ${p.shortTitle} is one of the most approachable options we've tested. You don't need to be an expert to enjoy everything this bike offers.`,
-    'expert-analysis': `From a technical standpoint, the ${p.shortTitle} makes several smart engineering decisions that set it apart from the competition.`,
+    'value-focused': isGolfCart
+      ? `At ${p.price}${p.oldPrice ? ` (down from ${p.oldPrice})` : ''}, the ${p.shortTitle} offers excellent value in the electric golf cart market. Every dollar spent translates into real benefits on the course and beyond.`
+      : `At ${p.price}${p.oldPrice ? ` (down from ${p.oldPrice})` : ''}, the ${p.shortTitle} offers exceptional value. Every dollar spent translates into real, tangible benefits on the road.`,
+    'performance-focused': isGolfCart
+      ? `Performance is where the ${p.shortTitle} truly shines. With ${specs['Motor'] || 'serious power'} under the hood, this golf cart delivers smooth, reliable transportation across any terrain.`
+      : `Performance is where the ${p.shortTitle} truly shines. With ${specs['Motor'] || 'serious power'} under the hood, this e-bike delivers an exhilarating riding experience.`,
+    'beginner-friendly': isGolfCart
+      ? `New to electric golf carts? The ${p.shortTitle} is one of the most user-friendly options we've tested. You don't need to be an expert to operate it.`
+      : `New to electric bikes? The ${p.shortTitle} is one of the most approachable options we've tested. You don't need to be an expert to enjoy everything this bike offers.`,
+    'expert-analysis': isGolfCart
+      ? `From a technical standpoint, the ${p.shortTitle} makes several smart design decisions that set it apart from competing golf carts.`
+      : `From a technical standpoint, the ${p.shortTitle} makes several smart engineering decisions that set it apart from the competition.`,
   };
 
   const oldPriceLine = p.oldPrice ? `~~${p.oldPrice}~~ ` : '';
   const ratingStars = '★'.repeat(Math.round(p.rating)) + '☆'.repeat(5 - Math.round(p.rating));
 
+  const tags = isGolfCart
+    ? `  - golf cart\n  - electric golf cart\n  - golf cart review\n  - ${p.store.toLowerCase().replace(/\s+/g, '-')}\n  - 4-seater golf cart`
+    : `  - ebike\n  - review\n  - ${p.category.toLowerCase()}\n  - ${p.store.toLowerCase().replace(/\s+/g, '-')}`;
+
+  const safeTitle = (p.title || '').replace(/"/g, '\\"').replace(/\n/g, ' ');
+  const safeDesc = (p.excerpt || '').replace(/"/g, '\\"').replace(/\n/g, ' ');
   return `---
-title: "${p.title} — Full Review 2026"
-description: "${p.excerpt}"
+title: "${safeTitle} — Full Review 2026"
+description: "${safeDesc}"
 date: "${new Date().toISOString().split('T')[0]}"
 author: "The Electric Bike Superstore"
 category: "${p.category}"
 tags:
-  - ebike
-  - review
-  - ${p.category.toLowerCase()}
-  - ${p.store.toLowerCase().replace(/\s+/g, '-')}
+${tags}
 image: "${p.image}"
 slug: "${p.slug}"
 ---
@@ -146,7 +169,7 @@ ${p.body.match(/## Verdict[\s\S]*?$/)?.[0]?.replace('## Verdict', '')?.trim() ||
   <a href="${p.affiliateUrl}" class="btn btn-primary" style="font-size:1.1rem;padding:14px 40px;display:inline-block;text-decoration:none;border-radius:8px;" target="_blank" rel="noopener noreferrer">Buy Now at ${p.store} →</a>
 </div>
 
-${galleryImages ? `## Product Gallery\n\n<div class="product-gallery">\n${galleryImages}\n</div>` : ''}
+${gallery ? `## Product Gallery\n\n<div class="product-gallery">\n${gallery}\n</div>` : ''}
 
 ## 🏪 Shop By Store
 

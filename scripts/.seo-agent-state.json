@@ -1,6 +1,6 @@
 {
-  "runs": 130,
-  "lastRun": "2026-06-19T02:37:02.462Z",
+  "runs": 132,
+  "lastRun": "2026-06-22T23:14:56.562Z",
   "keywords": [
     {
       "keyword": "fat tire electric bike review",
@@ -396,8 +396,28 @@
       "keyword": "best electric bike for contractors",
       "slug": "best-electric-bike-for-contractors",
       "created": "2026-06-19T02:37:02.460Z"
+    },
+    {
+      "keyword": "best electric bike for security guards",
+      "slug": "best-electric-bike-for-security-guards",
+      "created": "2026-06-22T23:14:16.448Z"
+    },
+    {
+      "keyword": "best electric bike for police",
+      "slug": "best-electric-bike-for-police",
+      "created": "2026-06-22T23:14:16.448Z"
+    },
+    {
+      "keyword": "best electric bike for fire department",
+      "slug": "best-electric-bike-for-fire-department",
+      "created": "2026-06-22T23:14:56.551Z"
+    },
+    {
+      "keyword": "best electric bike for EMS",
+      "slug": "best-electric-bike-for-ems",
+      "created": "2026-06-22T23:14:56.551Z"
     }
   ],
-  "postsCreated": 79,
-  "optimizations": 5
+  "postsCreated": 83,
+  "optimizations": 41
 }
