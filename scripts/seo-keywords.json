@@ -5999,6 +5999,126 @@
       "intent": "buying",
       "difficulty": "low",
       "category": "environment"
+    },
+    {
+      "keyword": "electric golf cart",
+      "intent": "buying"
+    },
+    {
+      "keyword": "electric golf cart for adults",
+      "intent": "buying"
+    },
+    {
+      "keyword": "4 seater electric golf cart",
+      "intent": "buying"
+    },
+    {
+      "keyword": "best electric golf cart 2026",
+      "intent": "buying"
+    },
+    {
+      "keyword": "electric golf cart for sale",
+      "intent": "buying"
+    },
+    {
+      "keyword": "electric golf cart with roof",
+      "intent": "buying"
+    },
+    {
+      "keyword": "street legal electric golf cart",
+      "intent": "buying"
+    },
+    {
+      "keyword": "electric golf cart 4 passenger",
+      "intent": "buying"
+    },
+    {
+      "keyword": "electric golf cart for farm",
+      "intent": "buying"
+    },
+    {
+      "keyword": "electric golf cart for resort",
+      "intent": "buying"
+    },
+    {
+      "keyword": "best electric golf cart for beginners",
+      "intent": "buying"
+    },
+    {
+      "keyword": "electric golf cart review",
+      "intent": "review"
+    },
+    {
+      "keyword": "electric golf cart comparison",
+      "intent": "comparison"
+    },
+    {
+      "keyword": "cheap electric golf cart",
+      "intent": "buying"
+    },
+    {
+      "keyword": "premium electric golf cart",
+      "intent": "buying"
+    },
+    {
+      "keyword": "electric golf cart under 5000",
+      "intent": "buying"
+    },
+    {
+      "keyword": "electric golf cart under 10000",
+      "intent": "buying"
+    },
+    {
+      "keyword": "fast electric golf cart",
+      "intent": "buying"
+    },
+    {
+      "keyword": "off road electric golf cart",
+      "intent": "buying"
+    },
+    {
+      "keyword": "all terrain electric golf cart",
+      "intent": "buying"
+    },
+    {
+      "keyword": "electric golf cart lithium battery",
+      "intent": "buying"
+    },
+    {
+      "keyword": "electric golf cart with lithium battery",
+      "intent": "buying"
+    },
+    {
+      "keyword": "best golf cart brand 2026",
+      "intent": "buying"
+    },
+    {
+      "keyword": "X-ARK golf cart review",
+      "intent": "review"
+    },
+    {
+      "keyword": "GIYI electric golf cart",
+      "intent": "buying"
+    },
+    {
+      "keyword": "SDLANCH golf cart",
+      "intent": "buying"
+    },
+    {
+      "keyword": "GO-UP golf cart",
+      "intent": "buying"
+    },
+    {
+      "keyword": "ATS POWER golf cart",
+      "intent": "buying"
+    },
+    {
+      "keyword": "electric sightseeing vehicle",
+      "intent": "buying"
+    },
+    {
+      "keyword": "4 seater electric utility vehicle",
+      "intent": "buying"
     }
   ]
 }
