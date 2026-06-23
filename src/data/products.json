@@ -1934,5 +1934,104 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "happyrun-mid-drive",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GS8QGFSN?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GS8QGFSN",
+    "title": "HAPPYRUN Mid-Drive Electric Motorcycle \u2014 Removable Battery, Full Suspension",
+    "shortTitle": "HAPPYRUN Mid-Drive",
+    "category": "Gas Motorcycle",
+    "price": "Buy Now",
+    "oldPrice": "",
+    "rating": 4.3,
+    "reviews": 0,
+    "excerpt": "HAPPYRUN mid-drive electric motorcycle with removable battery and full suspension. Versatile and powerful for adults.",
+    "image": "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800&q=80"
+    ],
+    "specs": {
+      "Motor": "Mid-Drive",
+      "Battery": "Removable",
+      "Suspension": "Full Suspension"
+    },
+    "pros": [
+      "Mid-drive motor",
+      "Removable battery",
+      "Full suspension"
+    ],
+    "cons": [
+      "Limited specs"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "eskute-mid-drive",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GQSPTWCB?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GQSPTWCB",
+    "title": "ESKUTE Mid-Drive Electric Motorcycle \u2014 Hydraulic Brakes, Shock Absorbers",
+    "shortTitle": "ESKUTE Mid-Drive",
+    "category": "Gas Motorcycle",
+    "price": "Buy Now",
+    "oldPrice": "",
+    "rating": 4.1,
+    "reviews": 0,
+    "excerpt": "ESKUTE mid-drive electric motorcycle with hydraulic brakes and shock absorbers. Smooth ride with powerful performance.",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80"
+    ],
+    "specs": {
+      "Motor": "Mid-Drive",
+      "Brakes": "Hydraulic",
+      "Suspension": "Shock Absorbers"
+    },
+    "pros": [
+      "Mid-drive motor",
+      "Hydraulic brakes",
+      "Shock absorbers"
+    ],
+    "cons": [
+      "Limited specs"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "bigniu-chopper-b0cznj3fz",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0CZNJN3FZ?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0CZNJN3FZ",
+    "title": "BIGNIU Electric Bike \u2014 Brushless Motor, Full Suspension, Windshield",
+    "shortTitle": "BIGNIU Brushless Chopper",
+    "category": "Gas Motorcycle",
+    "price": "Buy Now",
+    "oldPrice": "",
+    "rating": 4.0,
+    "reviews": 0,
+    "excerpt": "BIGNIU electric bike with brushless motor, full suspension, and windshield. Comfortable and stylish chopper design.",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80"
+    ],
+    "specs": {
+      "Motor": "Brushless",
+      "Suspension": "Full Suspension",
+      "Features": "Windshield"
+    },
+    "pros": [
+      "Brushless motor",
+      "Full suspension",
+      "Windshield included"
+    ],
+    "cons": [
+      "Limited specs"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]

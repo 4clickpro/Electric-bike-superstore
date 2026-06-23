@@ -1,6 +1,6 @@
 {
-  "runs": 146,
-  "lastRun": "2026-06-23T06:14:17.844Z",
+  "runs": 147,
+  "lastRun": "2026-06-23T06:44:17.926Z",
   "keywords": [
     {
       "keyword": "fat tire electric bike review",
@@ -556,8 +556,18 @@
       "keyword": "best electric bike for high blood pressure",
       "slug": "best-electric-bike-for-high-blood-pressure",
       "created": "2026-06-23T06:14:17.840Z"
+    },
+    {
+      "keyword": "best electric bike for obesity",
+      "slug": "best-electric-bike-for-obesity",
+      "created": "2026-06-23T06:44:17.922Z"
+    },
+    {
+      "keyword": "best electric bike for pregnancy",
+      "slug": "best-electric-bike-for-pregnancy",
+      "created": "2026-06-23T06:44:17.922Z"
     }
   ],
-  "postsCreated": 111,
-  "optimizations": 53
+  "postsCreated": 113,
+  "optimizations": 54
 }

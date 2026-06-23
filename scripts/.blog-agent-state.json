@@ -229,8 +229,13 @@
       "slug": "vivie-ace07-vs-amazon-aniioki-a9-pro-max",
       "type": "comparison",
       "date": "2026-06-23T06:14:17.709Z"
+    },
+    {
+      "slug": "amazon-zuttex-9000w-dual-motor-vs-amazon-eahora-romeo-pro-iii",
+      "type": "comparison",
+      "date": "2026-06-23T06:44:17.809Z"
     }
   ],
-  "lastRun": "2026-06-23T06:14:17.709Z",
-  "totalCreated": 46
+  "lastRun": "2026-06-23T06:44:17.809Z",
+  "totalCreated": 47
 }
