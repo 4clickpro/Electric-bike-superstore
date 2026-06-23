@@ -1724,5 +1724,44 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-damson-y3-5000w",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GS1TJRL4?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GS1TJRL4",
+    "title": "DAMSON Y3 5000W Dual Motor Electric Bike for Adults AWD \u2014 52V 30Ah Battery, 40MPH, Up to 90 Mile Range, 26\" Fat Tire Mountain Ebike, Full Suspension, Hydraulic Disc Brakes",
+    "shortTitle": "DAMSON Y3 5000W AWD",
+    "category": "Mountain",
+    "price": "Buy Now",
+    "oldPrice": "",
+    "rating": 4.3,
+    "reviews": 0,
+    "excerpt": "5000W dual motor AWD electric bike with 52V 30Ah battery, 40MPH top speed, up to 90-mile range, 26\" fat tires, full suspension, and hydraulic disc brakes.",
+    "image": "https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Motor": "5000W Dual Motor AWD",
+      "Battery": "52V 30Ah",
+      "Range": "Up to 90 Miles",
+      "Top Speed": "40 MPH",
+      "Tires": "26\" Fat Tire",
+      "Suspension": "Full Suspension",
+      "Brakes": "Hydraulic Disc"
+    },
+    "pros": [
+      "5000W dual motor AWD",
+      "90-mile range",
+      "Full suspension",
+      "Hydraulic brakes"
+    ],
+    "cons": [
+      "Heavy due to dual motor",
+      "New brand"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
