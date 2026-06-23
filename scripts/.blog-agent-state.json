@@ -154,8 +154,83 @@
       "slug": "amazon-golf-cart-b0g53wwvps-vs-burchda-y3-awd",
       "type": "comparison",
       "date": "2026-06-22T23:14:16.437Z"
+    },
+    {
+      "slug": "amazon-1200-electric-passenger-vs-amazon-eahora-urace-carbon",
+      "type": "comparison",
+      "date": "2026-06-22T23:44:16.562Z"
+    },
+    {
+      "slug": "amazon-eahora-romeo-pro-iii-vs-amazon-goup-sightseeing-2",
+      "type": "comparison",
+      "date": "2026-06-23T00:14:16.614Z"
+    },
+    {
+      "slug": "ebike-commuting-guide",
+      "type": "guide",
+      "date": "2026-06-23T00:14:16.614Z"
+    },
+    {
+      "slug": "amazon-pujh-6000w-100mile-vs-kingbull-hunter",
+      "type": "comparison",
+      "date": "2026-06-23T00:44:16.712Z"
+    },
+    {
+      "slug": "amazon-golf-cart-b0gdfmd6qm-vs-amazon-electric-mobility-scooter",
+      "type": "comparison",
+      "date": "2026-06-23T01:14:16.814Z"
+    },
+    {
+      "slug": "vivie-ace07-vs-amazon-ts-tst-grp-1500w-fat-tire",
+      "type": "comparison",
+      "date": "2026-06-23T01:44:16.912Z"
+    },
+    {
+      "slug": "amazon-goup-sightseeing-2-vs-amazon-golf-cart-b0gdfmd6qm",
+      "type": "comparison",
+      "date": "2026-06-23T02:14:17.009Z"
+    },
+    {
+      "slug": "amazon-8500w-electric-dirt-bike-vs-amazon-1200-electric-passenger",
+      "type": "comparison",
+      "date": "2026-06-23T02:44:17.107Z"
+    },
+    {
+      "slug": "amazon-aniioki-a9-pro-max-vs-vivie-ace01",
+      "type": "comparison",
+      "date": "2026-06-23T03:14:17.208Z"
+    },
+    {
+      "slug": "amazon-pujh-6000w-dual-motor-vs-vivie-ace01",
+      "type": "comparison",
+      "date": "2026-06-23T03:44:17.288Z"
+    },
+    {
+      "slug": "burchda-r5-pro-vs-amazon-bigniu-bg-x",
+      "type": "comparison",
+      "date": "2026-06-23T04:14:17.386Z"
+    },
+    {
+      "slug": "kingbull-discover-vs-amazon-goup-sightseeing-golf-cart",
+      "type": "comparison",
+      "date": "2026-06-23T04:44:17.486Z"
+    },
+    {
+      "slug": "amazon-golf-cart-b0f8xd5f94-vs-kingbull-hunter",
+      "type": "comparison",
+      "date": "2026-06-23T05:14:17.573Z"
+    },
+    {
+      "slug": "vivie-ace01-vs-amazon-eahora-romeo-pro-3",
+      "type": "comparison",
+      "date": "2026-06-23T05:44:17.610Z"
+    },
+    {
+      "slug": "vivie-ace07-vs-amazon-aniioki-a9-pro-max",
+      "type": "comparison",
+      "date": "2026-06-23T06:14:17.709Z"
     }
   ],
-  "lastRun": "2026-06-22T23:14:16.437Z",
-  "totalCreated": 31
+  "lastRun": "2026-06-23T06:14:17.709Z",
+  "totalCreated": 46
 }
