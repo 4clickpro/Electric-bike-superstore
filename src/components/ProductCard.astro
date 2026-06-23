@@ -1,5 +1,5 @@
 ---
-// ProductCard — e-commerce product card with image, price, add-to-cart
+// ProductCard — e-commerce product card with image, price, affiliate link
 export interface Props {
   title: string;
   slug: string;
@@ -10,18 +10,21 @@ export interface Props {
   badge?: string;
   rating?: number;
   reviews?: number;
+  affiliateUrl?: string;
+  productUrl?: string;
 }
 
 const base = import.meta.env.BASE_URL;
-const shopifyBase = 'https://hnrqqt-an.myshopify.com';
-const { title, slug, price, originalPrice, image, category, badge, rating = 4.5, reviews = 0 } = Astro.props;
+const { title, slug, price, originalPrice, image, category, badge, rating = 4.5, reviews = 0, affiliateUrl, productUrl } = Astro.props;
 const stars = Math.round(rating);
 const hasDiscount = originalPrice && originalPrice > price;
 const discountPercent = hasDiscount ? Math.round(((originalPrice - price) / originalPrice) * 100) : 0;
+const buyUrl = affiliateUrl || productUrl || `${base}blog/${slug}/`;
+const linkUrl = productUrl || affiliateUrl || `${base}blog/${slug}/`;
 ---
 
 <div class="product-card card animate-fade-up">
-  <a href={`${shopifyBase}/products/${slug}`} target="_blank" rel="noopener noreferrer" class="product-image-link" aria-label={`View ${title}`}>
+  <a href={linkUrl} target="_blank" rel="noopener noreferrer" class="product-image-link" aria-label={`View ${title}`}>
     <div class="product-image">
       <img src={image} alt={title} loading="lazy" width="400" height="400" />
       {badge && <span class={`badge badge-${badge}`}>{badge === 'sale' ? `${discountPercent}% OFF` : badge}</span>}
@@ -29,7 +32,7 @@ const discountPercent = hasDiscount ? Math.round(((originalPrice - price) / orig
   </a>
   <div class="product-body">
     <span class="product-category">{category}</span>
-    <a href={`${shopifyBase}/products/${slug}`} target="_blank" rel="noopener noreferrer" class="product-title-link">
+    <a href={linkUrl} target="_blank" rel="noopener noreferrer" class="product-title-link">
       <h4>{title}</h4>
     </a>
     <div class="product-rating">
@@ -44,7 +47,7 @@ const discountPercent = hasDiscount ? Math.round(((originalPrice - price) / orig
       <span class="price">${price.toFixed(2)}</span>
       {hasDiscount && <span class="original-price">${originalPrice.toFixed(2)}</span>}
     </div>
-    <a href={`${shopifyBase}/products/${slug}`} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm add-to-cart-btn">
+    <a href={buyUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm add-to-cart-btn">
       🛒 Buy Now
     </a>
   </div>
