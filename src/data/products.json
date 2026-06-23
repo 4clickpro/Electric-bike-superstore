@@ -2095,5 +2095,67 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "goup-golf-cart-b0gstz7wkz",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GSTZ7WKZ?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GSTZ7WKZ",
+    "title": "GO-UP Golf Cart \u2014 Hummer Style, 4-Seater Electric",
+    "shortTitle": "GO-UP Hummer Golf Cart",
+    "category": "Golf Cart",
+    "price": "Buy Now",
+    "oldPrice": "",
+    "rating": 4.3,
+    "reviews": 0,
+    "excerpt": "GO-UP golf cart with Hummer-style design. 4-seater electric golf cart built for comfort and style.",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80"
+    ],
+    "specs": {
+      "Seating": "4 Adults",
+      "Style": "Hummer Design"
+    },
+    "pros": [
+      "Hummer style design",
+      "4-seater capacity"
+    ],
+    "cons": [
+      "Limited specs"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "goup-4-seater-compartment",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GS9R7H33?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GS9R7H33",
+    "title": "GO-UP Electric Golf Cart \u2014 4-Seater with Storage Compartment",
+    "shortTitle": "GO-UP 4-Seater Compartment",
+    "category": "Golf Cart",
+    "price": "Buy Now",
+    "oldPrice": "",
+    "rating": 4.2,
+    "reviews": 0,
+    "excerpt": "GO-UP electric golf cart with 4-seater capacity and storage compartment. Practical and comfortable.",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80"
+    ],
+    "specs": {
+      "Seating": "4 Adults",
+      "Features": "Storage Compartment"
+    },
+    "pros": [
+      "4-seater",
+      "Storage compartment"
+    ],
+    "cons": [
+      "Limited specs"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
