@@ -2033,5 +2033,36 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "eahora-55miles-commuting",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0G6KH9H1P?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0G6KH9H1P",
+    "title": "eAhora Electric Motorcycle \u2014 55 Miles Range, Commuting Bike for Adults",
+    "shortTitle": "eAhora 55Mi Commuter",
+    "category": "Gas Motorcycle",
+    "price": "Buy Now",
+    "oldPrice": "",
+    "rating": 4.2,
+    "reviews": 0,
+    "excerpt": "eAhora electric motorcycle with 55-mile range. Built for daily commuting and urban riding.",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80"
+    ],
+    "specs": {
+      "Range": "55 Miles",
+      "Use Case": "Commuting"
+    },
+    "pros": [
+      "55-mile range",
+      "Commuter design"
+    ],
+    "cons": [
+      "Limited specs"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
