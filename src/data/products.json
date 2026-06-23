@@ -2064,5 +2064,36 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "eahora-b0ccvcqkv1",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0CCVCQKV1?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0CCVCQKV1",
+    "title": "eAhora Electric Motorcycle \u2014 Full Suspension, Hydraulic Brakes",
+    "shortTitle": "eAhora Suspension Hydraulic",
+    "category": "Gas Motorcycle",
+    "price": "Buy Now",
+    "oldPrice": "",
+    "rating": 4.1,
+    "reviews": 0,
+    "excerpt": "eAhora electric motorcycle with full suspension and hydraulic brakes. Smooth and powerful ride for adults.",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80"
+    ],
+    "specs": {
+      "Suspension": "Full Suspension",
+      "Brakes": "Hydraulic"
+    },
+    "pros": [
+      "Full suspension",
+      "Hydraulic brakes"
+    ],
+    "cons": [
+      "Limited specs"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
