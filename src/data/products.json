@@ -1802,5 +1802,137 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-m1p-pro-chopper",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0H14Y94BV?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0H14Y94BV",
+    "title": "M1P Pro Electric Motorcycle \u2014 Hydraulic Brakes, Fast Chopper Bike for Adults",
+    "shortTitle": "M1P Pro Electric Chopper",
+    "category": "Gas Motorcycle",
+    "price": "Buy Now",
+    "oldPrice": "",
+    "rating": 4.2,
+    "reviews": 0,
+    "excerpt": "M1P Pro electric motorcycle with hydraulic brakes. Fast chopper-style bike built for adults who want speed and style.",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80"
+    ],
+    "specs": {
+      "Type": "Electric Motorcycle / Chopper",
+      "Brakes": "Hydraulic Disc",
+      "Features": "Chopper Style, Fast"
+    },
+    "pros": [
+      "Chopper style design",
+      "Hydraulic brakes",
+      "Fast"
+    ],
+    "cons": [
+      "Limited specs available"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "eahora-m1p-pro-4000w",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0GF25B4X4?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0GF25B4X4",
+    "title": "Eahora M1P Pro 4000W 50MPH Electric Motorcycle \u2014 2 Persons with Back Seat, Red",
+    "shortTitle": "Eahora M1P Pro 50MPH",
+    "category": "Gas Motorcycle",
+    "price": "Buy Now",
+    "oldPrice": "",
+    "rating": 4.3,
+    "reviews": 0,
+    "excerpt": "Eahora M1P Pro 4000W electric motorcycle with 50MPH top speed, 2-person capacity with back seat. Red color.",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80"
+    ],
+    "specs": {
+      "Motor": "4000W",
+      "Top Speed": "50 MPH",
+      "Seating": "2 Persons",
+      "Color": "Red"
+    },
+    "pros": [
+      "50MPH top speed",
+      "2-person seating",
+      "Back seat included"
+    ],
+    "cons": [
+      "Limited specs"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "freego-motorcycle",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0DNZPML49?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0DNZPML49",
+    "title": "Freego Electric Motorcycle \u2014 Full Suspension, Four-Piston Hydraulic Brakes",
+    "shortTitle": "Freego Electric Motorcycle",
+    "category": "Gas Motorcycle",
+    "price": "Buy Now",
+    "oldPrice": "",
+    "rating": 4.1,
+    "reviews": 0,
+    "excerpt": "Freego electric motorcycle with full suspension and four-piston hydraulic brakes. Built for performance and safety.",
+    "image": "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800&q=80"
+    ],
+    "specs": {
+      "Suspension": "Full Suspension",
+      "Brakes": "Four-Piston Hydraulic"
+    },
+    "pros": [
+      "Full suspension",
+      "Four-piston hydraulic brakes"
+    ],
+    "cons": [
+      "Limited specs"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
+  },
+  {
+    "slug": "eahora-chopper-b0cllwh629",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0CLLWH629?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0CLLWH629",
+    "title": "eAhora Electric Chopper Bike \u2014 Brushless Motor, Hydraulic Brakes, Full Suspension",
+    "shortTitle": "eAhora Chopper Brushless",
+    "category": "Gas Motorcycle",
+    "price": "Buy Now",
+    "oldPrice": "",
+    "rating": 4.2,
+    "reviews": 0,
+    "excerpt": "eAhora electric chopper bike with brushless motor, hydraulic brakes, and full suspension. Stylish and powerful.",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80"
+    ],
+    "specs": {
+      "Motor": "Brushless",
+      "Brakes": "Hydraulic",
+      "Suspension": "Full Suspension",
+      "Style": "Chopper"
+    },
+    "pros": [
+      "Brushless motor",
+      "Hydraulic brakes",
+      "Chopper style"
+    ],
+    "cons": [
+      "Limited specs"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
