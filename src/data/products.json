@@ -1763,5 +1763,44 @@
     ],
     "body": "",
     "affiliateId": "amazon"
+  },
+  {
+    "slug": "amazon-freesky-hunting",
+    "store": "Amazon",
+    "affiliateUrl": "https://www.amazon.com/dp/B0FJDXPFF4?tag=techbot00-20",
+    "productUrl": "https://www.amazon.com/dp/B0FJDXPFF4",
+    "title": "FREESKY 2026 Dual Battery 48V 45AH 200 Miles 40MPH Electric Bike for Adults \u2014 High-Torque Single Motor Long Range Fast Fat Tire Ebike, 26\" Full Suspension Mountain E Bike, Rear Basket",
+    "shortTitle": "FREESKY Dual Battery 200Mi",
+    "category": "Mountain",
+    "price": "Buy Now",
+    "oldPrice": "",
+    "rating": 4.4,
+    "reviews": 0,
+    "excerpt": "FREESKY 2026 dual battery electric bike with 48V 45AH capacity, up to 200 miles range, 40MPH top speed, 26\" fat tires, full suspension, and rear basket. Built for hunting and long-range adventure.",
+    "image": "https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg",
+    "gallery": [
+      "https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg"
+    ],
+    "specs": {
+      "Motor": "High-Torque Single Motor",
+      "Battery": "Dual 48V 45AH",
+      "Range": "Up to 200 Miles",
+      "Top Speed": "40 MPH",
+      "Tires": "26\" Fat Tire",
+      "Suspension": "Full Suspension",
+      "Extras": "Rear Basket"
+    },
+    "pros": [
+      "Dual battery 200-mile range",
+      "40MPH top speed",
+      "Full suspension",
+      "Rear basket for cargo"
+    ],
+    "cons": [
+      "Heavy due to dual battery",
+      "Single motor (not dual)"
+    ],
+    "body": "",
+    "affiliateId": "amazon"
   }
 ]
