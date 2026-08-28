@@ -1,895 +1,390 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
 import productsData from '@data/products.json';
 
 const base = import.meta.env.BASE_URL;
+const PHONE = '850-299-8575';
+const PHONE_TEL = 'tel:8502998575';
 
-// Per-store affiliate links
-const AFF_BURCHDA = 'https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733';
-const AFF_KINGBULL = 'https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733';
-const AFF_VIVI = 'https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733';
-// Aliases for templates
-const aff1 = AFF_BURCHDA;
-const aff2 = AFF_KINGBULL;
-const aff3 = AFF_VIVI;
+// Blog posts for right sidebar — newest first
+const allPosts = (await getCollection('blog')).sort((a, b) =>
+  new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
+const recentPosts = allPosts.slice(0, 5);
 
-// Separate products from guides, and e-bikes from golf carts
-const products = productsData.filter(p => p.price && p.category !== 'Golf Cart');
-const golfCarts = productsData.filter(p => p.price && p.category === 'Golf Cart');
-const guides = productsData.filter(p => !p.price);
+// Bikes for sale — left sidebar
+const forSale = productsData.filter(p => p.price && p.category !== 'Golf Cart').slice(0, 4);
 
-// Featured: top 3 by rating
-const featured = products.slice(0, 3);
-
-// Categories for sidebar
-const categories = ['All', 'Mountain', 'Commuter', 'Folding', 'Cargo', 'Fat Tire', 'Premium', 'Golf Cart'];
+// Photo tiles (layout rhythm inspired by coastal rental sites — all branding/photos our own)
+const tiles = [
+  { href: '#book', image: '/images/destin-sunset.jpg', label: 'Rent a Bike', sub: 'Hourly • Daily • Weekly' },
+  { href: `${base}products`, image: '/images/aventon-level3-step-through.jpg', label: 'Bikes for Sale', sub: 'Own your ride' },
+  { href: '#book', image: '/images/fat-bike-beach.jpg', label: 'Fat Tire Beach Rides', sub: 'Sand-ready e-bikes' },
+  { href: '#book', image: '/images/beach-cruiser.jpg', label: 'Beach Cruisers', sub: 'Cruise the Emerald Coast' },
+];
 ---
 
 <BaseLayout
-  title="The Electric Bike Superstore — Best Electric Bike Reviews & Buying Guides 2026"
-  description="Honest electric bike reviews, expert buying guides, and maintenance tips. Find the perfect e-bike from Burchda, King Bull, and Vivi."
+  title="Electric Bike Rentals & Sales — Destin & Miramar Beach, FL"
+  description="Rent or buy electric bikes in Destin and Miramar Beach, FL. Fat tire beach rides, cruisers, and e-bikes for sale. Call 850-299-8575 to book your ride today."
   canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
 >
 
-  <!-- START ADVERTISER: Vivi Ebike (US) from awin.com -->
-  <div style="text-align: center; padding: 12px 20px; background: var(--color-bg); border-bottom: 1px solid var(--color-border);">
-    <a rel="sponsored" href="https://www.awin1.com/cread.php?s=3682927&v=98557&q=494573&r=2915733" target="_blank" rel="noopener noreferrer">
-      <img src="https://www.awin1.com/cshow.php?s=3682927&v=98557&q=494573&r=2915733" border="0" alt="Vivi Ebike (US)" style="max-width: 100%; height: auto;">
-    </a>
-  </div>
-  <!-- END ADVERTISER: Vivi Ebike (US) from awin.com -->
-
-  <!-- ===== HERO — Clean, text-focused ===== -->
-  <section style="padding: 48px 0 40px; background: var(--color-bg-elevated); border-bottom: 1px solid var(--color-border);">
-    <div class="container">
-      <div style="max-width: 700px;">
-        <h1 style="font-size: 2.2rem; margin-bottom: 12px; font-weight: 800;">
-          Best Electric Bike <span class="gradient-text">Reviews & Buying Guides</span>
-        </h1>
-        <p style="font-size: 1.05rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 28px;">
-          Honest, in-depth reviews of the best e-bikes from Burchda, King Bull, and Vivi. Real specs, real prices, real testing — not marketing hype.
-        </p>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href={`${base}blog`} class="btn btn-primary">Read Reviews</a>
-          <a href={`${base}blog?category=Buying+Guide`} class="btn btn-outline">Buying Guides</a>
-          <a href={aff1} target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #38a169; color: #38a169;">🛒 Shop E-Bikes</a>
-	          <a href="https://amzn.to/4uRplxG" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #FF9900; color: #FF9900;">🏌️ Golf Carts 2026</a>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="container hero-inner">
+        <p class="hero-eyebrow">Destin &bull; Miramar Beach, Florida</p>
+        <h1>Electric Bike <span class="hero-accent">Rentals &amp; Sales</span></h1>
+        <p class="hero-sub">Explore the Emerald Coast on two wheels. Fat tire e-bikes, beach cruisers, and step-throughs — delivered ready to ride.</p>
+        <a class="phone-big" href={PHONE_TEL}>📞 {PHONE}</a>
+        <div class="hero-ctas">
+          <a href="#book" class="btn btn-primary">Book a Rental</a>
+          <a href={`${base}products`} class="btn btn-outline-light">Shop Bikes</a>
         </div>
       </div>
     </div>
   </section>
 
-  
-
-
-
-<!-- ===== MAIN 2-COLUMN LAYOUT ===== -->
-  <section class="section" style="padding-top: 32px;">
+  <!-- ===== PHOTO TILE GRID ===== -->
+  <section class="section tiles-section">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 280px; gap: 40px; align-items: start;">
-
-        <!-- CENTER: EBR-Style Product Reviews -->
-        <main>
-          <div style="margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--color-accent);">
-            <h2 style="font-size: 1.3rem; margin: 0; font-weight: 700;">Best Electric Bikes We've Tested</h2>
-            <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 4px;">Updated June 2026 — Prices and availability subject to change</p>
-          </div>
-
-          {products.map(product => (
-            <article class="bike-review" style="margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--color-border);">
-              <!-- Product Header -->
-              <div style="display: grid; grid-template-columns: 200px 1fr; gap: 24px; margin-bottom: 16px;">
-                <a href={`${base}blog/${product.slug}/`} style="display: block; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border);">
-                  <img src={product.image} alt={product.title} loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-                </a>
-                <div>
-                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                    <span class="badge badge-new">{product.category}</span>
-                    <span style="font-size: 0.78rem; color: var(--color-text-muted);">{product.store}</span>
-                  </div>
-                  <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-weight: 700; line-height: 1.3;">
-                    <a href={`${base}blog/${product.slug}/`} style="color: var(--color-text-primary); text-decoration: none;">
-                      {product.title}
-                    </a>
-                  </h3>
-                  <!-- Star Rating -->
-                  <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
-                    <div style="display: flex; gap: 1px;">
-                      {[1,2,3,4,5].map(i => (
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill={i <= Math.round(product.rating) ? "#d69e2e" : "#e1e5e9"} stroke="#d69e2e" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                      ))}
-                    </div>
-                    <span style="font-size: 0.82rem; color: var(--color-text-muted);">{product.rating}/5 ({product.reviews} reviews)</span>
-                  </div>
-                  <!-- Price -->
-                  <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px;">
-                    {product.oldPrice && <span style="font-size: 0.88rem; color: var(--color-text-muted); text-decoration: line-through;">{product.oldPrice}</span>}
-                    <span style="font-size: 1.3rem; font-weight: 800; color: var(--color-accent);">{product.price}</span>
-                  </div>
-                  <!-- CTA -->
-                  <a href={product.affiliateUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center;">
-                    Best Price at {product.store} →
-                  </a>
-                </div>
-              </div>
-
-              <!-- Specs Table -->
-              <div style="background: var(--color-bg-elevated); border-radius: var(--radius-md); padding: 16px; margin-bottom: 16px;">
-                <h4 style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-bottom: 10px; font-weight: 700;">Key Specs</h4>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 16px;">
-                  {Object.entries(product.specs).slice(0, 6).map(([key, value]) => (
-                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
-                      <span style="color: var(--color-text-muted);">{key}:</span>
-                      <span style="font-weight: 600; color: var(--color-text-primary);">{value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <!-- Excerpt -->
-              <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 12px;">
-                {product.excerpt}
-              </p>
-
-              <!-- Pros/Cons -->
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
-                <div>
-                  <h4 style="font-size: 0.82rem; color: var(--color-success); font-weight: 700; margin-bottom: 6px;">👍 PROS</h4>
-                  <ul style="list-style: none; padding: 0; margin: 0;">
-                    {product.pros.map(pro => (
-                      <li style="font-size: 0.82rem; color: var(--color-text-secondary); padding: 3px 0; border-bottom: 1px solid var(--color-border-light);">✓ {pro}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 style="font-size: 0.82rem; color: var(--color-danger); font-weight: 700; margin-bottom: 6px;">👎 CONS</h4>
-                  <ul style="list-style: none; padding: 0; margin: 0;">
-                    {product.cons.map(con => (
-                      <li style="font-size: 0.82rem; color: var(--color-text-secondary); padding: 3px 0; border-bottom: 1px solid var(--color-border-light);">✗ {con}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Bottom CTA -->
-              <div style="display: flex; gap: 10px; align-items: center;">
-                <a href={product.affiliateUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                  Check Price at {product.store} →
-                </a>
-                <a href={`${base}blog/${product.slug}/`} class="btn btn-outline btn-sm">
-                  Read Full Review
-                </a>
-              </div>
-            </article>
-          ))}
-
-          <!-- Golf Carts Section -->
-          {golfCarts.length > 0 && (
-          <div style="margin-top: 48px;">
-            <div style="margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid #38a169;">
-              <h2 style="font-size: 1.3rem; margin: 0; font-weight: 700;">🛒 Electric Golf Carts</h2>
-              <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 4px;">Available on Amazon — Prime shipping eligible</p>
+      <h2 class="section-title">Find your ride</h2>
+      <p class="section-sub">Book direct with a local shop — no apps, no middleman fees.</p>
+      <div class="tile-grid">
+        {tiles.map(t => (
+          <a href={t.href} class="tile">
+            <img src={t.image} alt={t.label} loading="lazy" />
+            <div class="tile-label">
+              <h3>{t.label}</h3>
+              <p>{t.sub}</p>
             </div>
-            {golfCarts.map(product => (
-              <article class="bike-review" style="margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--color-border);">
-                <div style="display: grid; grid-template-columns: 200px 1fr; gap: 24px; margin-bottom: 16px;">
-                  <a href={product.affiliateUrl} target="_blank" rel="noopener noreferrer" style="display: block; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border);">
-                    <img src={product.image} alt={product.title} loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-                  </a>
-                  <div>
-                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                      <span class="badge badge-new">{product.category}</span>
-                      <span style="font-size: 0.78rem; color: var(--color-text-muted);">{product.store}</span>
-                    </div>
-                    <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-weight: 700; line-height: 1.3;">
-                      <a href={product.affiliateUrl} target="_blank" rel="noopener noreferrer" style="color: var(--color-text-primary); text-decoration: none;">
-                        {product.title}
-                      </a>
-                    </h3>
-                    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
-                      <div style="display: flex; gap: 1px;">
-                        {[1,2,3,4,5].map(i => (
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill={i <= Math.round(product.rating) ? "#d69e2e" : "#e1e5e9"} stroke="#d69e2e" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        ))}
-                      </div>
-                      <span style="font-size: 0.82rem; color: var(--color-text-muted);">{product.rating}/5 ({product.reviews} reviews)</span>
-                    </div>
-                    <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px;">
-                      {product.oldPrice && <span style="font-size: 0.88rem; color: var(--color-text-muted); text-decoration: line-through;">{product.oldPrice}</span>}
-                      <span style="font-size: 1.3rem; font-weight: 800; color: #38a169;">{product.price}</span>
-                    </div>
-                    <a href={product.affiliateUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="background: #38a169; border-color: #38a169;">
-                      View on Amazon →
-                    </a>
-                  </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAIN 3-COLUMN: SALES | CENTER | BLOG ===== -->
+  <section class="section main-section">
+    <div class="container">
+      <div class="three-col">
+
+        <!-- LEFT SIDEBAR: BIKE SALES -->
+        <aside class="col-sidebar-left">
+          <div class="sidebar-card">
+            <h3 class="sidebar-title">🚲 Bikes for Sale</h3>
+            {forSale.map(p => (
+              <a href={`${base}blog/${p.slug}/`} class="sale-item">
+                <img src={p.image} alt={p.shortTitle} loading="lazy" />
+                <div>
+                  <strong>{p.shortTitle}</strong>
+                  <span class="sale-price">{p.price}</span>
                 </div>
-                <div style="background: var(--color-bg-elevated); border-radius: var(--radius-md); padding: 16px; margin-bottom: 16px;">
-                  <h4 style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-bottom: 10px; font-weight: 700;">Key Specs</h4>
-                  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 16px;">
-                    {Object.entries(product.specs).slice(0, 6).map(([key, value]) => (
-                      <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
-                        <span style="color: var(--color-text-muted);">{key}:</span>
-                        <span style="font-weight: 600; color: var(--color-text-primary);">{value}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 12px;">
-                  {product.excerpt}
-                </p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
-                  <div>
-                    <h4 style="font-size: 0.82rem; color: var(--color-success); font-weight: 700; margin-bottom: 6px;">👍 PROS</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                      {product.pros.map(pro => (
-                        <li style="font-size: 0.82rem; color: var(--color-text-secondary); padding: 3px 0; border-bottom: 1px solid var(--color-border-light);">✓ {pro}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 style="font-size: 0.82rem; color: var(--color-danger); font-weight: 700; margin-bottom: 6px;">👎 CONS</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                      {product.cons.map(con => (
-                        <li style="font-size: 0.82rem; color: var(--color-text-secondary); padding: 3px 0; border-bottom: 1px solid var(--color-border-light);">✗ {con}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div style="display: flex; gap: 10px; align-items: center;">
-                  <a href={product.affiliateUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: #38a169; border-color: #38a169;">
-                    Check Price on Amazon →
-                  </a>
-                  <a href={`${base}blog/${product.slug}/`} class="btn btn-outline btn-sm">
-                    Read Full Review
-                  </a>
-                </div>
-              </article>
+              </a>
             ))}
+            <a href={`${base}products`} class="sidebar-more">View all bikes →</a>
           </div>
-          )}
+          <div class="sidebar-card call-card">
+            <h3>Call to Order</h3>
+            <a href={PHONE_TEL} class="phone-side">{PHONE}</a>
+            <p>Open 7 days a week</p>
+          </div>
+        </aside>
 
-          <!-- Guides Section -->
-          <div style="margin-top: 48px;">
-            <div style="margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--color-border);">
-              <h2 style="font-size: 1.3rem; margin: 0; font-weight: 700;">Expert Buying Guides</h2>
+        <!-- CENTER: WELCOME / RENTAL INFO / WHY US -->
+        <main class="col-center">
+          <div class="center-card">
+            <h2>Welcome to the Emerald Coast's E-Bike Shop</h2>
+            <p>
+              We're your local electric bike shop serving <strong>Destin</strong> and <strong>Miramar Beach, Florida</strong>.
+              Cruise Highway 98, ride the Timpoochee Trail along 30A, or roll straight onto the sand with one of our
+              fat tire beach e-bikes. Every rental is fully charged, sanitized, and fitted to you before you ride.
+            </p>
+            <p>
+              Ready to buy? We also sell quality electric bikes — test ride one first, then take it home.
+              Locals and visitors welcome.
+            </p>
+          </div>
+
+          <div class="center-card">
+            <h2>How Rentals Work</h2>
+            <ol class="steps">
+              <li><strong>Call or book</strong> — <a href={PHONE_TEL}>{PHONE}</a> or reserve online</li>
+              <li><strong>We fit you</strong> — helmet, lock, and a quick safety walkthrough included</li>
+              <li><strong>Ride</strong> — cruise the beach paths, Henderson Beach, and Destin Harbor</li>
+              <li><strong>Return or extend</strong> — hourly, daily, weekly, and monthly rates</li>
+            </ol>
+            <div class="rate-table">
+              <div><span>Hourly</span><strong>from $15</strong></div>
+              <div><span>Half Day</span><strong>from $39</strong></div>
+              <div><span>Full Day</span><strong>from $59</strong></div>
+              <div><span>Weekly</span><strong>from $199</strong></div>
             </div>
-            <div class="grid-2">
-              {guides.map(guide => (
-                <article class="card" style="padding: 20px;">
-                  <span class="badge badge-new" style="margin-bottom: 8px;">{guide.category}</span>
-                  <h3 style="font-size: 1.05rem; margin-bottom: 8px; font-weight: 700;">
-                    <a href={`${base}blog/${guide.slug}/`} style="color: var(--color-text-primary);">{guide.title}</a>
-                  </h3>
-                  <p style="color: var(--color-text-secondary); font-size: 0.88rem; line-height: 1.6;">{guide.excerpt}</p>
-                  <a href={`${base}blog/${guide.slug}/`} class="read-more" style="margin-top: 12px; display: inline-flex;">
-                    Read Guide →
-                  </a>
-                </article>
-              ))}
-            </div>
+            <p class="rate-note">Rates vary by model. Call for current availability and delivery options.</p>
+          </div>
+
+          <div class="center-card call-band" id="book">
+            <h2>Ready to Ride?</h2>
+            <p>Serving Destin, Miramar Beach, Sandestin, and 30A. Delivery to your condo or hotel available.</p>
+            <a class="phone-big" href={PHONE_TEL}>📞 {PHONE}</a>
+          </div>
+
+          <div class="center-card">
+            <h2>Why Ride With Us</h2>
+            <ul class="why-list">
+              <li>✅ Local, owner-operated — real people, not a call center</li>
+              <li>✅ Fully charged &amp; sanitized before every rental</li>
+              <li>✅ Helmets, locks &amp; baskets included free</li>
+              <li>✅ Delivery &amp; pickup to Destin &amp; Miramar Beach condos</li>
+              <li>✅ Try before you buy — rental credit toward purchase</li>
+            </ul>
           </div>
         </main>
 
-        <!-- RIGHT SIDEBAR -->
-        <aside style="position: sticky; top: 96px;">
-          <!-- Browse By Type -->
-          <div style="background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 18px; margin-bottom: 16px;">
-            <h3 style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-bottom: 10px; font-weight: 700;">Browse By Type</h3>
-            <nav>
-              <ul style="list-style: none; padding: 0; margin: 0;">
-                {categories.filter(c => c !== 'All').map(cat => (
-                  <li>
-                    <a href={`${base}blog?category=${cat}`} style="display: block; padding: 7px 0; color: var(--color-text-primary); font-size: 0.88rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light); transition: color 150ms;">{cat} E-Bikes</a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+        <!-- RIGHT SIDEBAR: BLOG -->
+        <aside class="col-sidebar-right">
+          <div class="sidebar-card">
+            <h3 class="sidebar-title">📰 From the Blog</h3>
+            {recentPosts.map(p => (
+              <a href={`${base}blog/${p.id.replace(/\.mdx?$/, '')}/`} class="blog-item">
+                {p.data.image && <img src={p.data.image} alt="" loading="lazy" />}
+                <div>
+                  <strong>{p.data.title}</strong>
+                  <time>{new Date(p.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+                </div>
+              </a>
+            ))}
+            <a href={`${base}blog`} class="sidebar-more">All articles →</a>
           </div>
-
-          <!-- Affiliate Stores -->
-          <div style="background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 18px; margin-bottom: 16px;">
-            <h3 style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-bottom: 10px; font-weight: 700;">Shop By Store</h3>
-            <nav>
-              <ul style="list-style: none; padding: 0; margin: 0;">
-                <li><a href={AFF_BURCHDA} target="_blank" rel="noopener noreferrer" style="display: block; padding: 7px 0; color: var(--color-accent); font-size: 0.88rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light);">🏪 Burchda Bikes</a></li>
-                <li><a href={AFF_KINGBULL} target="_blank" rel="noopener noreferrer" style="display: block; padding: 7px 0; color: var(--color-accent); font-size: 0.88rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light);">🏪 King Bull Bike</a></li>
-                <li><a href={AFF_VIVI} target="_blank" rel="noopener noreferrer" style="display: block; padding: 7px 0; color: var(--color-accent); font-size: 0.88rem; font-weight: 500; border-bottom: 1px solid var(--color-border-light);">🏪 Vivi Bikes</a></li>
-                <li><a href="https://amzn.to/4uRplxG" target="_blank" rel="noopener noreferrer" style="display: block; padding: 7px 0; color: #FF9900; font-size: 0.88rem; font-weight: 500;">🏪 NIU — Highest Quality E-Bikes</a></li>
-              </ul>
-            </nav>
+          <div class="sidebar-card service-card">
+            <h3>Service Area</h3>
+            <ul>
+              <li>📍 Destin, FL</li>
+              <li>📍 Miramar Beach, FL</li>
+              <li>📍 Sandestin</li>
+              <li>📍 Santa Rosa Beach / 30A</li>
+            </ul>
           </div>
-
-          <!-- Newsletter -->
-          <div style="background: var(--color-accent); border-radius: var(--radius-md); padding: 20px; color: #fff;">
-            <h3 style="font-size: 0.9rem; margin-bottom: 4px; font-weight: 700; color: #fff;">E-Bike Deals Newsletter</h3>
-            <p style="font-size: 0.78rem; color: rgba(255,255,255,0.85); margin-bottom: 12px; line-height: 1.5;">Get weekly deals, new model alerts, and expert riding tips.</p>
-            <form onsubmit="event.preventDefault(); alert('Thanks for subscribing!');" style="display: flex; flex-direction: column; gap: 6px;">
-              <input type="email" placeholder="your@email.com" required aria-label="Email" style="padding: 8px 12px; border-radius: var(--radius-sm); border: none; font-size: 0.85rem; font-family: var(--font-sans);" />
-              <button type="submit" class="btn" style="background: #fff; color: var(--color-accent); justify-content: center; font-weight: 700; font-size: 0.85rem;">Subscribe</button>
-            </form>
-            <p style="font-size: 0.68rem; color: rgba(255,255,255,0.7); margin-top: 8px;">No spam. Unsubscribe anytime.</p>
-          </div>
-
-          <!-- Disclaimer -->
-          <p style="font-size: 0.72rem; color: var(--color-text-muted); margin-top: 12px; line-height: 1.5;">
-            <em>As an affiliate partner of Burchda, King Bull, Vivi, and Amazon, we may earn a small commission on qualifying purchases. This does not affect our reviews or recommendations.</em>
-          </p>
         </aside>
 
       </div>
     </div>
   </section>
 
-  
-
-<!-- ===== ELECTRIC BIKES FOR ADULTS — AMAZON PICKS ===== -->
-  <section style="padding: 40px 0; background: var(--color-bg-elevated); border-bottom: 1px solid var(--color-border);">
-    <div class="container">
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
-        <div>
-          <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 4px;">🛍️ Electric Bikes for Adults</h2>
-          <p style="color: var(--color-text-muted); font-size: 0.88rem;">Affordable, top-rated e-bikes on Amazon — fast shipping, easy returns.</p>
-        </div>
-        <a href="https://www.amazon.com/s?k=electric+bike+for+adults&tag=techbot00-20" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: #FF9900; border-color: #FF9900; color: #fff;">Shop All on Amazon →</a>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px;">
-        <a href="https://www.amazon.com/gp/aw/d/B0GLGWZ276?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: all var(--transition-fast);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/715xtmf5gVL._AC_SL1500_.jpg" alt="TS TST 1500W Fat Tire E-Bike" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px;">TS TST 1500W Fat Tire E-Bike</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 8px;">48V 15Ah Battery • 65 Mi Range • 20"x4" Fat Tires</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.1rem; font-weight: 800; color: #B12704;">$599</span>
-              <span style="font-size: 0.82rem; color: var(--color-text-muted); text-decoration: line-through;">$799</span>
-              <span style="font-size: 0.75rem; color: #B12704; font-weight: 600;">Save $200</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/gp/aw/d/B0GQ8NPQ85?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: all var(--transition-fast);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71q3ZL4YpcL._AC_SL1500_.jpg" alt="TS TST 1500W Full Suspension" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px;">TS TST 1500W Full Suspension</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 8px;">48V 15Ah Battery • 65 Mi Range • Full Suspension</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.1rem; font-weight: 800; color: #B12704;">$649</span>
-              <span style="font-size: 0.82rem; color: var(--color-text-muted); text-decoration: line-through;">$849</span>
-              <span style="font-size: 0.75rem; color: #B12704; font-weight: 600;">Save $200</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0D8VX8VMH?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: all var(--transition-fast);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71ZWvcDQNDL._AC_SL1500_.jpg" alt="BIGNIU BG-X E-Bike" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px;">BIGNIU BG-X E-Bike</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 8px;">1500W Motor • Turn Signals • Dual Suspension • Windshield</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.1rem; font-weight: 800; color: #B12704;">$699</span>
-              <span style="font-size: 0.82rem; color: var(--color-text-muted); text-decoration: line-through;">$899</span>
-              <span style="font-size: 0.75rem; color: #B12704; font-weight: 600;">Save $200</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0FMQ8ZLZH?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: all var(--transition-fast);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/81lYSs07dcL._AC_SL1500_.jpg" alt="HAPPYRUN G300 Pro Dirt Bike" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px;">HAPPYRUN G300 Pro Dirt Bike</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 8px;">6500W Motor • 50 MPH • 72V 30Ah • Hydraulic Brakes</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.1rem; font-weight: 800; color: #B12704;">$1,199</span>
-              <span style="font-size: 0.82rem; color: var(--color-text-muted); text-decoration: line-through;">$1,499</span>
-              <span style="font-size: 0.75rem; color: #B12704; font-weight: 600;">Save $300</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0GDD4F44Z?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: all var(--transition-fast);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/81xqDL5ZYnL._AC_SL1500_.jpg" alt="PUJH 6000W Dual Motor E-Bike" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px;">PUJH 6000W Dual Motor E-Bike</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 8px;">60V 1200Wh Battery • 110Nm Torque • Hydraulic Brakes</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.1rem; font-weight: 800; color: #B12704;">$1,299</span>
-              <span style="font-size: 0.82rem; color: var(--color-text-muted); text-decoration: line-through;">$1,599</span>
-              <span style="font-size: 0.75rem; color: #B12704; font-weight: 600;">Save $300</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0F8QGVC89?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: all var(--transition-fast);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/81HAKevNZZL._AC_SL1500_.jpg" alt="PUJH 6000W 100-Mile E-Bike" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px;">PUJH 6000W 100-Mile E-Bike</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 8px;">60V 1200Wh Battery • 100 Mi Range • Full Suspension</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.1rem; font-weight: 800; color: #B12704;">$1,399</span>
-              <span style="font-size: 0.82rem; color: var(--color-text-muted); text-decoration: line-through;">$1,699</span>
-              <span style="font-size: 0.75rem; color: #B12704; font-weight: 600;">Save $300</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0GCLBBM2Y?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: all var(--transition-fast);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="Wallke H7 Ultra 4000W E-Bike" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px;">Wallke H7 Ultra 4000W E-Bike</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 8px;">Solar Charge • Portable Power • UL2849 Certified</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.1rem; font-weight: 800; color: #B12704;">$1,599</span>
-              <span style="font-size: 0.82rem; color: var(--color-text-muted); text-decoration: line-through;">$1,999</span>
-              <span style="font-size: 0.75rem; color: #B12704; font-weight: 600;">Save $400</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0FL18TZ5L?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: all var(--transition-fast);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/81QhHdDKmoL._AC_SL1500_.jpg" alt="ZUTTEX 9000W Dual Motor E-Bike" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px;">ZUTTEX 9000W Dual Motor E-Bike</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 8px;">58V 36AH Battery • 47 MPH • 24" Fat Tires • LCD Display</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.1rem; font-weight: 800; color: #B12704;">$1,499</span>
-              <span style="font-size: 0.82rem; color: var(--color-text-muted); text-decoration: line-through;">$1,799</span>
-              <span style="font-size: 0.75rem; color: #B12704; font-weight: 600;">Save $300</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0F9W1423C?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: all var(--transition-fast);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="8500W Electric Dirt Bike" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px;">8500W Electric Dirt Bike</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 8px;">72V • 52 MPH • 4-Piston Brakes • Off-Road</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.1rem; font-weight: 800; color: #B12704;">$1,699</span>
-              <span style="font-size: 0.82rem; color: var(--color-text-muted); text-decoration: line-through;">$2,099</span>
-              <span style="font-size: 0.75rem; color: #B12704; font-weight: 600;">Save $400</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0GQSQ1VM3?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: all var(--transition-fast);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/91hMEpD2D7L._AC_SL1500_.jpg" alt="ANIIOKI A9 Pro Max E-Bike" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px;">ANIIOKI A9 Pro Max E-Bike</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 8px;">7000W Dual Motor • 300 Mi Range • 46 MPH • 80Ah Battery</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.1rem; font-weight: 800; color: #B12704;">$1,799</span>
-              <span style="font-size: 0.82rem; color: var(--color-text-muted); text-decoration: line-through;">$2,199</span>
-              <span style="font-size: 0.75rem; color: #B12704; font-weight: 600;">Save $400</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0F32Q5HJ4?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: all var(--transition-fast);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="eAhora Romeo Pro III 6000W" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px;">eAhora Romeo Pro III 6000W</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 8px;">60V 80Ah Battery • 300 Mi Range • 52 MPH • Full Suspension</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.1rem; font-weight: 800; color: #B12704;">$1,899</span>
-              <span style="font-size: 0.82rem; color: var(--color-text-muted); text-decoration: line-through;">$2,299</span>
-              <span style="font-size: 0.75rem; color: #B12704; font-weight: 600;">Save $400</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0F54KPNPM?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: all var(--transition-fast);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="eAhora Romeo Pro 3 5600W" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px;">eAhora Romeo Pro 3 5600W</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 8px;">60V 80Ah Battery • 250 Mi Range • 50 MPH • Air Suspension</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.1rem; font-weight: 800; color: #B12704;">$1,799</span>
-              <span style="font-size: 0.82rem; color: var(--color-text-muted); text-decoration: line-through;">$2,199</span>
-              <span style="font-size: 0.75rem; color: #B12704; font-weight: 600;">Save $400</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0GWMLF84J?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; transition: all var(--transition-fast);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="eAhora Urace Carbon E-Bike" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px;">eAhora Urace Carbon E-Bike</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 8px;">T800 Carbon Frame • 700C Wheels • Road & Gravel</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.1rem; font-weight: 800; color: #B12704;">$1,499</span>
-              <span style="font-size: 0.82rem; color: var(--color-text-muted); text-decoration: line-through;">$1,799</span>
-              <span style="font-size: 0.75rem; color: #B12704; font-weight: 600;">Save $300</span>
-            </div>
-          </div>
-        </a>
-      </div>
-        
-
-
-
-<!-- ===== HOT 5-STAR ELECTRIC GOLF CARTS ===== -->
-  <section style="padding: 48px 0; background: linear-gradient(135deg, #1a5f2a 0%, #2d8a4e 100%);">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 32px;">
-        <span style="display: inline-block; background: #FF6B35; color: #fff; padding: 6px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px;">🔥 HOT 5-STAR NEW MODELS</span>
-        <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; color: #fff;">Electric Golf Carts for Adults</h2>
-        <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem;">Top-rated 4-seater electric golf carts — all-terrain, high-power, long range.</p>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px;">
-        <a href="https://www.amazon.com/dp/B0DSZY626D?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/710pbDN5OoL._AC_SL1500_.jpg" alt="X-ARK 4-Seater Golf Cart" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.5/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">X-ARK 4-Seater Golf Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric golf cart with 5000W high-power motor, 60-mile max range, 23.5" all-terr...</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$12,999</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$45.99</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0G8GG3P9P?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71dCuKU41NL._AC_SL1500_.jpg" alt="GIYI 4-Seater Golf Cart" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.6/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">GIYI 4-Seater Golf Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric golf cart with 5KW motor, 20 MPH top speed, 44-mile range, 60V battery, ...</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$8,299</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$69.99</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0G2LXSLTP?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/713n8DxUNxL._AC_SL1500_.jpg" alt="SDLANCH 4-Seater Golf Cart" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.4/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">SDLANCH 4-Seater Golf Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric golf cart with 45-mile long range, 60V battery, 800 lbs payload capacity...</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$9,800</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$3,999</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0GDFMD6QM?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/81PZzvLNxtL._AC_SL1500_.jpg" alt="4-Seater Golf Cart (B0GDFMD6QM)" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.3/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">4-Seater Golf Cart (B0GDFMD6QM)</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric golf cart with advanced suspension for recreational use, park, and hotel...</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$8,299</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$69.99</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0GXKK7PSY?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71gj1P5NvgL._AC_SL1500_.jpg" alt="ATS POWER 4-Seater Golf Cart" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.3/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">ATS POWER 4-Seater Golf Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric golf cart with waterproof design, all-terrain capability, LED lights, an...</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$10,999</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$129.19</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0GL1RC7L1?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/81myX6hjwfL._AC_SL1500_.jpg" alt="GO-UP Sightseeing Golf Cart" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.5/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">GO-UP Sightseeing Golf Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric sightseeing vehicle with massive 48V 105AH lithium battery. Built for go...</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$12,050</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$151</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0GQBL7S4F?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71ZNL7i6FML._AC_SL1500_.jpg" alt="ATS POWER Golf Cart (B0GQBL7S4F)" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.4/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">ATS POWER Golf Cart (B0GQBL7S4F)</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">ATS POWER electric golf cart with 4-seater capacity, all-terrain tires, LED display, and q...</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$7,999</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$400</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0GL1J5CDH?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/91PToPTW0EL._AC_SL1500_.jpg" alt="GO-UP Sightseeing Vehicle" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.6/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">GO-UP Sightseeing Vehicle</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric sightseeing leisure vehicle. Premium golf cart for adults, built for res...</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$7,700</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$4,999</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0GR9JYP7M?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/81S685CeDbL._AC_SL1500_.jpg" alt="GO-UP Stylish Golf Cart" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.4/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">GO-UP Stylish Golf Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">Stylish lightweight 4-seater electric golf cart. Modern design with powerful performance....</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$7,500</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$129.19</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0G4QVZX5R?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/710pbDN5OoL._AC_SL1500_.jpg" alt="1200 Electric Passenger Cart" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.2/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">1200 Electric Passenger Cart</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">1200W electric golf cart with exterior passenger configuration. 4-seater design....</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$4,299.89</span> <span style="font-size: 0.8rem; color: #999; text-decoration: line-through;">$16.99</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0H395JDLD?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="GOUP 4-Seater Sunroof" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.4/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">GOUP 4-Seater Sunroof</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">GOUP 4-seater electric golf cart with 48V motor, sunroof, and black finish. Premium comfor...</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #B12704;">$9,643.73</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0GXKK7PSY?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71gj1P5NvgL._AC_SL1500_.jpg" alt="ATS POWER Waterproof" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.3/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">ATS POWER Waterproof</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">ATS POWER 4-seater electric golf cart with waterproof design and all-terrain capability....</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #FF6B35;">Make Offer</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0GYDQCPVT?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="GOUP 2-Seater" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.2/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">GOUP 2-Seater</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">GOUP 2-seater electric golf cart. Compact and efficient for couples or solo riders....</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #FF6B35;">Make Offer</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0CW35HX2Y?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="Electric Mobility Scooter" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.1/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Electric Mobility Scooter</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">Electric golf cart with storage, mobility features, and scooter design. Courtesy vehicle f...</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #FF6B35;">Make Offer</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0F8XD5F94?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="Electric Golf Cart (B0F8XD5F94)" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.0/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Electric Golf Cart (B0F8XD5F94)</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">4-seater electric golf cart with all-terrain capability. Built for golf courses and off-ro...</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #FF6B35;">Make Offer</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.amazon.com/dp/B0G53WWVPS?tag=techbot00-20" target="_blank" rel="noopener noreferrer" style="background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-          <div style="aspect-ratio: 4/3; overflow: hidden; background: #f5f5f5;">
-            <img src="https://m.media-amazon.com/images/I/71t4nM4V0DL._AC_SL1500_.jpg" alt="Electric Golf Cart (B0G53WWVPS)" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div style="padding: 16px;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
-              <span style="font-size: 0.85rem; color: #FF9900;">★★★★★</span>
-              <span style="font-size: 0.8rem; color: #888;">4.0/5</span>
-            </div>
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px;">Electric Golf Cart (B0G53WWVPS)</h3>
-            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">Premium 4-seater electric golf cart. High-quality build for serious golfers and commercial...</p>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.15rem; font-weight: 800; color: #FF6B35;">Make Offer</span>
-            </div>
-          </div>
-        </a>
-      </div>
-      <p style="text-align: center; margin-top: 20px; font-size: 0.75rem; color: rgba(255,255,255,0.7);">As an Amazon Associate, we earn from qualifying purchases.</p>
-    </div>
-  </section>
-
-<!-- ===== QUIZ — Bottom of page ===== -->
-  <section style="padding: 48px 0; background: var(--color-accent-light); border-top: 2px solid var(--color-accent); margin-top: 48px;">
-    <div class="container" style="max-width: 640px;">
-      <div style="text-align: center; margin-bottom: 24px;">
-        <span class="badge badge-new" style="margin-bottom: 8px;">Interactive</span>
-        <h2 style="font-size: 1.4rem; margin-bottom: 6px; font-weight: 700;">Find Your Perfect E-Bike in 30 Seconds</h2>
-        <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Answer 3 quick questions and we'll match you with the ideal ride.</p>
-      </div>
-      <div class="quiz-widget" id="quiz-widget" style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-        <div class="quiz-progress" style="width: 100%; height: 6px; background: var(--color-border-light); border-radius: 6px; margin-bottom: 24px; overflow: hidden;">
-          <div class="quiz-progress-bar" id="quiz-progress-bar" style="height: 100%; width: 0%; background: var(--color-accent); border-radius: 6px; transition: width 0.4s ease;"></div>
-        </div>
-        <div class="quiz-step active" data-step="1">
-          <h3 style="font-size: 1.05rem; margin-bottom: 16px; text-align: center; font-weight: 600;">What's your primary riding style?</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <button class="quiz-opt" onclick="quizAnswer(1,'commuter',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">🏙️ City Commuting</button>
-            <button class="quiz-opt" onclick="quizAnswer(1,'mountain',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">⛰️ Off-Road Trails</button>
-            <button class="quiz-opt" onclick="quizAnswer(1,'folding',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">🎒 Compact & Portable</button>
-            <button class="quiz-opt" onclick="quizAnswer(1,'cargo',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">📦 Hauling & Utility</button>
-          </div>
-        </div>
-        <div class="quiz-step" data-step="2" style="display: none;">
-          <h3 style="font-size: 1.05rem; margin-bottom: 16px; text-align: center; font-weight: 600;">What's your budget range?</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-            <button class="quiz-opt" onclick="quizAnswer(2,'budget',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">Under $1,000</button>
-            <button class="quiz-opt" onclick="quizAnswer(2,'mid',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">$1,000 – $2,000</button>
-            <button class="quiz-opt" onclick="quizAnswer(2,'premium',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">$2,000+</button>
-          </div>
-        </div>
-        <div class="quiz-step" data-step="3" style="display: none;">
-          <h3 style="font-size: 1.05rem; margin-bottom: 16px; text-align: center; font-weight: 600;">How far do you need to ride per charge?</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-            <button class="quiz-opt" onclick="quizAnswer(3,'short',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">Under 30 miles</button>
-            <button class="quiz-opt" onclick="quizAnswer(3,'medium',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">30–60 miles</button>
-            <button class="quiz-opt" onclick="quizAnswer(3,'long',this)" style="padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); background: #fff; color: var(--color-text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 200ms ease; text-align: center;">60+ miles</button>
-          </div>
-        </div>
-        <div class="quiz-step" data-step="4" style="display: none; text-align: center;">
-          <div style="font-size: 3rem; margin-bottom: 12px;" id="quiz-result-emoji">🎉</div>
-          <h3 style="font-size: 1.3rem; margin-bottom: 8px; font-weight: 700;" id="quiz-result-title">Your Perfect Match!</h3>
-          <p style="color: var(--color-text-secondary); margin-bottom: 24px; font-size: 1rem;" id="quiz-result-desc"></p>
-          <a class="btn btn-primary" id="quiz-result-link" href={aff1} target="_blank" rel="noopener noreferrer" style="font-size: 1.1rem; padding: 14px 40px;">Shop Your Match →</a>
-          <button style="display: block; margin: 20px auto 0; background: none; border: none; color: var(--color-text-muted); font-size: 0.85rem; cursor: pointer; text-decoration: underline;" onclick="quizReset()">↻ Retake Quiz</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
 </BaseLayout>
 
-<script>
-  var quizState = { q1: null, q2: null, q3: null };
-  window.quizAnswer = function(step, value, btn) {
-    quizState['q' + step] = value;
-    var parent = btn.parentElement;
-    parent.querySelectorAll('.quiz-opt').forEach(function(b) { b.classList.remove('selected'); b.style.borderColor = 'var(--color-border)'; b.style.background = '#fff'; });
-    btn.classList.add('selected');
-    btn.style.borderColor = 'var(--color-accent)';
-    btn.style.background = 'var(--color-accent-light)';
-    document.getElementById('quiz-progress-bar').style.width = (step / 3 * 100) + '%';
-    setTimeout(function() {
-      document.querySelectorAll('.quiz-step[data-step="' + step + '"]')[0].style.display = 'none';
-      document.querySelectorAll('.quiz-step[data-step="' + (step + 1) + '"]')[0].style.display = 'block';
-      if (step === 3) {
-        var q1 = quizState.q1;
-        var map = {
-          commuter: { emoji: '🏙️', title: 'The Urban Commuter', desc: 'You need a sleek, reliable e-bike for daily commuting. Check out our top commuter picks.' },
-          mountain: { emoji: '⛰️', title: 'The Trail Blazer', desc: 'You live for off-road adventure. Our mountain e-bikes are built for any terrain.' },
-          folding: { emoji: '🎒', title: 'The City Minimalist', desc: 'Portability is everything. Our folding e-bikes pack down small and ride big.' },
-          cargo: { emoji: '📦', title: 'The Family Hauler', desc: 'You need to move people and stuff. Our cargo e-bikes have the power and capacity.' }
-        };
-        var r = map[q1] || map.commuter;
-        document.getElementById('quiz-result-emoji').textContent = r.emoji;
-        document.getElementById('quiz-result-title').textContent = r.title;
-        document.getElementById('quiz-result-desc').textContent = r.desc;
-      }
-    }, 300);
-  };
-  window.quizReset = function() {
-    quizState = { q1: null, q2: null, q3: null };
-    document.querySelectorAll('.quiz-opt').forEach(function(b) { b.classList.remove('selected'); b.style.borderColor = 'var(--color-border)'; b.style.background = '#fff'; });
-    document.querySelectorAll('.quiz-step').forEach(function(s) { s.style.display = 'none'; s.classList.remove('active'); });
-    document.querySelector('.quiz-step[data-step="1"]').style.display = 'block';
-    document.querySelector('.quiz-step[data-step="1"]').classList.add('active');
-    document.getElementById('quiz-progress-bar').style.width = '0%';
-  };
-</script>
-
 <style>
-  .quiz-opt:hover {
-    border-color: var(--color-accent) !important;
-    background: var(--color-accent-light) !important;
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 520px;
+    background: url('/images/destin-sunset.jpg') center 35% / cover no-repeat;
   }
-  @media (max-width: 1024px) {
-    .container > div[style*="grid-template-columns: 1fr 280px"] { grid-template-columns: 1fr !important; }
-    aside[style*="position: sticky"] { position: static !important; }
-    .bike-review > div[style*="grid-template-columns: 200px 1fr"] { grid-template-columns: 1fr !important; }
-    .bike-review > div[style*="grid-template-columns: 200px 1fr"] img { max-height: 240px; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(6,32,52,.55) 0%, rgba(6,32,52,.75) 100%);
+    display: flex;
+    align-items: center;
+  }
+  .hero-inner { text-align: center; padding: 60px 0; }
+  .hero-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    font-size: .85rem;
+    font-weight: 700;
+    color: #9fd8b8;
+    margin-bottom: 10px;
+  }
+  .hero h1 {
+    color: #fff;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 18px rgba(0,0,0,.4);
+  }
+  .hero-accent { color: #7be3a6; }
+  .hero-sub {
+    color: #e8f2ec;
+    font-size: 1.1rem;
+    max-width: 560px;
+    margin: 0 auto 22px;
+    line-height: 1.6;
+  }
+  .phone-big {
+    display: inline-block;
+    font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+    font-weight: 800;
+    color: #fff;
+    background: rgba(45,138,78,.92);
+    padding: 12px 38px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 10px 34px rgba(0,0,0,.35);
+    margin-bottom: 22px;
+    transition: transform var(--transition-fast), background var(--transition-fast);
+  }
+  .phone-big:hover { transform: translateY(-2px); background: #2d8a4e; }
+  .hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-outline-light {
+    border: 2px solid #fff;
+    color: #fff;
+    background: transparent;
+    padding: 12px 30px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+  .btn-outline-light:hover { background: rgba(255,255,255,.15); }
+
+  /* ===== TILES ===== */
+  .tiles-section { background: var(--color-bg-elevated); border-bottom: 1px solid var(--color-border); }
+  .section-title { text-align: center; font-size: 1.7rem; font-weight: 800; margin-bottom: 6px; }
+  .section-sub { text-align: center; color: var(--color-text-muted); margin-bottom: 28px; }
+  .tile-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .tile {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border: 1px solid var(--color-border);
+    display: block;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .tile:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(0,0,0,.18); }
+  .tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tile-label {
+    position: absolute;
+    inset: auto 0 0 0;
+    background: linear-gradient(180deg, transparent, rgba(6,32,52,.88) 60%);
+    padding: 34px 16px 14px;
+    color: #fff;
+  }
+  .tile-label h3 { font-size: 1.05rem; font-weight: 800; margin: 0; }
+  .tile-label p { font-size: .8rem; margin: 2px 0 0; color: #cfe6d8; }
+
+  /* ===== 3-COLUMN ===== */
+  .main-section { padding: 40px 0; }
+  .three-col {
+    display: grid;
+    grid-template-columns: 250px 1fr 280px;
+    gap: 28px;
+    align-items: start;
+  }
+  .col-center { display: flex; flex-direction: column; gap: 22px; }
+  .center-card {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 26px 28px;
+  }
+  .center-card h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; }
+  .center-card p { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 10px; }
+  .center-card p:last-child { margin-bottom: 0; }
+  .steps { padding-left: 20px; line-height: 1.9; color: var(--color-text-secondary); }
+  .steps a { color: var(--color-accent); font-weight: 700; }
+
+  .rate-table {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 16px 0 8px;
+  }
+  .rate-table > div {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 12px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .rate-table span { font-size: .78rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: .05em; }
+  .rate-table strong { font-size: 1.05rem; color: var(--color-accent); }
+  .rate-note { font-size: .78rem; color: var(--color-text-muted); font-style: italic; }
+
+  .call-band { text-align: center; background: linear-gradient(135deg, #103c25, #1d6b40); border: none; }
+  .call-band h2 { color: #fff; }
+  .call-band p { color: #cfe6d8; }
+  .call-band .phone-big { margin: 8px 0 0; }
+
+  .why-list { list-style: none; padding: 0; line-height: 2; color: var(--color-text-secondary); }
+
+  /* ===== SIDEBARS ===== */
+  .col-sidebar-left, .col-sidebar-right { display: flex; flex-direction: column; gap: 22px; }
+  .sidebar-card {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    position: sticky;
+    top: 96px;
+  }
+  .sidebar-title { font-size: 1rem; font-weight: 800; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid var(--color-accent); }
+  .sale-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border-light);
+    text-decoration: none;
+  }
+  .sale-item img { width: 74px; height: 56px; object-fit: cover; border-radius: 6px; border: 1px solid var(--color-border); }
+  .sale-item strong { display: block; font-size: .84rem; color: var(--color-text-primary); line-height: 1.3; }
+  .sale-price { font-size: .92rem; font-weight: 800; color: var(--color-accent); }
+  .blog-item {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border-light);
+    text-decoration: none;
+  }
+  .blog-item img { width: 74px; height: 56px; object-fit: cover; border-radius: 6px; border: 1px solid var(--color-border); }
+  .blog-item strong { display: block; font-size: .82rem; color: var(--color-text-primary); line-height: 1.35; }
+  .blog-item time { font-size: .72rem; color: var(--color-text-muted); }
+  .sidebar-more {
+    display: block;
+    padding-top: 12px;
+    font-weight: 700;
+    font-size: .88rem;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .call-card { text-align: center; }
+  .call-card h3 { font-size: 1rem; margin-bottom: 8px; }
+  .phone-side {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    text-decoration: none;
+    margin-bottom: 4px;
+  }
+  .call-card p { font-size: .8rem; color: var(--color-text-muted); margin: 0; }
+  .service-card ul { list-style: none; padding: 0; line-height: 2.1; font-size: .88rem; color: var(--color-text-secondary); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1080px) {
+    .three-col { grid-template-columns: 230px 1fr; }
+    .col-sidebar-right { grid-column: 1 / -1; flex-direction: row; }
+    .col-sidebar-right .sidebar-card { flex: 1; position: static; }
+    .tile-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 768px) {
-    .bike-review > div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+    .hero { min-height: 460px; }
+    .three-col { grid-template-columns: 1fr; }
+    .col-sidebar-right { flex-direction: column; }
+    .tile-grid { grid-template-columns: 1fr; }
+    .rate-table { grid-template-columns: repeat(2, 1fr); }
+    .sidebar-card { position: static; }
   }
 </style>

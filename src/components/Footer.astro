@@ -1,11 +1,7 @@
 ---
-// Footer — clean white, blog links, green accent
+// Footer — clean white, site links, local business info
 const base = import.meta.env.BASE_URL;
-const aff = 'https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733';
-// Per-store links for footer
-const affBurchda = 'https://www.awin1.com/cread.php?awinmid=123118&awinaffid=2915733';
-const affKingBull = 'https://www.awin1.com/cread.php?awinmid=124136&awinaffid=2915733';
-const affVivi = 'https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733';
+const PHONE = '850-299-8575';
 ---
 
 <footer class="footer">
@@ -29,7 +25,9 @@ const affVivi = 'https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733
           </svg>
           EB Superstore
         </a>
-        <p>Honest electric bike reviews, expert buying guides, and maintenance tips. Helping riders find the perfect e-bike.</p>
+        <p>Electric bike rentals &amp; sales in Destin and Miramar Beach, Florida. Explore the Emerald Coast on two wheels.</p>
+        <p class="footer-phone"><a href="tel:8502998575">📞 {PHONE}</a></p>
+        <p class="footer-area">Serving Destin • Miramar Beach • Sandestin • 30A</p>
         <div class="social-links">
           <a href="#" aria-label="Twitter" class="social-link">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -77,8 +75,7 @@ const affVivi = 'https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; {new Date().getFullYear()} The Electric Bike Superstore. All rights reserved.</p>
-      <p class="footer-tagline">⚡ <a href={aff} target="_blank" rel="noopener noreferrer" style="color: var(--color-accent);">Shop E-Bikes →</a></p>
+      <p>&copy; {new Date().getFullYear()} Electric Bike Rentals &amp; Sales — Destin, FL. All rights reserved.</p>
     </div>
   </div>
 </footer>
@@ -105,6 +102,15 @@ const affVivi = 'https://www.awin1.com/cread.php?awinmid=98557&awinaffid=2915733
     line-height: 1.7;
     max-width: 300px;
   }
+
+  .footer-phone { margin-top: 8px !important; }
+  .footer-phone a {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .footer-area { font-size: 0.8rem !important; margin-top: 4px !important; }
 
   .footer-logo {
     display: flex;
