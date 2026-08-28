@@ -3,9 +3,11 @@
 const base = import.meta.env.BASE_URL;
 const PHONE = '850-299-8575';
 
+const AMAZON_STORE = 'https://www.amazon.com/stores/page/F97C0FA7-87EC-4A90-A10E-AA86092556D7?linkCode=ll2&tag=techbot00-20&linkId=9c4b9c187a70b34dfb2da356b094982d&language=en_US&ref_=as_li_ss_tl';
+
 const navItems = [
   { href: `${base}`, label: 'Home' },
-  { href: `${base}products`, label: 'Bikes for Sale' },
+  { href: AMAZON_STORE, label: 'Bikes for Sale', external: true },
   { href: `${base}blog`, label: 'Blog' },
   { href: `${base}#book`, label: 'Book a Rental' },
   { href: `${base}about`, label: 'About' },
@@ -20,7 +22,7 @@ const navItems = [
 
     <nav class="nav" id="nav" aria-label="Main navigation">
       {navItems.map(item => (
-        <a href={item.href} class="nav-link">
+        <a href={item.href} class="nav-link" target={item.external ? '_blank' : undefined} rel={item.external ? 'sponsored nofollow noopener' : undefined}>
           {item.label}
         </a>
       ))}
