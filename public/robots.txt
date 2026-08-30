@@ -3,4 +3,24 @@ Allow: /
 Disallow: /admin
 Disallow: /cart
 
+# AI search crawlers - explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+Sitemap: https://theelectricbikesuperstore.com/sitemap-index.xml
 Sitemap: https://theelectricbikesuperstore.com/sitemap.xml
