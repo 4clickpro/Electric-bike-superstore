@@ -56,7 +56,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
             <strong>Email:</strong> <a href="mailto:hello@theelectricbikesuperstore.com">hello@theelectricbikesuperstore.com</a>
           </li>
           <li style="padding: 8px 0; border-bottom: 1px solid var(--color-border-light);">
-            <strong>Location:</strong> Portland, Oregon, USA
+            <strong>Location:</strong> Miramar Beach, Florida — serving Destin, Miramar Beach &amp; 30A
           </li>
           <li style="padding: 8px 0;">
             <strong>Response time:</strong> Within 24 hours
@@ -69,20 +69,30 @@ import BaseLayout from '@layouts/BaseLayout.astro';
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "The Electric Bike Superstore",
+    "@type": "LocalBusiness",
+    "name": "EB Rentals & Sales",
+    "alternateName": "The Electric Bike Superstore",
     "url": "https://theelectricbikesuperstore.com",
+    "telephone": "+1-850-299-8575",
     "email": "hello@theelectricbikesuperstore.com",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Portland",
-      "addressRegion": "Oregon",
+      "addressLocality": "Miramar Beach",
+      "addressRegion": "FL",
       "addressCountry": "US"
     },
-    "sameAs": [
-      "https://twitter.com/ebikesuperstore",
-      "https://www.instagram.com/theelectricbikesuperstore/"
-    ]
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 30.3772,
+      "longitude": -86.3358
+    },
+    "areaServed": ["Destin, FL", "Miramar Beach, FL", "Sandestin, FL", "30A, FL", "Okaloosa Island, FL"],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
   }
   </script>
 </BaseLayout>
