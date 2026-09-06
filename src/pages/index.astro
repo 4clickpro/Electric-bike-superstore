@@ -12,7 +12,7 @@ const allPosts = (await getCollection('blog')).sort((a, b) =>
 );
 const recentPosts = allPosts.slice(0, 5);
 
-// Featured bike — left sidebar (Amazon affiliate)
+// Featured bike — left sidebar (affiliate)
 const FEATURED = {
   title: 'ANIIOKI A8 Pro Max',
   spec: '7000W dual motor • 300-mi range • 46MPH • 72V 70Ah',
@@ -29,8 +29,17 @@ const tiles = [
   { href: '#book', image: '/images/beach-cruiser.jpg', label: 'Beach Cruisers', sub: 'Cruise the Emerald Coast' },
 ];
 
-// NIU scooters — shop the lineup on Amazon (affiliate)
+// NIU e-bikes & scooters — shop the lineup (affiliate)
 const NIU_STORE = 'https://www.amazon.com/stores/page/F97C0FA7-87EC-4A90-A10E-AA86092556D7?linkCode=ll2&tag=techbot00-20&linkId=9c4b9c187a70b34dfb2da356b094982d&language=en_US&ref_=as_li_ss_tl';
+const ebikes = [
+  { image: '/images/niu-bqi-c3-white.jpg', model: 'NIU BQi C3', blurb: 'Step-through city commuter' },
+  { image: '/images/niu-bqi-c3-grey.jpg', model: 'NIU BQi C3', blurb: 'Quiet, connected daily ride' },
+  { image: '/images/niu-bqi-c3-black.jpg', model: 'NIU BQi C3', blurb: 'Sleek everyday e-bike' },
+  { image: '/images/niu-bqi-fat-black.jpg', model: 'NIU BQi Fat Tire', blurb: 'Beach-ready fat tires' },
+  { image: '/images/niu-bqi-fat-grey.jpg', model: 'NIU BQi Fat Tire', blurb: 'Cruise sand & trails' },
+  { image: '/images/niu-bqi-fat-yellow.jpg', model: 'NIU BQi Fat Tire', blurb: 'Stand-out beach cruiser' },
+  { image: '/images/niu-bqi-fat-green.jpg', model: 'NIU BQi Fat Tire', blurb: 'Rugged all-terrain ride' },
+];
 const scooters = [
   { image: '/images/niu-kqi-air-x.jpg', model: 'NIU KQi Air X', blurb: 'Ultralight carbon scooter' },
   { image: '/images/niu-kqi-air.jpg', model: 'NIU KQi Air', blurb: 'Featherlight city cruiser' },
@@ -93,11 +102,32 @@ const scooters = [
     </div>
   </section>
 
-  <!-- ===== NIU SCOOTERS (AMAZON AFFILIATE) ===== -->
+  <!-- ===== NIU E-BIKES (AFFILIATE) ===== -->
   <section class="section scooters-section">
     <div class="container">
-      <h2 class="section-title">Shop NIU Scooters on Amazon</h2>
-      <p class="section-sub">The lineup that made NIU famous — portable, smart, and ready to ride. Check the latest prices on Amazon.</p>
+      <h2 class="section-title">Shop NIU E-Bikes</h2>
+      <p class="section-sub">NIU's e-bike lineup — step-through city cruisers and sand-ready fat tire rides. Check the latest prices and availability.</p>
+      <div class="scooter-grid">
+        {ebikes.map(s => (
+          <a href={NIU_STORE} target="_blank" rel="sponsored nofollow noopener" class="scooter-card">
+            <img src={s.image} alt={s.model} loading="lazy" />
+            <div class="scooter-info">
+              <strong class="scooter-model">{s.model}</strong>
+              <span class="scooter-blurb">{s.blurb}</span>
+              <span class="scooter-cta">Check Price →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      <p class="scooter-disclosure">We may earn a commission from qualifying purchases.</p>
+    </div>
+  </section>
+
+  <!-- ===== NIU SCOOTERS (AFFILIATE) ===== -->
+  <section class="section scooters-section">
+    <div class="container">
+      <h2 class="section-title">Shop NIU Scooters</h2>
+      <p class="section-sub">The lineup that made NIU famous — portable, smart, and ready to ride. Check the latest prices and availability.</p>
       <div class="scooter-grid">
         {scooters.map(s => (
           <a href={NIU_STORE} target="_blank" rel="sponsored nofollow noopener" class="scooter-card">
@@ -105,12 +135,12 @@ const scooters = [
             <div class="scooter-info">
               <strong class="scooter-model">{s.model}</strong>
               <span class="scooter-blurb">{s.blurb}</span>
-              <span class="scooter-cta">Check Price on Amazon →</span>
+              <span class="scooter-cta">Check Price →</span>
             </div>
           </a>
         ))}
       </div>
-      <p class="scooter-disclosure">As an Amazon Associate, we earn from qualifying purchases.</p>
+      <p class="scooter-disclosure">We may earn a commission from qualifying purchases.</p>
     </div>
   </section>
 
@@ -119,7 +149,7 @@ const scooters = [
     <div class="container">
       <div class="three-col">
 
-        <!-- LEFT SIDEBAR: FEATURED BIKE (AMAZON) -->
+        <!-- LEFT SIDEBAR: FEATURED BIKE -->
         <aside class="col-sidebar-left">
           <div class="sidebar-card featured-card">
             <h3 class="sidebar-title">⭐ Featured Bike</h3>
@@ -128,9 +158,9 @@ const scooters = [
               <strong class="feat-title">{FEATURED.title}</strong>
               <span class="feat-spec">{FEATURED.spec}</span>
               <span class="feat-price">{FEATURED.price}</span>
-              <span class="feat-cta">Check Price on Amazon →</span>
+              <span class="feat-cta">Check Price →</span>
             </a>
-            <p class="feat-disclosure">As an Amazon Associate, we earn from qualifying purchases.</p>
+            <p class="feat-disclosure">We may earn a commission from qualifying purchases.</p>
           </div>
           <div class="sidebar-card call-card">
             <h3>Call to Book</h3>
