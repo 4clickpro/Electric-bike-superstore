@@ -28,6 +28,18 @@ const tiles = [
   { href: '#book', image: '/images/fat-bike-beach.jpg', label: 'Fat Tire Beach Rides', sub: 'Sand-ready e-bikes' },
   { href: '#book', image: '/images/beach-cruiser.jpg', label: 'Beach Cruisers', sub: 'Cruise the Emerald Coast' },
 ];
+
+// NIU scooters — shop the lineup on Amazon (affiliate)
+const NIU_STORE = 'https://www.amazon.com/stores/page/F97C0FA7-87EC-4A90-A10E-AA86092556D7?linkCode=ll2&tag=techbot00-20&linkId=9c4b9c187a70b34dfb2da356b094982d&language=en_US&ref_=as_li_ss_tl';
+const scooters = [
+  { image: '/images/niu-kqi-air-x.jpg', model: 'NIU KQi Air X', blurb: 'Ultralight carbon scooter' },
+  { image: '/images/niu-kqi-air.jpg', model: 'NIU KQi Air', blurb: 'Featherlight city cruiser' },
+  { image: '/images/niu-kqi-100p.jpg', model: 'NIU KQi 100P', blurb: 'Commuter favorite' },
+  { image: '/images/niu-kqi-100f.jpg', model: 'NIU KQi 100F', blurb: 'Smooth & stable ride' },
+  { image: '/images/niu-kqi-200p.jpg', model: 'NIU KQi 200P', blurb: 'Long-range performer' },
+  { image: '/images/niu-kqi-300p.jpg', model: 'NIU KQi 300P', blurb: 'Powerful all-rounder' },
+  { image: '/images/niu-kqi-300x.jpg', model: 'NIU KQi 300X', blurb: 'All-terrain suspension' },
+];
 ---
 
 <BaseLayout
@@ -78,6 +90,27 @@ const tiles = [
           </a>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- ===== NIU SCOOTERS (AMAZON AFFILIATE) ===== -->
+  <section class="section scooters-section">
+    <div class="container">
+      <h2 class="section-title">Shop NIU Scooters on Amazon</h2>
+      <p class="section-sub">The lineup that made NIU famous — portable, smart, and ready to ride. Check the latest prices on Amazon.</p>
+      <div class="scooter-grid">
+        {scooters.map(s => (
+          <a href={NIU_STORE} target="_blank" rel="sponsored nofollow noopener" class="scooter-card">
+            <img src={s.image} alt={s.model} loading="lazy" />
+            <div class="scooter-info">
+              <strong class="scooter-model">{s.model}</strong>
+              <span class="scooter-blurb">{s.blurb}</span>
+              <span class="scooter-cta">Check Price on Amazon →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      <p class="scooter-disclosure">As an Amazon Associate, we earn from qualifying purchases.</p>
     </div>
   </section>
 
@@ -284,6 +317,41 @@ const tiles = [
   .tile-label h3 { font-size: 1.05rem; font-weight: 800; margin: 0; }
   .tile-label p { font-size: .8rem; margin: 2px 0 0; color: #cfe6d8; }
 
+  /* ===== NIU SCOOTERS ===== */
+  .scooters-section { background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
+  .scooter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .scooter-card {
+    display: block;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .scooter-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(0,0,0,.18); }
+  .scooter-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+  .scooter-info { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 3px; }
+  .scooter-model { font-size: .98rem; font-weight: 800; color: var(--color-text-primary); }
+  .scooter-blurb { font-size: .78rem; color: var(--color-text-muted); }
+  .scooter-cta {
+    margin-top: 8px;
+    background: #FF9900;
+    color: #111;
+    font-weight: 800;
+    font-size: .82rem;
+    text-align: center;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: filter var(--transition-fast);
+  }
+  .scooter-card:hover .scooter-cta { filter: brightness(.95); }
+  .scooter-disclosure { text-align: center; font-size: .72rem; color: var(--color-text-muted); font-style: italic; margin-top: 18px; }
+
   /* ===== 3-COLUMN ===== */
   .main-section { padding: 40px 0; }
   .three-col {
@@ -423,13 +491,18 @@ const tiles = [
     .col-sidebar-right { grid-column: 1 / -1; flex-direction: row; }
     .col-sidebar-right .sidebar-card { flex: 1; position: static; }
     .tile-grid { grid-template-columns: repeat(2, 1fr); }
+    .scooter-grid { grid-template-columns: repeat(3, 1fr); }
   }
   @media (max-width: 768px) {
     .hero { min-height: 460px; }
     .three-col { grid-template-columns: 1fr; }
     .col-sidebar-right { flex-direction: column; }
     .tile-grid { grid-template-columns: 1fr; }
+    .scooter-grid { grid-template-columns: repeat(2, 1fr); }
     .rate-table { grid-template-columns: repeat(2, 1fr); }
     .sidebar-card { position: static; }
+  }
+  @media (max-width: 480px) {
+    .scooter-grid { grid-template-columns: 1fr; }
   }
 </style>
