@@ -1,52 +1,49 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import ProductCard from '@components/ProductCard.astro';
-import productsData from '@data/products.json';
 
 const base = import.meta.env.BASE_URL;
 
-// Only show products with a price (exclude standalone buying guides)
-const products = productsData.filter(p => p.price);
+// NIU e-bikes & scooters — shop the lineup (affiliate)
+const NIU_STORE = 'https://www.amazon.com/stores/page/F97C0FA7-87EC-4A90-A10E-AA86092556D7?linkCode=ll2&tag=techbot00-20&linkId=9c4b9c187a70b34dfb2da356b094982d&language=en_US&ref_=as_li_ss_tl';
 
-// Build category list from actual product data
-const categorySet = new Set(products.map(p => p.category));
-const categories = ['All', ...Array.from(categorySet).sort()];
+const ebikes = [
+  { image: '/images/niu-bqi-c3-white.jpg', model: 'NIU BQi C3', blurb: 'Step-through city commuter' },
+  { image: '/images/niu-bqi-c3-grey.jpg', model: 'NIU BQi C3', blurb: 'Quiet, connected daily ride' },
+  { image: '/images/niu-bqi-c3-black.jpg', model: 'NIU BQi C3', blurb: 'Sleek everyday e-bike' },
+  { image: '/images/niu-bqi-fat-black.jpg', model: 'NIU BQi Fat Tire', blurb: 'Beach-ready fat tires' },
+  { image: '/images/niu-bqi-fat-grey.jpg', model: 'NIU BQi Fat Tire', blurb: 'Cruise sand & trails' },
+  { image: '/images/niu-bqi-fat-yellow.jpg', model: 'NIU BQi Fat Tire', blurb: 'Stand-out beach cruiser' },
+  { image: '/images/niu-bqi-fat-green.jpg', model: 'NIU BQi Fat Tire', blurb: 'Rugged all-terrain ride' },
+];
+const scooters = [
+  { image: '/images/niu-kqi-air-x.jpg', model: 'NIU KQi Air X', blurb: 'Ultralight carbon scooter' },
+  { image: '/images/niu-kqi-air.jpg', model: 'NIU KQi Air', blurb: 'Featherlight city cruiser' },
+  { image: '/images/niu-kqi-100p.jpg', model: 'NIU KQi 100P', blurb: 'Commuter favorite' },
+  { image: '/images/niu-kqi-100f.jpg', model: 'NIU KQi 100F', blurb: 'Smooth & stable ride' },
+  { image: '/images/niu-kqi-200p.jpg', model: 'NIU KQi 200P', blurb: 'Long-range performer' },
+  { image: '/images/niu-kqi-300p.jpg', model: 'NIU KQi 300P', blurb: 'Powerful all-rounder' },
+  { image: '/images/niu-kqi-300x.jpg', model: 'NIU KQi 300X', blurb: 'All-terrain suspension' },
+];
 
-// Build store list
-const storeSet = new Set(products.map(p => p.store).filter(Boolean));
-const stores = ['All', ...Array.from(storeSet).sort()];
+const products = [
+  ...ebikes.map(p => ({ ...p, category: 'E-Bike' })),
+  ...scooters.map(p => ({ ...p, category: 'Scooter' })),
+];
 
-// Parse price strings ("$1,199") into numbers for the ProductCard component
-function parsePrice(p: string | undefined): number {
-  if (!p) return 0;
-  return parseFloat(p.replace(/[$,]/g, ''));
-}
-
-function parseOldPrice(p: string | undefined): number | undefined {
-  if (!p) return undefined;
-  const n = parseFloat(p.replace(/[$,]/g, ''));
-  return n > 0 ? n : undefined;
-}
+const categories = ['All', 'E-Bike', 'Scooter'];
 ---
 
 <BaseLayout
-  title="Electric Bikes For Sale — Compare Top Models & Prices | The Electric Bike Superstore"
-  description="Compare electric bikes from Burchda, King Bull, and Vivi. Real specs, current prices, and direct links to buy."
+  title="NIU Electric Bikes & Scooters For Sale — Compare Models | The Electric Bike Superstore"
+  description="Shop the NIU lineup — BQi e-bikes and KQi scooters. Compare models, check the latest prices, and buy direct through our affiliate links."
   type="website"
   canonicalURL={new URL(Astro.url.pathname, Astro.site).toString()}
 >
   <section class="section-sm" style="padding-top: 32px;">
     <div class="container">
       <div class="page-header">
-        <h1>Electric Bikes <span class="gradient-text">For Sale</span></h1>
-        <p>Browse top-rated electric bikes from trusted brands. Compare specs, prices, and buy direct from authorized sellers.</p>
-      </div>
-
-      <!-- Store Filter -->
-      <div class="filter-bar" style="margin-bottom: 12px;">
-        {stores.map(store => (
-          <button class="filter-btn" data-store={store}>{store}</button>
-        ))}
+        <h1>NIU Electric Bikes <span class="gradient-text">&amp; Scooters</span></h1>
+        <p>Browse the full NIU lineup — step-through e-bikes, sand-ready fat tire rides, and smart city scooters. Check the latest prices and availability on Amazon.</p>
       </div>
 
       <!-- Category Filter -->
@@ -59,12 +56,12 @@ function parseOldPrice(p: string | undefined): number | undefined {
       <!-- Search -->
       <div class="search-bar">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <input type="text" id="products-search" placeholder="Search by name, brand, or category..." aria-label="Search electric bikes" />
+        <input type="text" id="products-search" placeholder="Search by model..." aria-label="Search NIU electric bikes and scooters" />
       </div>
 
       <!-- Results Count -->
       <div id="results-count" style="text-align: center; color: var(--color-text-muted); font-size: 0.85rem; margin: 16px 0;">
-        Showing {products.length} products
+        Showing {products.length} NIU models
       </div>
 
       <!-- Products Grid -->
@@ -73,28 +70,25 @@ function parseOldPrice(p: string | undefined): number | undefined {
           <div
             class="product-item"
             data-category={product.category}
-            data-store={product.store}
-            data-title={product.title.toLowerCase()}
-            data-slug={product.slug}
+            data-title={(product.model + ' ' + product.blurb).toLowerCase()}
           >
-            <ProductCard
-              title={product.title}
-              slug={product.slug}
-              price={parsePrice(product.price)}
-              originalPrice={parseOldPrice(product.oldPrice)}
-              image={product.image}
-              category={product.category}
-              rating={product.rating}
-              reviews={product.reviews}
-              affiliateUrl={product.affiliateUrl}
-              productUrl={product.productUrl}
-            />
+            <a href={NIU_STORE} target="_blank" rel="sponsored nofollow noopener" class="scooter-card">
+              <img src={product.image} alt={product.model} loading="lazy" width="400" height="400" />
+              <div class="scooter-info">
+                <strong class="scooter-model">{product.model}</strong>
+                <span class="scooter-category">{product.category}</span>
+                <span class="scooter-blurb">{product.blurb}</span>
+                <span class="scooter-cta">Check Price →</span>
+              </div>
+            </a>
           </div>
         ))}
       </div>
 
+      <p class="scooter-disclosure">We may earn a commission from qualifying purchases.</p>
+
       <div id="no-results" style="display:none; text-align:center; padding: 64px 0;">
-        <p style="color: var(--color-text-muted); font-size: 1.1rem;">No bikes match your filters. Try a different search or category.</p>
+        <p style="color: var(--color-text-muted); font-size: 1.1rem;">No NIU models match your filters. Try a different search or category.</p>
       </div>
     </div>
   </section>
@@ -170,16 +164,52 @@ function parseOldPrice(p: string | undefined): number | undefined {
   }
   .search-bar input:focus { outline: none; }
   .search-bar input::placeholder { color: var(--color-text-muted); }
+
+  /* NIU product cards (same style as homepage NIU sections) */
+  .scooter-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .scooter-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(0,0,0,.18); }
+  .scooter-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+  .scooter-info { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 3px; flex: 1; }
+  .scooter-model { font-size: .98rem; font-weight: 800; color: var(--color-text-primary); }
+  .scooter-category {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--color-text-muted);
+  }
+  .scooter-blurb { font-size: .78rem; color: var(--color-text-muted); }
+  .scooter-cta {
+    margin-top: auto;
+    padding-top: 8px;
+    background: #FF9900;
+    color: #111;
+    font-weight: 800;
+    font-size: .82rem;
+    text-align: center;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: filter var(--transition-fast);
+  }
+  .scooter-card:hover .scooter-cta { filter: brightness(.95); }
+  .scooter-disclosure { text-align: center; font-size: .72rem; color: var(--color-text-muted); font-style: italic; margin-top: 24px; }
 </style>
 
 <script>
-  // State for the two filter dimensions + search
+  // State for category filter + search
   let activeCategory = 'All';
-  let activeStore = 'All';
   let searchQuery = '';
 
   const categoryBtns = document.querySelectorAll('[data-category]');
-  const storeBtns =  document.querySelectorAll('[data-store]');
   const searchInput = document.getElementById('products-search');
   const grid = document.getElementById('products-grid');
   const noResults = document.getElementById('no-results');
@@ -188,24 +218,21 @@ function parseOldPrice(p: string | undefined): number | undefined {
 
   // Initialize active state
   categoryBtns.forEach(b => { if (b.dataset.category === 'All') b.classList.add('active'); });
-  storeBtns.forEach(b => { if (b.dataset.store === 'All') b.classList.add('active'); });
 
   function filterProducts() {
     let visible = 0;
     items().forEach(el => {
       const cat = el.dataset.category || '';
-      const store = el.dataset.store || '';
-      const title = (el.dataset.title || '') + ' ' + (el.dataset.slug || '').replace(/-/g, ' ');
+      const title = el.dataset.title || '';
       const matchCat = activeCategory === 'All' || cat === activeCategory;
-      const matchStore = activeStore === 'All' || store === activeStore;
       const matchSearch = !searchQuery || title.includes(searchQuery);
-      const show = matchCat && matchStore && matchSearch;
+      const show = matchCat && matchSearch;
       el.style.display = show ? '' : 'none';
       if (show) visible++;
     });
     if (noResults) noResults.style.display = visible === 0 ? '' : 'none';
     if (grid) grid.style.display = visible === 0 ? 'none' : '';
-    if (resultsCount) resultsCount.textContent = `Showing ${visible} ${visible === 1 ? 'product' : 'products'}`;
+    if (resultsCount) resultsCount.textContent = `Showing ${visible} ${visible === 1 ? 'NIU model' : 'NIU models'}`;
   }
 
   categoryBtns.forEach(btn => {
@@ -213,15 +240,6 @@ function parseOldPrice(p: string | undefined): number | undefined {
       categoryBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeCategory = btn.dataset.category || 'All';
-      filterProducts();
-    });
-  });
-
-  storeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      storeBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeStore = btn.dataset.store || 'All';
       filterProducts();
     });
   });
